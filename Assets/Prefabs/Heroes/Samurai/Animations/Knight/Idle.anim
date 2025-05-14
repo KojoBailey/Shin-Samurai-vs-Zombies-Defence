@@ -1,0 +1,2906 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Idle
+  serializedVersion: 7
+  m_Legacy: 1
+  m_Compressed: 1
+  m_UseHighQualityCurve: 0
+  m_RotationCurves: []
+  m_CompressedRotationCurves:
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt
+    m_Times:
+      m_NumItems: 5
+      m_Data: 00a3a3a62c
+      m_BitSize: 8
+    m_Values:
+      m_NumItems: 5
+      m_Data: c69041d36eb042d396f041d3be9041d3c69041d3
+    m_Slopes:
+      m_NumItems: 20
+      m_Range: 0.08518069
+      m_Start: -0.03662735
+      m_Data: c0af69dca5691fa5695fa7691da769
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: f8f7df7ff8f7df7f
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt
+    m_Times:
+      m_NumItems: 5
+      m_Data: 00a3a3a62c
+      m_BitSize: 8
+    m_Values:
+      m_NumItems: 5
+      m_Data: 2368e075d3a7e078dbb720770b88e0752368e075
+    m_Slopes:
+      m_NumItems: 20
+      m_Range: 0.09700007
+      m_Start: -0.04255905
+      m_Data: c0f5771c97691d4769eaa469e3a569
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: 28a4f0bc28a4f0bc
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt
+    m_Times:
+      m_NumItems: 12
+      m_Data: 0085141b462b0a0a0d1ba314
+      m_BitSize: 8
+    m_Values:
+      m_NumItems: 12
+      m_Data: cb569476bb56127ac366127f4377128173c752825bd7d2803bf792810b279381cbf69279db269379cb361477cb569476
+    m_Slopes:
+      m_NumItems: 48
+      m_Range: 0.6434686
+      m_Start: -0.4172702
+      m_Data: 1a2786e9999e72caab6d9aa6aa9aa6df199a13fcab8d099465ea99a97aa6e76aa6676aa6
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_lf_eye_jnt
+    m_Times:
+      m_NumItems: 20
+      m_Data: 80eb951b455d684446110ae1951c19
+      m_BitSize: 6
+    m_Values:
+      m_NumItems: 20
+      m_Data: cbb6ee7f8ba6f07fdb46f07fa336ee7f9b76ef7f7bf6f07ff335f17f33d6f07fcbd5ee7ff385ef7ffbe5f07f5b36f17fb366f07f9b56ee7fa326ee7f7356f07fab76f07fa3e6ee7fb3a6ee7fcbb6ee7f
+    m_Slopes:
+      m_NumItems: 80
+      m_Range: 0.6107485
+      m_Start: -0.3671451
+      m_Data: ec5c7e215a8e9f55ba725c86245f62805c56b059a25e56ae29599aa55c7af25b8efa54defb57b65f55b6b95c86a15a86ff58b2e156aafc5a9a2f5a9a
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_rt_eye_jnt
+    m_Times:
+      m_NumItems: 22
+      m_Data: 80eb89101545144a858ad260a44d516b03
+      m_BitSize: 6
+    m_Values:
+      m_NumItems: 22
+      m_Data: 4b26f07ffbf5f17f4bd6f17f0366ef7f1b36f07f2396f17feb75f27f8395f27fcb75f27f5b55f07f8b25f17f8b25f27fbba5f27f03b6f27f23f6f17f3b16f17f1b76ef7febb5f17f0bf6f17f4b96f17f0bf6ef7f4b26f07f
+    m_Slopes:
+      m_NumItems: 88
+      m_Range: 0.9470655
+      m_Start: -0.4483744
+      m_Data: 9fd9619ad76d98d48d65d87599d959e6dc4140d83de5d77d9dd589d8d57d9dd95d5ed869bfda7da1d3a96dd691d6d3912cda6d59d865efd785dbd585e1d67d24d875
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: 460d35d7460d35d7
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: fb27d57ffb27d57f
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: fb07d67ffb07d67f
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt/herob:Hero_Plume4_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: fdef1fdafdef1fda
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt/herob:Hero_Plume4_jnt/herob:Hero_Plume5_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: fb07e37ffb07e37f
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt/herob:Hero_Plume4_jnt/herob:Hero_Plume5_jnt/herob:Hero_Plume6_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: fb17f27ffb17f27f
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt/herob:Hero_Plume4_jnt/herob:Hero_Plume5_jnt/herob:Hero_Plume6_jnt/herob:Hero_Plume7_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: fb47ee7ffb47ee7f
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: 5928d0485928d048
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt/herob:Hero_lf_upArm_jnt
+    m_Times:
+      m_NumItems: 6
+      m_Data: 007867a3781e
+      m_BitSize: 8
+    m_Values:
+      m_NumItems: 6
+      m_Data: d3a79e9abb87daa8c3e7d8adc3279aabcb17de9cd3a79e9a
+    m_Slopes:
+      m_NumItems: 24
+      m_Range: 0.2507583
+      m_Start: -0.1142222
+      m_Data: 14f04b1d9252ddd66d1b2b89222d8c5da775
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt/herob:Hero_lf_upArm_jnt/herob:Hero_lf_elbow_jnt
+    m_Times:
+      m_NumItems: 10
+      m_Data: 002dcf280bfd724914
+      m_BitSize: 7
+    m_Values:
+      m_NumItems: 10
+      m_Data: db682c9f9b18ec97d3586c9e9308ac96db682c9fb3382c9aa3186c98d3586c9e9b18ac97db682c9f
+    m_Slopes:
+      m_NumItems: 40
+      m_Range: 0.3044406
+      m_Start: -0.1392998
+      m_Data: 4f5694ab984f51768ce737571f376ace0598abc84751768cadf8471f176a
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt/herob:Hero_lf_upArm_jnt/herob:Hero_lf_elbow_jnt/herob:Hero_lf_wrist_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: fbf7df7ffbf7df7f
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt/herob:Hero_lf_upArm_jnt/herob:Hero_lf_elbow_jnt/herob:Hero_lf_wrist_jnt/herob:Hero_lf_hand_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: d3f9a27ed3f9a27e
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt/herob:Hero_lf_upArm_jnt/herob:Hero_lf_elbow_jnt/herob:Hero_lf_wrist_jnt/herob:Hero_lf_hand_jnt/herob:Hero_shield_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: 63ab0c6163ab0c61
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt
+    m_Times:
+      m_NumItems: 8
+      m_Data: 004c845f357f3203
+      m_BitSize: 8
+    m_Values:
+      m_NumItems: 8
+      m_Data: 00fcef4200fcef42000c30432118b043f8db6f42000c304300ecaf4200fcef42
+    m_Slopes:
+      m_NumItems: 32
+      m_Range: 0.08864616
+      m_Start: -0.04474908
+      m_Data: 8d1cc73e10043f1000d3aaaefb40103e100041bff38d0cc7
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt/herob:Hero_rt_upArm_jnt
+    m_Times:
+      m_NumItems: 5
+      m_Data: 00a3a38c46
+      m_BitSize: 8
+    m_Values:
+      m_NumItems: 5
+      m_Data: 3b685cbc33889dac4bc89daa3bf81cb63b685cbc
+    m_Slopes:
+      m_NumItems: 20
+      m_Range: 0.2225488
+      m_Start: -0.1121074
+      m_Data: d108c4e238915d77765ff53fdf177a
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt/herob:Hero_rt_upArm_jnt/herob:Hero_rt_elbow_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: fbd7e57ffbd7e57f
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt/herob:Hero_rt_upArm_jnt/herob:Hero_rt_elbow_jnt/herob:Hero_rt_wrist_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: fbf7df7ffbf7df7f
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt/herob:Hero_rt_upArm_jnt/herob:Hero_rt_elbow_jnt/herob:Hero_rt_wrist_jnt/herob:Hero_rt_hand_jnt
+    m_Times:
+      m_NumItems: 16
+      m_Data: 805b9661b9969ebc86a51c19
+      m_BitSize: 6
+    m_Values:
+      m_NumItems: 16
+      m_Data: eb35567f2386d680b3651780a3a5567e33f655800bd616819b15177fcb45d67e3be65580c3759780a3a5567e33f655800bd616819b25577fc385d67eeb35567f
+    m_Slopes:
+      m_NumItems: 64
+      m_Range: 0.6387495
+      m_Start: -0.228363
+      m_Data: 74e4754c89618b14459e53599f845d4a895dd22349f3d371d665594515459e53599f845d4a895dd423513fa06d688361
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt/herob:Hero_rt_upArm_jnt/herob:Hero_rt_elbow_jnt/herob:Hero_rt_wrist_jnt/herob:Hero_rt_hand_jnt/herob:Hero_sword_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: d883617cd883617c
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_accessory_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: 78a431b878a431b8
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt
+    m_Times:
+      m_NumItems: 5
+      m_Data: 00a3a3a62c
+      m_BitSize: 8
+    m_Values:
+      m_NumItems: 5
+      m_Data: db67e08413882085f397e084db77e084db67e084
+    m_Slopes:
+      m_NumItems: 20
+      m_Range: 0.07149908
+      m_Start: -0.01121721
+      m_Data: 3fe128869224c09224879024899124
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_lf_upLeg_jnt
+    m_Times:
+      m_NumItems: 22
+      m_Data: c0da50dc545e540979db25428e7b7d5703
+      m_BitSize: 6
+    m_Values:
+      m_NumItems: 22
+      m_Data: facd9848c22f9c44dacf1b466a2f9a4a2ace9a41626e1946a2cf9b44da8f1b466a2f194a3aae9a40620e994572cf1a44d26f1b4482ef984a62ae1a422a0e9a437a0e9946caef1b44920f9a4ad24e1a464a6e9a43facd9848
+    m_Slopes:
+      m_NumItems: 88
+      m_Range: 0.5460292
+      m_Start: -0.1961628
+      m_Data: f51832dfa655d7c0ddc0a5108a337debf66526b75555a0d943c5244af5402ef6712ab74d99947dc00451c0a6145c10fef0f74159865580328d83a60c4833854c82bd
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_lf_upLeg_jnt/herob:Hero_lf_knee_jnt
+    m_Times:
+      m_NumItems: 35
+      m_Data: 00a5198e1245cdb51d4db3294a232a86d36c4d1385471395c63100
+      m_BitSize: 6
+    m_Values:
+      m_NumItems: 35
+      m_Data: 2099d5c0d85950c036f853c166d853c1f8894fc0c0f950c0c0e950c0903952c078e952c010aa4ec02ef853c166d853c1f8994fc0b8f950c0b03951c0a0c951c0781953c0b01951c09698d3c02ef853c166d853c1f8994fc0b8f950c0b03951c0904952c0687953c0d85950c036f853c166d853c1f0a94fc0b01951c098f951c080c952c038f994c02099d5c0
+    m_Slopes:
+      m_NumItems: 140
+      m_Range: 1.598349
+      m_Start: -0.7791594
+      m_Data: 113b70c00b7c16987db7c472feb2732027762227766bf576551975c7ba7cd9c77db7c472feb2731ff775222776e6a5765ff7758c9a744f697dd9c77db7c472feb2731ff775222776ec147f561975076b7c19a87db7c472ffd2731ff775635676b3d37faee37fe7347f
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_lf_upLeg_jnt/herob:Hero_lf_knee_jnt/herob:Hero_lf_ankle_jnt
+    m_Times:
+      m_NumItems: 31
+      m_Data: 8046198ee3351e7534176628986738d7e55ce1d1609e6200
+      m_BitSize: 6
+    m_Values:
+      m_NumItems: 31
+      m_Data: d3631db9c3d45dceca4abbd17acabbd17b541fcd4304dfc743341cc11b445dc0f3c41dd1da6abbd18aea3bd383541fcd5b349ec663245cc24b44dcc02b545dc0cbd4ddcc12abbbd3da0abcd38b641fcd5b349ec663245cc21bf4dcbe83d4ddc7e26a3bd38aea3bd37b54dfcc3b941ec643b45cc203f45cbdd3631db9
+    m_Slopes:
+      m_NumItems: 124
+      m_Range: 1.169867
+      m_Start: -0.6451738
+      m_Data: efd96f7ff863697882442c91011ba8a8049e114b892a1a77b7686f676882442c91011bac26d49d1fc791104c89aa1a7b37896f665882032c91c01aa825d4991fc78dd49c8537c96b676882031c91000ba8a4f5955d9791c50b98161a95
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_lf_upLeg_jnt/herob:Hero_lf_knee_jnt/herob:Hero_lf_ankle_jnt/herob:Hero_lf_ball_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: fbf7dfacfbf7dfac
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_rt_upLeg_jnt
+    m_Times:
+      m_NumItems: 22
+      m_Data: 000a4517256a98073932a579d14a616103
+      m_BitSize: 6
+    m_Values:
+      m_NumItems: 22
+      m_Data: b3829e9a9bf261a494a8a8d683d2619bbb32dfa0bb925e9ea31261a2943829d683c2619bbb129fa0c372de9fb3321f9e943829d68322e29ca3e21f9fc372de9ea372df9d943829d683f2219d9b82609dc3b29e9fb3829e9a
+    m_Slopes:
+      m_NumItems: 88
+      m_Range: 0.6440496
+      m_Start: -0.3907022
+      m_Data: e21e83e40d7b9e08b42c83b671d2b2dd6c91e33f77a3c99dab63b6aec4aa9ef99ca20e83a58a922227bcf041af1ddb98623f7fa58a92e226bc2d24a72697a5e359a1
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_rt_upLeg_jnt/herob:Hero_rt_knee_jnt
+    m_Times:
+      m_NumItems: 37
+      m_Data: 00a9188ee2500de51d8d424586a2b086a350d0d144e1d1285b641c03
+      m_BitSize: 6
+    m_Values:
+      m_NumItems: 37
+      m_Data: d09950c0887952c080e952c0705953c0088916c118e9d5c0c0f950c040dacdc0e00950c0b8f950c080e952c0705953c0086916c118e9d5c0d85950c048aacdc038ea8dc0e00950c0d0a950c080e952c0705953c0086916c118e9d5c0d85950c048aacdc038da8dc0d08950c0b02951c080e952c0705953c0104916c118e9d5c0c8b950c0188a8ec0109a8ec0d83950c0d09950c0
+    m_Slopes:
+      m_NumItems: 148
+      m_Range: 1.804128
+      m_Start: -1.118248
+      m_Data: acc89aabc89a27899a31779b2e979f588d90440f987747972ff896acc89a67799a70779b2e979f5bdc908dad98ddfa99bf8693f33797acc89667799a70779b2e979f5bdc908dad98ddfa99fb5693f00797abc89a67799a70679b6e879fdd2b91163c999ffa99365797f77697f01797
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_rt_upLeg_jnt/herob:Hero_rt_knee_jnt/herob:Hero_rt_ankle_jnt
+    m_Times:
+      m_NumItems: 33
+      m_Data: 00e940547434d7a6445764280eaa4018743494a7445e641c03
+      m_BitSize: 6
+    m_Values:
+      m_NumItems: 33
+      m_Data: 724dc1d35a2db9d7a3f69bd70b369dcf222dbdd7f26ebecdda0ebfcdca8d3fd38a8d3bd6a3f69bd76b565cd503c65dcfca0d3ed4fa8ebecdca2e3fceca8d3fd3a28d3dd5a3f69bd76b565cd503c65dcfca0d3ed4fa8ebecdd22e3fce92cd3fd4726dbcd6a3f69bd76b569cd503d69dcfa22dbed462eebed04a8ebfd09a0d41d3724dc1d3
+    m_Slopes:
+      m_NumItems: 132
+      m_Range: 1.387322
+      m_Start: -0.619372
+      m_Data: 587481d8537d15777d0dda903fc913ea674206199914458d9853811ba671c6a99ca2695637182724075680d9ac512591d853811ba671c6a99ca2695637182724075682f9a453358d5a737d1ba67106ca9ca0495eeda742e20756461a9106e99c0f288d
+      m_BitSize: 6
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  - m_Path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_rt_upLeg_jnt/herob:Hero_rt_knee_jnt/herob:Hero_rt_ankle_jnt/herob:Hero_rt_ball_jnt
+    m_Times:
+      m_NumItems: 2
+      m_Data: 006008
+      m_BitSize: 10
+    m_Values:
+      m_NumItems: 2
+      m_Data: fbf7dfacfbf7dfac
+    m_Slopes:
+      m_NumItems: 8
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  m_EulerCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.0000326895, y: 0.3864912, z: -0.03118041}
+        inSlope: {x: 0.0003819005, y: -0.009149226, z: 0.1406658}
+        outSlope: {x: 0.0003819005, y: -0.009149226, z: 0.1406658}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.03333334
+        value: {x: -0.00001995949, y: 0.3861861, z: -0.02649156}
+        inSlope: {x: 0.0007282753, y: -0.0174513, z: 0.1531354}
+        outSlope: {x: 0.000728275, y: -0.01745607, z: 0.1531353}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.06666666
+        value: {x: 0.00001586219, y: 0.3853275, z: -0.02097141}
+        inSlope: {x: 0.001367736, y: -0.03278298, z: 0.1755067}
+        outSlope: {x: 0.001367736, y: -0.03277914, z: 0.1755065}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.1666667
+        value: {x: 0.0002263515, y: 0.3802826, z: -0.001134537}
+        inSlope: {x: 0.002646663, y: -0.06343552, z: 0.2118186}
+        outSlope: {x: 0.002646666, y: -0.06343386, z: 0.2118188}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.4666667
+        value: {x: 0.0009537389, y: 0.3628488, z: 0.04781853}
+        inSlope: {x: 0.0007282836, y: -0.01746352, z: 0.04351426}
+        outSlope: {x: 0.0007282855, y: -0.01745252, z: 0.0435152}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5
+        value: {x: 0.0009664689, y: 0.3625437, z: 0.0485723}
+        inSlope: {x: -0.001637987, y: 0.03966997, z: 0.003124039}
+        outSlope: {x: -0.001638009, y: 0.039667, z: 0.00312332}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5333333
+        value: {x: 0.0008445389, y: 0.365493, z: 0.04802679}
+        inSlope: {x: -0.006730552, y: 0.1183963, z: -0.03131649}
+        outSlope: {x: -0.006730487, y: 0.1183888, z: -0.03131635}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.5666667
+        value: {x: 0.0005177655, y: 0.3704368, z: 0.04648452}
+        inSlope: {x: -0.01199783, y: 0.1648421, z: -0.05909635}
+        outSlope: {x: -0.01199799, y: 0.1648545, z: -0.05909796}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6
+        value: {x: 0.00004467658, y: 0.3764828, z: 0.04408693}
+        inSlope: {x: -0.01550956, y: 0.1845326, z: -0.08263703}
+        outSlope: {x: -0.01550939, y: 0.1845279, z: -0.08263588}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6333333
+        value: {x: -0.0005162031, y: 0.3827386, z: 0.0409754}
+        inSlope: {x: -0.01726516, y: 0.1774349, z: -0.1019323}
+        outSlope: {x: -0.01726537, y: 0.1774432, z: -0.1019336}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.7666667
+        value: {x: -0.002467087, y: 0.3929425, z: 0.02421843}
+        inSlope: {x: -0.00673044, y: -0.05006683, z: -0.1366928}
+        outSlope: {x: -0.006730577, y: -0.05006981, z: -0.1366945}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.8333333
+        value: {x: -0.002545973, y: 0.386909, z: 0.01424644}
+        inSlope: {x: 0.002410447, y: -0.1193776, z: -0.183606}
+        outSlope: {x: 0.002410473, y: -0.1193793, z: -0.1836077}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.9
+        value: {x: -0.00225327, y: 0.3777946, z: -0.0002633509}
+        inSlope: {x: 0.005854005, y: -0.1424919, z: -0.234785}
+        outSlope: {x: 0.005854035, y: -0.1425028, z: -0.2347871}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.9666666
+        value: {x: -0.001799869, y: 0.3686801, z: -0.01593184}
+        inSlope: {x: 0.007231413, y: -0.1193978, z: -0.2183664}
+        outSlope: {x: 0.007231462, y: -0.1193847, z: -0.2183682}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.033333
+        value: {x: -0.001323511, y: 0.3626466, z: -0.0282525}
+        inSlope: {x: 0.006542564, y: -0.05006273, z: -0.1343486}
+        outSlope: {x: 0.006542812, y: -0.05006654, z: -0.1343531}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.066667
+        value: {x: -0.001119768, y: 0.361748, z: -0.03174909}
+        inSlope: {x: 0.003056136, y: 0.02929712, z: -0.06699389}
+        outSlope: {x: 0.003056146, y: 0.02929753, z: -0.06699391}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.1
+        value: {x: -0.001119768, y: 0.3645996, z: -0.03271879}
+        inSlope: {x: 0.000000008406468, y: 0.1087293, z: 0.006832368}
+        outSlope: {x: -6.77627e-18, y: 0.1087324, z: 0.006831013}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.2
+        value: {x: -0.001119768, y: 0.3774204, z: -0.02456637}
+        inSlope: {x: -2.904116e-18, y: 0.07882699, z: 0.1188581}
+        outSlope: {x: -0.00000000414722, y: 0.07882942, z: 0.1188589}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.3
+        value: {x: -0.001030124, y: 0.3782382, z: -0.01126414}
+        inSlope: {x: 0.002536447, y: -0.01993834, z: 0.1510812}
+        outSlope: {x: 0.002536503, y: -0.01993803, z: 0.1510852}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.366667
+        value: {x: -0.0007937931, y: 0.3763805, z: -0.0005233698}
+        inSlope: {x: 0.004370109, y: -0.03435074, z: 0.1679312}
+        outSlope: {x: 0.004370077, y: -0.03435231, z: 0.16793}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.5
+        value: {x: -0.00007664935, y: 0.3707433, z: 0.02218827}
+        inSlope: {x: 0.005837017, y: -0.04588084, z: 0.1631187}
+        outSlope: {x: 0.005836869, y: -0.04588068, z: 0.1631142}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.533333
+        value: {x: 0.0001179172, y: 0.3692139, z: 0.02749852}
+        inSlope: {x: 0.005745167, y: -0.04516117, z: 0.1538885}
+        outSlope: {x: 0.005745355, y: -0.04516835, z: 0.1538937}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.733333
+        value: {x: 0.0009430395, y: 0.3627279, z: 0.04803526}
+        inSlope: {x: 0.001344646, y: -0.0105737, z: 0.03115291}
+        outSlope: {x: 0.001344639, y: -0.01056604, z: 0.03115255}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.766667
+        value: {x: 0.0009664689, y: 0.3625437, z: 0.0485723}
+        inSlope: {x: -0.00147752, y: 0.04147738, z: -0.001082945}
+        outSlope: {x: -0.001477466, y: 0.04147841, z: -0.001082916}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.8
+        value: {x: 0.000844538, y: 0.365493, z: 0.04796306}
+        inSlope: {x: -0.006730477, y: 0.1183937, z: -0.03466153}
+        outSlope: {x: -0.006730611, y: 0.118389, z: -0.03466246}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.833333
+        value: {x: 0.0005177648, y: 0.3704368, z: 0.0462615}
+        inSlope: {x: -0.01199792, y: 0.1648424, z: -0.06459413}
+        outSlope: {x: -0.01199797, y: 0.164847, z: -0.06459318}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.866667
+        value: {x: 0.00004467564, y: 0.3764828, z: 0.04365681}
+        inSlope: {x: -0.01550958, y: 0.1845294, z: -0.08884963}
+        outSlope: {x: -0.01550948, y: 0.1845314, z: -0.08884901}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.9
+        value: {x: -0.0005162031, y: 0.3827386, z: 0.0403382}
+        inSlope: {x: -0.01726549, y: 0.1774427, z: -0.1074302}
+        outSlope: {x: -0.01726492, y: 0.1774351, z: -0.1074259}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.033333
+        value: {x: -0.002467087, y: 0.3933007, z: 0.02370866}
+        inSlope: {x: -0.006730577, y: -0.03067326, z: -0.1249867}
+        outSlope: {x: -0.006730553, y: -0.03067325, z: -0.1249845}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1
+        value: {x: -0.002565835, y: 0.3895027, z: 0.01533715}
+        inSlope: {x: 0.001324577, y: -0.07800321, z: -0.1409135}
+        outSlope: {x: 0.001324687, y: -0.0780099, z: -0.1409224}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.166667
+        value: {x: -0.002400255, y: 0.3832506, z: 0.004661889}
+        inSlope: {x: 0.00344405, y: -0.1042924, z: -0.172641}
+        outSlope: {x: 0.003444095, y: -0.1042956, z: -0.1726433}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.233333
+        value: {x: -0.002119873, y: 0.3759467, z: -0.007235372}
+        inSlope: {x: 0.004768779, y: -0.1095613, z: -0.1775803}
+        outSlope: {x: 0.004768714, y: -0.109561, z: -0.1775794}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.4
+        value: {x: -0.001264374, y: 0.3622885, z: -0.0306065}
+        inSlope: {x: 0.004603083, y: -0.03067325, z: -0.07274011}
+        outSlope: {x: 0.00460319, y: -0.03067751, z: -0.0727414}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.433333
+        value: {x: -0.001119768, y: 0.361748, z: -0.03240272}
+        inSlope: {x: 0.002169093, y: 0.04620403, z: -0.03168388}
+        outSlope: {x: 0.002169106, y: 0.04620185, z: -0.03168481}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.466667
+        value: {x: -0.001119768, y: 0.3653685, z: -0.03271879}
+        inSlope: {x: 0.000000004222338, y: 0.1413863, z: 0.03272871}
+        outSlope: {x: -6.77627e-18, y: 0.1413876, z: 0.03273003}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.5
+        value: {x: -0.001119768, y: 0.3711738, z: -0.03022075}
+        inSlope: {x: -2.904116e-18, y: 0.1679287, z: 0.1108404}
+        outSlope: {x: -6.77627e-18, y: 0.1679279, z: 0.1108401}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.533333
+        value: {x: -0.001119768, y: 0.3765637, z: -0.02532945}
+        inSlope: {x: -2.904116e-18, y: 0.1164678, z: 0.146504}
+        outSlope: {x: 0.00000001664008, y: 0.1164676, z: 0.1465002}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.566667
+        value: {x: -0.001119768, y: 0.3789382, z: -0.02045397}
+        inSlope: {x: 0.000312143, y: 0.03316575, z: 0.1374674}
+        outSlope: {x: 0.0003121106, y: 0.03316207, z: 0.1374596}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.6
+        value: {x: -0.00109896, y: 0.3787747, z: -0.01616507}
+        inSlope: {x: 0.001197444, y: -0.009416665, z: 0.1345473}
+        outSlope: {x: 0.001197507, y: -0.009411623, z: 0.1345562}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.866667
+        value: {x: 0.00001528488, y: 0.3700185, z: 0.02520193}
+        inSlope: {x: 0.005477564, y: -0.04305225, z: 0.1479027}
+        outSlope: {x: 0.005477898, y: -0.04305064, z: 0.147912}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.1
+        value: {x: 0.0009456618, y: 0.3627072, z: 0.04810889}
+        inSlope: {x: 0.001197405, y: -0.009407809, z: 0.02696139}
+        outSlope: {x: 0.001197517, y: -0.009407152, z: 0.02696338}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.133333
+        value: {x: 0.0009664689, y: 0.3625437, z: 0.0485723}
+        inSlope: {x: -0.00151685, y: 0.04178477, z: -0.002187042}
+        outSlope: {x: -0.001516852, y: 0.04178403, z: -0.0021874}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.166667
+        value: {x: 0.0008445389, y: 0.365493, z: 0.04796307}
+        inSlope: {x: -0.006730492, y: 0.1183974, z: -0.03466185}
+        outSlope: {x: -0.006730589, y: 0.118389, z: -0.03466206}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.2
+        value: {x: 0.0005177663, y: 0.3704368, z: 0.04626151}
+        inSlope: {x: -0.0119979, y: 0.1648424, z: -0.0645932}
+        outSlope: {x: -0.01199796, y: 0.1648513, z: -0.06459476}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.233333
+        value: {x: 0.00004467752, y: 0.3764828, z: 0.04365682}
+        inSlope: {x: -0.01550956, y: 0.1845251, z: -0.08885015}
+        outSlope: {x: -0.01550949, y: 0.1845277, z: -0.08884849}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.266667
+        value: {x: -0.000516201, y: 0.3827385, z: 0.04033821}
+        inSlope: {x: -0.01726545, y: 0.177439, z: -0.1074287}
+        outSlope: {x: -0.01726522, y: 0.1774315, z: -0.1074285}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.4
+        value: {x: -0.002467087, y: 0.3933007, z: 0.02370867}
+        inSlope: {x: -0.006730402, y: -0.03067645, z: -0.1249845}
+        outSlope: {x: -0.006730594, y: -0.0306807, z: -0.1249867}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.466667
+        value: {x: -0.002565836, y: 0.3895027, z: 0.01532479}
+        inSlope: {x: 0.001324618, y: -0.07799632, z: -0.1415958}
+        outSlope: {x: 0.001324577, y: -0.0779987, z: -0.1415955}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.533333
+        value: {x: -0.002400256, y: 0.3832506, z: 0.004570692}
+        inSlope: {x: 0.003444141, y: -0.1043036, z: -0.1741304}
+        outSlope: {x: 0.003444065, y: -0.1043062, z: -0.1741273}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.6
+        value: {x: -0.002119872, y: 0.3759467, z: -0.007432489}
+        inSlope: {x: 0.004768498, y: -0.1095456, z: -0.1790585}
+        outSlope: {x: 0.004768813, y: -0.109561, z: -0.1790699}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.766667
+        value: {x: -0.001264374, y: 0.3622885, z: -0.03083176}
+        inSlope: {x: 0.004603154, y: -0.0306807, z: -0.07068051}
+        outSlope: {x: 0.004603066, y: -0.03067432, z: -0.07067828}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.8
+        value: {x: -0.001119768, y: 0.361748, z: -0.032539}
+        inSlope: {x: 0.002169135, y: 0.03986784, z: -0.02830546}
+        outSlope: {x: 0.002169065, y: 0.03986161, z: -0.02830466}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.833333
+        value: {x: -0.001119768, y: 0.3649462, z: -0.03271879}
+        inSlope: {x: -0.0000000373546, y: 0.1263267, z: 0.02019175}
+        outSlope: {x: -6.776222e-18, y: 0.126321, z: 0.0201896}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.933333
+        value: {x: -0.001119768, y: 0.3804063, z: -0.0245328}
+        inSlope: {x: -2.904116e-18, y: 0.09643029, z: 0.1175148}
+        outSlope: {x: -0.00000000414722, y: 0.09642737, z: 0.117516}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.033333
+        value: {x: -0.001030125, y: 0.3814275, z: -0.01126416}
+        inSlope: {x: 0.002536611, y: -0.02399097, z: 0.1510905}
+        outSlope: {x: 0.002536554, y: -0.02399268, z: 0.1510878}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.1
+        value: {x: -0.0007937936, y: 0.3791923, z: -0.0005233921}
+        inSlope: {x: 0.004370325, y: -0.0413339, z: 0.1679394}
+        outSlope: {x: 0.00437015, y: -0.04133734, z: 0.1679333}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.233334
+        value: {x: -0.00007664794, y: 0.3724095, z: 0.02218831}
+        inSlope: {x: 0.005836952, y: -0.05520537, z: 0.1631167}
+        outSlope: {x: 0.005837009, y: -0.05521362, z: 0.1631181}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.266667
+        value: {x: 0.0001179179, y: 0.3705693, z: 0.02749854}
+        inSlope: {x: 0.005745339, y: -0.05434509, z: 0.1538929}
+        outSlope: {x: 0.00574565, y: -0.05434445, z: 0.1539014}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.466667
+        value: {x: 0.0009430395, y: 0.3627653, z: 0.04803526}
+        inSlope: {x: 0.001344692, y: -0.01271947, z: 0.03115357}
+        outSlope: {x: 0.001344712, y: -0.01271628, z: 0.03115335}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.5
+        value: {x: 0.0009664689, y: 0.3625437, z: 0.0485723}
+        inSlope: {x: -0.001477489, y: 0.04091518, z: -0.002273176}
+        outSlope: {x: -0.001477479, y: 0.04090912, z: -0.00227322}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.533333
+        value: {x: 0.000844539, y: 0.365493, z: 0.0478837}
+        inSlope: {x: -0.0067308, y: 0.1183995, z: -0.03883059}
+        outSlope: {x: -0.006730723, y: 0.1183965, z: -0.03882979}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.566667
+        value: {x: 0.0005177669, y: 0.3704368, z: 0.04598373}
+        inSlope: {x: -0.01199766, y: 0.1648456, z: -0.07143728}
+        outSlope: {x: -0.01199732, y: 0.1648353, z: -0.07143554}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.6
+        value: {x: 0.00004467878, y: 0.3764828, z: 0.0431211}
+        inSlope: {x: -0.01551034, y: 0.1845304, z: -0.09659299}
+        outSlope: {x: -0.01550976, y: 0.1845319, z: -0.09658924}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.633333
+        value: {x: -0.0005161991, y: 0.3827385, z: 0.03954456}
+        inSlope: {x: -0.01726511, y: 0.1774347, z: -0.1142727}
+        outSlope: {x: -0.01726431, y: 0.177423, z: -0.1142676}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.766667
+        value: {x: -0.002467087, y: 0.393533, z: 0.02307373}
+        inSlope: {x: -0.006730582, y: -0.01763477, z: -0.110402}
+        outSlope: {x: -0.006730877, y: -0.01762724, z: -0.1104083}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.833333
+        value: {x: -0.002579532, y: 0.3913252, z: 0.01643435}
+        inSlope: {x: 0.0005571399, y: -0.04601465, z: -0.1008261}
+        outSlope: {x: 0.0005571186, y: -0.04601704, z: -0.10083}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.966667
+        value: {x: -0.0023719, y: 0.3829531, z: 0.001410026}
+        inSlope: {x: 0.00244939, y: -0.07182604, z: -0.1191003}
+        outSlope: {x: 0.002449401, y: -0.07182349, z: -0.1191003}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.066667
+        value: {x: -0.002071613, y: 0.3759214, z: -0.01039839}
+        inSlope: {x: 0.003490285, y: -0.06407581, z: -0.1137433}
+        outSlope: {x: 0.003490206, y: -0.06407356, z: -0.1137397}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.2
+        value: {x: -0.001540103, y: 0.3699577, z: -0.02375801}
+        inSlope: {x: 0.004374248, y: -0.01763558, z: -0.08120541}
+        outSlope: {x: 0.004374214, y: -0.01763576, z: -0.08120468}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.233334
+        value: {x: -0.001391811, y: 0.3696495, z: -0.02626879}
+        inSlope: {x: 0.006678491, y: 0.03484969, z: -0.06853275}
+        outSlope: {x: 0.006678591, y: 0.03485312, z: -0.068533}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.266667
+        value: {x: -0.001094864, y: 0.372281, z: -0.02832689}
+        inSlope: {x: 0.0113213, y: 0.1263165, z: -0.05404613}
+        outSlope: {x: 0.01132202, y: 0.1263217, z: -0.05404902}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.3
+        value: {x: -0.0006370642, y: 0.3780704, z: -0.02987185}
+        inSlope: {x: 0.01316925, y: 0.1736734, z: -0.03774234}
+        outSlope: {x: 0.01316993, y: 0.1736828, z: -0.03774424}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.333333
+        value: {x: -0.0002168575, y: 0.3838597, z: -0.03084319}
+        inSlope: {x: 0.009065807, y: 0.1263141, z: -0.01962893}
+        outSlope: {x: 0.009065983, y: 0.1263121, z: -0.01962898}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.0000326895, y: 0.3864912, z: -0.03118041}
+        inSlope: {x: 0.005524889, y: 0.07893914, z: -0.01011644}
+        outSlope: {x: 0.005524889, y: 0.07893914, z: -0.01011644}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.04782883, y: -4.163336e-17, z: -2.775558e-17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.04782883, y: -4.163336e-17, z: -2.775558e-17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.04577883, y: -2.025255e-13, z: 4.680839e-13}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.04577883, y: -2.025255e-13, z: 4.680839e-13}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.1259014, y: -5.551115e-17, z: 4.163336e-17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.1259014, y: -5.551115e-17, z: 4.163336e-17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -1.387779e-17, y: 0.04514728, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -1.387779e-17, y: 0.04514728, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -1.110223e-16, y: 0.3745605, z: -0.1207746}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -1.110223e-16, y: 0.3745605, z: -0.1207746}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.1659341, y: 1.110223e-16, z: -0.04306098}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.1659341, y: 1.110223e-16, z: -0.04306098}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.1302366, y: -3.608225e-16, z: -0.0108898}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.1302366, y: -3.608225e-16, z: -0.0108898}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.09036654, y: -2.627065e-14, z: -0.0546332}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.09036654, y: -2.627065e-14, z: -0.0546332}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt/herob:Hero_Plume4_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.1314463, y: 9.436896e-16, z: -2.081668e-16}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.1314463, y: 9.436896e-16, z: -2.081668e-16}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt/herob:Hero_Plume4_jnt/herob:Hero_Plume5_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.1053912, y: 8.207324e-14, z: 1.665335e-16}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.1053912, y: 8.207324e-14, z: 1.665335e-16}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt/herob:Hero_Plume4_jnt/herob:Hero_Plume5_jnt/herob:Hero_Plume6_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.1519604, y: 1.110223e-16, z: -6.661338e-16}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.1519604, y: 1.110223e-16, z: -6.661338e-16}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt/herob:Hero_Plume4_jnt/herob:Hero_Plume5_jnt/herob:Hero_Plume6_jnt/herob:Hero_Plume7_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.01079796, y: 0.000467174, z: -0.03091505}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.01079796, y: 0.000467174, z: -0.03091505}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.1589272, y: 0, z: -2.775558e-17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.1589272, y: 0, z: -2.775558e-17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt/herob:Hero_lf_upArm_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.171381, y: 9.50731e-17, z: 1.417475e-17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.171381, y: 9.50731e-17, z: 1.417475e-17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt/herob:Hero_lf_upArm_jnt/herob:Hero_lf_elbow_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.1682145, y: -9.222598e-18, z: 3.051118e-16}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.1682145, y: -9.222598e-18, z: 3.051118e-16}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt/herob:Hero_lf_upArm_jnt/herob:Hero_lf_elbow_jnt/herob:Hero_lf_wrist_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.06034721, y: 0.02028529, z: 0.01028831}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 0.06034721, y: 0.02028529, z: 0.01028831}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt/herob:Hero_lf_upArm_jnt/herob:Hero_lf_elbow_jnt/herob:Hero_lf_wrist_jnt/herob:Hero_lf_hand_jnt/herob:Hero_shield_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.01079753, y: 0.0004671496, z: 0.0309151}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.01079753, y: 0.0004671496, z: 0.0309151}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.1589269, y: -0.0000009356402, z: 0.00000007712453}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 0.1589269, y: -0.0000009356402, z: 0.00000007712453}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt/herob:Hero_rt_upArm_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.1713811, y: 0.0000001914184, z: 0.0000000174872}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 0.1713811, y: 0.0000001914184, z: 0.0000000174872}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt/herob:Hero_rt_upArm_jnt/herob:Hero_rt_elbow_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.1682142, y: 0.0000004160182, z: 0.000000004014606}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 0.1682142, y: 0.0000004160182, z: 0.000000004014606}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt/herob:Hero_rt_upArm_jnt/herob:Hero_rt_elbow_jnt/herob:Hero_rt_wrist_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.05591562, y: 0.0321568, z: -0.05698702}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 0.05591562, y: 0.0321568, z: -0.05698702}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt/herob:Hero_rt_upArm_jnt/herob:Hero_rt_elbow_jnt/herob:Hero_rt_wrist_jnt/herob:Hero_rt_hand_jnt/herob:Hero_sword_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.08779684, y: 0.1563037, z: -1.040834e-16}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.08779684, y: 0.1563037, z: -1.040834e-16}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_accessory_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.05982189, y: 0.004661199, z: -0.001648582}
+        inSlope: {x: -0.0000252415, y: 0.0006988011, z: 0.001045052}
+        outSlope: {x: -0.0000252415, y: 0.0006988011, z: 0.001045052}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6666666
+        value: {x: 0.05980181, y: 0.004925759, z: -0.001607101}
+        inSlope: {x: -0.0000298875, y: 0.0001563446, z: -0.0006353724}
+        outSlope: {x: -0.00003052606, y: 0.0001562212, z: -0.0006353951}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.4
+        value: {x: 0.05978652, y: 0.004957694, z: -0.002023773}
+        inSlope: {x: -0.000004869491, y: -0.000005870664, z: -0.0001398459}
+        outSlope: {x: -0.000004177636, y: -0.000005758883, z: -0.0001398773}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.066667
+        value: {x: 0.05978698, y: 0.004820436, z: -0.002320216}
+        inSlope: {x: 0.000001186772, y: -0.0001187424, z: -0.0002073668}
+        outSlope: {x: 0.0000003672046, y: -0.0001187243, z: -0.0002073334}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 4.133333
+        value: {x: 0.05978861, y: 0.00469991, z: -0.002517143}
+        inSlope: {x: 0.00000481095, y: -0.00007345414, z: -0.00003802626}
+        outSlope: {x: 0.000003704006, y: -0.00007339693, z: -0.00003795143}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.2
+        value: {x: 0.05981705, y: 0.004663597, z: -0.001809464}
+        inSlope: {x: 0.00002492221, y: -0.00002693587, z: 0.0007270057}
+        outSlope: {x: 0.00002482074, y: -0.00002698404, z: 0.0007269981}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.3
+        value: {x: 0.05982026, y: 0.004661457, z: -0.001705705}
+        inSlope: {x: 0.00003764143, y: -0.000009979794, z: 0.001285866}
+        outSlope: {x: 0.00003721568, y: -0.000009720355, z: 0.001285946}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 0.05982189, y: 0.004661199, z: -0.001648582}
+        inSlope: {x: 0.00001481602, y: -0.000001561297, z: 0.0005139934}
+        outSlope: {x: 0.00001481602, y: -0.000001561297, z: 0.0005139934}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.02222959, y: 0.005550965, z: 0.08278695}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 0.02222959, y: 0.005550965, z: 0.08278695}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_lf_upLeg_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.2052165, y: 2.367e-17, z: -1.870067e-17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.2052165, y: 2.367e-17, z: -1.870067e-17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_lf_upLeg_jnt/herob:Hero_lf_knee_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.1156304, y: 1.866584e-19, z: 8.327674e-17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: -0.1156304, y: 1.866584e-19, z: 8.327674e-17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_lf_upLeg_jnt/herob:Hero_lf_knee_jnt/herob:Hero_lf_ankle_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.02222953, y: 0.005550968, z: -0.082787}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 0.02222953, y: 0.005550968, z: -0.082787}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_rt_upLeg_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.2052161, y: 0.00000009298157, z: 0.000000008379419}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 0.2052161, y: 0.00000009298157, z: 0.000000008379419}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_rt_upLeg_jnt/herob:Hero_rt_knee_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.1156309, y: 0.0000001305898, z: -0.00000007116804}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 0.1156309, y: 0.0000001305898, z: -0.00000007116804}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_rt_upLeg_jnt/herob:Hero_rt_knee_jnt/herob:Hero_rt_ankle_jnt
+  m_ScaleCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_lf_eye_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_rt_eye_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt/herob:Hero_Plume4_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt/herob:Hero_Plume4_jnt/herob:Hero_Plume5_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt/herob:Hero_Plume4_jnt/herob:Hero_Plume5_jnt/herob:Hero_Plume6_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_neck_jnt/herob:Hero_head_a_jnt/herob:Hero_Plume1_jnt/herob:Hero_Plume2_jnt/herob:Hero_Plume3_jnt/herob:Hero_Plume4_jnt/herob:Hero_Plume5_jnt/herob:Hero_Plume6_jnt/herob:Hero_Plume7_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt/herob:Hero_lf_upArm_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt/herob:Hero_lf_upArm_jnt/herob:Hero_lf_elbow_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_lf_clavicle_jnt/herob:Hero_lf_upArm_jnt/herob:Hero_lf_elbow_jnt/herob:Hero_lf_wrist_jnt/herob:Hero_lf_hand_jnt/herob:Hero_shield_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt/herob:Hero_rt_upArm_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt/herob:Hero_rt_upArm_jnt/herob:Hero_rt_elbow_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_spine_end_jnt/herob:Hero_rt_clavicle_jnt/herob:Hero_rt_upArm_jnt/herob:Hero_rt_elbow_jnt/herob:Hero_rt_wrist_jnt/herob:Hero_rt_hand_jnt/herob:Hero_sword_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_spine_mid_jnt/herob:Hero_spine_hi_jnt/herob:Hero_accessory_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_lf_upLeg_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_lf_upLeg_jnt/herob:Hero_lf_knee_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_lf_upLeg_jnt/herob:Hero_lf_knee_jnt/herob:Hero_lf_ankle_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_lf_upLeg_jnt/herob:Hero_lf_knee_jnt/herob:Hero_lf_ankle_jnt/herob:Hero_lf_ball_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_rt_upLeg_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_rt_upLeg_jnt/herob:Hero_rt_knee_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_rt_upLeg_jnt/herob:Hero_rt_knee_jnt/herob:Hero_rt_ankle_jnt
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5.366667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    path: herob:skeleton_root_jnt/herob:Hero_Skeleton_grp/herob:Hero_spine_low_jnt/herob:Hero_hip_jnt/herob:Hero_rt_upLeg_jnt/herob:Hero_rt_knee_jnt/herob:Hero_rt_ankle_jnt/herob:Hero_rt_ball_jnt
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 30
+  m_WrapMode: 2
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 1
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []

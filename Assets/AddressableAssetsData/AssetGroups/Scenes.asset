@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Scenes
+  m_EditorClassIdentifier: 
+  m_GroupName: Scenes
+  m_GUID: 2c0d44533ebf98c4ebeb08f7b748e65e
+  m_SerializeEntries:
+  - m_GUID: 0805cf57450cc9241b35c1dc7ebbdf5a
+    m_Address: Scenes/LoadingScreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f62c31a305d971428c20d0200e5c2b5
+    m_Address: Scenes/SamuraiShop
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53ee90e2979c8bb4baa5c6c11dd0d730
+    m_Address: Scenes/OpeningCinematic
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 680a744af1267af4f8695e9fd323817f
+    m_Address: Scenes/GluLogoIntro
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: afb5a082957e87246b6c0cb1664820aa
+    m_Address: Scenes/TitleScreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7305f6e7032ad3459314ac560a857f2
+    m_Address: Scenes/Gameplay
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ad3485259873eac478fc26ccd2272b29, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d154e119f8b2a524da55f3a411212e8d, type: 2}
+    - {fileID: 11400000, guid: 64c5b470bf3790b4b9171060f48029e4, type: 2}

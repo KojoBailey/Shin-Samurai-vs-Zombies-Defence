@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109c3ab24b89a96498b9ff5c084d2ce4, type: 3}
+  m_Name: Sword
+  m_EditorClassIdentifier: 
+  DisplayName: Katana Samurai
+  Desc: Sworn protectors of the village, armed to repel the invasion!
+  Cost: 10
+  Cooldown: 2
+  AttackFrequency: 1
+  Prefab: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 13878438caec6ee4bbdd3d5dc5f4bace, type: 3}

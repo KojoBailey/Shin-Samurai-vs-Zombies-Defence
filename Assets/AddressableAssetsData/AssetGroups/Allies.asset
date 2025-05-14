@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Allies
+  m_EditorClassIdentifier: 
+  m_GroupName: Allies
+  m_GUID: 44a07de65f9289b449b5b8ad45acd967
+  m_SerializeEntries:
+  - m_GUID: 3f3331396608bc645a9cc821feddf16c
+    m_Address: Data/Allies/Ashigaru
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Ally
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4b21efdab2770d409d6d56bcec161ee
+    m_Address: Data/Allies/Sword
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Ally
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2aaf1871addd714f859a58de0498a02
+    m_Address: Data/Allies/Archer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Ally
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ad3485259873eac478fc26ccd2272b29, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: acedf68f88d6b6440ad1c9494fb49584, type: 2}
+    - {fileID: 11400000, guid: 00c62e3ecf8418344a4be856dbe14ea7, type: 2}

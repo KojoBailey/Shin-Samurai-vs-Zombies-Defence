@@ -1,0 +1,22 @@
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+UserSettings/
+
+# VS/Mono Auto Generated Files
+.vscode/
+.idea/
+
+# Windows specific files
+Thumbs.db
+Desktop.ini
+
+# OSX specific files
+.DS_Store
+
+# Build results
+*.apk
+*.unitypackage

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc32a23c5b63c4498c56f103d07588f, type: 3}
+  m_Name: Samurai
+  m_EditorClassIdentifier: 
+  DisplayName: Samurai
+  Desc: The Village's bravest warrior. Use his strength to guide his people to victory!
+  Icon: {fileID: 21300000, guid: 279aa6d8b6dc83243a928415256b53e1, type: 3}
+  Wrapper: {fileID: 111370524432460492, guid: 4e3dbdeb38ca83e4a9a493cf5e180934, type: 3}
+  Costumes:
+  - {fileID: 11400000, guid: f406d8dac3b82bd438738fa9c5d5beb2, type: 2}
+  - {fileID: 11400000, guid: fcba9bceaa23a5a499e3364feae40c3d, type: 2}
+  - {fileID: 11400000, guid: fdc056e2355cd63449e72e49d0c04d3b, type: 2}
+  MeleeWeaponData: {fileID: 11400000, guid: af10351aa07b4c94eb6aa1a5ce31118c, type: 2}
+  RangedWeaponData: {fileID: 11400000, guid: 8980fbc302c906b469fe27f85223495d, type: 2}

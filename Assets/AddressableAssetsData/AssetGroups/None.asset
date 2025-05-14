@@ -1,0 +1,219 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: None
+  m_EditorClassIdentifier: 
+  m_GroupName: None
+  m_GUID: 51d461491789ae34f99a5586fa0af5c8
+  m_SerializeEntries:
+  - m_GUID: 01364c2a699ab9c48bc478b723b58178
+    m_Address: Audio/Combat/Sword Impact 00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 091a7f2145d58c74eb3c809bef55e78c
+    m_Address: Audio/Combat/Footstep 01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b8bc01642653134a86794362470b2f3
+    m_Address: Audio/Combat/Swoosh Medium 04
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10d1d6e319d76e64bab9972a089dbc76
+    m_Address: Audio/Combat/Swoosh Small 00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18e17fdd16a7c484590463a317b6fcb1
+    m_Address: Audio/Combat/Swoosh Big 00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c8150266f882b644a3bcef9c07658fc
+    m_Address: Data/Enemies/Zombies/LightZombie
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Enemy
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1de24b976edd97c45a8f856866384d0d
+    m_Address: Audio/Combat/Swoosh Big 01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23f5c0500e1764b4da5cc6790391f7e3
+    m_Address: Audio/Combat/Swoosh Medium 01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 262c2d09124d6b34eb5376179def02bc
+    m_Address: Audio/Combat/Sword Impact 02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 29ce92622e8fb4544af7673920057d1e
+    m_Address: Audio/Combat/Swoosh Medium 00
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a2a2cea8df0f5342bc92b89f7d5f6ae
+    m_Address: Audio/Combat/Footstep 04
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b9d1f58c5c08644db377fe618f89052
+    m_Address: Audio/Combat/Footstep 00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 390c53902d58465439c4ec38a76d0928
+    m_Address: Audio/Combat/Swoosh Small 03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f0c7d01560dd92478e3daa111156e4a
+    m_Address: Audio/Combat/Swoosh Spin 01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44ed451c61096234bba1f53d7bf5cd09
+    m_Address: Audio/Combat/Swoosh Huge 02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ef14018da4ebcf40a1bb489d83630bb
+    m_Address: Audio/Combat/Swoosh Big 04
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 523ef244eb088474188c3e9c203e5418
+    m_Address: Audio/Combat/Swoosh Huge 01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84b785395757d6c4ea6a18b5b766c067
+    m_Address: BGM/Zen Garden Day
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85b34f8238ed8704abd2c4c8f5a6c0f4
+    m_Address: Audio/Combat/Footstep Large 02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8980fbc302c906b469fe27f85223495d
+    m_Address: Data/Weapons/Samurai Bow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Weapon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f5d457021fdf334d88dd31f2ac640b8
+    m_Address: Audio/Combat/Swoosh Medium 03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 949d6864fb0a6e941b628223390caf01
+    m_Address: Stages/ZenGarden
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Stage
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 95fd7340c865eea4b9d3b6d412e77afc
+    m_Address: Audio/Combat/Footstep 02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 992bd7e63b6c5d14598e752809234cc5
+    m_Address: Audio/Combat/Sword Impact 03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1411cf8b0f76444ea764b0fcd7d3cec
+    m_Address: Audio/Combat/Swoosh Small 01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a23313c53bdca614d99a9ae59be4c066
+    m_Address: Audio/Combat/Footstep Large 00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a81bf93a90dc3e74abc8ff6d34838d82
+    m_Address: Audio/Combat/Swoosh Huge 00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: adfc8a089a67c2049899ef590a1409f9
+    m_Address: Audio/Combat/Swoosh Big 02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af10351aa07b4c94eb6aa1a5ce31118c
+    m_Address: Data/Weapons/Samurai Katana
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Weapon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bcfc7f6bf2c3f2943a03d94cac03cba7
+    m_Address: Audio/Combat/Footstep 03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cfc54814039e01540a3ae8d9b3774ef5
+    m_Address: Audio/Combat/Swoosh Spin 00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d012df1b0e07eb740ad2be9521f72124
+    m_Address: Audio/Combat/Swoosh Medium 02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2b1eec111cc4184bb06e5fea64dacc4
+    m_Address: Audio/Combat/Swoosh Small 02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d35dc19544d070e459eecc7eae2b3a1b
+    m_Address: Audio/Combat/Sword Impact 01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df0aa7a306fcb0b4a88f1371414f98cf
+    m_Address: Audio/Combat/Sword Impact 04
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2fb11154ffefa44eb82723a9c7f4f6b
+    m_Address: Audio/Combat/Footstep Large 01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8aafb23e02b91849996e9f59e228535
+    m_Address: Audio/Combat/Swoosh Small 04
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe17ce69757865141b460fc600f88944
+    m_Address: Audio/Combat/Swoosh Big 03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ad3485259873eac478fc26ccd2272b29, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 19b5f9a79f915284a98fd86f448de374, type: 2}
+    - {fileID: 11400000, guid: 0ef9dd08331e49c418a998c3d2655918, type: 2}
