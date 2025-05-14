@@ -20,3 +20,4 @@ Desktop.ini
 # Build results
 *.apk
 *.unitypackage
+/Assets/Rendering

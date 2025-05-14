@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\MeshSaver.cs" />
+    <Compile Include="Assets\Editor\ImageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
