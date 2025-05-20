@@ -15,11 +15,6 @@ MonoBehaviour:
   m_GroupName: Scenes
   m_GUID: 2c0d44533ebf98c4ebeb08f7b748e65e
   m_SerializeEntries:
-  - m_GUID: 0805cf57450cc9241b35c1dc7ebbdf5a
-    m_Address: Scenes/LoadingScreen
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4f62c31a305d971428c20d0200e5c2b5
     m_Address: Scenes/SamuraiShop
     m_ReadOnly: 0

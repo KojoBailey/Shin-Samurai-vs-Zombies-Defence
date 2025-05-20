@@ -1124,6 +1124,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="com.upscalebaby.generic-serializable-dictionary">
+      <HintPath>Library\ScriptAssemblies\com.upscalebaby.generic-serializable-dictionary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="GLTFSerialization">
       <HintPath>Library\ScriptAssemblies\GLTFSerialization.dll</HintPath>
       <Private>False</Private>
@@ -1190,6 +1194,10 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="com.upscalebaby.generic-serializable-dictionary-editor">
+      <HintPath>Library\ScriptAssemblies\com.upscalebaby.generic-serializable-dictionary-editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Autodesk.Fbx">

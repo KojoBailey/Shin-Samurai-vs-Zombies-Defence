@@ -1,19 +1,15 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class UIManager {
+public class UIManager { // User Interface Manager
     public const float screenWidth = 1920;
-    public const float screenHeight = 1080
-    ;
-    public static EventTrigger Trigger;
+    public const float screenHeight = 1080;
+    public static EventTrigger trigger;
     
-    public const float HoverSmoothSlow = 0.15f;
+    public const float hoverSmoothSlow = 0.15f;
 
-    public enum Direction {
-        Up, Down, Left, Right
-    };
+    public enum Direction { Up, Down, Left, Right };
 
     public static void CopyRectTransform(RectTransform source, RectTransform target) {
         target.anchoredPosition = source.anchoredPosition;
@@ -25,10 +21,10 @@ public class UIManager {
     }
 
     public static void AddEventTrigger(string id, GameObject button, EventTriggerType type, Action<string> func) {
-        Trigger = button.AddComponent<EventTrigger>();
+        trigger = button.AddComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry { eventID = type };
         entry.callback.AddListener((data) => func(id));
-        Trigger.triggers.Add(entry);
+        trigger.triggers.Add(entry);
     }
 
     public static void SendOffScreen(RectTransform rectTransform, Direction direction) {
@@ -45,7 +41,7 @@ public class UIManager {
     // Gradually and smoothly change the scale of an object.
     public static void SmoothScale(RectTransform rectTransform, Vector2 target) {
         Vector3 targetScale = new Vector3(target.x, target.y, 1);
-        rectTransform.localScale += (targetScale - rectTransform.localScale) / HoverSmoothSlow * Time.deltaTime;
+        rectTransform.localScale += (targetScale - rectTransform.localScale) / hoverSmoothSlow * Time.deltaTime;
     }
     // Gradually and smoothly change the scale of an object, with a custom slow amount.
     public static void SmoothScale(RectTransform rectTransform, Vector2 target, float customSlow) {
@@ -55,7 +51,7 @@ public class UIManager {
 
     // Gradually and smoothly change the position of an object.
     public static void SmoothPos(RectTransform rectTransform, Vector2 target) {
-        rectTransform.anchoredPosition += (target - rectTransform.anchoredPosition) / HoverSmoothSlow * Time.deltaTime;
+        rectTransform.anchoredPosition += (target - rectTransform.anchoredPosition) / hoverSmoothSlow * Time.deltaTime;
     }
     // Gradually and smoothly change the position of an object, with a custom slow amount.
     public static void SmoothPos(RectTransform rectTransform, Vector2 target, float customSlow) {

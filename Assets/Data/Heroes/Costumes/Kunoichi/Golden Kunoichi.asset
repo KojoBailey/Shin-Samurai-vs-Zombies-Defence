@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f03e728150d15846ba70b211eed59f1, type: 3}
+  m_Name: Golden Kunoichi
+  m_EditorClassIdentifier: 
+  DisplayName: Golden Kunoichi
+  Prefab: {fileID: 1738044504032259, guid: 34d9da249f2776c49a85c634b7b8c7fb, type: 3}
+  MaterialOverride: {fileID: 2100000, guid: 519451cfdc9b9fa4193270fec969b25e, type: 2}
+  AudioData: {fileID: 11400000, guid: ac69044eeb3080449aa8e7c7a2a1df37, type: 2}

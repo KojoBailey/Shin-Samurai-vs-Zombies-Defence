@@ -284,6 +284,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.upscalebaby.generic-serializable-dictionary": {
+      "version": "https://github.com/upscalebaby/generic-serializable-dictionary.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e86261d4e9d0e683500d9011642a0cd4a8535c07"
+    },
     "org.khronos.unitygltf": {
       "version": "https://github.com/KhronosGroup/UnityGLTF.git",
       "depth": 0,

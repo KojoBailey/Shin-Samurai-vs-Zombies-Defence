@@ -100,7 +100,7 @@ AnimationClip:
       m_BitSize: 3
     m_Values:
       m_NumItems: 31
-      m_Data: fdf6edc6bd56edc7fd146acf757366d31df365d25df227cc8db169c6ad71e6c7f51162c86df25fc7dd935cbbfd149bb06df59aaefd749bb42d941dc27db3e1cf0b89cdacd3b853c2c5b520c62d749fc6f51162c8559266cee3e94baeb35a90bdba962cc9831bd4c36b8b91ac337bd09b4b4b0fa0734b0eaffdf6edc6
+      m_Data: fdf6edc6bd56edc7fd146acf757366d31df365d25df227cc8db169c6ad71e6c7f51122c86df25fc7dd935cbbfd149bb06df59aaefd749bb42d941dc27db3e1cf0b89cdacd3b853c2c5b520c62d749fc6f51122c8559266cee3e94baeb35a90bdba962cc9831bd4c36b8b91ac337bd09b4b4b0fa0734b0eaffdf6edc6
     m_Slopes:
       m_NumItems: 124
       m_Range: 14.774863
@@ -180,7 +180,7 @@ AnimationClip:
       m_BitSize: 4
     m_Values:
       m_NumItems: 33
-      m_Data: d3a79e9acb275f93aba7df8773171f7f2bd71d76db961c6fb316dc6b0b071e6c8b57a06ba367605a93a79f48ab375f46b3b7db468b475a49e365595f3b14936d0b54d0655b64106a03f59077db95d58bf34664b39b7630bb5be6b1b943f631b94306f2b8a316ae9fab4566764ba6a0713bf75d756b171e7fa3671e8bcba79e95d3a79e9a
+      m_Data: d3a79e9acb275f93aba7df8773171f7f2bd71d76db961c6fb316dc6b0b071e6c8b57a06ba367605a93a79f48ab375f46b3b7db468b475a49e365595f3b14936d0b54d0655b64106a03f59077db95d58bf34664b39b7630bb5be6b1b943f631b943f6f1b8a316ae9fab4566764ba6a0713bf75d756b171e7fa3671e8bcba79e95d3a79e9a
     m_Slopes:
       m_NumItems: 132
       m_Range: 20.378317
@@ -292,7 +292,7 @@ AnimationClip:
       m_BitSize: 4
     m_Values:
       m_NumItems: 32
-      m_Data: 3b685cbccb049398bcf498beccf4d8bdccc45abddc745cbefcf4a2ce63e3d5a08454a1bdec16f39884f7f5992246409b0ae8ca972ae84b971a06d7a00229d6870348e58803c8e68933f8e98e73082f9a3b95b3a081896fb979696fb94929afb8d168aeb5631667c86bf969b6a3e964b20bc922b0b3f8e0b24bf81cbb3b685cbc
+      m_Data: 3b685cbccb049398bcf498beccf4d8bdccc45abddc745cbefcf4a2ce63e3d5a08454a1bdec16f39884f7f5992246409b0ae8ca972ae84b971a06d7a00229d6870348e58803c8e68933f8e98e73082f9a3b95b3a081896fb979696fb94929afb8d168aeb5631627c86bf969b6a3e964b20bc922b0b3f8e0b24bf81cbb3b685cbc
     m_Slopes:
       m_NumItems: 128
       m_Range: 26.611618
@@ -372,7 +372,7 @@ AnimationClip:
       m_BitSize: 4
     m_Values:
       m_NumItems: 30
-      m_Data: 5874ad8d7084ae80b0a4ef73b0a4ef73b0a4ef73b0a4ef73a075b272c2bab66f4aba395848d7734748d7734748d7734748d77347d886334c0846b25778f5b16200f5b16570f4f163f073716260936d6c10e3e97710e3e97710e3e97710e3e9771873278550436594e083a9905874ad8d4874ed8d5874ad8d
+      m_Data: 5874ad8d7084ae80b0a4ef73b0a4ef73b0a4ef73b0a4ef73a065b272c2bab66f4aba395848d7734748d7734748d7734748d77347d886334c0836b25778f5b16200f5b16570f4f163f073716260936d6c10e3e97710e3e97710e3e97710e3e9771873278550436594e083a9905874ad8d4874ed8d5874ad8d
     m_Slopes:
       m_NumItems: 120
       m_Range: 8.767664
@@ -404,7 +404,7 @@ AnimationClip:
       m_BitSize: 4
     m_Values:
       m_NumItems: 32
-      m_Data: a10c56bc718b92aeb9ab14a0c92bd59f89ab93a2b9ab14a051ec1592612e9284c9720e7e79934c8471534c8481934b8381934b83618d0e7f496858b5f90d59d6b356f462c375b1660b36727501099bb5512c5a8e798c5a8da18cda8ca98cda8c19acd69e898dcfb6e96ecec3992fd0c91990d1c711b093bf39ad14bfa10c56bc
+      m_Data: a10c56bc718b92aeb9ab14a0c92bd59f89ab93a2b9ab14a051ec1592612e9284c9720e7e79934c8471534c8481934b8381934b83618d0e7f496858b5f90d59d6b356f462c375b1660b26727501099bb5512c5a8e798c5a8da18cda8ca98cda8c19acd69e898dcfb6e96ecec3992f90c91990d1c711b093bf39ad14bfa10c56bc
     m_Slopes:
       m_NumItems: 128
       m_Range: 20.751213
@@ -468,7 +468,7 @@ AnimationClip:
       m_BitSize: 4
     m_Values:
       m_NumItems: 33
-      m_Data: 48c99a52a8c6e0535856e44e4856a44d1876a44ce085644ce845a850f098e65838fad960b8ba8f4bd81a8f49de37d83d1e17d839cef657387868674f8827624a385adb4248a9974170c60f5760764e7108f558853055dc7e48d5dc7b60f59c7a60f59c7a7095dc8588459c9138b61b8f98f6147da0f7d46c9078d75e28d9195448c99a52
+      m_Data: 48c99a52a8c6e0535856e44e4856a44d1876a44ce085644ce845a850f098e65838fad960b8ba8f4bd81a8f49de37d83d1e17d839cef657387868674f8827624a385adb4248a9974170c60f5760764e7108f558853055dc7e48d5dc7b60f59c7a60f59c7a7095dc8588459c9138b61b8f98f6147da0f7d46c9078d75e28d9d95348c99a52
     m_Slopes:
       m_NumItems: 132
       m_Range: 23.256203
@@ -500,7 +500,7 @@ AnimationClip:
       m_BitSize: 4
     m_Values:
       m_NumItems: 33
-      m_Data: 3aaebfd5ebf4a1c7bb649b8debb41a80b334dc76cb44dc733b059e70f3c6e39edbdb62c47b2bd8b77beb56b63b4b52ab1bfb10a7139b50a5ab85a7ac9b75a3c1ba54b0a0ba94a08b7d18b18d725221c16b2516c9cb549acdbb645bcdb3c45bcdb3c45bcd1a4a33c36aaaacae722caece7aeeacd4f26f31ceaaefb7cebaae3dd33aaebfd5
+      m_Data: 3aaebfd5ebf4a1c7bb649b8debb41a80b334dc76cb44dc733b059e70f3c6e39edbdb62c47b2bd8b77beb56b63b4b52ab1bfb10a7139b50a5ab85a7ac9b75a3c1ba54b0a0ba94a08b7d18b18d725221c16b25d6c8cb549acdbb645bcdb3c45bcdb3c45bcd1a4a33c36aaaacae722caece7aeeacd4f26f31ceaaefb7cebaae3dd33aaebfd5
     m_Slopes:
       m_NumItems: 132
       m_Range: 24.83977
@@ -532,7 +532,7 @@ AnimationClip:
       m_BitSize: 4
     m_Values:
       m_NumItems: 31
-      m_Data: 4a0eea85ca2d6689e2cc5f8d1aec598d4aabd38b6a8acc877a2acf8bc2aad18fb2e9ca8e7a88c48b7a88c48b7a88c48b7a88c48b3aa8459082a7c6991a27c5a12a073fa63a4737a98aa7b3a8d2e7399b7a88c48b220acf8ac24bda8a3acc61897a4ae3891a88628b2267628c8a29e48ca22be78a7a2de9874a0eea85
+      m_Data: 4a0eea85ca2d6689e2cc5f8d1aec598d4aabd38b6a8acc877a2acf8bc2aad18fb2e9ca8e7a88c48b7a88c48b7a88c48b7a88c48b3aa8459082a7c6991a27c5a12a073fa63a4737a98aa7b3a8d2e7399b7a88c48b220acf8ac24bda8a3acc61897a4ae3891a88628b2267628c8a09e48ca22be78a7a2de9874a0eea85
     m_Slopes:
       m_NumItems: 124
       m_Range: 8.964764
@@ -58653,24 +58653,10 @@ AnimationClip:
     floatParameter: 0
     intParameter: 2
     messageOptions: 0
-  - time: 0.4
-    functionName: DealDamage
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 0.6666667
     functionName: SwooshMedium
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 2
-    messageOptions: 0
-  - time: 0.8
-    functionName: DealDamage
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
     messageOptions: 0

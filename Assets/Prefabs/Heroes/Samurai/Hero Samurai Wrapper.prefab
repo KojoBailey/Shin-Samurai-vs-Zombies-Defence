@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &111370524432460492
+--- !u!1 &5202391561953481559
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8461983616273694975}
-  - component: {fileID: 3146635594232754005}
-  - component: {fileID: 3656787610774144741}
+  - component: {fileID: 487303648162792255}
+  - component: {fileID: 8506016040144347712}
+  - component: {fileID: 5966371877073210937}
   m_Layer: 0
   m_Name: Hero Samurai Wrapper
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8461983616273694975
+--- !u!4 &487303648162792255
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111370524432460492}
+  m_GameObject: {fileID: 5202391561953481559}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,67 +33,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &3146635594232754005
+--- !u!111 &8506016040144347712
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111370524432460492}
+  m_GameObject: {fileID: 5202391561953481559}
   m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: 7400000, guid: a0e85525bea3bb74b9619994c05e5d4b, type: 2}
   m_Animations:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7400000, guid: a0e85525bea3bb74b9619994c05e5d4b, type: 2}
   - {fileID: 7400000, guid: 66d6de9af8e2a4244945f1fca724061b, type: 2}
   - {fileID: 7400000, guid: 824e4a7dee89d5f45836c03db5ed773f, type: 2}
   - {fileID: 7400000, guid: 4eec2e674705f574f80138fad1ae8927, type: 2}
-  - {fileID: 7400000, guid: 52750187999262d488f33f64c7130864, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 7400000, guid: a0e85525bea3bb74b9619994c05e5d4b, type: 2}
+  - {fileID: 7400000, guid: 52d0388f04eb42d4c9327c6cf904f948, type: 2}
+  - {fileID: 7400000, guid: a7c71272fe02dfd4eb8d18a4fc599f41, type: 2}
   - {fileID: 7400000, guid: fd2f8fbb6a1ff974ea0e293d0e195ba9, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7400000, guid: 4562c2df08455c44a9950944d8a40092, type: 2}
+  - {fileID: 7400000, guid: 88e7f18a061fef04cb4cb346da65935a, type: 2}
+  - {fileID: 7400000, guid: 52750187999262d488f33f64c7130864, type: 2}
+  - {fileID: 7400000, guid: 46695f3ffe5688b49947b75352174a80, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_UpdateMode: 0
-  m_CullingType: 1
---- !u!114 &3656787610774144741
+  m_CullingType: 0
+--- !u!114 &5966371877073210937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111370524432460492}
+  m_GameObject: {fileID: 5202391561953481559}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5151dbeb3422ed47b8d301240bc96a7, type: 3}

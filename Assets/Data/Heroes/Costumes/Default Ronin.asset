@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f03e728150d15846ba70b211eed59f1, type: 3}
+  m_Name: Default Ronin
+  m_EditorClassIdentifier: 
+  DisplayName: "R\u014Dnin"
+  Prefab: {fileID: 1226012885181222, guid: b488afc3f76f5084c84484fd1c031b2c, type: 3}
+  MaterialOverride: {fileID: 2100000, guid: 8ce14481206f8034ab00c760a791d5ce, type: 2}
+  AudioData: {fileID: 11400000, guid: 8822873301f87f142b1087336e9fddb1, type: 2}

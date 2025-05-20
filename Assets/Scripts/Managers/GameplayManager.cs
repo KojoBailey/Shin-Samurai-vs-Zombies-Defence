@@ -1,84 +1,151 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
+using UnityEngine.AddressableAssets;
 
-public class GameplayManager {
-    public static float GameTimer;
-    private static float spawnSave;
+/* Manages the main, non-menu gameplay. */
+public class GameplayManager { // Gameplay Manager
+    public static bool initialised = false;
+    public static float gameTimer;
+    private static float m_spawnSave;
 
-    public static float HeroX;
+    public static float heroX;
 
     public static Stage stage;
-    private static BGM bgm;
+    private static GameObject m_hud;
+    private static BGM m_bgm;
 
-    public static Dictionary<string, GameplayEntity> Entities;
+    public static Dictionary<string, GameplayEntity> entities;
     public static Hero hero;
-    public static List<Troop> Enemies;
+    public static List<Enemy> enemies;
+
+    public static Dictionary<string, GameplayEntity> closestTargets;
+
+    public enum AttackStatus { None, RangedHold, Melee, Ranged };
 
     public static async Task StartWave() {
         stage = new Stage("ZenGarden");
         await stage.Init();
 
-        bgm = new BGM("Zen Garden Day");
-        await bgm.Init();
+        var hudHandle = Addressables.InstantiateAsync("Prefabs/Gameplay HUD");
+        m_hud = await hudHandle.Task;
 
-        Entities = new();
+        m_bgm = new BGM("Zen Garden Day");
+        await m_bgm.Init();
 
-        hero = new Hero("Samurai");
-        await hero.Init(stage.HeroSpawn);
-        hero.SetBounds(stage.LeftBound, stage.RightBound);
-        hero.Allegiance = GameplayEntity.Side.Left;
+        entities = new();
+        closestTargets = new();
+
+        SaveManager.EquipCostume("Samurai", 0);
+        SaveManager.EquipCostume("Kunoichi", 0);
+        SaveManager.EquipCostume("Ronin", 0);
+        hero = new Hero(SaveManager.selectedHero);
+        hero.SetBounds(stage.leftBound, stage.rightBound);
+        hero.allegiance = GameplayEntity.Side.Left;
+        await hero.Init(stage.heroSpawn);
         AddEntity("Hero", hero);
 
-        Enemies = new List<Troop>();
+        enemies = new List<Enemy>();
+
+        initialised = true;
     }
 
     private static void AddEntity(string id, GameplayEntity entity) {
         entity.SetEntityId(id);
-        Entities.Add(id, entity);
+        entities.Add(id, entity);
     }
 
     public static async Task SpawnEnemy(string id) {
-        Troop enemy = new Troop(id);
-        await enemy.Init(stage.ZombieSpawn);
-        enemy.SetBounds(stage.LeftBound, float.MaxValue);
-        enemy.Allegiance = GameplayEntity.Side.Right;
-        Enemies.Add(enemy);
-        AddEntity($"Enemy{Entities.Count - 1}", enemy);
+        Enemy enemy = new Enemy(id);
+        enemy.SetBounds(stage.leftBound, float.MaxValue);
+        enemy.allegiance = GameplayEntity.Side.Right;
+        await enemy.Init(stage.zombieSpawn);
+        enemies.Add(enemy);
+        AddEntity($"Enemy{entities.Count - 1}", enemy);
     }
 
     public static async Task Update() {
-        hero.Update();
-        foreach (Troop enemy in Enemies) {
-            enemy.Update();
-        }
+        if (initialised) {
+            hero.Update();
+            foreach (Enemy enemy in enemies) {
+                if (enemy.toDestroy) {
+                    DestroyEntity(enemy.entityId);
+                    break;
+                }
+                enemy.Update();
+            }
 
-        foreach (GameplayEntity entity in Entities.Values) {
-            stage.SnapToGround(entity.transform);
-        }
+            foreach (Enemy enemy in enemies) {
+                if (enemy.currentState == GameplayEntity.State.Die) continue;
+                float difference = enemy.xPos - hero.xPos;
+                if (difference > 0) {
+                    if (difference < hero.meleeRange) {
+                        hero.attackStatus = AttackStatus.Melee;
+                        break;
+                    } else if (difference < hero.rangedRange) {
+                        hero.attackStatus = AttackStatus.Ranged;
+                        break;
+                    } else if (difference < hero.rangedRange + 1) {
+                        hero.attackStatus = AttackStatus.RangedHold;
+                        break;
+                    } else {
+                        hero.attackStatus = AttackStatus.None;
+                    }
+                }
+            }
 
-        if (GameTimer - spawnSave > 5) {
-            spawnSave = GameTimer;
-            await SpawnEnemy("LightZombie");
-        }
+            foreach (GameplayEntity entity in entities.Values) {
+                if (entity != null) {
+                    stage.ApplyGravity(entity);
 
-        GameTimer += Time.deltaTime;
+                    float closestDistance = float.MaxValue;
+                    foreach (GameplayEntity target in entities.Values) {
+                        if (target != null && target.allegiance != entity.allegiance && target.health > 0) {
+                            float distance = target.xPos - entity.xPos;
+                            if (entity.allegiance == GameplayEntity.Side.Right)
+                                distance *= -1;
+                            if (distance > 0 && distance < closestDistance) {
+                                closestDistance = distance;
+                                closestTargets[entity.entityId] = target;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (gameTimer - m_spawnSave > 5) {
+                m_spawnSave = gameTimer;
+                await SpawnEnemy("LightZombie");
+            }
+
+            gameTimer += Time.deltaTime;
+        }
     }
 
     public static void DealDamage(string entityId) {
-        GameplayEntity entity = Entities[entityId];
-        if (entity.Allegiance == GameplayEntity.Side.Left) {
-            foreach (Troop enemy in Enemies) {
+        GameplayEntity entity = entities[entityId];
+        if (entity.allegiance == GameplayEntity.Side.Left) {
+            foreach (Enemy enemy in enemies) {
                 if (entity.IsInMeleeRange(enemy.position.x)) {
-                    enemy.Damage(entity.GetMeleeDamage());
-                    entity.MeleeAttackSFX();
+                    enemy.Damage(10); // Change to troop damage
+                    entity.MeleeHitSFX();
                 }
             }
-        } else if (entity.Allegiance == GameplayEntity.Side.Right) {
-            if (entity.IsInMeleeRange(hero.position.x)) {
-                hero.Damage(entity.GetMeleeDamage());
-                entity.MeleeAttackSFX();
+        } else if (entity.allegiance == GameplayEntity.Side.Right) {
+            if (entity.IsInMeleeRange(hero.xPos)) {
+                hero.Damage(10); // Change to troop damage
+                entity.MeleeHitSFX();
             }
         }
+    }
+
+    public static void FireProjectile(string entityId) {
+        entities[entityId].FireProjectile(closestTargets[entityId]);
+    }
+
+    public static void DestroyEntity(string entityId) {
+        if (enemies.Contains((Enemy)entities[entityId]))
+            enemies.Remove((Enemy)entities[entityId]);
+        entities[entityId] = null;
     }
 };

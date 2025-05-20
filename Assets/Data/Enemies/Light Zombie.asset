@@ -16,13 +16,21 @@ MonoBehaviour:
   Desc: 
   Icon: {fileID: 0}
   Prefab: {fileID: 1915455133389061, guid: cac684251d156ea44a9938e624d586a3, type: 3}
-  WeaponData: {fileID: 11400000, guid: af10351aa07b4c94eb6aa1a5ce31118c, type: 2}
+  MeleeWeaponData: {fileID: 0}
+  RangedWeaponData: {fileID: 0}
   AudioData: {fileID: 11400000, guid: dc99c1f98f3f2994db846d7044556dfc, type: 2}
-  Boss: 0
-  Health: 40
-  Speed: 0.85
-  Flying: 0
-  Knockbackable: 1
-  MeleeRange: 1
-  MeleeDamage: 7
-  AttackFrequency: 2
+  Stats:
+    list:
+    - Key: 0
+      Value: 40
+    - Key: 1
+      Value: 0.85
+    - Key: 2
+      Value: 7
+    - Key: 4
+      Value: 1
+    - Key: 3
+      Value: 2
+    - Key: 5
+      Value: 1
+    keyCollision: 0

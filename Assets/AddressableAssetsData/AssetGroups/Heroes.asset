@@ -21,6 +21,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Hero
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 50436871e473c844493a0bc48acc30c3
+    m_Address: Data/Heroes/Ronin
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Hero
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b2ca6cd3559aa2479265830fa83abc7
+    m_Address: Data/Heroes/Kunoichi
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Hero
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ad3485259873eac478fc26ccd2272b29, type: 2}
   m_SchemaSet:

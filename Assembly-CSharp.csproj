@@ -48,32 +48,39 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.47f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Data\Enemies\EnemyData.cs" />
-    <Compile Include="Assets\Data\Weapons\WeaponData.cs" />
+    <Compile Include="Assets\Scripts\Prefab MonoBehaviours\WeaponAnchor.cs" />
+    <Compile Include="Assets\Scripts\Prefab Objects\RangedWeapon.cs" />
     <Compile Include="Assets\Scripts\Managers\SFXManager.cs" />
     <Compile Include="Assets\Scripts\Animation Events\AnimEventAttack.cs" />
-    <Compile Include="Assets\Scripts\Objects\Troop.cs" />
+    <Compile Include="Assets\Scripts\Prefab Objects\BGM.cs" />
     <Compile Include="Assets\Scripts\Managers\AllyManager.cs" />
     <Compile Include="Assets\Scripts\Managers\SceneLoadManager.cs" />
+    <Compile Include="Assets\Scripts\Prefab MonoBehaviours\EntityHealthBar.cs" />
     <Compile Include="Assets\Scripts\Scenes\SamuraiShop.cs" />
-    <Compile Include="Assets\Scripts\Objects\BGM.cs" />
+    <Compile Include="Assets\Scripts\Prefab Objects\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\EntityAudioData.cs" />
     <Compile Include="Assets\Scripts\Managers\SaveManager.cs" />
     <Compile Include="Assets\Scripts\Scenes\Gameplay.cs" />
-    <Compile Include="Assets\Scripts\WeaponAnchor.cs" />
+    <Compile Include="Assets\Scripts\Prefab Objects\Hero.cs" />
     <Compile Include="Assets\Scripts\Scenes\TitleScreen.cs" />
     <Compile Include="Assets\Scripts\Animation Events\AnimEventAudioCommon.cs" />
-    <Compile Include="Assets\Scripts\Objects\Stage.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\EnemyData.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
-    <Compile Include="Assets\Data\Heroes\Costumes\CostumeData.cs" />
+    <Compile Include="Assets\Scripts\Scenes\GameplayHUD.cs" />
     <Compile Include="Assets\Scripts\Animation Events\AnimEventAudioEntity.cs" />
-    <Compile Include="Assets\Data\Allies\Ally.cs" />
+    <Compile Include="Assets\Scripts\Prefab Objects\Stage.cs" />
     <Compile Include="Assets\Scripts\Scenes\OpeningCinematic.cs" />
-    <Compile Include="Assets\Scripts\Objects\GameplayEntity.cs" />
+    <Compile Include="Assets\Scripts\Prefab Objects\Enemy.cs" />
     <Compile Include="Assets\Scripts\Scenes\LoadingScreen.cs" />
-    <Compile Include="Assets\Scripts\Objects\Hero.cs" />
-    <Compile Include="Assets\Scripts\Objects\Weapon.cs" />
-    <Compile Include="Assets\Data\Allies\EntityAudioData.cs" />
-    <Compile Include="Assets\Data\Heroes\HeroData.cs" />
+    <Compile Include="Assets\Scripts\Prefab Objects\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IUpgradable.cs" />
+    <Compile Include="Assets\Scripts\Prefab Objects\MeleeWeapon.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\CostumeData.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\HeroData.cs" />
+    <Compile Include="Assets\Scripts\Prefab Objects\GameplayEntity.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\MeleeWeaponData.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\RangedWeaponData.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\Ally.cs" />
     <Compile Include="Assets\Scripts\Managers\GameplayManager.cs" />
     <Compile Include="Assets\Scripts\Scenes\GluLogoIntro.cs" />
   </ItemGroup>
@@ -1108,6 +1115,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="com.upscalebaby.generic-serializable-dictionary">
+      <HintPath>Library\ScriptAssemblies\com.upscalebaby.generic-serializable-dictionary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="GLTFSerialization">
       <HintPath>Library\ScriptAssemblies\GLTFSerialization.dll</HintPath>
       <Private>False</Private>
@@ -1174,6 +1185,10 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="com.upscalebaby.generic-serializable-dictionary-editor">
+      <HintPath>Library\ScriptAssemblies\com.upscalebaby.generic-serializable-dictionary-editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Autodesk.Fbx">

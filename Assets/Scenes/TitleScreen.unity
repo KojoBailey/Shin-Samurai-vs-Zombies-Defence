@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 588016480}
   - component: {fileID: 588016479}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: Event System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 753399918}
   - component: {fileID: 753399917}
   m_Layer: 0
-  m_Name: GameLogic
+  m_Name: Game Logic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,18 +642,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7701609a9547df149be5e5062cd55a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneCanvas: {fileID: 1315835496}
-  bloodBottomRef: {fileID: 1287267022}
-  bloodTopRef: {fileID: 1944632273}
-  samurai: {fileID: 995438966}
-  ronin: {fileID: 1840454377}
-  kunoichi: {fileID: 1372540245}
-  daimyo: {fileID: 624994235}
-  onmyoji: {fileID: 1623343867}
-  logo: {fileID: 257306206}
-  settingsButton: {fileID: 881500382}
-  versionText: {fileID: 452786516}
-  startText: {fileID: 1620414201}
+  m_canvas: {fileID: 1315835496}
+  m_bloodBottomRef: {fileID: 1287267022}
+  m_bloodTopRef: {fileID: 1944632273}
+  m_samurai: {fileID: 995438966}
+  m_ronin: {fileID: 1840454377}
+  m_kunoichi: {fileID: 1372540245}
+  m_daimyo: {fileID: 624994235}
+  m_onmyoji: {fileID: 1623343867}
+  m_logoTransform: {fileID: 257306206}
+  m_settingsButton: {fileID: 881500382}
+  m_versionText: {fileID: 452786516}
+  m_startTextTransform: {fileID: 1620414201}
 --- !u!4 &753399918
 Transform:
   m_ObjectHideFlags: 0

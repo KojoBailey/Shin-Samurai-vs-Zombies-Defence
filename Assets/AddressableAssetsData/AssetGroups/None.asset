@@ -15,8 +15,23 @@ MonoBehaviour:
   m_GroupName: None
   m_GUID: 51d461491789ae34f99a5586fa0af5c8
   m_SerializeEntries:
+  - m_GUID: 00d48d9bd00c60e48862646588be8e1d
+    m_Address: Textures/Icons/Ronin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 00e60ab4e2eb56f48b82f01acc871e45
+    m_Address: Prefabs/Gameplay HUD
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 01364c2a699ab9c48bc478b723b58178
     m_Address: Audio/Combat/Sword Impact 00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0805cf57450cc9241b35c1dc7ebbdf5a
+    m_Address: Prefabs/Loading Screen
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -51,6 +66,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 22c5c0ff8c73a0c4ca32ac2ea6cfbd1c
+    m_Address: Textures/Icons/Kunoichi
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 23f5c0500e1764b4da5cc6790391f7e3
     m_Address: Audio/Combat/Swoosh Medium 01
     m_ReadOnly: 0
@@ -58,6 +78,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 262c2d09124d6b34eb5376179def02bc
     m_Address: Audio/Combat/Sword Impact 02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 279aa6d8b6dc83243a928415256b53e1
+    m_Address: Textures/Icons/Samurai
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -97,8 +122,19 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 502e906824819f34d8a6249ea53493c3
+    m_Address: Data/Weapons/Samurai Bow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Weapon
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 523ef244eb088474188c3e9c203e5418
     m_Address: Audio/Combat/Swoosh Huge 01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 635f875135eaa2b44ab1e2dcd3da6b12
+    m_Address: Textures/HUD
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -113,14 +149,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8980fbc302c906b469fe27f85223495d
-    m_Address: Data/Weapons/Samurai Bow
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Weapon
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8f5d457021fdf334d88dd31f2ac640b8
     m_Address: Audio/Combat/Swoosh Medium 03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9383051597430fc47bcdbc7eab4d623a
+    m_Address: Audio/Combat/Arrow Fire 02
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -166,8 +201,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Weapon
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bca30fcc63a3ffc41bf3f9cd94a59752
+    m_Address: Textures/Icons/Onmyoji
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bcfc7f6bf2c3f2943a03d94cac03cba7
     m_Address: Audio/Combat/Footstep 03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c43d4bac8c20f0a4c9dfef65ab72c174
+    m_Address: Textures/Icons/Daimyo
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -201,8 +246,28 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e81b452004384fb4caa6e86143e4dec3
+    m_Address: Audio/Combat/Arrow Fire 01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e8aafb23e02b91849996e9f59e228535
     m_Address: Audio/Combat/Swoosh Small 04
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea04541cbe972bf498ea29fb7c55ed90
+    m_Address: Audio/Combat/Arrow Fire 00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f15777fb607b8b242a8e079c0a0f0b7f
+    m_Address: Data/Weapons/Kunoichi Kusarigama
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7c223aa1ea21fe499c578664f12cdc6
+    m_Address: Prefabs/Entity Health Bar
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

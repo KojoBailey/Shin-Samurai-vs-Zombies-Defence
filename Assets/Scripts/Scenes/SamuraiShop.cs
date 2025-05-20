@@ -1,57 +1,56 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SamuraiShop : MonoBehaviour {
-    [SerializeField] private Canvas sceneCanvas;
-    [SerializeField] private RectTransform allyReference;
+public class SamuraiShop : MonoBehaviour { // Samurai Shop
+    [SerializeField] private Canvas m_sceneCanvas;
+    [SerializeField] private RectTransform m_allyReference;
 
-    private Dictionary<string, Ally> allies = new();
-    private Dictionary<string, GameObject> allyButtons = new();
-    private Dictionary<string, Vector2> targetScales = new();
+    private Dictionary<string, Ally> m_allies = new();
+    private Dictionary<string, GameObject> m_allyButtons = new();
+    private Dictionary<string, Vector2> m_targetScales = new();
 
     private async void Start() {
         int i = 0;
-        foreach (string allyId in AllyManager.AllyIds) {
+        foreach (string allyId in AllyManager.allyIds) {
             Ally ally = await AllyManager.LoadAlly(allyId);
             
             GameObject allyButton = new GameObject("DynamicSprite");
-            allyButton.transform.SetParent(sceneCanvas.transform, false);
+            allyButton.transform.SetParent(m_sceneCanvas.transform, false);
 
             Image img = allyButton.AddComponent<Image>();
-            img.sprite = ally.Icon;
+            img.sprite = ally.icon;
 
             RectTransform rectTransform = allyButton.GetComponent<RectTransform>();
-            UIManager.CopyRectTransform(allyReference, rectTransform);
+            UIManager.CopyRectTransform(m_allyReference, rectTransform);
             rectTransform.anchoredPosition += new Vector2(i++ * 275, 0);
 
             UIManager.AddEventTrigger(allyId, allyButton, EventTriggerType.PointerEnter, OnPointerEnter);
             UIManager.AddEventTrigger(allyId, allyButton, EventTriggerType.PointerExit, OnPointerExit);
             UIManager.AddEventTrigger(allyId, allyButton, EventTriggerType.PointerClick, OnPointerClick);
 
-            allies.Add(allyId, ally);
-            allyButtons.Add(allyId, allyButton);
-            targetScales.Add(allyId, allyReference.localScale);
+            m_allies.Add(allyId, ally);
+            m_allyButtons.Add(allyId, allyButton);
+            m_targetScales.Add(allyId, m_allyReference.localScale);
         }
 
         SceneLoadManager.FinishLoading();
     }
 
     private void OnPointerEnter(string id) {
-        targetScales[id] = allyReference.localScale * new Vector2(1.2f, 1.2f);
+        m_targetScales[id] = m_allyReference.localScale * new Vector2(1.2f, 1.2f);
     }
     private void OnPointerExit(string id) {
-        targetScales[id] = allyReference.localScale;
+        m_targetScales[id] = m_allyReference.localScale;
     }
     private void OnPointerClick(string id) {
-        Debug.Log(allies[id].DisplayName);
+        Debug.Log(m_allies[id].displayName);
     }
 
     private void Update() {
-        foreach (var pair in allyButtons) {
-            UIManager.SmoothScale(pair.Value.GetComponent<RectTransform>(), targetScales[pair.Key]);
+        foreach (var pair in m_allyButtons) {
+            UIManager.SmoothScale(pair.Value.GetComponent<RectTransform>(), m_targetScales[pair.Key]);
         }
     }
 }

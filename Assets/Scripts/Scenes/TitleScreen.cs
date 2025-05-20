@@ -4,35 +4,32 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class TitleScreen : MonoBehaviour {
-    [SerializeField] private Canvas sceneCanvas;
-    [SerializeField] private Image bloodBottomRef;
-    [SerializeField] private Image bloodTopRef;
-    [SerializeField] private Image samurai;
-    [SerializeField] private Image ronin;
-    [SerializeField] private Image kunoichi;
-    [SerializeField] private Image daimyo;
-    [SerializeField] private Image onmyoji;
-    [SerializeField] private RectTransform logo;
-    [SerializeField] private Image settingsButton;
-    [SerializeField] private TextMeshProUGUI versionText;
-    [SerializeField] private RectTransform startText;
+public class TitleScreen : MonoBehaviour { // Title Screen
+    [SerializeField] private Canvas m_canvas;
+    [SerializeField] private Image m_bloodBottomRef;
+    [SerializeField] private Image m_bloodTopRef;
+    [SerializeField] private Image m_samurai;
+    [SerializeField] private Image m_ronin;
+    [SerializeField] private Image m_kunoichi;
+    [SerializeField] private Image m_daimyo;
+    [SerializeField] private Image m_onmyoji;
+    [SerializeField] private RectTransform m_logoTransform;
+    [SerializeField] private Image m_settingsButton;
+    [SerializeField] private TextMeshProUGUI m_versionText;
+    [SerializeField] private RectTransform m_startTextTransform;
 
-    private GameObject[] bloodBottom = new GameObject[4];
-    private GameObject[] bloodTop = new GameObject[4];
-    private float bloodScrollSpeed = 300;
-    private float bloodWidth;
-    private float bloodPos;
+    private GameObject[] m_bloodBottom = new GameObject[4];
+    private GameObject[] m_bloodTop = new GameObject[4];
+    private float m_bloodScrollSpeed = 300;
+    private float m_bloodWidth;
+    private float m_bloodPos;
 
-    private Dictionary<string, Image> heroes = new();
-    private Dictionary<string, Vector2> originalHeroPositions = new();
-    private Dictionary<string, Vector2> targetHeroPositions = new();
-
-    private Vector2 targetLogoPos;
-
-    private Vector2 settingsScale;
-
-    private float startTextScale;
+    private Dictionary<string, Image> m_heroes = new();
+    private Dictionary<string, Vector2> m_originalHeroPositions = new();
+    private Dictionary<string, Vector2> m_targetHeroPositions = new();
+    
+    private Vector2 m_targetLogoPos;
+    private Vector2 m_targetSettingsScale;
 
     private async void Start() {
         // Initialise managers.
@@ -41,111 +38,111 @@ public class TitleScreen : MonoBehaviour {
         SaveManager.EquipCostume("Samurai", 0);
 
         // Blood scroll animation
-        bloodPos = 0;
-        bloodWidth = bloodBottomRef.rectTransform.rect.width - 3;
+        m_bloodPos = 0;
+        m_bloodWidth = m_bloodBottomRef.rectTransform.rect.width - 3;
         for (int i = 0; i < 4; i++) {
-            bloodBottom[i] = new GameObject("Blood Bottom " + i);
-            bloodBottom[i].transform.SetParent(sceneCanvas.transform, false);
-            bloodBottom[i].transform.SetSiblingIndex(samurai.transform.GetSiblingIndex() + 1);
+            m_bloodBottom[i] = new GameObject("Blood Bottom " + i);
+            m_bloodBottom[i].transform.SetParent(m_canvas.transform, false);
+            m_bloodBottom[i].transform.SetSiblingIndex(m_samurai.transform.GetSiblingIndex() + 1);
 
-            Image img = bloodBottom[i].AddComponent<Image>();
-            img.sprite = bloodBottomRef.sprite;
+            Image img = m_bloodBottom[i].AddComponent<Image>();
+            img.sprite = m_bloodBottomRef.sprite;
 
-            RectTransform rectTransform = bloodBottom[i].GetComponent<RectTransform>();
-            UIManager.CopyRectTransform(bloodBottomRef.rectTransform, rectTransform);
-            rectTransform.anchoredPosition -= new Vector2(i * bloodWidth, 0);
+            RectTransform rectTransform = m_bloodBottom[i].GetComponent<RectTransform>();
+            UIManager.CopyRectTransform(m_bloodBottomRef.rectTransform, rectTransform);
+            rectTransform.anchoredPosition -= new Vector2(i * m_bloodWidth, 0);
         }
         for (int i = 0; i < 4; i++) {
-            bloodTop[i] = new GameObject("Blood Top " + i);
-            bloodTop[i].transform.SetParent(sceneCanvas.transform, false);
-            bloodTop[i].transform.SetSiblingIndex(samurai.transform.GetSiblingIndex() + 1);
+            m_bloodTop[i] = new GameObject("Blood Top " + i);
+            m_bloodTop[i].transform.SetParent(m_canvas.transform, false);
+            m_bloodTop[i].transform.SetSiblingIndex(m_samurai.transform.GetSiblingIndex() + 1);
 
-            Image img = bloodTop[i].AddComponent<Image>();
-            img.sprite = bloodTopRef.sprite;
+            Image img = m_bloodTop[i].AddComponent<Image>();
+            img.sprite = m_bloodTopRef.sprite;
 
-            RectTransform rectTransform = bloodTop[i].GetComponent<RectTransform>();
-            UIManager.CopyRectTransform(bloodTopRef.rectTransform, rectTransform);
-            rectTransform.anchoredPosition += new Vector2(i * bloodWidth, 0);
+            RectTransform rectTransform = m_bloodTop[i].GetComponent<RectTransform>();
+            UIManager.CopyRectTransform(m_bloodTopRef.rectTransform, rectTransform);
+            rectTransform.anchoredPosition += new Vector2(i * m_bloodWidth, 0);
         }
 
-        // Save logo position.
-        targetLogoPos = logo.anchoredPosition;
-        UIManager.SendOffScreen(logo, UIManager.Direction.Up);
+        // Save m_logoTransform position.
+        m_targetLogoPos = m_logoTransform.anchoredPosition;
+        UIManager.SendOffScreen(m_logoTransform, UIManager.Direction.Up);
 
         // Hero hover
-        heroes.Add("samurai", samurai);
-        heroes.Add("ronin", ronin);
-        heroes.Add("kunoichi", kunoichi);
-        heroes.Add("daimyo", daimyo);
-        heroes.Add("onmyoji", onmyoji);
-        foreach (var pair in heroes) {
-            originalHeroPositions.Add(pair.Key, pair.Value.rectTransform.anchoredPosition);
-            targetHeroPositions.Add(pair.Key, originalHeroPositions[pair.Key]);
+        m_heroes.Add("Samurai", m_samurai);
+        m_heroes.Add("Ronin", m_ronin);
+        m_heroes.Add("Kunoichi", m_kunoichi);
+        m_heroes.Add("Daimyo", m_daimyo);
+        m_heroes.Add("Onmyoji", m_onmyoji);
+        foreach (var pair in m_heroes) {
+            m_originalHeroPositions.Add(pair.Key, pair.Value.rectTransform.anchoredPosition);
+            m_targetHeroPositions.Add(pair.Key, m_originalHeroPositions[pair.Key]);
             UIManager.AddEventTrigger(pair.Key, pair.Value.gameObject, EventTriggerType.PointerEnter, HeroOnPointerEnter);
             UIManager.AddEventTrigger(pair.Key, pair.Value.gameObject, EventTriggerType.PointerExit, HeroOnPointerExit);
         }
 
         // Settings button
-        settingsScale = new Vector2(1f, 1f);
-        UIManager.AddEventTrigger("settings", settingsButton.gameObject, EventTriggerType.PointerEnter, SettingsOnPointerEnter);
-        UIManager.AddEventTrigger("settings", settingsButton.gameObject, EventTriggerType.PointerExit, SettingsOnPointerExit);
+        m_targetSettingsScale = new Vector2(1f, 1f);
+        UIManager.AddEventTrigger("settings", m_settingsButton.gameObject, EventTriggerType.PointerEnter, SettingsOnPointerEnter);
+        UIManager.AddEventTrigger("settings", m_settingsButton.gameObject, EventTriggerType.PointerExit, SettingsOnPointerExit);
 
         // Set version text to game version.
-        versionText.text = "v" + Application.version;
+        m_versionText.text = "v" + Application.version;
         if (Debug.isDebugBuild)
-            versionText.text += "-D";
+            m_versionText.text += "-D";
 
         SceneLoadManager.FinishLoading();
     }
 
     private void HeroOnPointerEnter(string id) {
-        targetHeroPositions[id] = originalHeroPositions[id] + new Vector2(5, 5);
+        m_targetHeroPositions[id] = m_originalHeroPositions[id] + new Vector2(5, 5);
     }
     private void HeroOnPointerExit(string id) {
-        targetHeroPositions[id] = originalHeroPositions[id];
+        m_targetHeroPositions[id] = m_originalHeroPositions[id];
     }
 
     private void SettingsOnPointerEnter(string id) {
-        settingsScale = new Vector2(1.1f, 1.1f);
+        m_targetSettingsScale = new Vector2(1.1f, 1.1f);
     }
     private void SettingsOnPointerExit(string id) {
-        settingsScale = new Vector2(1.0f, 1.0f);
+        m_targetSettingsScale = new Vector2(1.0f, 1.0f);
     }
 
 
     private void Update() {
         if (SceneLoadManager.finishedLoading) {
             // Update blood scroll positions.
-            bloodPos += bloodScrollSpeed * Time.deltaTime;
-            bloodPos %= bloodWidth;
+            m_bloodPos += m_bloodScrollSpeed * Time.deltaTime;
+            m_bloodPos %= m_bloodWidth;
             for (int i = 0; i < 4; i++) {
-                RectTransform rectTransform = bloodBottom[i].GetComponent<RectTransform>();
+                RectTransform rectTransform = m_bloodBottom[i].GetComponent<RectTransform>();
                 rectTransform.anchoredPosition = new Vector2(
-                    bloodBottomRef.rectTransform.anchoredPosition.x + bloodPos - bloodWidth * i,
+                    m_bloodBottomRef.rectTransform.anchoredPosition.x + m_bloodPos - m_bloodWidth * i,
                     rectTransform.anchoredPosition.y
                 );
             }
             for (int i = 0; i < 4; i++) {
-                RectTransform rectTransform = bloodTop[i].GetComponent<RectTransform>();
+                RectTransform rectTransform = m_bloodTop[i].GetComponent<RectTransform>();
                 rectTransform.anchoredPosition = new Vector2(
-                    bloodTopRef.rectTransform.anchoredPosition.x - bloodPos + bloodWidth * i,
+                    m_bloodTopRef.rectTransform.anchoredPosition.x - m_bloodPos + m_bloodWidth * i,
                     rectTransform.anchoredPosition.y
                 );
             }
 
             // Update Hero positions.
-            foreach (var pair in heroes) {
-                UIManager.SmoothPos(pair.Value.GetComponent<RectTransform>(), targetHeroPositions[pair.Key]);
+            foreach (var pair in m_heroes) {
+                UIManager.SmoothPos(pair.Value.GetComponent<RectTransform>(), m_targetHeroPositions[pair.Key]);
             }
 
-            // Update logo position;
-            UIManager.SmoothPos(logo, targetLogoPos, 0.7f);
+            // Update m_logoTransform position;
+            UIManager.SmoothPos(m_logoTransform, m_targetLogoPos, 0.7f);
 
             // Update settings button scale.
-            UIManager.SmoothScale(settingsButton.GetComponent<RectTransform>(), settingsScale);
+            UIManager.SmoothScale(m_settingsButton.GetComponent<RectTransform>(), m_targetSettingsScale);
 
             // Update start text scale.
-            UIManager.SinScale(startText, new Vector2(1f, 1f), new Vector2(1.2f, 1.2f), 1);
+            UIManager.SinScale(m_startTextTransform, new Vector2(1f, 1f), new Vector2(1.2f, 1.2f), 1);
 
             // Click/tap anywhere to proceed to next scene.
             if (Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Return))

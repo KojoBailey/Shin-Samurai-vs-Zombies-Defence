@@ -435,8 +435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98494cb309372f4c8aed51361633cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 833892666}
-  audioSource: {fileID: 833892665}
+  m_videoPlayer: {fileID: 833892666}
+  m_audioSource: {fileID: 833892665}
 --- !u!1 &1363803605
 GameObject:
   m_ObjectHideFlags: 0

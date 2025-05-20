@@ -9,15 +9,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0041f4276e011d4ea16da031b75e336, type: 3}
+  m_Script: {fileID: 11500000, guid: 814888f46f97c884e94bbfae8b0819ca, type: 3}
   m_Name: Samurai Bow
   m_EditorClassIdentifier: 
-  DisplayName: Bow
-  Desc: 
-  Icon: {fileID: 0}
-  Type: 1
-  LeftHandPrefab: {fileID: 1490059639780072, guid: 61e6928ef4ed0f242aaef56f5f874667, type: 3}
-  RightHandPrefab: {fileID: 1612053678651384, guid: e10356814958f45459f3248e219cf7c4, type: 3}
-  Projectile: {fileID: 1612053678651384, guid: e10356814958f45459f3248e219cf7c4, type: 3}
-  HitSFX: []
-  Range: 5
+  displayName: Bow
+  description: 
+  icon: {fileID: 0}
+  leftHandPrefab: {fileID: 1490059639780072, guid: 61e6928ef4ed0f242aaef56f5f874667, type: 3}
+  rightHandPrefab: {fileID: 1612053678651384, guid: e10356814958f45459f3248e219cf7c4, type: 3}
+  projectile: {fileID: 1612053678651384, guid: e10356814958f45459f3248e219cf7c4, type: 3}
+  hitAudio: []
+  stats:
+    list:
+    - Key: 0
+      Value: 4
+    - Key: 2
+      Value: 1.4
+    keyCollision: 0
+  upgrades:
+  - list:
+    - Key: 1
+      Value: 8
+    keyCollision: 0

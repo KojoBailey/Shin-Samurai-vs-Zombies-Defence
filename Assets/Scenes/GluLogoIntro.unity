@@ -420,8 +420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196a5477438b5c443829945fb790c67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 833892666}
-  audioSource: {fileID: 833892665}
+  m_videoPlayer: {fileID: 833892666}
+  m_audioSource: {fileID: 833892665}
 --- !u!4 &833892668
 Transform:
   m_ObjectHideFlags: 0

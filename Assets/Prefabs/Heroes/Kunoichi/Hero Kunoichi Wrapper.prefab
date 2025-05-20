@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5729575631369662466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7818809959227744454}
+  - component: {fileID: -4180806238399759182}
+  - component: {fileID: 4505710077287990468}
+  m_Layer: 0
+  m_Name: Hero Kunoichi Wrapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7818809959227744454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729575631369662466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &-4180806238399759182
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729575631369662466}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: a5f3b614e7ba61443941109d70c49572, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 826006ef75d27574c8dbe653e4080153, type: 2}
+  - {fileID: 7400000, guid: 4a9ebe5c939e8cb4fbc6e7b047702dd3, type: 2}
+  - {fileID: 7400000, guid: d4d70fdcdf7b85446954bc7944883e7d, type: 2}
+  - {fileID: 7400000, guid: ef1dab6f6436c6d4c917790e18fb754a, type: 2}
+  - {fileID: 7400000, guid: ee2c2f874aefc3742b407b6e1f918bf0, type: 2}
+  - {fileID: 7400000, guid: c0930212b18a9e5488d09fe797d6d459, type: 2}
+  - {fileID: 7400000, guid: 9b66049ba31941c4aaf9e7e82d8bf8d2, type: 2}
+  - {fileID: 7400000, guid: b30065b59f0167849a27c8812c05fbd7, type: 2}
+  - {fileID: 7400000, guid: b2be8e702ada43e41a6c52121b92419b, type: 2}
+  - {fileID: 7400000, guid: d622087cd7e040844b4fab9338ef8aea, type: 2}
+  - {fileID: 7400000, guid: a5f3b614e7ba61443941109d70c49572, type: 2}
+  - {fileID: 7400000, guid: 3379165b5bca8be43b92d9fcda684f40, type: 2}
+  - {fileID: 7400000, guid: 9b367401f4935a94cb167d8ee2051c81, type: 2}
+  - {fileID: 7400000, guid: b8f3b9a518a2917428e6bc3ee005f669, type: 2}
+  - {fileID: 7400000, guid: fc4577e45d80d5347971147dcb0ab7e2, type: 2}
+  - {fileID: 7400000, guid: e2e87bda481f34841b6b48530998d4f5, type: 2}
+  - {fileID: 7400000, guid: efe58f40ba6523642af45063a714298b, type: 2}
+  - {fileID: 7400000, guid: 49b2cdef1eed1a84bad0ae0b878345c1, type: 2}
+  - {fileID: 7400000, guid: 20b225506821b36409934d0ac0197927, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
+--- !u!114 &4505710077287990468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729575631369662466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5151dbeb3422ed47b8d301240bc96a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityId: Hero

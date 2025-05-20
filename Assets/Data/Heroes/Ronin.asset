@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc32a23c5b63c4498c56f103d07588f, type: 3}
+  m_Name: Ronin
+  m_EditorClassIdentifier: 
+  DisplayName: "R\u014Dnin"
+  Desc: 
+  Icon: {fileID: 21300000, guid: 00d48d9bd00c60e48862646588be8e1d, type: 3}
+  Wrapper: {fileID: 2703682261951476262, guid: 8c996278700ec1948992b504433a43d8, type: 3}
+  Costumes:
+  - {fileID: 11400000, guid: 3039c07b6c300e34e946ebc3c1d3dcd0, type: 2}
+  MeleeWeaponData: {fileID: 11400000, guid: f73906ba1d2cbf34eb6e68e535c27611, type: 2}
+  RangedWeaponData: {fileID: 0}
+  Stats:
+    list:
+    - Key: 3
+      Value: 0.2
+    - Key: 2
+      Value: 2
+    keyCollision: 0
+  Upgrades:
+  - list:
+    - Key: 0
+      Value: 200
+    - Key: 1
+      Value: 15
+    keyCollision: 0

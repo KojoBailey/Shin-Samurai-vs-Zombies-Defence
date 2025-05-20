@@ -7,16 +7,16 @@ using UnityEngine.ResourceManagement.ResourceLocations;
 
 public class AllyManager {
     // A list of all Ally IDs, without loading the Allies themselves.
-    public static List<string> AllyIds;
+    public static List<string> allyIds;
 
     public static async Task Init() {
         var handle = Addressables.LoadResourceLocationsAsync("Ally");
         await handle.Task;
-        AllyIds = new();
+        allyIds = new();
         if (handle.Status == AsyncOperationStatus.Succeeded) {
             IList<IResourceLocation> locations = handle.Result;
             foreach (var loc in locations) {
-                AllyIds.Add(System.IO.Path.GetFileName(loc.PrimaryKey));
+                allyIds.Add(System.IO.Path.GetFileName(loc.PrimaryKey));
             }
         } else Debug.LogError("Failed to get list of Allies.");
     }

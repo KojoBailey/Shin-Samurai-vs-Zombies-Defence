@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d717bd6c91cbeb4cb73a639d2c2d15e, type: 3}
+  m_Name: Kunoichi Audio
+  m_EditorClassIdentifier: 
+  SpawnSounds: []
+  FootstepSize: 0
+  FootstepSounds:
+  - {fileID: 8300000, guid: d7e94dadace8ab546ac1d002562b0294, type: 3}
+  - {fileID: 8300000, guid: df1b81f7cc16e0c43bd460255e1efded, type: 3}
+  - {fileID: 8300000, guid: 2483a92302edfdb40b19fe615c072b07, type: 3}
+  - {fileID: 8300000, guid: 1f0b4c2e745a87741a3f0b96d677b1c2, type: 3}
+  AttackSounds:
+  - {fileID: 8300000, guid: 17e13ca0e0785ea47bd0658e569348e3, type: 3}
+  - {fileID: 8300000, guid: f72c4575e63a7ae4a933e5efb2c256f1, type: 3}
+  - {fileID: 8300000, guid: 8a03c354e01aa7a48a723eba651ed289, type: 3}
+  - {fileID: 8300000, guid: c00c98d445f9eb240bed49ac79bb7002, type: 3}
+  BigAttackSounds:
+  - {fileID: 8300000, guid: 21d19a214a4d86748aa9b8128bb88457, type: 3}
+  - {fileID: 8300000, guid: d415dc09f34434a409d990ed29b54e7a, type: 3}
+  - {fileID: 8300000, guid: 50424f516786124458c146136144b900, type: 3}
+  LongAttackSounds:
+  - {fileID: 8300000, guid: b50e767b6e8b2c54992b70ffaf07f2c3, type: 3}
+  - {fileID: 8300000, guid: 1c0e53a2cb38eec4a82dfd7a3c3178ea, type: 3}
+  DeathSounds:
+  - {fileID: 8300000, guid: ea04932c9b87be1449588dd567487da0, type: 3}
