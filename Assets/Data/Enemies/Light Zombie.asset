@@ -12,25 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0292bbba6cd1944b97a4e82a3e7dd34, type: 3}
   m_Name: Light Zombie
   m_EditorClassIdentifier: 
-  DisplayName: Light Zombie
-  Desc: 
-  Icon: {fileID: 0}
-  Prefab: {fileID: 1915455133389061, guid: cac684251d156ea44a9938e624d586a3, type: 3}
-  MeleeWeaponData: {fileID: 0}
-  RangedWeaponData: {fileID: 0}
-  AudioData: {fileID: 11400000, guid: dc99c1f98f3f2994db846d7044556dfc, type: 2}
-  Stats:
+  displayName: Light Zombie
+  description: 
+  icon: {fileID: 0}
+  prefab: {fileID: 1915455133389061, guid: cac684251d156ea44a9938e624d586a3, type: 3}
+  meleeWeaponData: {fileID: 0}
+  rangedWeaponData: {fileID: 0}
+  audioData: {fileID: 11400000, guid: dc99c1f98f3f2994db846d7044556dfc, type: 2}
+  stats:
     list:
     - Key: 0
       Value: 40
     - Key: 1
-      Value: 0.85
+      Value: 1
     - Key: 2
-      Value: 7
+      Value: 10
+    - Key: 3
+      Value: 1
     - Key: 4
       Value: 1
-    - Key: 3
-      Value: 2
     - Key: 5
       Value: 1
     keyCollision: 0

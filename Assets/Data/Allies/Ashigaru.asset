@@ -12,10 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109c3ab24b89a96498b9ff5c084d2ce4, type: 3}
   m_Name: Ashigaru
   m_EditorClassIdentifier: 
-  DisplayName: Ashigaru
-  Desc: As farmers of the village, not very strong, but oh so loyal.
-  Cost: 5
-  Cooldown: 1
-  AttackFrequency: 1
-  Prefab: {fileID: 0}
-  Icon: {fileID: 21300000, guid: e0cb9dd843f376948833ce3ebb5d57eb, type: 3}
+  displayName: Ashigaru
+  description: 
+  icon: {fileID: 21300000, guid: e0cb9dd843f376948833ce3ebb5d57eb, type: 3}
+  prefabWrapper: {fileID: 0}
+  costumes: []
+  meleeWeaponData: {fileID: 0}
+  rangedWeaponData: {fileID: 0}
+  audioData: {fileID: 0}
+  stats:
+    list:
+    - Key: 0
+      Value: 5
+    - Key: 2
+      Value: 1
+    keyCollision: 0
+  upgrades:
+  - list:
+    - Key: 1
+      Value: 40
+    - Key: 5
+      Value: 1
+    keyCollision: 0

@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Katana
   description: 
-  icon: {fileID: 0}
-  leftHandPrefab: {fileID: 0}
-  rightHandPrefab: {fileID: 1485028866128582, guid: cf33aebed3d68f44da754d6458ec09c2, type: 3}
-  hitAudio: []
+  hitAudio:
+  - {fileID: 8300000, guid: 01364c2a699ab9c48bc478b723b58178, type: 3}
+  - {fileID: 8300000, guid: d35dc19544d070e459eecc7eae2b3a1b, type: 3}
+  - {fileID: 8300000, guid: 262c2d09124d6b34eb5376179def02bc, type: 3}
+  - {fileID: 8300000, guid: 992bd7e63b6c5d14598e752809234cc5, type: 3}
+  - {fileID: 8300000, guid: df0aa7a306fcb0b4a88f1371414f98cf, type: 3}
   stats:
     list:
     - Key: 0
@@ -26,7 +28,11 @@ MonoBehaviour:
       Value: 0.7
     keyCollision: 0
   upgrades:
-  - list:
-    - Key: 1
-      Value: 10
-    keyCollision: 0
+  - icon: {fileID: 0}
+    leftHandPrefab: {fileID: 0}
+    rightHandPrefab: {fileID: 1485028866128582, guid: cf33aebed3d68f44da754d6458ec09c2, type: 3}
+    stats:
+      list:
+      - Key: 1
+        Value: 10
+      keyCollision: 0
