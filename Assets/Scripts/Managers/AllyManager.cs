@@ -22,8 +22,8 @@ public class AllyManager {
     }
 
     // Loads an Ally's data into memory.
-    public static async Task<Ally> LoadAlly(string _id) {
-        var handle = Addressables.LoadAssetAsync<Ally>("Data/Allies/" + _id);
+    public static async Task<AllyData> LoadAlly(string _id) {
+        var handle = Addressables.LoadAssetAsync<AllyData>("Data/Allies/" + _id);
         await handle.Task;
         if (handle.Status == AsyncOperationStatus.Succeeded)
             return handle.Result;

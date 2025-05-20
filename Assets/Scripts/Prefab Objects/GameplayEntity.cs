@@ -2,8 +2,8 @@ using UnityEngine;
 
 /* Characters during gameplay, including heroes, allies, and enemies. */
 public class GameplayEntity { // Gameplay Entity
-    public enum Side { Left, Right }
     public string entityId;
+    public enum Side { Left, Right }
     public Side allegiance;
     protected bool m_loaded = false;
 
@@ -12,6 +12,8 @@ public class GameplayEntity { // Gameplay Entity
     public Animation animation;
     public GameObject wrapperObject;
     public Animation wrapperAnimation;
+    protected float m_attackTimer;
+    protected float m_leftBound, m_rightBound;
 
     public float xPos {
         get => transform.position.x;

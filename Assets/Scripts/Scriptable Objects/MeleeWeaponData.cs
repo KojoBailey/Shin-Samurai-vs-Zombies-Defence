@@ -1,12 +1,10 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "New Melee Weapon", menuName = "Game Data/Melee Weapon")]
 public class MeleeWeaponData : ScriptableObject, IUpgradable {
     public string displayName;
     public string description;
-    public Sprite icon;
-    public GameObject leftHandPrefab;
-    public GameObject rightHandPrefab;
     public AudioClip[] hitAudio;
 
     public enum Stat {
@@ -15,30 +13,36 @@ public class MeleeWeaponData : ScriptableObject, IUpgradable {
         AttackFrequency
     }
     public GenericDictionary<Stat, float> stats;
-    public GenericDictionary<Stat, float>[] upgrades;
+    [System.Serializable] public class Upgrade {
+        public Sprite icon;
+        public GameObject leftHandPrefab;
+        public GameObject rightHandPrefab;
+        public GenericDictionary<Stat, float> stats;
+    }
+    public List<Upgrade> upgrades;
 
+    public GameObject leftHandPrefab {
+        get => upgrades[SaveManager.levels[this] - 1].leftHandPrefab;
+    }
+    public GameObject rightHandPrefab {
+        get => upgrades[SaveManager.levels[this] - 1].rightHandPrefab;
+    }
     public float range {
-        get {
-            return GetStat(Stat.Range);
-        }
+        get => GetStat(Stat.Range);
     }
     public float damage {
-        get {
-            return GetStat(Stat.Damage);
-        }
+        get => GetStat(Stat.Damage);
     }
     public float attackFrequency {
-        get {
-            return GetStat(Stat.AttackFrequency);
-        }
+        get => GetStat(Stat.AttackFrequency);
     }
 
     public float GetStat(Stat stat) {
         return GetStat(SaveManager.levels[this], stat);
     }
     public float GetStat(int level, Stat stat) {
-        if (upgrades[level - 1].ContainsKey(stat))
-            return upgrades[level - 1][stat];
+        if (upgrades[level - 1].stats.ContainsKey(stat))
+            return upgrades[level - 1].stats[stat];
         return stats[stat];
     }
 

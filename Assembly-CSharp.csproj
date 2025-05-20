@@ -75,12 +75,13 @@
     <Compile Include="Assets\Scripts\Prefab Objects\Projectile.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IUpgradable.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\MeleeWeapon.cs" />
+    <Compile Include="Assets\Scripts\Prefab Objects\Ally.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\CostumeData.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\HeroData.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\GameplayEntity.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\MeleeWeaponData.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RangedWeaponData.cs" />
-    <Compile Include="Assets\Scripts\Scriptable Objects\Ally.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\AllyData.cs" />
     <Compile Include="Assets\Scripts\Managers\GameplayManager.cs" />
     <Compile Include="Assets\Scripts\Scenes\GluLogoIntro.cs" />
   </ItemGroup>

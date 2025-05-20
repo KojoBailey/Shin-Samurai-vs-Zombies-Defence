@@ -126,7 +126,7 @@ public class GameplayManager { // Gameplay Manager
         GameplayEntity entity = entities[entityId];
         if (entity.allegiance == GameplayEntity.Side.Left) {
             foreach (Enemy enemy in enemies) {
-                if (entity.IsInMeleeRange(enemy.position.x)) {
+                if (entity.IsInMeleeRange(enemy.xPos)) {
                     enemy.Damage(10); // Change to troop damage
                     entity.MeleeHitSFX();
                 }

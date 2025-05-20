@@ -6,7 +6,6 @@ public class Hero : GameplayEntity {
     private string m_heroId;
     public HeroData data;
 
-    private float m_leftBound, m_rightBound;
     private float m_xVelocity;
 
     public GameplayManager.AttackStatus attackStatus;
@@ -34,16 +33,6 @@ public class Hero : GameplayEntity {
         wrapperAnimation = wrapperObject.GetComponent<Animation>();
         transform.position = new Vector3(spawnX, 0f, 0f);
         transform.rotation = Quaternion.Euler(0f, 90f, 0f);
-
-        // Attach weapon.
-        meleeWeapon = new MeleeWeapon(data.meleeWeaponData);
-        await meleeWeapon.Init(obj);
-        meleeRange = meleeWeapon.data.range;
-        if (data.rangedWeaponData != null) {
-            rangedWeapon = new RangedWeapon(data.rangedWeaponData);
-            await rangedWeapon.Init(obj);
-            rangedRange = rangedWeapon.data.range;
-        }
         SwitchToMelee();
 
         SaveManager.SetLevel(data, 1);

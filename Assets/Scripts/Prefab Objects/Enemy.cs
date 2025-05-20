@@ -3,29 +3,19 @@ using UnityEngine.AddressableAssets;
 using System.Threading.Tasks;
 
 public class Enemy : GameplayEntity {
-    private string id;
-    private EnemyData data;
-    private HealthBar healthBar;
-
-    private float attackCooldown;
-
-    private float leftBound, rightBound;
-
-    public Vector3 position {
-        get {
-            return transform.position;
-        }
-    }
+    private string m_id;
+    public EnemyData data;
+    private HealthBar m_healthBar;
 
     public Enemy(string enemyId) {
-        id = enemyId;
+        m_id = enemyId;
     }
 
     public async Task Init(float spawnX) {
-        var handle = Addressables.LoadAssetAsync<EnemyData>($"Data/Enemies/Zombies/{id}");
+        var handle = Addressables.LoadAssetAsync<EnemyData>($"Data/Enemies/Zombies/{m_id}");
         data = await handle.Task;
         if (data == null) {
-            Debug.LogError($"Could not find or load Enemy of id `{id}`.");
+            Debug.LogError($"Could not find or load Enemy of m_id `{m_id}`.");
             return;
         }
         obj = Object.Instantiate(data.prefab);
@@ -34,13 +24,21 @@ public class Enemy : GameplayEntity {
         transform.rotation = Quaternion.Euler(0f, -90f, 0f);
 
         // Attach weapon.
-        meleeWeapon = new MeleeWeapon(data.meleeWeaponData);
-        // await weapon.Init(obj);
+        if (data.meleeWeaponData != null) {
+            meleeWeapon = new MeleeWeapon(data.meleeWeaponData);
+            await meleeWeapon.Init(obj);
+            meleeRange = meleeWeapon.data.range;
+        }
+        if (data.rangedWeaponData != null) {
+            rangedWeapon = new RangedWeapon(data.rangedWeaponData);
+            await rangedWeapon.Init(obj);
+            rangedRange = rangedWeapon.data.range;
+        }
 
         health = data.health;
         data.audioData.Spawn();
-        healthBar = new HealthBar(this, data.health);
-        await healthBar.Init();
+        m_healthBar = new HealthBar(this, data.health);
+        await m_healthBar.Init();
 
         m_loaded = true;
     }
@@ -50,7 +48,7 @@ public class Enemy : GameplayEntity {
             HandleLogic();
             HandleMotion();
             HandleAnimation();
-            healthBar.Update();
+            m_healthBar.Update();
             obj.SetActive(true);
         }
     }
@@ -82,7 +80,7 @@ public class Enemy : GameplayEntity {
     }
 
     private void HandleAnimation() {
-        if (transform.position.x <= leftBound || transform.position.x >= rightBound) {
+        if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound) {
             ChangeState(State.Idle);
         }
 
@@ -112,18 +110,18 @@ public class Enemy : GameplayEntity {
         }
 
         if (currentState == State.MeleeAttack) {
-            if (attackCooldown < 0f)
-                attackCooldown = data.GetStat(EnemyData.Stat.AttackFrequency);
+            if (m_attackTimer < 0f)
+                m_attackTimer = data.GetStat(EnemyData.Stat.AttackFrequency);
             if (!animation.IsPlaying("Attack01")) {
-                if (attackCooldown == data.GetStat(EnemyData.Stat.AttackFrequency)) {
+                if (m_attackTimer == data.GetStat(EnemyData.Stat.AttackFrequency)) {
                     animation.CrossFade("Attack01", 0.1f);
                 } else {
                     animation.CrossFade("Idle", 0.1f);
                 }
             }
-            attackCooldown -= Time.deltaTime;
+            m_attackTimer -= Time.deltaTime;
         } else {
-            attackCooldown = data.GetStat(EnemyData.Stat.AttackFrequency);
+            m_attackTimer = data.GetStat(EnemyData.Stat.AttackFrequency);
         }
 
         if (currentState == State.Die) {
@@ -141,10 +139,10 @@ public class Enemy : GameplayEntity {
         } else if (isGettingKnockedBack) {
             ChangeX(1 * Time.deltaTime);
         }
-        if (transform.position.x < leftBound)
-            SetX(leftBound);
-        if (transform.position.x > rightBound)
-            SetX(rightBound);
+        if (transform.position.x < m_leftBound)
+            SetX(m_leftBound);
+        if (transform.position.x > m_rightBound)
+            SetX(m_rightBound);
     }
 
     private void ChangeState(State newState) {
@@ -152,8 +150,8 @@ public class Enemy : GameplayEntity {
     }
 
     public void SetBounds(float left, float right) {
-        leftBound = left;
-        rightBound = right;
+        m_leftBound = left;
+        m_rightBound = right;
     }
 
     public void ChangeX(float x) {

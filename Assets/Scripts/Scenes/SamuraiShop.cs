@@ -7,14 +7,14 @@ public class SamuraiShop : MonoBehaviour { // Samurai Shop
     [SerializeField] private Canvas m_sceneCanvas;
     [SerializeField] private RectTransform m_allyReference;
 
-    private Dictionary<string, Ally> m_allies = new();
+    private Dictionary<string, AllyData> m_allies = new();
     private Dictionary<string, GameObject> m_allyButtons = new();
     private Dictionary<string, Vector2> m_targetScales = new();
 
     private async void Start() {
         int i = 0;
         foreach (string allyId in AllyManager.allyIds) {
-            Ally ally = await AllyManager.LoadAlly(allyId);
+            AllyData ally = await AllyManager.LoadAlly(allyId);
             
             GameObject allyButton = new GameObject("DynamicSprite");
             allyButton.transform.SetParent(m_sceneCanvas.transform, false);
