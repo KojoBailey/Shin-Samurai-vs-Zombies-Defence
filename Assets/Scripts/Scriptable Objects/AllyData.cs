@@ -25,20 +25,19 @@ public class AllyData : ScriptableObject, IUpgradable {
     public GenericDictionary<Stat, float>[] upgrades;
 
     public float health {
-        get {
-            return stats[Stat.Health];
-        }
+        get => GetStat(Stat.Health);
+    }
+    public float speed {
+        get => GetStat(Stat.Speed);
     }
     public int knockbackCount {
-        get {
-            return (int)stats[Stat.KnockbackCount];
-        }
+        get => (int)GetStat(Stat.KnockbackCount);
     }
 
-    public object GetStat(Stat stat) {
+    public float GetStat(Stat stat) {
         return GetStat(SaveManager.levels[this], stat);
     }
-    public object GetStat(int level, Stat stat) {
+    public float GetStat(int level, Stat stat) {
         if (upgrades[level - 1].ContainsKey(stat))
             return upgrades[level - 1][stat];
         return stats[stat];

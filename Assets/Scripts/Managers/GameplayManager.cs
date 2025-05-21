@@ -18,6 +18,7 @@ public class GameplayManager { // Gameplay Manager
     public static Dictionary<string, GameplayEntity> entities;
     public static Hero hero;
     public static List<Enemy> enemies;
+    public static List<Ally> allies;
 
     public static Dictionary<string, GameplayEntity> closestTargets;
 
@@ -46,6 +47,7 @@ public class GameplayManager { // Gameplay Manager
         AddEntity("Hero", hero);
 
         enemies = new List<Enemy>();
+        allies = new List<Ally>();
 
         initialised = true;
     }
@@ -63,6 +65,14 @@ public class GameplayManager { // Gameplay Manager
         enemies.Add(enemy);
         AddEntity($"Enemy{entities.Count - 1}", enemy);
     }
+     public static async Task SpawnAlly(string id) {
+        Ally ally = new Ally(id);
+        ally.SetBounds(float.MinValue, stage.rightBound);
+        ally.allegiance = GameplayEntity.Side.Left;
+        await ally.Init(stage.allySpawn);
+        allies.Add(ally);
+        AddEntity($"Ally{entities.Count - 1}", ally);
+    }
 
     public static async Task Update() {
         if (initialised) {
@@ -73,6 +83,13 @@ public class GameplayManager { // Gameplay Manager
                     break;
                 }
                 enemy.Update();
+            }
+            foreach (Ally ally in allies) {
+                if (ally.toDestroy) {
+                    DestroyEntity(ally.entityId);
+                    break;
+                }
+                ally.Update();
             }
 
             foreach (Enemy enemy in enemies) {
@@ -115,7 +132,8 @@ public class GameplayManager { // Gameplay Manager
 
             if (gameTimer - m_spawnSave > 5) {
                 m_spawnSave = gameTimer;
-                await SpawnEnemy("LightZombie");
+                // await SpawnEnemy("LightZombie");
+                await SpawnAlly("Humans/Ashigaru");
             }
 
             gameTimer += Time.deltaTime;

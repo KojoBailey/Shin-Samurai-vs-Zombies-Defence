@@ -145,22 +145,6 @@ public class Enemy : GameplayEntity {
             SetX(m_rightBound);
     }
 
-    private void ChangeState(State newState) {
-        currentState = newState;
-    }
-
-    public void SetBounds(float left, float right) {
-        m_leftBound = left;
-        m_rightBound = right;
-    }
-
-    public void ChangeX(float x) {
-        transform.position += new Vector3(x, 0, 0);
-    }
-    public void SetX(float x) {
-        transform.position = new Vector3(x, 0, 0);
-    }
-
     private bool InRangeOf(float target) {
         float distance = transform.position.x - target;
         return (distance < data.GetStat(EnemyData.Stat.Range)) && (distance > 0); // Includes checking if in front or behind.

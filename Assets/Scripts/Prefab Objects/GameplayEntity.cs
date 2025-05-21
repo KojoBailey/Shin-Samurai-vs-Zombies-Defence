@@ -11,6 +11,7 @@ public class GameplayEntity { // Gameplay Entity
     public Transform transform;
     public Animation animation;
     public GameObject wrapperObject;
+    public AnimationHandler animationHandler;
     public Animation wrapperAnimation;
     protected float m_attackTimer;
     protected float m_leftBound, m_rightBound;
@@ -72,11 +73,38 @@ public class GameplayEntity { // Gameplay Entity
         knockbackMeter = 20;
     }
 
+    protected void ChangeState(State newState) {
+        currentState = newState;
+    }
+
+    public void SetBounds(float left, float right) {
+        m_leftBound = left;
+        m_rightBound = right;
+    }
+
+    public void ChangeX(float x) {
+        transform.position += new Vector3(x, 0, 0);
+    }
+    public void SetX(float x) {
+        transform.position = new Vector3(x, 0, 0);
+    }
+
     public virtual void Damage(float damage) {
         health -= damage;
     }
     public virtual void Heal(float damage) {
         health += damage;
+    }
+
+    public void SwitchToMelee() {
+        meleeWeapon.Show();
+        if (rangedWeapon != null)
+            rangedWeapon.Hide();
+    }
+    public void SwitchToRanged() {
+        meleeWeapon.Hide();
+        if (rangedWeapon != null)
+            rangedWeapon.Show();
     }
 
     public void FireProjectile(GameplayEntity target) {

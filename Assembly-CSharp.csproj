@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Scenes\GameplayHUD.cs" />
     <Compile Include="Assets\Scripts\Animation Events\AnimEventAudioEntity.cs" />
+    <Compile Include="Assets\Scripts\Prefab MonoBehaviours\AnimationHandler.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\Stage.cs" />
     <Compile Include="Assets\Scripts\Scenes\OpeningCinematic.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\Enemy.cs" />

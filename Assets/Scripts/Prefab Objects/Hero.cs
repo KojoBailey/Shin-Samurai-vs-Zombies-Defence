@@ -29,13 +29,27 @@ public class Hero : GameplayEntity {
         wrapperObject = Object.Instantiate(data.prefabWrapper);
         obj = Object.Instantiate(data.GetEquippedCostume().prefab, wrapperObject.transform);
 
+        SaveManager.SetLevel(data, 1);
+        SaveManager.SetLevel(data.meleeWeaponData, 1);
+        SaveManager.SetLevel(data.rangedWeaponData, 1);
         Prepare();
         wrapperAnimation = wrapperObject.GetComponent<Animation>();
         transform.position = new Vector3(spawnX, 0f, 0f);
         transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+
+        // Attach weapon.
+        if (data.meleeWeaponData != null) {
+            meleeWeapon = new MeleeWeapon(data.meleeWeaponData);
+            await meleeWeapon.Init(obj);
+            meleeRange = meleeWeapon.data.range;
+        }
+        if (data.rangedWeaponData != null) {
+            rangedWeapon = new RangedWeapon(data.rangedWeaponData);
+            await rangedWeapon.Init(obj);
+            rangedRange = rangedWeapon.data.range;
+        }
         SwitchToMelee();
 
-        SaveManager.SetLevel(data, 1);
         health = data.health;
 
         m_isTurning = false;
@@ -204,26 +218,6 @@ public class Hero : GameplayEntity {
             xPos = m_rightBound;
 
         GameplayManager.heroX = transform.position.x;
-    }
-
-    private void ChangeState(State newState) {
-        currentState = newState;
-    }
-
-    public void SetBounds(float left, float right) {
-        m_leftBound = left;
-        m_rightBound = right;
-    }
-
-    public void SwitchToMelee() {
-        meleeWeapon.Show();
-        if (rangedWeapon != null)
-            rangedWeapon.Hide();
-    }
-    public void SwitchToRanged() {
-        meleeWeapon.Hide();
-        if (rangedWeapon != null)
-            rangedWeapon.Show();
     }
 
     public override bool IsInMeleeRange(float targetX) {
