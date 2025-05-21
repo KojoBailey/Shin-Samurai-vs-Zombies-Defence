@@ -128,6 +128,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - Weapon
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 50fa20986c48e8e43a4005671559d3b5
+    m_Address: Assets/Prefabs/Humans/Ashigaru/Ashigaru.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 523ef244eb088474188c3e9c203e5418
     m_Address: Audio/Combat/Swoosh Huge 01
     m_ReadOnly: 0

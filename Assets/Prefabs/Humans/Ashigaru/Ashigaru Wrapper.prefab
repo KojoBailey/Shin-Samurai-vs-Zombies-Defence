@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6783554147169887690}
   - component: {fileID: 9204657148250322841}
+  - component: {fileID: 5864548248978208613}
   m_Layer: 0
   m_Name: Ashigaru Wrapper
   m_TagString: Untagged
@@ -48,3 +49,16 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &5864548248978208613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2380961386848252518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5151dbeb3422ed47b8d301240bc96a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityId: 

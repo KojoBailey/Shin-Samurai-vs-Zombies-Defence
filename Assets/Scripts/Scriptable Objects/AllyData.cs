@@ -2,6 +2,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewAlly", menuName = "Game Data/Ally")]
 public class AllyData : ScriptableObject, IUpgradable {
+    public string id;
     public string displayName;
     public string description;
     public Sprite icon;
@@ -10,7 +11,12 @@ public class AllyData : ScriptableObject, IUpgradable {
     public MeleeWeaponData meleeWeaponData;
     public RangedWeaponData rangedWeaponData;
 
-    public EntityAudioData audioData;
+    public CostumeData GetEquippedCostume() {
+        CostumeData costume = costumes[SaveManager.equippedCostumes[id]];
+        if (costume.material)
+            costume.prefab.GetComponent<SkinnedMeshRenderer>().material = costume.material;
+        return costume;
+    }
 
     public enum Stat {
         Cost,

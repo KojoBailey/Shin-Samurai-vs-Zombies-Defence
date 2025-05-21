@@ -177,20 +177,31 @@ MonoBehaviour:
   anim: {fileID: 111913455278010186}
   m_idle:
   - {fileID: 7400000, guid: 24bb7c353d95d6448a2c31fe7af0c512, type: 2}
+  m_idleRanged: []
   m_attack:
   - {fileID: 7400000, guid: 48d0eb40334edf440a31fbca3eb65b16, type: 2}
   - {fileID: 7400000, guid: 54c608d6dbd4cf045b15cdb76a71346b, type: 2}
+  m_attackRanged: []
   m_forward:
   - {fileID: 7400000, guid: 9f221235e49f7044a84718e0a9ae1c63, type: 2}
   m_backward: []
+  m_backpedal: []
+  m_backpedalTurn: []
+  m_castForward: []
+  m_castMid: []
+  m_abilities:
+    list: []
+    keyCollision: 0
   m_knockedBack:
   - {fileID: 7400000, guid: 7739bca3c69793447841b13150d36f4a, type: 2}
   m_land:
   - {fileID: 7400000, guid: c34994c98f0cf30498bd65c219a4bf43, type: 2}
   m_cower:
   - {fileID: 7400000, guid: 32a2ba915d6eb0c4fa6472e69339f80e, type: 2}
+  m_stunned: []
   m_die:
   - {fileID: 7400000, guid: c66575183fd92be44b4156ec512e31b9, type: 2}
+  m_revive: []
   m_victory:
   - {fileID: 7400000, guid: 2c552bf0653a7654fa0bd98ee9ae6d23, type: 2}
 --- !u!114 &-4115744014762095706

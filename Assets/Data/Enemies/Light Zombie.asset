@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0292bbba6cd1944b97a4e82a3e7dd34, type: 3}
   m_Name: Light Zombie
   m_EditorClassIdentifier: 
+  id: LightZombie
   displayName: Light Zombie
   description: 
   icon: {fileID: 0}
+  prefabWrapper: {fileID: 3437202985824953269, guid: cb5115c36b0b6cc40b9693ed7d2879bd, type: 3}
   prefab: {fileID: 1915455133389061, guid: cac684251d156ea44a9938e624d586a3, type: 3}
   meleeWeaponData: {fileID: 0}
   rangedWeaponData: {fileID: 0}

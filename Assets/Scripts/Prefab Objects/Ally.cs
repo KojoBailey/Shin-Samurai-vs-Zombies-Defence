@@ -15,13 +15,12 @@ public class Ally : GameplayEntity {
         var handle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/{m_id}");
         data = await handle.Task;
         if (data == null) {
-            Debug.LogError($"Could not find or load Ally of ID `{m_id}`.");
+            Debug.LogError($"Could not find or load Ally of ID \"{m_id}\".");
             return;
         }
-        obj = Object.Instantiate(data.prefabWrapper);
+        wrapperObject = Object.Instantiate(data.prefabWrapper);
+        obj = Object.Instantiate(data.GetEquippedCostume().prefab, wrapperObject.transform);
         Prepare();
-        animationHandler = obj.GetComponent<AnimationHandler>();
-        animationHandler.LoadClips();
         transform.position = new Vector3(spawnX, 0f, Random.Range(-0.4f, 0.4f));
         transform.rotation = Quaternion.Euler(0f, 90f, 0f);
 
@@ -40,24 +39,14 @@ public class Ally : GameplayEntity {
         }
 
         health = data.health;
-        data.audioData.Spawn();
+        data.GetEquippedCostume().audioData.Spawn();
         m_healthBar = new HealthBar(this, data.health);
         await m_healthBar.Init();
 
-        obj.SetActive(true);
-        m_loaded = true;
+        FinishInit();
     }
 
-    public void Update() {
-        if (m_loaded) {
-            HandleState();
-            HandleMotion();
-            if (rangedWeapon != null)
-                rangedWeapon.Update();
-        }
-    }
-
-    public virtual void HandleState() {
+    protected override void HandleState() {
         if (health <= 0) {
             ChangeState(State.Die);
             return;
@@ -77,33 +66,29 @@ public class Ally : GameplayEntity {
 
         if (!animationHandler.attackIsPlaying)
             ChangeState(State.Walk);
-    }
-    public virtual void HandleMotion() {
-        if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound) {
-            ChangeState(State.Idle);
-        }
 
         if (!isGettingKnockedBack && currentState == State.KnockedBack) {
             ChangeState(State.Landing);
         }
-
+    }
+    protected override void HandleMotion() {
         if (currentState != m_previousState) {
             m_previousState = currentState;
             switch (currentState) {
                 case State.Idle:
-                    animation.CrossFade(animationHandler.idle.name, 0.1f);
+                    animation.CrossFade(animationHandler.idle, 0.1f);
                     break;
                 case State.Walk:
-                    animation.CrossFade(animationHandler.forward.name, 0.1f);
+                    animation.CrossFade(animationHandler.forward, 0.1f);
                     break;
                 case State.KnockedBack:
-                    animation.CrossFade(animationHandler.knockedBack.name, 0.1f);
+                    animation.CrossFade(animationHandler.knockedBack, 0.1f);
                     break;
                 case State.Landing:
-                    animation.CrossFade(animationHandler.land.name, 0.1f);
+                    animation.CrossFade(animationHandler.land, 0.1f);
                     break;
                 case State.Die:
-                    animation.CrossFade(animationHandler.die.name, 0.1f);
+                    animation.CrossFade(animationHandler.die, 0.1f);
                     break;
             }
         }
@@ -113,9 +98,9 @@ public class Ally : GameplayEntity {
                 m_attackTimer = data.meleeWeaponData.attackFrequency;
             if (!animationHandler.attackIsPlaying) {
                 if (m_attackTimer == data.meleeWeaponData.attackFrequency) {
-                    animation.CrossFade(animationHandler.attack.name, 0.1f);
+                    animation.CrossFade(animationHandler.attack, 0.1f);
                 } else {
-                    animation.CrossFade(animationHandler.idle.name, 0.1f);
+                    animation.CrossFade(animationHandler.idle, 0.1f);
                 }
             }
             m_attackTimer -= Time.deltaTime;
@@ -142,5 +127,7 @@ public class Ally : GameplayEntity {
             SetX(m_leftBound);
         if (transform.position.x > m_rightBound)
             SetX(m_rightBound);
+
+        m_healthBar.Update();
     }
 }

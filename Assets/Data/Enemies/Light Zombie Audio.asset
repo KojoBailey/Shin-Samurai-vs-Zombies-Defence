@@ -12,20 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d717bd6c91cbeb4cb73a639d2c2d15e, type: 3}
   m_Name: Light Zombie Audio
   m_EditorClassIdentifier: 
-  SpawnSounds:
+  spawnAudio:
   - {fileID: 8300000, guid: 882571bb8d56d5644ad728b68598c162, type: 3}
   - {fileID: 8300000, guid: 6c9f923e53b0ee846bfd79866a4c373e, type: 3}
   - {fileID: 8300000, guid: f9cdad137b065444593c0a40b4982708, type: 3}
-  FootstepSize: 0
-  FootstepSounds: []
-  AttackSounds:
+  footstepSize: 0
+  footstepAudio: []
+  attackAudio:
   - {fileID: 8300000, guid: 840b43027cfa58349a9d7be223077650, type: 3}
   - {fileID: 8300000, guid: 578501e7425faa74d8c46a62d1928e8d, type: 3}
   - {fileID: 8300000, guid: c8f6b5abbaab3e14aa43a519ff564831, type: 3}
   - {fileID: 8300000, guid: 92d05c3e06dc13346b2e68e0625080c8, type: 3}
   - {fileID: 8300000, guid: 5b8150cdda255e34ba750b3644a141c3, type: 3}
-  BigAttackSounds: []
-  DeathSounds:
+  bigAttackAudio: []
+  longAttackAudio: []
+  deathAudio:
   - {fileID: 8300000, guid: 68b25a6b5fe08f543b19e72827dd069a, type: 3}
   - {fileID: 8300000, guid: 79f747055ccb1bc4d8301a816d5c6ed9, type: 3}
   - {fileID: 8300000, guid: e08e71ec53e488f42af3f309cc9e2d92, type: 3}

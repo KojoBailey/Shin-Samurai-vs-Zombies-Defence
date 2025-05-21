@@ -58,19 +58,44 @@ public class GameplayEntity { // Gameplay Entity
     public State currentState;
     protected State m_previousState;
 
-    public void SetEntityId(string newId) {
-        entityId = newId;
-        if (wrapperAnimation != null)
-            wrapperObject.GetComponent<AnimEventAttack>().entityId = entityId;
-        else
-            obj.GetComponent<AnimEventAttack>().entityId = entityId;
-    }
-
     protected void Prepare() {
         obj.SetActive(false);
         transform = obj.transform;
         animation = obj.GetComponent<Animation>();
+        wrapperAnimation = wrapperObject.GetComponent<Animation>();
+        animationHandler = obj.GetComponent<AnimationHandler>();
+        animationHandler.LoadClips();
         knockbackMeter = 20;
+    }
+
+    protected void FinishInit() {
+        obj.SetActive(true);
+        m_loaded = true;
+    }
+
+    public virtual void Update() {
+        if (m_loaded) {
+            HandleState();
+            if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound) {
+                SwitchToMelee();
+                ChangeState(State.Idle);
+            }
+            HandleMotion();
+            if (transform.position.x < m_leftBound)
+                xPos = m_leftBound;
+            if (transform.position.x > m_rightBound)
+                xPos = m_rightBound;
+            if (rangedWeapon != null)
+                rangedWeapon.Update();
+        }
+    }
+
+    protected virtual void HandleState() {}
+    protected virtual void HandleMotion() {}
+
+    public void SetEntityId(string newId) {
+        entityId = newId;
+        wrapperObject.GetComponent<AnimEventAttack>().entityId = entityId;
     }
 
     protected void ChangeState(State newState) {

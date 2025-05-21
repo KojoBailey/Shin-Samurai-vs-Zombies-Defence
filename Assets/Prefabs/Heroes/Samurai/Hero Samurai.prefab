@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 4106859189324623}
   - component: {fileID: 6292679410759752689}
   - component: {fileID: 111527447602694404}
+  - component: {fileID: -8716870789726330733}
   - component: {fileID: 7232215455403451582}
   - component: {fileID: 45962402728662870}
   m_Layer: 0
@@ -295,51 +296,68 @@ Animation:
   m_GameObject: {fileID: 1145853511077067}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 90490e52d4a792c4d8235d97d1886bd4, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: d82a9557a6a4c204fa2d70c393990a98, type: 2}
-  - {fileID: 7400000, guid: 22a3e096bd6e08b4d9eedc7e53bded84, type: 2}
-  - {fileID: 7400000, guid: 910e17b4fabb8024eba781343a8e2b72, type: 2}
-  - {fileID: 7400000, guid: 3f870df2a70335449b3d26029f044096, type: 2}
-  - {fileID: 7400000, guid: b5fcfbc061df0ac42a5f43631171bfcd, type: 2}
-  - {fileID: 7400000, guid: 7eb1c865ef1c4e4408f6048703930c48, type: 2}
-  - {fileID: 7400000, guid: 0de796ec919fc8949b55d84edd465d78, type: 2}
-  - {fileID: 7400000, guid: af484ab74ae9a1c46a5853101540d3fc, type: 2}
-  - {fileID: 7400000, guid: 4bb3d01d71a77654b8da6e2d2468d049, type: 2}
-  - {fileID: 7400000, guid: 85301303290e1fb4db5809b659191c2a, type: 2}
-  - {fileID: 7400000, guid: 0426536197850484397d540110bae4ae, type: 2}
-  - {fileID: 7400000, guid: 61a7e6a46298cb147be902d87045eb56, type: 2}
-  - {fileID: 7400000, guid: 195b77cfda36b1946bdf217f90bc33e5, type: 2}
-  - {fileID: 7400000, guid: 0b0e250e1e9226340a1bf179d20000f5, type: 2}
-  - {fileID: 7400000, guid: 247c34522ad8d344f98a2bec1167cf90, type: 2}
-  - {fileID: 7400000, guid: f92e2753a8a51214e8808b348f69b921, type: 2}
-  - {fileID: 7400000, guid: daee3c98f65983b4ba2eab273ee27d6a, type: 2}
-  - {fileID: 7400000, guid: 6e2665de76dd38b4d96885d3cac9e383, type: 2}
-  - {fileID: 7400000, guid: 934f5796b7db000499128afab1b32944, type: 2}
-  - {fileID: 7400000, guid: 666b11e12a9f62942ae413538881617d, type: 2}
-  - {fileID: 7400000, guid: 22dff85e739ba05409aca305ae260843, type: 2}
-  - {fileID: 7400000, guid: 5045ebe3546ec0446a8d7431edc32786, type: 2}
-  - {fileID: 7400000, guid: 8e2254a4b5dbd1348bb1ac0c135b459a, type: 2}
-  - {fileID: 7400000, guid: cc704d272e3ee794381229efe0c934a6, type: 2}
-  - {fileID: 7400000, guid: 0442284ca65ae1d41866b98433ade64f, type: 2}
-  - {fileID: 7400000, guid: b5dcda5febb90b744824b7dd01655c05, type: 2}
-  - {fileID: 7400000, guid: 6fe46d0910836d942b52d614f23e82b9, type: 2}
-  - {fileID: 7400000, guid: 4c9e344f5f397ce428b7d338dd924938, type: 2}
-  - {fileID: 7400000, guid: fb87b473140ab164bb122bff2f068e7f, type: 2}
-  - {fileID: 7400000, guid: 90490e52d4a792c4d8235d97d1886bd4, type: 2}
-  - {fileID: 7400000, guid: e4c26f948f8fa8847a8ace65e5879b36, type: 2}
-  - {fileID: 7400000, guid: 8ab1642c754b9f6498cb6f6d8c9fdbbe, type: 2}
-  - {fileID: 7400000, guid: b12775afbe3037c45ba32802d4ac9527, type: 2}
-  - {fileID: 7400000, guid: 45c7a8fa079452242a81d90e4fa3af53, type: 2}
-  - {fileID: 7400000, guid: 873633446c94ffd4bb403d54939b5eb0, type: 2}
-  - {fileID: 7400000, guid: 1f679ac8ec2253b4dbaaad4fc70a13e5, type: 2}
-  - {fileID: 7400000, guid: 1104eda9b1b4e88468d0c591dd0bc864, type: 2}
-  - {fileID: 7400000, guid: b1e74a380e18b9f46a454d83515ee6cd, type: 2}
+  m_Animation: {fileID: 0}
+  m_Animations: []
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 1
+--- !u!114 &-8716870789726330733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145853511077067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49282e99dd88c343aaf1914a2faa0c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 111527447602694404}
+  m_idle:
+  - {fileID: 7400000, guid: 90490e52d4a792c4d8235d97d1886bd4, type: 2}
+  m_idleRanged:
+  - {fileID: 7400000, guid: e4c26f948f8fa8847a8ace65e5879b36, type: 2}
+  m_attack:
+  - {fileID: 7400000, guid: 910e17b4fabb8024eba781343a8e2b72, type: 2}
+  - {fileID: 7400000, guid: 3f870df2a70335449b3d26029f044096, type: 2}
+  - {fileID: 7400000, guid: b5fcfbc061df0ac42a5f43631171bfcd, type: 2}
+  m_attackRanged:
+  - {fileID: 7400000, guid: 7eb1c865ef1c4e4408f6048703930c48, type: 2}
+  m_forward:
+  - {fileID: 7400000, guid: 1f679ac8ec2253b4dbaaad4fc70a13e5, type: 2}
+  m_backward:
+  - {fileID: 7400000, guid: 873633446c94ffd4bb403d54939b5eb0, type: 2}
+  m_backpedal:
+  - {fileID: 7400000, guid: 0de796ec919fc8949b55d84edd465d78, type: 2}
+  m_backpedalTurn:
+  - {fileID: 7400000, guid: af484ab74ae9a1c46a5853101540d3fc, type: 2}
+  m_castForward:
+  - {fileID: 7400000, guid: 4bb3d01d71a77654b8da6e2d2468d049, type: 2}
+  m_castMid:
+  - {fileID: 7400000, guid: 85301303290e1fb4db5809b659191c2a, type: 2}
+  m_abilities:
+    list:
+    - Key: KatanaSlash
+      Value: {fileID: 7400000, guid: d82a9557a6a4c204fa2d70c393990a98, type: 2}
+    - Key: SummonLightning
+      Value: {fileID: 7400000, guid: 22a3e096bd6e08b4d9eedc7e53bded84, type: 2}
+    keyCollision: 0
+  m_knockedBack:
+  - {fileID: 7400000, guid: 8ab1642c754b9f6498cb6f6d8c9fdbbe, type: 2}
+  m_land:
+  - {fileID: 7400000, guid: b12775afbe3037c45ba32802d4ac9527, type: 2}
+  m_cower: []
+  m_stunned:
+  - {fileID: 7400000, guid: 1104eda9b1b4e88468d0c591dd0bc864, type: 2}
+  m_die:
+  - {fileID: 7400000, guid: 0426536197850484397d540110bae4ae, type: 2}
+  m_revive:
+  - {fileID: 7400000, guid: 45c7a8fa079452242a81d90e4fa3af53, type: 2}
+  m_victory:
+  - {fileID: 7400000, guid: b1e74a380e18b9f46a454d83515ee6cd, type: 2}
 --- !u!114 &7232215455403451582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e8fb3f8bc967d4cb70acfa6eacc60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_audioData: {fileID: 0}
+  m_audioData: {fileID: 11400000, guid: c749f7a27b06e90449f71c47b2165ad4, type: 2}
 --- !u!114 &45962402728662870
 MonoBehaviour:
   m_ObjectHideFlags: 0

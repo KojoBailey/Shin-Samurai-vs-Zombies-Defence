@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: 44a07de65f9289b449b5b8ad45acd967
   m_SerializeEntries:
   - m_GUID: 3f3331396608bc645a9cc821feddf16c
-    m_Address: Data/Allies/Ashigaru
+    m_Address: Data/Allies/Humans/Ashigaru
     m_ReadOnly: 0
     m_SerializedLabels:
     - Ally

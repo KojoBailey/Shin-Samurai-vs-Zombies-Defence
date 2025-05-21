@@ -12,10 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d717bd6c91cbeb4cb73a639d2c2d15e, type: 3}
   m_Name: Ashigaru Audio
   m_EditorClassIdentifier: 
-  spawnAudio: []
+  spawnAudio:
+  - {fileID: 8300000, guid: 6691f888fdbdc4746a437e20e6ed073e, type: 3}
+  - {fileID: 8300000, guid: 3b958d2a79a51a1408913ca93f086839, type: 3}
+  - {fileID: 8300000, guid: 1fe68ed3fba228e489f2ab8729eba7ae, type: 3}
   footstepSize: 0
   footstepAudio: []
-  attackAudio: []
+  attackAudio:
+  - {fileID: 8300000, guid: 96c98f269bd58fc42a5e7bf842b6f267, type: 3}
+  - {fileID: 8300000, guid: c3a1e3833f9d3ff48bcd1f21cd1ac751, type: 3}
+  - {fileID: 8300000, guid: f77e281efc9b79c458684469aa6d4492, type: 3}
   bigAttackAudio: []
   longAttackAudio: []
-  deathAudio: []
+  deathAudio:
+  - {fileID: 8300000, guid: 936482922bbd1024d953eede09c45add, type: 3}
+  - {fileID: 8300000, guid: 977dbedd175857e43a50f787fb7a677b, type: 3}
+  - {fileID: 8300000, guid: 8dfab514fd4eecb4a9045d78e30e6600, type: 3}

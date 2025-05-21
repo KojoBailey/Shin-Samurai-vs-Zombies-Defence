@@ -33,7 +33,6 @@ public class Hero : GameplayEntity {
         SaveManager.SetLevel(data.meleeWeaponData, 1);
         SaveManager.SetLevel(data.rangedWeaponData, 1);
         Prepare();
-        wrapperAnimation = wrapperObject.GetComponent<Animation>();
         transform.position = new Vector3(spawnX, 0f, 0f);
         transform.rotation = Quaternion.Euler(0f, 90f, 0f);
 
@@ -53,20 +52,11 @@ public class Hero : GameplayEntity {
         health = data.health;
 
         m_isTurning = false;
-        m_loaded = true;
+        animation.Play(animationHandler.idle);
+        FinishInit();
     }
 
-    public void Update() {
-        if (m_loaded) {
-            HandleLogic();
-            HandleMotion();
-            HandleAnimation();
-            if (rangedWeapon != null)
-                rangedWeapon.Update();
-        }
-    }
-
-    private void HandleLogic() {
+    protected override void HandleState() {
         // Health-related stuff
         if (health <= 0) {
             ChangeState(State.Die);
@@ -101,99 +91,7 @@ public class Hero : GameplayEntity {
                 ChangeState(State.Idle);
             }
         }
-    }
 
-    private void HandleAnimation() {
-        if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound) {
-            SwitchToMelee();
-            ChangeState(State.Idle);
-        }
-
-        if (currentState != m_previousState) {
-            m_previousState = currentState;
-            switch (currentState) {
-                case State.Idle:
-                    SwitchToMelee();
-                    animation.CrossFade("Idle", 0.1f);
-                    wrapperAnimation.CrossFade("Idle", 0.1f);
-                    break;
-                case State.IdleRanged:
-                    SwitchToRanged();
-                    animation.CrossFade("IdleRanged", 0.1f);
-                    wrapperAnimation.CrossFade("IdleRanged", 0.1f);
-                    break;
-                case State.Forward:
-                    SwitchToMelee();
-                    animation.CrossFade("RunForward", 0.1f);
-                    wrapperAnimation.CrossFade("RunForward", 0.1f);
-                    break;
-                case State.BackPedal:
-                    SwitchToMelee();
-                    animation.CrossFade("Backpedal", 0.1f);
-                    wrapperAnimation.CrossFade("Backpedal", 0.1f);
-                    break;
-                case State.BackwardRun:
-                    SwitchToMelee();
-                    m_isTurning = true;
-                    animation.Play("BackpedalTurn");
-                    wrapperAnimation.Play("BackpedalTurn");
-                    break;
-                case State.MeleeAttack:
-                    SwitchToMelee();
-                    break;
-                case State.RangedAttack:
-                    SwitchToRanged();
-                    break;
-                case State.Die:
-                    animation.CrossFade("Die", 0.1f);
-                    wrapperAnimation.CrossFade("Die", 0.1f);
-                    data.GetEquippedCostume().audioData.Die();
-                    break;
-            }
-        }
-        if (currentState == State.Die) return;
-
-        if (currentState == State.MeleeAttack) {
-            if (m_meleeAttackTimer < 0f)
-                m_meleeAttackTimer = meleeWeapon.data.attackFrequency;
-            if (!animation.IsPlaying("Attack01") && !animation.IsPlaying("Attack02") && !animation.IsPlaying("Attack03")) {
-                if (m_meleeAttackTimer == meleeWeapon.data.attackFrequency) {
-                    int rand = Random.Range(1, 4);
-                    animation.CrossFade($"Attack0{rand}", 0.1f);
-                    wrapperAnimation.CrossFade($"Attack0{rand}", 0.1f);
-                } else {
-                    animation.CrossFade("Idle", 0.1f);
-                    wrapperAnimation.CrossFade("Idle", 0.1f);
-                }
-            }
-        }
-        m_meleeAttackTimer -= Time.deltaTime;
-
-        if (currentState == State.RangedAttack && rangedWeapon != null) {
-            if (m_rangedAttackTimer < 0f)
-                m_rangedAttackTimer = rangedWeapon.data.attackFrequency;
-            if (!animation.IsPlaying("AttackRanged")) {
-                if (m_rangedAttackTimer == rangedWeapon.data.attackFrequency) {
-                    animation.CrossFade("AttackRanged", 0.1f);
-                    wrapperAnimation.CrossFade("AttackRanged", 0.1f);
-                } else {
-                    animation.CrossFade("IdleRanged", 0.1f);
-                    wrapperAnimation.CrossFade("IdleRanged", 0.1f);
-                }
-            }
-        }
-        m_rangedAttackTimer -= Time.deltaTime;
-
-        if (m_isTurning == true && !animation.IsPlaying("BackpedalTurn") && currentState == State.BackwardRun) {
-            animation.Play("RunBackward");
-            wrapperAnimation.Play("RunBackward");
-            m_isTurning = false;
-        }
-
-        obj.SetActive(true);
-    }
-
-    private void HandleMotion() {
         switch (currentState) {
             case State.Forward:
                 m_xVelocity += data.acceleration * Time.deltaTime;
@@ -212,10 +110,88 @@ public class Hero : GameplayEntity {
 
         xPos += m_xVelocity;
         m_xVelocity *= 0.90f;
-        if (transform.position.x < m_leftBound)
-            xPos = m_leftBound;
-        if (transform.position.x > m_rightBound)
-            xPos = m_rightBound;
+    }
+
+    protected override void HandleMotion() {
+        if (currentState != m_previousState) {
+            m_previousState = currentState;
+            switch (currentState) {
+                case State.Idle:
+                    SwitchToMelee();
+                    animation.CrossFade(animationHandler.idle, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.idle, 0.1f);
+                    break;
+                case State.IdleRanged:
+                    SwitchToRanged();
+                    animation.CrossFade(animationHandler.idleRanged, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.idleRanged, 0.1f);
+                    break;
+                case State.Forward:
+                    SwitchToMelee();
+                    animation.CrossFade(animationHandler.forward, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.forward, 0.1f);
+                    break;
+                case State.BackPedal:
+                    SwitchToMelee();
+                    animation.CrossFade(animationHandler.backpedal, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.backpedal, 0.1f);
+                    break;
+                case State.BackwardRun:
+                    SwitchToMelee();
+                    m_isTurning = true;
+                    animation.Play(animationHandler.backpedalTurn);
+                    wrapperAnimation.Play(animationHandler.backpedalTurn);
+                    break;
+                case State.MeleeAttack:
+                    SwitchToMelee();
+                    break;
+                case State.RangedAttack:
+                    SwitchToRanged();
+                    break;
+                case State.Die:
+                    animation.CrossFade(animationHandler.die, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.die, 0.1f);
+                    data.GetEquippedCostume().audioData.Die();
+                    break;
+            }
+        }
+        if (currentState == State.Die) return;
+
+        if (currentState == State.MeleeAttack) {
+            if (m_meleeAttackTimer < 0f)
+                m_meleeAttackTimer = meleeWeapon.data.attackFrequency;
+            if (!animationHandler.attackIsPlaying) {
+                if (m_meleeAttackTimer == meleeWeapon.data.attackFrequency) {
+                    animation.CrossFade(animationHandler.attack, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.attack, 0.1f);
+                } else {
+                    animation.CrossFade(animationHandler.idle, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.idle, 0.1f);
+                }
+            }
+        }
+        m_meleeAttackTimer -= Time.deltaTime;
+
+        if (currentState == State.RangedAttack && rangedWeapon != null) {
+            if (m_rangedAttackTimer < 0f)
+                m_rangedAttackTimer = rangedWeapon.data.attackFrequency;
+            if (!animation.IsPlaying(animationHandler.attackRanged)) {
+                if (m_rangedAttackTimer == rangedWeapon.data.attackFrequency) {
+                    animation.CrossFade(animationHandler.attackRanged, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.attackRanged, 0.1f);
+                } else {
+                    animation.CrossFade(animationHandler.idleRanged, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.idleRanged, 0.1f);
+                }
+            }
+        }
+        m_rangedAttackTimer -= Time.deltaTime;
+
+        if (m_isTurning == true && !animationHandler.backpedalTurnIsPlaying && currentState == State.BackwardRun) {
+            animation.Play(animationHandler.backward);
+            wrapperAnimation.Play(animationHandler.backward);
+            m_isTurning = false;
+        }
 
         GameplayManager.heroX = transform.position.x;
     }

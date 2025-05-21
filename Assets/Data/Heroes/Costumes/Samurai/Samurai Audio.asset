@@ -12,26 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d717bd6c91cbeb4cb73a639d2c2d15e, type: 3}
   m_Name: Samurai Audio
   m_EditorClassIdentifier: 
-  SpawnSounds: []
-  FootstepSize: 0
-  FootstepSounds:
+  spawnAudio: []
+  footstepSize: 0
+  footstepAudio:
   - {fileID: 8300000, guid: 93804ecf0dfc6c34e9fb86270a135efd, type: 3}
   - {fileID: 8300000, guid: d116370c6adc6a14489ef1130e26e86c, type: 3}
   - {fileID: 8300000, guid: 0b47d36255deac745bc85431e7914747, type: 3}
   - {fileID: 8300000, guid: 1343a4321113eff4cb202b39b73fb7b0, type: 3}
   - {fileID: 8300000, guid: 987455eb075d2ad4c9b17604e838cdec, type: 3}
-  AttackSounds:
+  attackAudio:
   - {fileID: 8300000, guid: 0cd17f7dd6e8dfc4fb51100ebc9490fe, type: 3}
   - {fileID: 8300000, guid: 6461dbd7010bf574d93a7987dadb42cc, type: 3}
   - {fileID: 8300000, guid: 82434d7cb42c23749a2ae08e139b04a0, type: 3}
   - {fileID: 8300000, guid: 38dad8b4d38caa64886ceaf056baf649, type: 3}
   - {fileID: 8300000, guid: 6d7b1d37244dbd941b1e52f1cfbd2674, type: 3}
-  BigAttackSounds:
+  bigAttackAudio:
   - {fileID: 8300000, guid: e9218c94ead10f245bf1219e1562ec71, type: 3}
   - {fileID: 8300000, guid: 48cee8410f0efd847a9b2719ac1ca21c, type: 3}
   - {fileID: 8300000, guid: c11fc64c2c9036c4a828aa49e3262a0c, type: 3}
   - {fileID: 8300000, guid: 4e71a80c4ca724f4eb86b3447429dced, type: 3}
-  DeathSounds:
+  longAttackAudio: []
+  deathAudio:
   - {fileID: 8300000, guid: 5e23afe87a8dce0468991481124bb5f8, type: 3}
   - {fileID: 8300000, guid: 23b11510a9c35c44e95e91b813901a3b, type: 3}
   - {fileID: 8300000, guid: c4291829332b8bb43b64f10eb6623106, type: 3}

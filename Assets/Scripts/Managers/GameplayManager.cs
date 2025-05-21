@@ -40,6 +40,7 @@ public class GameplayManager { // Gameplay Manager
         SaveManager.EquipCostume("Samurai", 0);
         SaveManager.EquipCostume("Kunoichi", 0);
         SaveManager.EquipCostume("Ronin", 0);
+        SaveManager.EquipCostume("Ashigaru", 0);
         hero = new Hero(SaveManager.selectedHero);
         hero.SetBounds(stage.leftBound, stage.rightBound);
         hero.allegiance = GameplayEntity.Side.Left;
@@ -132,7 +133,7 @@ public class GameplayManager { // Gameplay Manager
 
             if (gameTimer - m_spawnSave > 5) {
                 m_spawnSave = gameTimer;
-                // await SpawnEnemy("LightZombie");
+                await SpawnEnemy("LightZombie");
                 await SpawnAlly("Humans/Ashigaru");
             }
 

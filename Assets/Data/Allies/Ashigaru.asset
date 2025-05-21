@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109c3ab24b89a96498b9ff5c084d2ce4, type: 3}
   m_Name: Ashigaru
   m_EditorClassIdentifier: 
+  id: Ashigaru
   displayName: Ashigaru
   description: 
   icon: {fileID: 21300000, guid: e0cb9dd843f376948833ce3ebb5d57eb, type: 3}
-  prefabWrapper: {fileID: 0}
-  costumes: []
-  meleeWeaponData: {fileID: 0}
+  prefabWrapper: {fileID: 2380961386848252518, guid: feeace00d244d364f86ddddbdba82da9, type: 3}
+  costumes:
+  - {fileID: 11400000, guid: bc4fe1bf5c975494f9b4246339773972, type: 2}
+  - {fileID: 11400000, guid: dafb250bf6f2c38419ef4eb1f6cf2c3d, type: 2}
+  - {fileID: 11400000, guid: 4b967ea393e476844ae8c04ad4af8efc, type: 2}
+  - {fileID: 11400000, guid: f21f177f66841284faa7e0123c88710b, type: 2}
+  meleeWeaponData: {fileID: 11400000, guid: af10351aa07b4c94eb6aa1a5ce31118c, type: 2}
   rangedWeaponData: {fileID: 0}
-  audioData: {fileID: 0}
   stats:
     list:
     - Key: 0

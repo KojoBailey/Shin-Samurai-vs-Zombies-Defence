@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3437202985824953269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8209029325658911087}
+  - component: {fileID: 1656381016009434094}
+  - component: {fileID: -9004247586292040928}
+  m_Layer: 0
+  m_Name: Light Zombie Wrapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8209029325658911087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437202985824953269}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &1656381016009434094
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437202985824953269}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 798f3271b555d09449390f898e7b4855, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: e77f7da98b3f3b148bf952f5742c0a7e, type: 2}
+  - {fileID: 7400000, guid: 9c1d2bc05f9b86a458c701c0a9fb6b04, type: 2}
+  - {fileID: 7400000, guid: 8c54347acfedec24c83c3f2946bd368d, type: 2}
+  - {fileID: 7400000, guid: 798f3271b555d09449390f898e7b4855, type: 2}
+  - {fileID: 7400000, guid: 98941170fcb57c546b39564b0617a8bb, type: 2}
+  - {fileID: 7400000, guid: 27d0986b2d8167941aed51275b939cbe, type: 2}
+  - {fileID: 7400000, guid: abc5737ff4a8fbb40982807c2469c4a1, type: 2}
+  - {fileID: 7400000, guid: ac8ed8e7cef07534ea8d6f283b57b265, type: 2}
+  - {fileID: 7400000, guid: eae46ff5a108fec438b0527253d8709a, type: 2}
+  - {fileID: 7400000, guid: 783778d6131f5f34a83e79ab212737ca, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
+--- !u!114 &-9004247586292040928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437202985824953269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5151dbeb3422ed47b8d301240bc96a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityId: 

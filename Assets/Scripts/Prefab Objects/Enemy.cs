@@ -15,10 +15,11 @@ public class Enemy : GameplayEntity {
         var handle = Addressables.LoadAssetAsync<EnemyData>($"Data/Enemies/Zombies/{m_id}");
         data = await handle.Task;
         if (data == null) {
-            Debug.LogError($"Could not find or load Enemy of m_id `{m_id}`.");
+            Debug.LogError($"Could not find or load Enemy of ID \"{m_id}\".");
             return;
         }
-        obj = Object.Instantiate(data.prefab);
+        wrapperObject = Object.Instantiate(data.prefabWrapper);
+        obj = Object.Instantiate(data.prefab, wrapperObject.transform);
         Prepare();
         transform.position = new Vector3(spawnX, 0f, Random.Range(-0.4f, 0.4f));
         transform.rotation = Quaternion.Euler(0f, -90f, 0f);
@@ -40,20 +41,10 @@ public class Enemy : GameplayEntity {
         m_healthBar = new HealthBar(this, data.health);
         await m_healthBar.Init();
 
-        m_loaded = true;
+        FinishInit();
     }
 
-    public void Update() {
-        if (m_loaded) {
-            HandleLogic();
-            HandleMotion();
-            HandleAnimation();
-            m_healthBar.Update();
-            obj.SetActive(true);
-        }
-    }
-
-    private void HandleLogic() {
+    protected override void HandleState() {
         if (health <= 0) {
             ChangeState(State.Die);
             return;
@@ -74,85 +65,77 @@ public class Enemy : GameplayEntity {
         if (InRangeOf(GameplayManager.heroX)) {
             ChangeState(State.MeleeAttack);
         } else {
-            if (!animation.IsPlaying("Attack01"))
+            if (!animationHandler.attackIsPlaying)
                 ChangeState(State.Walk);
         }
     }
 
-    private void HandleAnimation() {
-        if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound) {
-            ChangeState(State.Idle);
+    protected override void HandleMotion() {
+        if (currentState == State.Walk) {
+            ChangeX(-1 * data.speed * Time.deltaTime);
+        } else if (isGettingKnockedBack) {
+            ChangeX(1 * Time.deltaTime);
         }
 
         if (!isGettingKnockedBack && currentState == State.KnockedBack) {
             ChangeState(State.Landing);
         }
-
+        
         if (currentState != m_previousState) {
             m_previousState = currentState;
             switch (currentState) {
                 case State.Idle:
-                    animation.CrossFade("Idle", 0.1f);
+                    animation.CrossFade(animationHandler.idle, 0.1f);
                     break;
                 case State.Walk:
-                    animation.CrossFade("Walk", 0.1f);
+                    animation.CrossFade(animationHandler.forward, 0.1f);
                     break;
                 case State.KnockedBack:
-                    animation.CrossFade("KnockedBack", 0.1f);
+                    animation.CrossFade(animationHandler.knockedBack, 0.1f);
                     break;
                 case State.Landing:
-                    animation.CrossFade("Land", 0.1f);
+                    animation.CrossFade(animationHandler.land, 0.1f);
                     break;
                 case State.Die:
-                    animation.CrossFade("Die", 0.1f);
+                    animation.CrossFade(animationHandler.die, 0.1f);
                     break;
             }
         }
 
         if (currentState == State.MeleeAttack) {
             if (m_attackTimer < 0f)
-                m_attackTimer = data.GetStat(EnemyData.Stat.AttackFrequency);
-            if (!animation.IsPlaying("Attack01")) {
-                if (m_attackTimer == data.GetStat(EnemyData.Stat.AttackFrequency)) {
-                    animation.CrossFade("Attack01", 0.1f);
+                m_attackTimer = data.attackFrequency;
+            if (!animationHandler.attackIsPlaying) {
+                if (m_attackTimer == data.attackFrequency) {
+                    animation.CrossFade(animationHandler.attack, 0.1f);
                 } else {
-                    animation.CrossFade("Idle", 0.1f);
+                    animation.CrossFade(animationHandler.idle, 0.1f);
                 }
             }
             m_attackTimer -= Time.deltaTime;
         } else {
-            m_attackTimer = data.GetStat(EnemyData.Stat.AttackFrequency);
+            m_attackTimer = data.attackFrequency;
         }
 
         if (currentState == State.Die) {
-            if (!animation.IsPlaying("Die")) {
+            if (!animationHandler.dieIsPlaying) {
                 Object.Destroy(obj);
                 toDestroy = true;
                 return;
             }
         }
-    }
 
-    private void HandleMotion() {
-        if (currentState == State.Walk) {
-            ChangeX(-1 * data.GetStat(EnemyData.Stat.Speed) * Time.deltaTime);
-        } else if (isGettingKnockedBack) {
-            ChangeX(1 * Time.deltaTime);
-        }
-        if (transform.position.x < m_leftBound)
-            SetX(m_leftBound);
-        if (transform.position.x > m_rightBound)
-            SetX(m_rightBound);
+        m_healthBar.Update();
     }
 
     private bool InRangeOf(float target) {
         float distance = transform.position.x - target;
-        return (distance < data.GetStat(EnemyData.Stat.Range)) && (distance > 0); // Includes checking if in front or behind.
+        return (distance < data.range) && (distance > 0); // Includes checking if in front or behind.
     }
 
     public override bool IsInMeleeRange(float targetX) {
         float distance = targetX - transform.position.x;
         if (allegiance == Side.Right) distance *= -1;
-        return (distance < data.GetStat(EnemyData.Stat.Range)) && (distance > 0);
+        return (distance < data.range) && (distance > 0);
     }
 };
