@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Scenes\LoadingScreen.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\Projectile.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IUpgradable.cs" />
+    <Compile Include="Assets\Scripts\Prefab Objects\Gate.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\MeleeWeapon.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\Ally.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\CostumeData.cs" />

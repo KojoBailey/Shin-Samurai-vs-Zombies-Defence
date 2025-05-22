@@ -24,13 +24,13 @@ MonoBehaviour:
   stats:
     list:
     - Key: 0
-      Value: 40
+      Value: 120
     - Key: 1
       Value: 1
     - Key: 2
       Value: 10
     - Key: 3
-      Value: 1
+      Value: 2
     - Key: 4
       Value: 1
     - Key: 5

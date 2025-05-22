@@ -14,19 +14,9 @@ public class RangedWeapon { // Ranged Weapon
     public RangedWeapon(string weaponId) {
         m_id = weaponId;
     }
-    public RangedWeapon(RangedWeaponData inputData) {
+    public RangedWeapon(RangedWeaponData inputData, GameObject heroLink) {
         data = inputData;
-    }
 
-    public async Task Init(GameObject heroLink) {
-        if (data == null) {
-            var handle = Addressables.LoadAssetAsync<RangedWeaponData>($"Data/Weapons/{m_id}");
-            data = await handle.Task;
-            if (data == null) {
-                Debug.LogError($"Could not find or load weapon of m_id `{m_id}`.");
-                return;
-            }
-        }
         if (data.leftHandPrefab != null) {
             m_leftObj = Object.Instantiate(data.leftHandPrefab);
             WeaponAnchor[] handObjs = heroLink.GetComponentsInChildren<WeaponAnchor>();

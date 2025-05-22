@@ -16,6 +16,7 @@ public class GameplayEntity { // Gameplay Entity
     protected float m_attackTimer;
     protected float m_leftBound, m_rightBound;
 
+    public int direction;
     public float xPos {
         get => transform.position.x;
         set => transform.position = new Vector3(value, transform.position.y, transform.position.z);
@@ -29,13 +30,14 @@ public class GameplayEntity { // Gameplay Entity
     public RangedWeapon rangedWeapon;
 
     public float health;
+    public float speedModifier = 1.0f; // Affects both animation and movement.
     public float meleeRange;
     public float rangedRange;
     protected int m_knockedBackCount = 0;
     public bool toDestroy = false;
 
     // Debug Tools
-    protected const bool m_doNotAttack = false;
+    public bool doNotAttack = false;
 
     public enum State {
         Idle,
@@ -66,8 +68,16 @@ public class GameplayEntity { // Gameplay Entity
         animationHandler = obj.GetComponent<AnimationHandler>();
         animationHandler.LoadClips();
         knockbackMeter = 20;
+        if (allegiance == Side.Left)
+            direction = 1;
+        else direction = -1;
     }
 
+    public void Spawn(float spawnX) {
+        xPos = spawnX;
+        obj.SetActive(true);
+        m_loaded = true;
+    }
     protected void FinishInit() {
         obj.SetActive(true);
         m_loaded = true;
@@ -107,13 +117,6 @@ public class GameplayEntity { // Gameplay Entity
         m_rightBound = right;
     }
 
-    public void ChangeX(float x) {
-        transform.position += new Vector3(x, 0, 0);
-    }
-    public void SetX(float x) {
-        transform.position = new Vector3(x, 0, 0);
-    }
-
     public virtual void Damage(float damage) {
         health -= damage;
     }
@@ -138,5 +141,24 @@ public class GameplayEntity { // Gameplay Entity
     }
 
     public virtual bool IsInMeleeRange(float _x) { return false; }
-    public virtual void MeleeHitSFX() {}
+    public virtual void MeleeHit(GameplayEntity target) {}
+
+    protected void ChangeAnimation(string animationId) {
+        animation.Play(animationId);
+        wrapperAnimation.Play(animationId);
+    }
+    protected void ChangeAnimation(string animationId, float crossFade) {
+        animation.CrossFade(animationId, crossFade);
+        wrapperAnimation.CrossFade(animationId, crossFade);
+    }
+
+    public void ChangeSpeed(float _speedModifier) {
+        speedModifier = _speedModifier;
+        foreach (AnimationState state in animation) {
+            state.speed = speedModifier;
+        }
+        foreach (AnimationState state in wrapperAnimation) {
+            state.speed = speedModifier;
+        }
+    }
 };

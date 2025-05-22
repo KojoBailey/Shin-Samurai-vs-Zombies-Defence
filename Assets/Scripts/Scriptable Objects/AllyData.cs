@@ -20,6 +20,7 @@ public class AllyData : ScriptableObject, IUpgradable {
 
     public enum Stat {
         Cost,
+        Cooldown,
         Health,
         Speed,
         Damage,
@@ -30,6 +31,12 @@ public class AllyData : ScriptableObject, IUpgradable {
     public GenericDictionary<Stat, float> stats;
     public GenericDictionary<Stat, float>[] upgrades;
 
+    public int cost {
+        get => (int)GetStat(Stat.Cost);
+    }
+    public float cooldown {
+        get => GetStat(Stat.Cooldown);
+    }
     public float health {
         get => GetStat(Stat.Health);
     }

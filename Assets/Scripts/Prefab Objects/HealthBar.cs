@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.AddressableAssets;
-using System.Threading.Tasks;
 
 public class HealthBar { // Health Bar
     public GameplayEntity entity;
@@ -16,14 +14,10 @@ public class HealthBar { // Health Bar
 
     private bool m_initialised = false;
 
-    public HealthBar(GameplayEntity _entity, float _maxHealth) {
+    public HealthBar(GameObject prefab, GameplayEntity _entity, float _maxHealth) {
         entity = _entity;
         maxHealth = _maxHealth;
-    }
-
-    public async Task Init() {
-        var handle = Addressables.LoadAssetAsync<GameObject>("Prefabs/Entity Health Bar");
-        m_canvas = Object.Instantiate(await handle.Task, entity.transform);
+        m_canvas = Object.Instantiate(prefab, entity.transform);
         m_mask = m_canvas.GetComponent<RectMask2D>();
         m_width = m_canvas.GetComponent<RectTransform>().rect.width;
 
@@ -34,7 +28,7 @@ public class HealthBar { // Health Bar
         else m_textures.front.color = red;
 
         m_canvas.transform.localPosition = new Vector3(0f, 1.5f, 0.15f);
-        m_canvas.transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
+        m_canvas.transform.localRotation = Quaternion.Euler(0f, -90f * entity.direction, 0f);
         m_canvas.GetComponent<Canvas>().sortingOrder = 999; // Send to front.
 
         m_initialised = true;
@@ -42,7 +36,7 @@ public class HealthBar { // Health Bar
 
     public void Update() {
         if (m_initialised) {
-            // Update m_mask.
+            // Update mask.
             m_targetPadding = m_width - entity.health / maxHealth * m_width;
             m_mask.padding += new Vector4(0, 0, (m_targetPadding - m_mask.padding.z) / 0.2f * Time.deltaTime, 0);
         }

@@ -28,13 +28,15 @@ MonoBehaviour:
     list:
     - Key: 0
       Value: 5
-    - Key: 2
+    - Key: 1
+      Value: 1
+    - Key: 3
       Value: 1
     keyCollision: 0
   upgrades:
   - list:
-    - Key: 1
+    - Key: 2
       Value: 40
-    - Key: 5
+    - Key: 6
       Value: 1
     keyCollision: 0

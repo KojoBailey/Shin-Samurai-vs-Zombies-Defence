@@ -216,6 +216,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be4798cab27c7e7469cc99e878b41a1d
+    m_Address: Prefabs/Sacred Gate
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c43d4bac8c20f0a4c9dfef65ab72c174
     m_Address: Textures/Icons/Daimyo
     m_ReadOnly: 0

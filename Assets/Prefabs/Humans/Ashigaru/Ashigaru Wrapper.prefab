@@ -43,9 +43,18 @@ Animation:
   m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: 0}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: 027cfc445d099b143a8b063cd6ba9eed, type: 2}
+  - {fileID: 7400000, guid: d7e225de2b8ccf245bce6b019936b818, type: 2}
+  - {fileID: 7400000, guid: 313b53c4759e0ee4ea8a26192dd1e4be, type: 2}
+  - {fileID: 7400000, guid: 979a2828d601ca8448d5e90441aab876, type: 2}
+  - {fileID: 7400000, guid: a1a0acfe6818f044da19be085da9dfc9, type: 2}
+  - {fileID: 7400000, guid: d134fe0f866f5ed47b392497a452a9bc, type: 2}
+  - {fileID: 7400000, guid: b3f2e60e874667846bde0b16331dc52c, type: 2}
+  - {fileID: 7400000, guid: 3a5495b299c9f6741b1e157e60b81522, type: 2}
+  - {fileID: 7400000, guid: 852cf5552aeef5e449134072237857f7, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0

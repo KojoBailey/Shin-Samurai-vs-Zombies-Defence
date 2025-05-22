@@ -8,7 +8,8 @@ public class Hero : GameplayEntity {
 
     private float m_xVelocity;
 
-    public GameplayManager.AttackStatus attackStatus;
+    public enum AttackStatus { None, RangedHold, Melee, Ranged };
+    public AttackStatus attackStatus;
     private float m_meleeAttackTimer;
     private float m_rangedAttackTimer;
     private float m_healthRegenTimer = 0;
@@ -34,17 +35,15 @@ public class Hero : GameplayEntity {
         SaveManager.SetLevel(data.rangedWeaponData, 1);
         Prepare();
         transform.position = new Vector3(spawnX, 0f, 0f);
-        transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+        transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
 
         // Attach weapon.
         if (data.meleeWeaponData != null) {
-            meleeWeapon = new MeleeWeapon(data.meleeWeaponData);
-            await meleeWeapon.Init(obj);
+            meleeWeapon = new MeleeWeapon(data.meleeWeaponData, obj);
             meleeRange = meleeWeapon.data.range;
         }
         if (data.rangedWeaponData != null) {
-            rangedWeapon = new RangedWeapon(data.rangedWeaponData);
-            await rangedWeapon.Init(obj);
+            rangedWeapon = new RangedWeapon(data.rangedWeaponData, obj);
             rangedRange = rangedWeapon.data.range;
         }
         SwitchToMelee();
@@ -69,6 +68,30 @@ public class Hero : GameplayEntity {
         if (health > data.health)
             health = data.health;
 
+        // Attack based on distance.
+        foreach (GameplayEntity enemy in GameplayManager.entities.Values) {
+            if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
+                continue;
+
+            float difference = enemy.xPos - xPos;
+            if (allegiance == Side.Right)
+                difference *= -1;
+            if (difference > 0) {
+                if (difference < meleeRange) {
+                    attackStatus = AttackStatus.Melee;
+                    break;
+                } else if (difference < rangedRange) {
+                    attackStatus = AttackStatus.Ranged;
+                    break;
+                } else if (difference < rangedRange + 1) {
+                    attackStatus = AttackStatus.RangedHold;
+                    break;
+                } else {
+                    attackStatus = AttackStatus.None;
+                }
+            }
+        }
+
         // Input-related stuff
         if (Input.GetKey(KeyCode.D)) {
                 m_backPedalTimer = 0;
@@ -81,11 +104,11 @@ public class Hero : GameplayEntity {
             }
         } else {
             m_backPedalTimer = 0;
-            if (attackStatus == GameplayManager.AttackStatus.Melee && !m_doNotAttack) {
+            if (attackStatus == AttackStatus.Melee && !doNotAttack) {
                 ChangeState(State.MeleeAttack);
-            } else if (attackStatus == GameplayManager.AttackStatus.Ranged && !m_doNotAttack) {
+            } else if (attackStatus == AttackStatus.Ranged && !doNotAttack) {
                 ChangeState(State.RangedAttack);
-            } else if (attackStatus == GameplayManager.AttackStatus.RangedHold) {
+            } else if (attackStatus == AttackStatus.RangedHold) {
                 ChangeState(State.IdleRanged);
             } else {
                 ChangeState(State.Idle);
@@ -108,7 +131,7 @@ public class Hero : GameplayEntity {
                 break;
         }
 
-        xPos += m_xVelocity;
+        xPos += m_xVelocity * direction;
         m_xVelocity *= 0.90f;
     }
 
@@ -198,10 +221,11 @@ public class Hero : GameplayEntity {
 
     public override bool IsInMeleeRange(float targetX) {
         float distance = targetX - transform.position.x;
-        if (allegiance == Side.Right) distance *= -1;
+        distance *= direction;
         return (distance < meleeWeapon.data.range) && (distance > 0);
     }
-    public override void MeleeHitSFX() {
+    public override void MeleeHit(GameplayEntity target) {
+        target.Damage(data.meleeWeaponData.damage);
         meleeWeapon.data.PlayHit();
     }
 

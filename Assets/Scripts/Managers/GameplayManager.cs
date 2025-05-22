@@ -15,14 +15,20 @@ public class GameplayManager { // Gameplay Manager
     private static GameObject m_hud;
     private static BGM m_bgm;
 
+    public static int smithy = 0;
+    private static float m_smithySave = 0;
+    public const float smithyRate = 1;
+
     public static Dictionary<string, GameplayEntity> entities;
     public static Hero hero;
-    public static List<Enemy> enemies;
-    public static List<Ally> allies;
+
+    public static List<AllyData> allies;
+    public static List<float> allyCooldowns;
+    public static GameObject healthBarPrefab;
+
+    public static Dictionary<string, EnemyData> enemies;
 
     public static Dictionary<string, GameplayEntity> closestTargets;
-
-    public enum AttackStatus { None, RangedHold, Melee, Ranged };
 
     public static async Task StartWave() {
         stage = new Stage("ZenGarden");
@@ -30,9 +36,6 @@ public class GameplayManager { // Gameplay Manager
 
         var hudHandle = Addressables.InstantiateAsync("Prefabs/Gameplay HUD");
         m_hud = await hudHandle.Task;
-
-        m_bgm = new BGM("Zen Garden Day");
-        await m_bgm.Init();
 
         entities = new();
         closestTargets = new();
@@ -44,11 +47,36 @@ public class GameplayManager { // Gameplay Manager
         hero = new Hero(SaveManager.selectedHero);
         hero.SetBounds(stage.leftBound, stage.rightBound);
         hero.allegiance = GameplayEntity.Side.Left;
+        hero.doNotAttack = false;
         await hero.Init(stage.heroSpawn);
         AddEntity("Hero", hero);
 
-        enemies = new List<Enemy>();
-        allies = new List<Ally>();
+        allies = new();
+        allyCooldowns = new();
+        var ashigaruDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/Ashigaru");
+        AllyData ashigaruData = await ashigaruDataHandle.Task;
+        if (ashigaruData == null) {
+            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/Ashigaru"}\".");
+            return;
+        }
+        allies.Add(ashigaruData);
+        allyCooldowns.Add(0);
+        SaveManager.SetLevel(ashigaruData, 1);
+        var healthBarHandle = Addressables.LoadAssetAsync<GameObject>("Prefabs/Entity Health Bar");
+        healthBarPrefab = await healthBarHandle.Task;
+
+        enemies = new();
+        var zombieDataHandle = Addressables.LoadAssetAsync<EnemyData>($"Data/Enemies/Zombies/LightZombie");
+        EnemyData zombieData = await zombieDataHandle.Task;
+        if (zombieData == null) {
+            Debug.LogError($"Could not find or load Enemy of ID \"{"Zombies/LightZombie"}\".");
+            return;
+        }
+        enemies.Add("LightZombie", zombieData);
+
+        // Load BGM last so audio only starts once the game is ready.
+        m_bgm = new BGM("Zen Garden Day");
+        await m_bgm.Init();
 
         initialised = true;
     }
@@ -58,57 +86,29 @@ public class GameplayManager { // Gameplay Manager
         entities.Add(id, entity);
     }
 
-    public static async Task SpawnEnemy(string id) {
-        Enemy enemy = new Enemy(id);
+    public static void SpawnEnemy(EnemyData _data) {
+        Enemy enemy = new Enemy(_data, GameplayEntity.Side.Right);
         enemy.SetBounds(stage.leftBound, float.MaxValue);
-        enemy.allegiance = GameplayEntity.Side.Right;
-        await enemy.Init(stage.zombieSpawn);
-        enemies.Add(enemy);
         AddEntity($"Enemy{entities.Count - 1}", enemy);
+        enemy.Spawn(stage.zombieSpawn);
     }
-     public static async Task SpawnAlly(string id) {
-        Ally ally = new Ally(id);
+     public static void SpawnAlly(AllyData _data) {
+        Ally ally = new Ally(_data, GameplayEntity.Side.Left);
         ally.SetBounds(float.MinValue, stage.rightBound);
-        ally.allegiance = GameplayEntity.Side.Left;
-        await ally.Init(stage.allySpawn);
-        allies.Add(ally);
         AddEntity($"Ally{entities.Count - 1}", ally);
+        ally.Spawn(stage.allySpawn);
     }
 
-    public static async Task Update() {
+    public static void Update() {
         if (initialised) {
-            hero.Update();
-            foreach (Enemy enemy in enemies) {
-                if (enemy.toDestroy) {
-                    DestroyEntity(enemy.entityId);
-                    break;
-                }
-                enemy.Update();
-            }
-            foreach (Ally ally in allies) {
-                if (ally.toDestroy) {
-                    DestroyEntity(ally.entityId);
-                    break;
-                }
-                ally.Update();
-            }
-
-            foreach (Enemy enemy in enemies) {
-                if (enemy.currentState == GameplayEntity.State.Die) continue;
-                float difference = enemy.xPos - hero.xPos;
-                if (difference > 0) {
-                    if (difference < hero.meleeRange) {
-                        hero.attackStatus = AttackStatus.Melee;
+            // Call Update() on each non-null entity.
+            foreach (var entity in entities) {
+                if (entity.Value != null) {
+                    if (entity.Value.toDestroy) {
+                        DestroyEntity(entity.Value.entityId);
                         break;
-                    } else if (difference < hero.rangedRange) {
-                        hero.attackStatus = AttackStatus.Ranged;
-                        break;
-                    } else if (difference < hero.rangedRange + 1) {
-                        hero.attackStatus = AttackStatus.RangedHold;
-                        break;
-                    } else {
-                        hero.attackStatus = AttackStatus.None;
                     }
+                    entity.Value.Update();
                 }
             }
 
@@ -116,6 +116,7 @@ public class GameplayManager { // Gameplay Manager
                 if (entity != null) {
                     stage.ApplyGravity(entity);
 
+                    // Get closest targets to each entity.
                     float closestDistance = float.MaxValue;
                     foreach (GameplayEntity target in entities.Values) {
                         if (target != null && target.allegiance != entity.allegiance && target.health > 0) {
@@ -133,8 +134,13 @@ public class GameplayManager { // Gameplay Manager
 
             if (gameTimer - m_spawnSave > 5) {
                 m_spawnSave = gameTimer;
-                await SpawnEnemy("LightZombie");
-                await SpawnAlly("Humans/Ashigaru");
+                SpawnEnemy(enemies["LightZombie"]);
+            }
+            allyCooldowns[0] -= Time.deltaTime;
+
+            if (gameTimer - m_smithySave > smithyRate) {
+                m_smithySave = gameTimer;
+                smithy += 1;
             }
 
             gameTimer += Time.deltaTime;
@@ -143,18 +149,12 @@ public class GameplayManager { // Gameplay Manager
 
     public static void DealDamage(string entityId) {
         GameplayEntity entity = entities[entityId];
-        if (entity.allegiance == GameplayEntity.Side.Left) {
-            foreach (Enemy enemy in enemies) {
-                if (entity.IsInMeleeRange(enemy.xPos)) {
-                    enemy.Damage(10); // Change to troop damage
-                    entity.MeleeHitSFX();
-                }
-            }
-        } else if (entity.allegiance == GameplayEntity.Side.Right) {
-            if (entity.IsInMeleeRange(hero.xPos)) {
-                hero.Damage(10); // Change to troop damage
-                entity.MeleeHitSFX();
-            }
+        foreach (GameplayEntity enemy in entities.Values) {
+            if (enemy == null || enemy.allegiance == entity.allegiance || enemy.currentState == GameplayEntity.State.Die)
+                continue;
+
+            if (entity.IsInMeleeRange(enemy.xPos + 0.2f * enemy.direction))
+                entity.MeleeHit(enemy);
         }
     }
 
@@ -163,8 +163,16 @@ public class GameplayManager { // Gameplay Manager
     }
 
     public static void DestroyEntity(string entityId) {
-        if (enemies.Contains((Enemy)entities[entityId]))
-            enemies.Remove((Enemy)entities[entityId]);
         entities[entityId] = null;
+    }
+
+    public static void Lethargy() {
+        foreach (GameplayEntity entity in entities.Values) {
+            if (entity == null || entity.currentState == GameplayEntity.State.Die)
+                continue;
+
+            if (entity.allegiance == GameplayEntity.Side.Right)
+                entity.ChangeSpeed(0.3f);
+        }
     }
 };

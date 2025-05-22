@@ -14,9 +14,9 @@ public class Gameplay : MonoBehaviour {
         SceneLoadManager.FinishLoading();
     }
 
-    private async void Update() {
+    private void Update() {
         if (SceneLoadManager.finishedLoading) {
-            await GameplayManager.Update();
+            GameplayManager.Update();
         }
     }
 

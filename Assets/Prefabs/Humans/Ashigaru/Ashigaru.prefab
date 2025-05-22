@@ -46,7 +46,6 @@ GameObject:
   - component: {fileID: 3726444145558034567}
   - component: {fileID: -4115744014762095706}
   - component: {fileID: 4477189399799237662}
-  - component: {fileID: 806906059266355535}
   m_Layer: 0
   m_Name: Ashigaru
   m_TagString: Untagged
@@ -229,19 +228,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_audioData: {fileID: 11400000, guid: 52594fecefbd70e44b9aa35c99f0f3d8, type: 2}
---- !u!114 &806906059266355535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137089257116050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5151dbeb3422ed47b8d301240bc96a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityId: 
 --- !u!1 &1183850022037473
 GameObject:
   m_ObjectHideFlags: 0

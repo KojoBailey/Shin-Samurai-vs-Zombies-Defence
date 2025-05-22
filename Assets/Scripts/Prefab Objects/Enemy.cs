@@ -1,55 +1,43 @@
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using System.Threading.Tasks;
 
 public class Enemy : GameplayEntity {
     private string m_id;
     public EnemyData data;
     private HealthBar m_healthBar;
 
-    public Enemy(string enemyId) {
-        m_id = enemyId;
-    }
+    public Enemy(EnemyData _data, Side _allegiance) {
+        data = _data;
+        allegiance = _allegiance;
 
-    public async Task Init(float spawnX) {
-        var handle = Addressables.LoadAssetAsync<EnemyData>($"Data/Enemies/Zombies/{m_id}");
-        data = await handle.Task;
-        if (data == null) {
-            Debug.LogError($"Could not find or load Enemy of ID \"{m_id}\".");
-            return;
-        }
         wrapperObject = Object.Instantiate(data.prefabWrapper);
         obj = Object.Instantiate(data.prefab, wrapperObject.transform);
         Prepare();
-        transform.position = new Vector3(spawnX, 0f, Random.Range(-0.4f, 0.4f));
-        transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+        transform.position = new Vector3(0f, 0f, Random.Range(-0.4f, 0.4f));
+        transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
 
         // Attach weapon.
         if (data.meleeWeaponData != null) {
-            meleeWeapon = new MeleeWeapon(data.meleeWeaponData);
-            await meleeWeapon.Init(obj);
+            meleeWeapon = new MeleeWeapon(data.meleeWeaponData, obj);
             meleeRange = meleeWeapon.data.range;
         }
         if (data.rangedWeaponData != null) {
-            rangedWeapon = new RangedWeapon(data.rangedWeaponData);
-            await rangedWeapon.Init(obj);
+            rangedWeapon = new RangedWeapon(data.rangedWeaponData, obj);
             rangedRange = rangedWeapon.data.range;
         }
 
         health = data.health;
         data.audioData.Spawn();
-        m_healthBar = new HealthBar(this, data.health);
-        await m_healthBar.Init();
-
-        FinishInit();
+        m_healthBar = new HealthBar(GameplayManager.healthBarPrefab, this, data.health);
     }
 
     protected override void HandleState() {
+        // Handle death.
         if (health <= 0) {
             ChangeState(State.Die);
             return;
         }
 
+        // Handle knockback.
         for (int i = data.knockbackCount - m_knockedBackCount; i > 0; i--) {
             if (health <= data.health / (data.knockbackCount + 1) * i) {
                 ChangeState(State.KnockedBack);
@@ -59,23 +47,29 @@ public class Enemy : GameplayEntity {
                 break;
             }
         }
-
         if (currentState == State.KnockedBack || (currentState == State.Landing && animation.IsPlaying("Land"))) return;
 
-        if (InRangeOf(GameplayManager.heroX)) {
-            ChangeState(State.MeleeAttack);
-        } else {
-            if (!animationHandler.attackIsPlaying)
-                ChangeState(State.Walk);
+        // Handle attacking.
+        if (!animationHandler.attackIsPlaying)
+            ChangeState(State.Walk);
+        foreach (GameplayEntity enemy in GameplayManager.entities.Values) {
+            if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
+                continue;
+
+            if (IsInMeleeRange(enemy.xPos)) {
+                ChangeState(State.MeleeAttack);
+                break;
+            }
         }
     }
 
     protected override void HandleMotion() {
         if (currentState == State.Walk) {
-            ChangeX(-1 * data.speed * Time.deltaTime);
+            xPos += data.speed * speedModifier * direction * Time.deltaTime;
         } else if (isGettingKnockedBack) {
-            ChangeX(1 * Time.deltaTime);
+            xPos -=  direction * Time.deltaTime;
         }
+        
 
         if (!isGettingKnockedBack && currentState == State.KnockedBack) {
             ChangeState(State.Landing);
@@ -85,19 +79,23 @@ public class Enemy : GameplayEntity {
             m_previousState = currentState;
             switch (currentState) {
                 case State.Idle:
-                    animation.CrossFade(animationHandler.idle, 0.1f);
+                    ChangeAnimation(animationHandler.idle, 0.1f);
                     break;
                 case State.Walk:
                     animation.CrossFade(animationHandler.forward, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.forward, 0.1f);
                     break;
                 case State.KnockedBack:
                     animation.CrossFade(animationHandler.knockedBack, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.knockedBack, 0.1f);
                     break;
                 case State.Landing:
                     animation.CrossFade(animationHandler.land, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.land, 0.1f);
                     break;
                 case State.Die:
                     animation.CrossFade(animationHandler.die, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.die, 0.1f);
                     break;
             }
         }
@@ -108,8 +106,10 @@ public class Enemy : GameplayEntity {
             if (!animationHandler.attackIsPlaying) {
                 if (m_attackTimer == data.attackFrequency) {
                     animation.CrossFade(animationHandler.attack, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.attack, 0.1f);
                 } else {
                     animation.CrossFade(animationHandler.idle, 0.1f);
+                    wrapperAnimation.CrossFade(animationHandler.idle, 0.1f);
                 }
             }
             m_attackTimer -= Time.deltaTime;
@@ -128,14 +128,14 @@ public class Enemy : GameplayEntity {
         m_healthBar.Update();
     }
 
-    private bool InRangeOf(float target) {
-        float distance = transform.position.x - target;
-        return (distance < data.range) && (distance > 0); // Includes checking if in front or behind.
-    }
-
     public override bool IsInMeleeRange(float targetX) {
         float distance = targetX - transform.position.x;
         if (allegiance == Side.Right) distance *= -1;
-        return (distance < data.range) && (distance > 0);
+        return (distance <= data.range) && (distance > 0);
+    }
+    public override void MeleeHit(GameplayEntity target) {
+        target.Damage(data.damage);
+        if (meleeWeapon != null)
+            meleeWeapon.data.PlayHit();
     }
 };
