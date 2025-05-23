@@ -27,7 +27,7 @@ public class Ally : GameplayEntity {
 
         health = data.health;
         data.GetEquippedCostume().audioData.Spawn();
-        m_healthBar = new HealthBar(GameplayManager.healthBarPrefab, this, data.health);
+        m_healthBar = new HealthBar(AssetManager.healthBarPrefab, this, data.health);
     }
 
     protected override void HandleState() {

@@ -57,6 +57,7 @@
     <Compile Include="Assets\Scripts\Managers\SceneLoadManager.cs" />
     <Compile Include="Assets\Scripts\Prefab MonoBehaviours\EntityHealthBar.cs" />
     <Compile Include="Assets\Scripts\Scenes\SamuraiShop.cs" />
+    <Compile Include="Assets\Scripts\Managers\AbilityManager.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\EntityAudioData.cs" />
     <Compile Include="Assets\Scripts\Managers\SaveManager.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Assets\Scripts\Scenes\GameplayHUD.cs" />
     <Compile Include="Assets\Scripts\Animation Events\AnimEventAudioEntity.cs" />
     <Compile Include="Assets\Scripts\Prefab MonoBehaviours\AnimationHandler.cs" />
+    <Compile Include="Assets\Scripts\Managers\AssetManager.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\Stage.cs" />
     <Compile Include="Assets\Scripts\Scenes\OpeningCinematic.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\Enemy.cs" />

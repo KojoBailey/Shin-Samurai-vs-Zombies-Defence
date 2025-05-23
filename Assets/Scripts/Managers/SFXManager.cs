@@ -15,6 +15,9 @@ public class SFXManager { // Sound Effects Manager
         }
     }
 
+    public static void Play(string address) {
+        Play(AssetManager.audioClips[address]);
+    }
     public static void Play(AudioClip clip) {
         AudioSource availableSlot = null;
         foreach (var audioSource in m_audioSources) {
@@ -29,10 +32,5 @@ public class SFXManager { // Sound Effects Manager
         }
         availableSlot.clip = clip;
         availableSlot.Play();
-    }
-    public static async Task Play(string address) {
-        var audioHandle = Addressables.LoadAssetAsync<AudioClip>($"Audio/{address}");
-        AudioClip clip = await audioHandle.Task;
-        Play(clip);
     }
 };

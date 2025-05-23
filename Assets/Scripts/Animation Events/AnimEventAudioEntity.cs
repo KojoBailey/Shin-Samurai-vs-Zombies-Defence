@@ -9,8 +9,8 @@ public class AnimEventAudioEntity : MonoBehaviour { // Animation Event: Entity A
     public void Spawn() {
         m_audioData.Spawn();
     }
-    public async Task Footstep() {
-        await m_audioData.Footstep();
+    public void Footstep() {
+        m_audioData.Footstep();
     }
     public void Attack() {
         m_audioData.Attack();

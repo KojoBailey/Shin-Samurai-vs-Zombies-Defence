@@ -35,7 +35,6 @@ public class TitleScreen : MonoBehaviour { // Title Screen
         // Initialise managers.
         SFXManager.Init();
         await AllyManager.Init();
-        SaveManager.EquipCostume("Samurai", 0);
 
         // Blood scroll animation
         m_bloodPos = 0;

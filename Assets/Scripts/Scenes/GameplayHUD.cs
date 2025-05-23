@@ -29,11 +29,11 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
     }
 
     private void AllySlotOnPointerClick(string id) {
-        if (GameplayManager.allyCooldowns[0] <= 0 && GameplayManager.smithy >= GameplayManager.allies[0].cost) {
-            GameplayManager.SpawnAlly(GameplayManager.allies[0]);
-            GameplayManager.allyCooldowns[0] = GameplayManager.allies[0].cooldown;
-            GameplayManager.smithy -= GameplayManager.allies[0].cost;
-            GameplayManager.Lethargy();
+        if (GameplayManager.allyCooldowns[0] <= 0 && GameplayManager.smithy >= AssetManager.alliesData[0].cost) {
+            GameplayManager.SpawnAlly(AssetManager.alliesData[0]);
+            GameplayManager.allyCooldowns[0] = AssetManager.alliesData[0].cooldown;
+            GameplayManager.smithy -= AssetManager.alliesData[0].cost;
+            AbilityManager.Lethargy();
         }
     }
 
@@ -44,7 +44,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
             m_healthBarTargetColour = HealthBar.LerpHSV(HealthBar.red, HealthBar.green, GameplayManager.hero.health / GameplayManager.hero.data.health);
             m_healthBarImage.color += (m_healthBarTargetColour - m_healthBarImage.color) / 0.2f * Time.deltaTime;
 
-            if (GameplayManager.smithy < GameplayManager.allies[0].cost) {
+            if (GameplayManager.smithy < AssetManager.alliesData[0].cost) {
                 m_allySlotReference.GetComponent<RectTransform>().localScale = new Vector3(0.9f, 0.9f, 0.9f);
                 m_allyIconReference.color = new Color(0.3f, 0.3f, 0.3f);
             } else {

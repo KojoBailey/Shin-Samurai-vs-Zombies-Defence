@@ -17,14 +17,14 @@ public class EntityAudioData : ScriptableObject {
         if (spawnAudio.Length > 0)
             SFXManager.Play(spawnAudio[Random.Range(0, spawnAudio.Length)]);
     }
-    public async Task Footstep() {
+    public void Footstep() {
         if (footstepAudio.Length == 0) {
             switch (footstepSize) {
                 case Size.Large:
-                    await SFXManager.Play($"Combat/Footstep Large 0{Random.Range(0, 3)}");
+                    SFXManager.Play($"Combat/Footstep Large 0{Random.Range(0, 3)}");
                     break;
                 default:
-                    await SFXManager.Play($"Combat/Footstep 0{Random.Range(0, 5)}");
+                    SFXManager.Play($"Combat/Footstep 0{Random.Range(0, 5)}");
                     break;
             }
             return;

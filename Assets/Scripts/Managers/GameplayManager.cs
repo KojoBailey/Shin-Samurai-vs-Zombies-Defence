@@ -1,7 +1,7 @@
-using System.Collections.Generic;
 using UnityEngine;
-using System.Threading.Tasks;
 using UnityEngine.AddressableAssets;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 /* Manages the main, non-menu gameplay. */
 public class GameplayManager { // Gameplay Manager
@@ -22,15 +22,13 @@ public class GameplayManager { // Gameplay Manager
     public static Dictionary<string, GameplayEntity> entities;
     public static Hero hero;
 
-    public static List<AllyData> allies;
     public static List<float> allyCooldowns;
-    public static GameObject healthBarPrefab;
-
-    public static Dictionary<string, EnemyData> enemies;
 
     public static Dictionary<string, GameplayEntity> closestTargets;
 
     public static async Task StartWave() {
+        await AssetManager.LoadGameplay();
+
         stage = new Stage("ZenGarden");
         await stage.Init();
 
@@ -51,28 +49,8 @@ public class GameplayManager { // Gameplay Manager
         await hero.Init(stage.heroSpawn);
         AddEntity("Hero", hero);
 
-        allies = new();
         allyCooldowns = new();
-        var ashigaruDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/Ashigaru");
-        AllyData ashigaruData = await ashigaruDataHandle.Task;
-        if (ashigaruData == null) {
-            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/Ashigaru"}\".");
-            return;
-        }
-        allies.Add(ashigaruData);
         allyCooldowns.Add(0);
-        SaveManager.SetLevel(ashigaruData, 1);
-        var healthBarHandle = Addressables.LoadAssetAsync<GameObject>("Prefabs/Entity Health Bar");
-        healthBarPrefab = await healthBarHandle.Task;
-
-        enemies = new();
-        var zombieDataHandle = Addressables.LoadAssetAsync<EnemyData>($"Data/Enemies/Zombies/LightZombie");
-        EnemyData zombieData = await zombieDataHandle.Task;
-        if (zombieData == null) {
-            Debug.LogError($"Could not find or load Enemy of ID \"{"Zombies/LightZombie"}\".");
-            return;
-        }
-        enemies.Add("LightZombie", zombieData);
 
         // Load BGM last so audio only starts once the game is ready.
         m_bgm = new BGM("Zen Garden Day");
@@ -101,6 +79,8 @@ public class GameplayManager { // Gameplay Manager
 
     public static void Update() {
         if (initialised) {
+            AbilityManager.Update();
+            
             // Call Update() on each non-null entity.
             foreach (var entity in entities) {
                 if (entity.Value != null) {
@@ -134,7 +114,7 @@ public class GameplayManager { // Gameplay Manager
 
             if (gameTimer - m_spawnSave > 5) {
                 m_spawnSave = gameTimer;
-                SpawnEnemy(enemies["LightZombie"]);
+                SpawnEnemy(AssetManager.enemiesData["LightZombie"]);
             }
             allyCooldowns[0] -= Time.deltaTime;
 
@@ -164,15 +144,5 @@ public class GameplayManager { // Gameplay Manager
 
     public static void DestroyEntity(string entityId) {
         entities[entityId] = null;
-    }
-
-    public static void Lethargy() {
-        foreach (GameplayEntity entity in entities.Values) {
-            if (entity == null || entity.currentState == GameplayEntity.State.Die)
-                continue;
-
-            if (entity.allegiance == GameplayEntity.Side.Right)
-                entity.ChangeSpeed(0.3f);
-        }
     }
 };

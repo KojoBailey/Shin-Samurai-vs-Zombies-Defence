@@ -27,7 +27,7 @@ public class Enemy : GameplayEntity {
 
         health = data.health;
         data.audioData.Spawn();
-        m_healthBar = new HealthBar(GameplayManager.healthBarPrefab, this, data.health);
+        m_healthBar = new HealthBar(AssetManager.healthBarPrefab, this, data.health);
     }
 
     protected override void HandleState() {
@@ -82,20 +82,17 @@ public class Enemy : GameplayEntity {
                     ChangeAnimation(animationHandler.idle, 0.1f);
                     break;
                 case State.Walk:
-                    animation.CrossFade(animationHandler.forward, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.forward, 0.1f);
+                    ChangeAnimation(animationHandler.forward, 0.1f);
                     break;
                 case State.KnockedBack:
-                    animation.CrossFade(animationHandler.knockedBack, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.knockedBack, 0.1f);
+                    ChangeAnimation(animationHandler.knockedBack, 0.1f);
                     break;
                 case State.Landing:
-                    animation.CrossFade(animationHandler.land, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.land, 0.1f);
+                    ChangeAnimation(animationHandler.land, 0.1f);
                     break;
                 case State.Die:
-                    animation.CrossFade(animationHandler.die, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.die, 0.1f);
+                    ChangeSpeed(1);
+                    ChangeAnimation(animationHandler.die, 0.1f);
                     break;
             }
         }
@@ -105,11 +102,9 @@ public class Enemy : GameplayEntity {
                 m_attackTimer = data.attackFrequency;
             if (!animationHandler.attackIsPlaying) {
                 if (m_attackTimer == data.attackFrequency) {
-                    animation.CrossFade(animationHandler.attack, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.attack, 0.1f);
+                    ChangeAnimation(animationHandler.attack, 0.1f);
                 } else {
-                    animation.CrossFade(animationHandler.idle, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.idle, 0.1f);
+                    ChangeAnimation(animationHandler.idle, 0.1f);
                 }
             }
             m_attackTimer -= Time.deltaTime;
