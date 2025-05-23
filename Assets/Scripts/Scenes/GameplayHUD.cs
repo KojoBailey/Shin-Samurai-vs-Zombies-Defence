@@ -4,6 +4,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.Build.Content;
 
 public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
     [SerializeField] private Image m_heroIcon;
@@ -18,6 +19,9 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
     [SerializeField] private Image m_cooldownReference;
     [SerializeField] private TextMeshProUGUI m_smithyText;
 
+    [SerializeField] private GameObject m_abilitySlotReference;
+    [SerializeField] private Image m_abilityCooldownReference;
+
     private async void Start() {
         var handle = Addressables.LoadAssetAsync<Sprite>($"Textures/Icons/{SaveManager.selectedHero}");
         m_heroIcon.sprite = await handle.Task;
@@ -26,6 +30,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
         }
 
         UIManager.AddEventTrigger("AllySlot1", m_cooldownReference.gameObject, EventTriggerType.PointerClick, AllySlotOnPointerClick);
+        UIManager.AddEventTrigger("AbilitySlot1", m_abilityCooldownReference.gameObject, EventTriggerType.PointerClick, AbilitySlotOnPointerClick);
     }
 
     private void AllySlotOnPointerClick(string id) {
@@ -33,7 +38,13 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
             GameplayManager.SpawnAlly(AssetManager.alliesData[0]);
             GameplayManager.allyCooldowns[0] = AssetManager.alliesData[0].cooldown;
             GameplayManager.smithy -= AssetManager.alliesData[0].cost;
+        }
+    }
+
+    private void AbilitySlotOnPointerClick(string id) {
+        if (GameplayManager.abilityCooldowns[0] <= 0) {
             AbilityManager.QueueAbility(AbilityManager.Lethargy);
+            GameplayManager.abilityCooldowns[0] = GameplayManager.equippedAbilities[0].cooldown;
         }
     }
 
@@ -51,7 +62,8 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
                 m_allySlotReference.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 m_allyIconReference.color = Color.white;
             }
-            m_cooldownReference.fillAmount = GameplayManager.allyCooldowns[0];
+            m_cooldownReference.fillAmount = GameplayManager.allyCooldowns[0] / AssetManager.alliesData[0].cooldown;
+            m_abilityCooldownReference.fillAmount = GameplayManager.abilityCooldowns[0] / GameplayManager.equippedAbilities[0].cooldown;
             m_smithyText.text = GameplayManager.smithy.ToString();
         }
     }

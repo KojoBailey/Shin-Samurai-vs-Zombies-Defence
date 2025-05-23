@@ -24,10 +24,20 @@ public class GameplayManager { // Gameplay Manager
 
     public static List<float> allyCooldowns;
 
+    public static List<AbilityData> equippedAbilities;
+    public static List<float> abilityCooldowns;
+
     public static Dictionary<string, GameplayEntity> closestTargets;
 
     public static async Task StartWave() {
         await AssetManager.LoadGameplay();
+
+        allyCooldowns = new();
+        allyCooldowns.Add(0);
+
+        equippedAbilities = new();
+        abilityCooldowns = new();
+        abilityCooldowns.Add(0);
         await AbilityManager.Init();
 
         stage = new Stage("ZenGarden");
@@ -49,9 +59,6 @@ public class GameplayManager { // Gameplay Manager
         hero.doNotAttack = false;
         await hero.Init(stage.heroSpawn);
         AddEntity("Hero", hero);
-
-        allyCooldowns = new();
-        allyCooldowns.Add(0);
 
         // Load BGM last so audio only starts once the game is ready.
         m_bgm = new BGM("Zen Garden Day");
@@ -118,6 +125,7 @@ public class GameplayManager { // Gameplay Manager
                 SpawnEnemy(AssetManager.enemiesData["LightZombie"]);
             }
             allyCooldowns[0] -= Time.deltaTime;
+            abilityCooldowns[0] -= Time.deltaTime;
 
             if (gameTimer - m_smithySave > smithyRate) {
                 m_smithySave = gameTimer;

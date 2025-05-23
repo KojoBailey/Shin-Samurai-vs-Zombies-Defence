@@ -14,9 +14,10 @@ public class AbilityManager { // Ability Manager
 
     public static async Task Init() {
         queue = new List<Action>();
-        
+
         var lethargyDataHandle = Addressables.LoadAssetAsync<AbilityData>("Data/Abilities/Lethargy");
         lethargyData = await lethargyDataHandle.Task;
+        GameplayManager.equippedAbilities.Add(lethargyData); // !! Remove for proper management.
         SaveManager.SetLevel(lethargyData, 1); // !! Remove once save system implemented.
     }
 
