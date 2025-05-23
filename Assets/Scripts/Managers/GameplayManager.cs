@@ -28,6 +28,7 @@ public class GameplayManager { // Gameplay Manager
 
     public static async Task StartWave() {
         await AssetManager.LoadGameplay();
+        await AbilityManager.Init();
 
         stage = new Stage("ZenGarden");
         await stage.Init();
@@ -80,7 +81,7 @@ public class GameplayManager { // Gameplay Manager
     public static void Update() {
         if (initialised) {
             AbilityManager.Update();
-            
+
             // Call Update() on each non-null entity.
             foreach (var entity in entities) {
                 if (entity.Value != null) {

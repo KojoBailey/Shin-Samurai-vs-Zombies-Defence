@@ -33,7 +33,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
             GameplayManager.SpawnAlly(AssetManager.alliesData[0]);
             GameplayManager.allyCooldowns[0] = AssetManager.alliesData[0].cooldown;
             GameplayManager.smithy -= AssetManager.alliesData[0].cost;
-            AbilityManager.Lethargy();
+            AbilityManager.QueueAbility(AbilityManager.Lethargy);
         }
     }
 

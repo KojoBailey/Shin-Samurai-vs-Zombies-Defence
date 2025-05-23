@@ -11,4 +11,7 @@ public class AnimEventAttack : MonoBehaviour { // Animation Event: Attack
     public void FireProjectile() {
         GameplayManager.FireProjectile(entityId);
     }
+    public void ActivateAbility() {
+        AbilityManager.ActivateAbility();
+    }
 };

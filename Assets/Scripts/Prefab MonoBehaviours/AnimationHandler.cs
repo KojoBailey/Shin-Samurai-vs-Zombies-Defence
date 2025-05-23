@@ -66,6 +66,17 @@ public class AnimationHandler : MonoBehaviour {
             return false;
         }
     }
+    public string castForward {
+        get => m_castForward[Random.Range(0, m_castForward.Length)].name;
+    }
+    public bool castForwardIsPlaying {
+        get {
+            foreach (AnimationClip clip in m_castForward) {
+                if (anim.IsPlaying(clip.name)) return true;
+            }
+            return false;
+        }
+    }
     public string forward {
         get => m_forward[Random.Range(0, m_forward.Length)].name;
     }
@@ -174,6 +185,8 @@ public class AnimationHandler : MonoBehaviour {
         foreach (AnimationClip clip in m_attack)
             anim.AddClip(clip, clip.name);
         foreach (AnimationClip clip in m_attackRanged)
+            anim.AddClip(clip, clip.name);
+        foreach (AnimationClip clip in m_castForward)
             anim.AddClip(clip, clip.name);
         foreach (AnimationClip clip in m_forward)
             anim.AddClip(clip, clip.name);

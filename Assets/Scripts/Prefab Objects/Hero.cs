@@ -15,6 +15,8 @@ public class Hero : GameplayEntity {
     private float m_healthRegenTimer = 0;
     private float m_backPedalTimer;
     private bool m_isTurning;
+    public enum AbilityStatus { None, CastForward, CastMid };
+    public AbilityStatus abilityStatus = AbilityStatus.None;
 
     public Hero(string _heroId) {
         m_heroId = _heroId;
@@ -67,6 +69,11 @@ public class Hero : GameplayEntity {
         }
         if (health > data.health)
             health = data.health;
+
+        if (abilityStatus == AbilityStatus.CastForward) {
+            ChangeState(State.CastForward);
+            return;
+        }
 
         // Attack based on distance.
         foreach (GameplayEntity enemy in GameplayManager.entities.Values) {
@@ -171,6 +178,10 @@ public class Hero : GameplayEntity {
                 case State.RangedAttack:
                     SwitchToRanged();
                     break;
+                case State.CastForward:
+                    SwitchToMelee();
+                    ChangeAnimation(animationHandler.castForward, 0.1f);
+                    break;
                 case State.Die:
                     animation.CrossFade(animationHandler.die, 0.1f);
                     wrapperAnimation.CrossFade(animationHandler.die, 0.1f);
@@ -209,6 +220,13 @@ public class Hero : GameplayEntity {
             }
         }
         m_rangedAttackTimer -= Time.deltaTime;
+
+        if (currentState == State.CastForward) {
+            if (!animationHandler.castForwardIsPlaying) {
+                abilityStatus = AbilityStatus.None;
+                ChangeState(State.Idle);
+            }
+        }
 
         if (m_isTurning == true && !animationHandler.backpedalTurnIsPlaying && currentState == State.BackwardRun) {
             animation.Play(animationHandler.backward);

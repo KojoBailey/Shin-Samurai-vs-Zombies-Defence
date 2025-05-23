@@ -55,6 +55,7 @@ Animation:
   - {fileID: 7400000, guid: 88e7f18a061fef04cb4cb346da65935a, type: 2}
   - {fileID: 7400000, guid: 52750187999262d488f33f64c7130864, type: 2}
   - {fileID: 7400000, guid: 46695f3ffe5688b49947b75352174a80, type: 2}
+  - {fileID: 7400000, guid: 39135b25ec172bc4a9abb7f0d1ec98e8, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -72,4 +73,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5151dbeb3422ed47b8d301240bc96a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityId: 
+  entityId: 
