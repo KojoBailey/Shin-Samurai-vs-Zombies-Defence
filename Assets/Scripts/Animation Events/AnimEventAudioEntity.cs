@@ -21,6 +21,9 @@ public class AnimEventAudioEntity : MonoBehaviour { // Animation Event: Entity A
     public void LongAttack() {
         m_audioData.LongAttack();
     }
+    public void PersonalAbility(string abilityId) {
+        m_audioData.PersonalAbility(abilityId);
+    }
     public void Die() {
         m_audioData.Die();
     }

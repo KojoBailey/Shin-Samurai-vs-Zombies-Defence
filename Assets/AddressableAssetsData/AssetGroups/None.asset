@@ -271,6 +271,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef7eee8d58d0c444b849e844324540c5
+    m_Address: Data/Abilities/Lethargy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f15777fb607b8b242a8e079c0a0f0b7f
     m_Address: Data/Weapons/Kunoichi Kusarigama
     m_ReadOnly: 0

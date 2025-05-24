@@ -32,6 +32,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c11fc64c2c9036c4a828aa49e3262a0c, type: 3}
   - {fileID: 8300000, guid: 4e71a80c4ca724f4eb86b3447429dced, type: 3}
   longAttackAudio: []
+  personalAbilityAudio:
+    list:
+    - Key: KatanaSlash
+      Value: {fileID: 8300000, guid: 7b4ffd51e9914a347b479b19ae664f7e, type: 3}
+    keyCollision: 0
   deathAudio:
   - {fileID: 8300000, guid: 5e23afe87a8dce0468991481124bb5f8, type: 3}
   - {fileID: 8300000, guid: 23b11510a9c35c44e95e91b813901a3b, type: 3}

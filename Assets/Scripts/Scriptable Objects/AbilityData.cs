@@ -14,7 +14,8 @@ public class AbilityData : ScriptableObject, IUpgradable {
         Cooldown,
         Duration,
         Range,
-        SpeedMultiplier
+        SpeedMultiplier,
+        Damage
     }
     public GenericDictionary<Stat, float> stats;
     public GenericDictionary<Stat, float>[] upgrades;
@@ -33,6 +34,9 @@ public class AbilityData : ScriptableObject, IUpgradable {
     }
     public float speedMultiplier {
         get => GetStat(Stat.SpeedMultiplier);
+    }
+    public float damage {
+        get => GetStat(Stat.Damage);
     }
 
     public float GetStat(Stat stat) {

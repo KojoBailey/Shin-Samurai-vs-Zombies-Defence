@@ -10,23 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b52f52aca171fb419ab8b40ea0a7986, type: 3}
-  m_Name: Lethargy
+  m_Name: Katana Slash
   m_EditorClassIdentifier: 
-  id: Lethargy
-  displayName: Lethargy
+  id: KatanaSlash
+  displayName: Katana Slash
   description: 
-  icon: {fileID: 21300000, guid: 0e9cfab427a989a46ae547ad9494b2b7, type: 3}
-  soundEffect: {fileID: 8300000, guid: 418e1c820651fd24d93f3c33071b192c, type: 3}
-  materialColour: {r: 0, g: 0.875, b: 1, a: 0}
+  icon: {fileID: 21300000, guid: c6fa0a65d36f8eb478348576dd692a55, type: 3}
+  soundEffect: {fileID: 0}
+  materialColour: {r: 0, g: 0, b: 0, a: 0}
   stats:
     list:
     - Key: 1
-      Value: 10
-    - Key: 4
-      Value: 0.3
+      Value: 5
     keyCollision: 0
   upgrades:
   - list:
-    - Key: 2
-      Value: 5
+    - Key: 5
+      Value: 30
     keyCollision: 0

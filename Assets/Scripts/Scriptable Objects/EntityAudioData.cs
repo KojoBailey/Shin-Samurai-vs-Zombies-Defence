@@ -11,6 +11,7 @@ public class EntityAudioData : ScriptableObject {
     public AudioClip[] attackAudio;
     public AudioClip[] bigAttackAudio;
     public AudioClip[] longAttackAudio;
+    public GenericDictionary<string, AudioClip> personalAbilityAudio;
     public AudioClip[] deathAudio;
 
     public void Spawn() {
@@ -39,6 +40,9 @@ public class EntityAudioData : ScriptableObject {
     }
     public void LongAttack() {
         SFXManager.Play(longAttackAudio[Random.Range(0, longAttackAudio.Length)]);
+    }
+    public void PersonalAbility(string abilityId) {
+        SFXManager.Play(personalAbilityAudio[abilityId]);
     }
     public void Die() {
         SFXManager.Play(deathAudio[Random.Range(0, deathAudio.Length)]);

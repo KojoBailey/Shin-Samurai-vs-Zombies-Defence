@@ -3,8 +3,6 @@ using UnityEngine.UI;
 using UnityEngine.AddressableAssets;
 using UnityEngine.EventSystems;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.Build.Content;
 
 public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
     [SerializeField] private Image m_heroIcon;
@@ -43,7 +41,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
 
     private void AbilitySlotOnPointerClick(string id) {
         if (GameplayManager.abilityCooldowns[0] <= 0) {
-            AbilityManager.QueueAbility(AbilityManager.Lethargy);
+            AbilityManager.QueueAbility(AbilityManager.KatanaSlash);
             GameplayManager.abilityCooldowns[0] = GameplayManager.equippedAbilities[0].cooldown;
         }
     }

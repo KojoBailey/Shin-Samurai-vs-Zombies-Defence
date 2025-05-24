@@ -13,15 +13,19 @@ public class Projectile {
     private bool m_initialised = false;
 
     public Projectile(RangedWeaponData _data, Transform spawnPos, GameplayEntity targetEntity) {
-        m_data = _data;
-        m_object = Object.Instantiate(m_data.projectile);
-        m_transform = m_object.GetComponent<Transform>();
-        m_transform.position = spawnPos.position;
-        m_transform.rotation = Quaternion.Euler(0f, 90f, 0f);
-        m_target = targetEntity;
-        m_targetTransform = targetEntity.transform;
-        m_initialDistance = m_targetTransform.position.x - m_transform.position.x;
-        m_initialised = true;
+        if (targetEntity != null) {
+            m_data = _data;
+            m_object = Object.Instantiate(m_data.projectile);
+            m_transform = m_object.GetComponent<Transform>();
+            m_transform.position = spawnPos.position;
+            m_transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+            m_target = targetEntity;
+            m_targetTransform = targetEntity.transform;
+            m_initialDistance = m_targetTransform.position.x - m_transform.position.x;
+            m_initialised = true;
+        } else {
+            toDestroy = true;
+        }
     }
 
     public void Update() {

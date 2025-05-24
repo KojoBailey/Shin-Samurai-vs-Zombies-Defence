@@ -50,6 +50,7 @@ public class GameplayEntity { // Gameplay Entity
         RangedAttack,
         CastMid,
         CastForward,
+        PersonalAbility,
         KnockedBack,
         Landing,
         Stunned,
@@ -142,6 +143,7 @@ public class GameplayEntity { // Gameplay Entity
 
     public virtual bool IsInMeleeRange(float _x) { return false; }
     public virtual void MeleeHit(GameplayEntity target) {}
+    public virtual void MeleeHit(GameplayEntity target, float damage) {}
 
     protected void ChangeAnimation(string animationId) {
         animation.Play(animationId);

@@ -107,7 +107,7 @@ public class GameplayManager { // Gameplay Manager
                     // Get closest targets to each entity.
                     float closestDistance = float.MaxValue;
                     foreach (GameplayEntity target in entities.Values) {
-                        if (target != null && target.allegiance != entity.allegiance && target.health > 0) {
+                        if (target != null && target.allegiance != entity.allegiance && target.currentState != GameplayEntity.State.Die) {
                             float distance = target.xPos - entity.xPos;
                             if (entity.allegiance == GameplayEntity.Side.Right)
                                 distance *= -1;

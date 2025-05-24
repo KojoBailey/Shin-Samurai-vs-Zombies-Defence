@@ -15,7 +15,7 @@ public class Hero : GameplayEntity {
     private float m_healthRegenTimer = 0;
     private float m_backPedalTimer;
     private bool m_isTurning;
-    public enum AbilityStatus { None, CastForward, CastMid };
+    public enum AbilityStatus { None, CastForward, CastMid, KatanaSlash };
     public AbilityStatus abilityStatus = AbilityStatus.None;
 
     public Hero(string _heroId) {
@@ -73,9 +73,13 @@ public class Hero : GameplayEntity {
         if (abilityStatus == AbilityStatus.CastForward) {
             ChangeState(State.CastForward);
             return;
+        } if (abilityStatus == AbilityStatus.KatanaSlash) {
+            ChangeState(State.PersonalAbility);
+            return;
         }
 
         // Attack based on distance.
+        attackStatus = AttackStatus.None;
         foreach (GameplayEntity enemy in GameplayManager.entities.Values) {
             if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
                 continue;
@@ -182,6 +186,12 @@ public class Hero : GameplayEntity {
                     SwitchToMelee();
                     ChangeAnimation(animationHandler.castForward, 0.1f);
                     break;
+                case State.PersonalAbility:
+                    if (abilityStatus == AbilityStatus.KatanaSlash) {
+                        SwitchToMelee();
+                        ChangeAnimation(animationHandler.GetAbility("KatanaSlash"), 0.1f);
+                    }
+                    break;
                 case State.Die:
                     animation.CrossFade(animationHandler.die, 0.1f);
                     wrapperAnimation.CrossFade(animationHandler.die, 0.1f);
@@ -228,6 +238,15 @@ public class Hero : GameplayEntity {
             }
         }
 
+        if (currentState == State.PersonalAbility) {
+            if (abilityStatus == AbilityStatus.KatanaSlash) {
+                if (!animationHandler.IsAbilityPlaying("KatanaSlash")) {
+                    abilityStatus = AbilityStatus.None;
+                    ChangeState(State.Idle);
+                }
+            }
+        }
+
         if (m_isTurning == true && !animationHandler.backpedalTurnIsPlaying && currentState == State.BackwardRun) {
             animation.Play(animationHandler.backward);
             wrapperAnimation.Play(animationHandler.backward);
@@ -243,7 +262,10 @@ public class Hero : GameplayEntity {
         return (distance < meleeWeapon.data.range) && (distance > 0);
     }
     public override void MeleeHit(GameplayEntity target) {
-        target.Damage(data.meleeWeaponData.damage);
+        MeleeHit(target, data.meleeWeaponData.damage);
+    }
+    public override void MeleeHit(GameplayEntity target, float damage) {
+        target.Damage(damage);
         meleeWeapon.data.PlayHit();
     }
 
