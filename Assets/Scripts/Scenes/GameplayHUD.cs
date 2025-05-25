@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.AddressableAssets;
 using UnityEngine.EventSystems;
 using TMPro;
+using System.Collections.Generic;
 
 public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
     [SerializeField] private Image m_heroIcon;
@@ -19,6 +20,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
 
     [SerializeField] private GameObject m_abilitySlotReference;
     [SerializeField] private Image m_abilityCooldownReference;
+    private List<GameObject> m_abilityButtons;
 
     private async void Start() {
         var handle = Addressables.LoadAssetAsync<Sprite>($"Textures/Icons/{SaveManager.selectedHero}");
@@ -28,7 +30,18 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
         }
 
         UIManager.AddEventTrigger("AllySlot1", m_cooldownReference.gameObject, EventTriggerType.PointerClick, AllySlotOnPointerClick);
-        UIManager.AddEventTrigger("AbilitySlot1", m_abilityCooldownReference.gameObject, EventTriggerType.PointerClick, AbilitySlotOnPointerClick);
+
+        int i = 0;
+        m_abilityButtons = new List<GameObject>();
+        foreach (AbilityData abilityData in GameplayManager.equippedAbilities) {
+            GameObject abilityButton = Instantiate(m_abilitySlotReference, m_abilitySlotReference.transform.parent);
+            abilityButton.transform.Find("Icon").gameObject.GetComponent<Image>().sprite = abilityData.icon;
+            abilityButton.transform.Find("Cooldown").gameObject.GetComponent<Image>().sprite = abilityData.icon;
+            abilityButton.GetComponent<RectTransform>().localPosition = new Vector3(-300 * i, 0, 0);
+            UIManager.AddEventTrigger(abilityData.id, i++, abilityButton, EventTriggerType.PointerClick, AbilitySlotOnPointerClick);
+            m_abilityButtons.Add(abilityButton);
+        }
+        m_abilitySlotReference.SetActive(false);
     }
 
     private void AllySlotOnPointerClick(string id) {
@@ -39,10 +52,10 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
         }
     }
 
-    private void AbilitySlotOnPointerClick(string id) {
-        if (GameplayManager.abilityCooldowns[0] <= 0) {
-            AbilityManager.QueueAbility(AbilityManager.KatanaSlash);
-            GameplayManager.abilityCooldowns[0] = GameplayManager.equippedAbilities[0].cooldown;
+    private void AbilitySlotOnPointerClick(string id, int index) {
+        if (GameplayManager.abilityCooldowns[index] <= 0) {
+            AbilityManager.QueueAbility(id);
+            GameplayManager.abilityCooldowns[index] = GameplayManager.equippedAbilities[index].cooldown;
         }
     }
 
@@ -61,8 +74,12 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
                 m_allyIconReference.color = Color.white;
             }
             m_cooldownReference.fillAmount = GameplayManager.allyCooldowns[0] / AssetManager.alliesData[0].cooldown;
-            m_abilityCooldownReference.fillAmount = GameplayManager.abilityCooldowns[0] / GameplayManager.equippedAbilities[0].cooldown;
             m_smithyText.text = GameplayManager.smithy.ToString();
+
+            for (int i = 0; i < m_abilityButtons.Count; i++) {
+                Image cooldown = m_abilityButtons[i].transform.Find("Cooldown").gameObject.GetComponent<Image>();
+                cooldown.fillAmount = GameplayManager.abilityCooldowns[i] / GameplayManager.equippedAbilities[i].cooldown;
+            }
         }
     }
 }

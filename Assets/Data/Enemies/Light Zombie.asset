@@ -24,7 +24,7 @@ MonoBehaviour:
   stats:
     list:
     - Key: 0
-      Value: 120
+      Value: 40
     - Key: 1
       Value: 1
     - Key: 2

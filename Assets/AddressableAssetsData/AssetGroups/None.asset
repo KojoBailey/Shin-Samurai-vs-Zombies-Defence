@@ -107,6 +107,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 391c7c45f25312442b5de1862680ef7e
+    m_Address: Data/Abilities/Katana Slash
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3f0c7d01560dd92478e3daa111156e4a
     m_Address: Audio/Combat/Swoosh Spin 01
     m_ReadOnly: 0

@@ -26,6 +26,12 @@ public class UIManager { // User Interface Manager
         entry.callback.AddListener((data) => func(id));
         trigger.triggers.Add(entry);
     }
+    public static void AddEventTrigger(string id, int index, GameObject button, EventTriggerType type, Action<string, int> func) {
+        trigger = button.AddComponent<EventTrigger>();
+        EventTrigger.Entry entry = new EventTrigger.Entry { eventID = type };
+        entry.callback.AddListener((data) => func(id, index));
+        trigger.triggers.Add(entry);
+    }
 
     public static void SendOffScreen(RectTransform rectTransform, Direction direction) {
         switch (direction) {

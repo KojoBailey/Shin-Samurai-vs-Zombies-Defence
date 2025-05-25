@@ -35,9 +35,8 @@ public class GameplayManager { // Gameplay Manager
         allyCooldowns = new();
         allyCooldowns.Add(0);
 
-        equippedAbilities = new();
-        abilityCooldowns = new();
-        abilityCooldowns.Add(0);
+        equippedAbilities = new List<AbilityData>();
+        abilityCooldowns = new List<float>();
         await AbilityManager.Init();
 
         stage = new Stage("ZenGarden");
@@ -125,7 +124,8 @@ public class GameplayManager { // Gameplay Manager
                 SpawnEnemy(AssetManager.enemiesData["LightZombie"]);
             }
             allyCooldowns[0] -= Time.deltaTime;
-            abilityCooldowns[0] -= Time.deltaTime;
+            for (int i = 0; i < abilityCooldowns.Count; i++)
+                abilityCooldowns[i] -= Time.deltaTime;
 
             if (gameTimer - m_smithySave > smithyRate) {
                 m_smithySave = gameTimer;

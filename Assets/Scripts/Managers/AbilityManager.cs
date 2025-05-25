@@ -20,11 +20,13 @@ public class AbilityManager { // Ability Manager
         var katanaSlashDataHandle = Addressables.LoadAssetAsync<AbilityData>("Data/Abilities/Katana Slash");
         katanaSlashData = await katanaSlashDataHandle.Task;
         GameplayManager.equippedAbilities.Add(katanaSlashData); // !! Remove for proper management.
+        GameplayManager.abilityCooldowns.Add(0);
         SaveManager.SetLevel(katanaSlashData, 1); // !! Remove once save system implemented.
 
         var lethargyDataHandle = Addressables.LoadAssetAsync<AbilityData>("Data/Abilities/Lethargy");
         lethargyData = await lethargyDataHandle.Task;
         GameplayManager.equippedAbilities.Add(lethargyData); // !! Remove for proper management.
+        GameplayManager.abilityCooldowns.Add(0);
         SaveManager.SetLevel(lethargyData, 1); // !! Remove once save system implemented.
     }
 
@@ -34,11 +36,12 @@ public class AbilityManager { // Ability Manager
         lethargyTimer -= Time.deltaTime;
     }
 
-    public static void QueueAbility(Action<string> func) {
-        queue.Add(func);
-        if (func == Lethargy) {
+    public static void QueueAbility(string abilityId) {
+        if (abilityId == "Lethargy") {
+            queue.Add(Lethargy);
             GameplayManager.hero.abilityStatus = Hero.AbilityStatus.CastForward;
-        } else if (func == KatanaSlash) {
+        } else if (abilityId == "KatanaSlash") {
+            queue.Add(KatanaSlash);
             GameplayManager.hero.abilityStatus = Hero.AbilityStatus.KatanaSlash;
         }
     }

@@ -22,9 +22,11 @@ MonoBehaviour:
     list:
     - Key: 1
       Value: 5
+    - Key: 3
+      Value: 3
     keyCollision: 0
   upgrades:
   - list:
     - Key: 5
-      Value: 30
+      Value: 35
     keyCollision: 0
