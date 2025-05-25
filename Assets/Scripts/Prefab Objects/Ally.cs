@@ -31,12 +31,6 @@ public class Ally : GameplayEntity {
     }
 
     protected override void HandleState() {
-        // Handle death.
-        if (health <= 0) {
-            ChangeState(State.Die);
-            return;
-        }
-
         // Handle knockback.
         for (int i = data.knockbackCount - m_knockedBackCount; i > 0; i--) {
             if (health <= data.health / (data.knockbackCount + 1) * i) {
@@ -52,6 +46,8 @@ public class Ally : GameplayEntity {
         // Handle attacking.
         if (!animationHandler.attackIsPlaying)
             ChangeState(State.Walk);
+        if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound)
+            ChangeState(State.Idle);
         foreach (GameplayEntity enemy in GameplayManager.entities.Values) {
             if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
                 continue;
@@ -118,7 +114,7 @@ public class Ally : GameplayEntity {
 
         if (currentState == State.Die) {
             if (!animationHandler.dieIsPlaying) {
-                Object.Destroy(obj);
+                Object.Destroy(wrapperObject);
                 toDestroy = true;
                 return;
             }

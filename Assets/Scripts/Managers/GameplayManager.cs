@@ -89,7 +89,7 @@ public class GameplayManager { // Gameplay Manager
         if (initialised) {
             AbilityManager.Update();
 
-            // Call Update() on each non-null entity.
+            // Update each entity and destroy finished ones.
             foreach (var entity in entities) {
                 if (entity.Value != null) {
                     if (entity.Value.toDestroy) {

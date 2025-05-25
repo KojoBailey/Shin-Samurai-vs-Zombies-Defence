@@ -97,8 +97,6 @@ public class Hero : GameplayEntity {
                 } else if (difference < rangedRange + 1) {
                     attackStatus = AttackStatus.RangedHold;
                     break;
-                } else {
-                    attackStatus = AttackStatus.None;
                 }
             }
         }
@@ -144,6 +142,9 @@ public class Hero : GameplayEntity {
 
         xPos += m_xVelocity * direction;
         m_xVelocity *= 0.90f;
+
+        if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound)
+            ChangeState(State.Idle);
     }
 
     protected override void HandleMotion() {

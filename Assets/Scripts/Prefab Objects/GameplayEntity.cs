@@ -87,11 +87,13 @@ public class GameplayEntity { // Gameplay Entity
     public virtual void Update() {
         if (m_loaded) {
             HandleState();
-            if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound) {
-                SwitchToMelee();
-                ChangeState(State.Idle);
+
+            if (health <= 0) {
+                ChangeState(State.Die);
             }
+
             HandleMotion();
+
             if (transform.position.x < m_leftBound)
                 xPos = m_leftBound;
             if (transform.position.x > m_rightBound)
