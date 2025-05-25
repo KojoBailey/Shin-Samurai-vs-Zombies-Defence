@@ -31,14 +31,15 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
 
         UIManager.AddEventTrigger("AllySlot1", m_cooldownReference.gameObject, EventTriggerType.PointerClick, AllySlotOnPointerClick);
 
-        int i = 0;
         m_abilityButtons = new List<GameObject>();
-        foreach (AbilityData abilityData in GameplayManager.equippedAbilities) {
+        for (int i = 0; i < GameplayManager.equippedAbilities.Count; i++) {
             GameObject abilityButton = Instantiate(m_abilitySlotReference, m_abilitySlotReference.transform.parent);
+            AbilityData abilityData = GameplayManager.equippedAbilities[i];
             abilityButton.transform.Find("Icon").gameObject.GetComponent<Image>().sprite = abilityData.icon;
             abilityButton.transform.Find("Cooldown").gameObject.GetComponent<Image>().sprite = abilityData.icon;
-            abilityButton.GetComponent<RectTransform>().localPosition = new Vector3(-300 * i, 0, 0);
-            UIManager.AddEventTrigger(abilityData.id, i++, abilityButton, EventTriggerType.PointerClick, AbilitySlotOnPointerClick);
+            abilityButton.GetComponent<RectTransform>().localPosition = new Vector3(
+                -300 * (GameplayManager.equippedAbilities.Count - 1 - i), 0, 0);
+            UIManager.AddEventTrigger(abilityData.id, i, abilityButton, EventTriggerType.PointerClick, AbilitySlotOnPointerClick);
             m_abilityButtons.Add(abilityButton);
         }
         m_abilitySlotReference.SetActive(false);
