@@ -18,11 +18,9 @@ public class Ally : GameplayEntity {
         // Attach weapon.
         if (data.meleeWeaponData != null) {
             meleeWeapon = new MeleeWeapon(data.meleeWeaponData, obj);
-            meleeRange = meleeWeapon.data.range;
         }
         if (data.rangedWeaponData != null) {
             rangedWeapon = new RangedWeapon(data.rangedWeaponData, obj);
-            rangedRange = rangedWeapon.data.range;
         }
 
         health = data.health;
@@ -97,9 +95,9 @@ public class Ally : GameplayEntity {
 
         if (currentState == State.MeleeAttack) {
             if (m_attackTimer < 0f)
-                m_attackTimer = data.meleeWeaponData.attackFrequency;
+                m_attackTimer = data.attackFrequency;
             if (!animationHandler.attackIsPlaying) {
-                if (m_attackTimer == data.meleeWeaponData.attackFrequency) {
+                if (m_attackTimer == data.attackFrequency) {
                     animation.CrossFade(animationHandler.attack, 0.1f);
                     wrapperAnimation.CrossFade(animationHandler.attack, 0.1f);
                 } else {
@@ -109,7 +107,7 @@ public class Ally : GameplayEntity {
             }
             m_attackTimer -= Time.deltaTime;
         } else {
-            m_attackTimer = data.meleeWeaponData.attackFrequency;
+            m_attackTimer = data.attackFrequency;
         }
 
         if (currentState == State.Die) {
@@ -129,7 +127,7 @@ public class Ally : GameplayEntity {
         return (distance < data.meleeWeaponData.range) && (distance > 0);
     }
     public override void MeleeHit(GameplayEntity target) {
-        target.Damage(data.meleeWeaponData.damage);
+        target.Damage(data.damage);
         meleeWeapon.data.PlayHit();
     }
 }

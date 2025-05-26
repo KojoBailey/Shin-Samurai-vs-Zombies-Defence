@@ -7,8 +7,8 @@ public class MeleeWeapon { // Melee Weapon
     public MeleeWeaponData data;
     private GameObject m_leftObj, m_rightObj;
 
-    public MeleeWeapon(MeleeWeaponData inputData, GameObject heroLink) {
-        data = inputData;
+    public MeleeWeapon(MeleeWeaponData _data, GameObject heroLink) {
+        data = _data;
 
         if (data.leftHandPrefab != null) {
             m_leftObj = Object.Instantiate(data.leftHandPrefab);
@@ -32,6 +32,27 @@ public class MeleeWeapon { // Melee Weapon
         }
 
         SaveManager.SetLevel(data, 1);
+    }
+    public MeleeWeapon(EnemyData.MeleeWeapon weaponData, GameObject enemyLink) {
+        if (weaponData.hand == WeaponAnchor.Side.Left) {
+            m_leftObj = Object.Instantiate(weaponData.prefab);
+            WeaponAnchor[] handObjs = enemyLink.GetComponentsInChildren<WeaponAnchor>();
+            foreach (WeaponAnchor handObj in handObjs) {
+                if (handObj.side == WeaponAnchor.Side.Left) {
+                    m_leftObj.transform.SetParent(handObj.transform, worldPositionStays: false);
+                    break;
+                }
+            }
+        } else if (weaponData.hand == WeaponAnchor.Side.Right) {
+            m_rightObj = Object.Instantiate(weaponData.prefab);
+            WeaponAnchor[] handObjs = enemyLink.GetComponentsInChildren<WeaponAnchor>();
+            foreach (WeaponAnchor handObj in handObjs) {
+                if (handObj.side == WeaponAnchor.Side.Right) {
+                    m_rightObj.transform.SetParent(handObj.transform, worldPositionStays: false);
+                    break;
+                }
+            }
+        }
     }
 
     public void Show() {

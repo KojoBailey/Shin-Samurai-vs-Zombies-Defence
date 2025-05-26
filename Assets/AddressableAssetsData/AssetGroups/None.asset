@@ -102,6 +102,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33b9dcb538985474e89c6f19f3ace0e6
+    m_Address: Data/Allies Gate
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 390c53902d58465439c4ec38a76d0928
     m_Address: Audio/Combat/Swoosh Small 03
     m_ReadOnly: 0
@@ -225,6 +230,12 @@ MonoBehaviour:
     m_Address: Prefabs/Sacred Gate
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bed8c9dd3c22de0478177814a73fd4b0
+    m_Address: Data/Enemies/Zombies/HoppingTorso
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Enemy
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c43d4bac8c20f0a4c9dfef65ab72c174
     m_Address: Textures/Icons/Daimyo

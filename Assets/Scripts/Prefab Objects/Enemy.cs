@@ -15,14 +15,12 @@ public class Enemy : GameplayEntity {
         transform.position = new Vector3(0f, 0f, Random.Range(-0.4f, 0.4f));
         transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
 
-        // Attach weapon.
-        if (data.meleeWeaponData != null) {
-            meleeWeapon = new MeleeWeapon(data.meleeWeaponData, obj);
-            meleeRange = meleeWeapon.data.range;
+        // Attach weapon(s).
+        if (data.meleeWeapon.prefab != null) {
+            meleeWeapon = new MeleeWeapon(data.meleeWeapon, obj);
         }
-        if (data.rangedWeaponData != null) {
-            rangedWeapon = new RangedWeapon(data.rangedWeaponData, obj);
-            rangedRange = rangedWeapon.data.range;
+        if (data.rangedWeapon.prefab != null) {
+            rangedWeapon = new RangedWeapon(data.rangedWeapon, obj);
         }
 
         health = data.health;
@@ -127,6 +125,6 @@ public class Enemy : GameplayEntity {
     public override void MeleeHit(GameplayEntity target) {
         target.Damage(data.damage);
         if (meleeWeapon != null)
-            meleeWeapon.data.PlayHit();
+            data.meleeWeapon.PlayHit();
     }
 };

@@ -8,9 +8,27 @@ public class EnemyData : ScriptableObject {
     public Sprite icon;
     public GameObject prefabWrapper;
     public GameObject prefab;
-    public MeleeWeaponData meleeWeaponData;
-    public RangedWeaponData rangedWeaponData;
     public EntityAudioData audioData;
+
+    public enum WeaponType { Melee, Ranged }
+    [System.Serializable] public class MeleeWeapon {
+        public GameObject prefab;
+        public WeaponAnchor.Side hand;
+        public AudioClip[] hitAudio;
+
+        public void PlayHit() {
+            if (hitAudio.Length > 0) {
+                SFXManager.Play(hitAudio[Random.Range(0, hitAudio.Length)]);
+            }
+        }
+    }
+    public MeleeWeapon meleeWeapon;
+    [System.Serializable] public class RangedWeapon {
+        public GameObject prefab;
+        public WeaponAnchor.Side hand;
+        public GameObject projectile;
+    }
+    public RangedWeapon rangedWeapon;
 
     public enum Stat {
         Health,
@@ -42,6 +60,7 @@ public class EnemyData : ScriptableObject {
     }
 
     public float GetStat(Stat stat) {
+        
         return stats[stat];
     }
 }

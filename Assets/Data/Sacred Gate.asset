@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f03e728150d15846ba70b211eed59f1, type: 3}
+  m_Name: Sacred Gate
+  m_EditorClassIdentifier: 
+  displayName: Sacred Gate
+  prefab: {fileID: 7557576946565138603, guid: be4798cab27c7e7469cc99e878b41a1d, type: 3}
+  material: {fileID: 2100000, guid: 72b3549f79fe3804aa2fe539a9168d80, type: 2}
+  audioData: {fileID: 11400000, guid: ac8866f2215bf064da1166b45b4d35c2, type: 2}

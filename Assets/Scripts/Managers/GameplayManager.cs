@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 /* Manages the main, non-menu gameplay. */
 public class GameplayManager { // Gameplay Manager
+    /* Debug Tools */
+    public static bool heroDoNotAttack = false;
+
     public static bool initialised = false;
     public static float gameTimer;
     private static float m_spawnSave;
@@ -12,6 +15,7 @@ public class GameplayManager { // Gameplay Manager
     public static float heroX;
 
     public static Stage stage;
+    public static Gate gate;
     private static GameObject m_hud;
     private static BGM m_bgm;
 
@@ -31,6 +35,8 @@ public class GameplayManager { // Gameplay Manager
 
     public static async Task StartWave() {
         await AssetManager.LoadGameplay();
+        entities = new Dictionary<string, GameplayEntity>();
+        closestTargets = new Dictionary<string, GameplayEntity>();
 
         allyCooldowns = new();
         allyCooldowns.Add(0);
@@ -42,11 +48,13 @@ public class GameplayManager { // Gameplay Manager
         stage = new Stage("ZenGarden");
         await stage.Init();
 
+        SaveManager.EquipCostume("AlliesGate", 0);
+        gate = new Gate(GameplayEntity.Side.Left);
+        await gate.Init();
+        AddEntity("Gate", gate);
+
         var hudHandle = Addressables.InstantiateAsync("Prefabs/Gameplay HUD");
         m_hud = await hudHandle.Task;
-
-        entities = new();
-        closestTargets = new();
 
         SaveManager.EquipCostume("Samurai", 0);
         SaveManager.EquipCostume("Kunoichi", 0);
@@ -55,7 +63,6 @@ public class GameplayManager { // Gameplay Manager
         hero = new Hero(SaveManager.selectedHero);
         hero.SetBounds(stage.leftBound, stage.rightBound);
         hero.allegiance = GameplayEntity.Side.Left;
-        hero.doNotAttack = false;
         await hero.Init(stage.heroSpawn);
         AddEntity("Hero", hero);
 
@@ -119,9 +126,17 @@ public class GameplayManager { // Gameplay Manager
                 }
             }
 
-            if (gameTimer - m_spawnSave > 5) {
+            if (gameTimer - m_spawnSave > 3) {
                 m_spawnSave = gameTimer;
-                SpawnEnemy(AssetManager.enemiesData["LightZombie"]);
+                int rand = Random.Range(0, 2);
+                switch (rand) {
+                    case 0:
+                        SpawnEnemy(AssetManager.enemiesData["HoppingTorso"]);
+                        break;
+                    case 1:
+                        SpawnEnemy(AssetManager.enemiesData["LightZombie"]);
+                        break;
+                }
             }
             allyCooldowns[0] -= Time.deltaTime;
             for (int i = 0; i < abilityCooldowns.Count; i++)

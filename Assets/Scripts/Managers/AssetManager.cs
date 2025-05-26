@@ -31,8 +31,15 @@ public class AssetManager { // Asset Manager
 
         /* Enemies*/
         enemiesData = new Dictionary<string, EnemyData>();
-        var zombieDataHandle = Addressables.LoadAssetAsync<EnemyData>($"Data/Enemies/Zombies/LightZombie");
+        var zombieDataHandle = Addressables.LoadAssetAsync<EnemyData>($"Data/Enemies/Zombies/HoppingTorso");
         EnemyData zombieData = await zombieDataHandle.Task;
+        if (zombieData == null) {
+            Debug.LogError($"Could not find or load Enemy of ID \"{"Zombies/HoppingTorso"}\".");
+            return;
+        }
+        enemiesData.Add("HoppingTorso", zombieData);
+        zombieDataHandle = Addressables.LoadAssetAsync<EnemyData>($"Data/Enemies/Zombies/LightZombie");
+        zombieData = await zombieDataHandle.Task;
         if (zombieData == null) {
             Debug.LogError($"Could not find or load Enemy of ID \"{"Zombies/LightZombie"}\".");
             return;

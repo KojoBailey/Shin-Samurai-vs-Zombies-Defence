@@ -9,10 +9,35 @@ public class HealthBar { // Health Bar
     private EntityHealthBar m_textures;
     private float m_width;
     private float m_targetPadding;
-    public static Color green = new Color(0f, 0.9f, 0f);
-    public static Color red = new Color(1f, 0f, 0f);
+
+    public Vector3 position {
+        set {
+            m_canvas.transform.localPosition = value;
+        }
+        get => m_canvas.transform.localPosition;
+    }
+    public Vector3 scale {
+        set {
+            m_canvas.transform.localScale = value;
+        }
+        get => m_canvas.transform.localScale;
+    }
 
     private bool m_initialised = false;
+
+    public static Color green = new Color(0f, 0.9f, 0f);
+    public static Color red = new Color(1f, 0f, 0f);
+    public static Color LerpHSV(Color a, Color b, float t) {
+        Color.RGBToHSV(a, out float h1, out float s1, out float v1);
+        Color.RGBToHSV(b, out float h2, out float s2, out float v2);
+
+        // Interpolate each component separately.
+        float h = Mathf.LerpAngle(h1 * 360f, h2 * 360f, t) / 360f; // Interpolate hue correctly across 360 degrees.
+        float s = Mathf.Lerp(s1, s2, t);
+        float v = Mathf.Lerp(v1, v2, t);
+
+        return Color.HSVToRGB(h, s, v);
+    }
 
     public HealthBar(GameObject prefab, GameplayEntity _entity, float _maxHealth) {
         entity = _entity;
@@ -40,17 +65,5 @@ public class HealthBar { // Health Bar
             m_targetPadding = m_width - entity.health / maxHealth * m_width;
             m_mask.padding += new Vector4(0, 0, (m_targetPadding - m_mask.padding.z) / 0.2f * Time.deltaTime, 0);
         }
-    }
-
-    public static Color LerpHSV(Color a, Color b, float t) {
-        Color.RGBToHSV(a, out float h1, out float s1, out float v1);
-        Color.RGBToHSV(b, out float h2, out float s2, out float v2);
-
-        // Interpolate each component separately.
-        float h = Mathf.LerpAngle(h1 * 360f, h2 * 360f, t) / 360f; // Interpolate hue correctly across 360 degrees.
-        float s = Mathf.Lerp(s1, s2, t);
-        float v = Mathf.Lerp(v1, v2, t);
-
-        return Color.HSVToRGB(h, s, v);
     }
 };

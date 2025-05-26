@@ -42,6 +42,29 @@ public class RangedWeapon { // Ranged Weapon
         m_projectiles = new();
         SaveManager.SetLevel(data, 1);
     }
+    public RangedWeapon(EnemyData.RangedWeapon weaponData, GameObject enemyLink) {
+        if (weaponData.hand == WeaponAnchor.Side.Left) {
+            m_leftObj = Object.Instantiate(weaponData.prefab);
+            WeaponAnchor[] handObjs = enemyLink.GetComponentsInChildren<WeaponAnchor>();
+            foreach (WeaponAnchor handObj in handObjs) {
+                if (handObj.side == WeaponAnchor.Side.Left) {
+                    m_leftObj.transform.SetParent(handObj.transform, worldPositionStays: false);
+                    break;
+                }
+            }
+        } else if (weaponData.hand == WeaponAnchor.Side.Right) {
+            m_rightObj = Object.Instantiate(weaponData.prefab);
+            WeaponAnchor[] handObjs = enemyLink.GetComponentsInChildren<WeaponAnchor>();
+            foreach (WeaponAnchor handObj in handObjs) {
+                if (handObj.side == WeaponAnchor.Side.Right) {
+                    m_rightObj.transform.SetParent(handObj.transform, worldPositionStays: false);
+                    break;
+                }
+            }
+        }
+
+        m_projectiles = new();
+    }
 
     public void Update() {
         foreach (Projectile projectile in m_projectiles) {

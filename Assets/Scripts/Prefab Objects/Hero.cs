@@ -113,9 +113,9 @@ public class Hero : GameplayEntity {
             }
         } else {
             m_backPedalTimer = 0;
-            if (attackStatus == AttackStatus.Melee && !doNotAttack) {
+            if (attackStatus == AttackStatus.Melee && !GameplayManager.heroDoNotAttack) {
                 ChangeState(State.MeleeAttack);
-            } else if (attackStatus == AttackStatus.Ranged && !doNotAttack) {
+            } else if (attackStatus == AttackStatus.Ranged && !GameplayManager.heroDoNotAttack) {
                 ChangeState(State.RangedAttack);
             } else if (attackStatus == AttackStatus.RangedHold) {
                 ChangeState(State.IdleRanged);

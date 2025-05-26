@@ -36,9 +36,6 @@ public class GameplayEntity { // Gameplay Entity
     protected int m_knockedBackCount = 0;
     public bool toDestroy = false;
 
-    // Debug Tools
-    public bool doNotAttack = false;
-
     public enum State {
         Idle,
         IdleRanged,

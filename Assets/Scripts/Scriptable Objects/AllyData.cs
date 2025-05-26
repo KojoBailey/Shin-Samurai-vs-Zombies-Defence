@@ -43,9 +43,19 @@ public class AllyData : ScriptableObject, IUpgradable {
     public float speed {
         get => GetStat(Stat.Speed);
     }
+    public float damage {
+        get => GetStat(Stat.Damage);
+    }
+    public int attackFrequency {
+        get => (int)GetStat(Stat.AttackFrequency);
+    }
     public int knockbackCount {
         get => (int)GetStat(Stat.KnockbackCount);
     }
+    public int range {
+        get => (int)GetStat(Stat.Range);
+    }
+
 
     public float GetStat(Stat stat) {
         return GetStat(SaveManager.levels[this], stat);

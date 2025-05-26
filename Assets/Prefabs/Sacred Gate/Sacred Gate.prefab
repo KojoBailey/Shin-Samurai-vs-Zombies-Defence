@@ -4882,6 +4882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7560515294265180521}
   - component: {fileID: 7597281173276487389}
+  - component: {fileID: 3066768251730829352}
   m_Layer: 0
   m_Name: Sacred Gate
   m_TagString: Untagged
@@ -4899,8 +4900,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.01, y: 0.011, z: 0.01}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4698533600861034570}
   - {fileID: 7562524178404599195}
@@ -4921,14 +4922,48 @@ Animation:
   m_GameObject: {fileID: 7557576946565138603}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 62ec05da868252f40840958badd0ab42, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 62ec05da868252f40840958badd0ab42, type: 2}
+  m_Animation: {fileID: 0}
+  m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &3066768251730829352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7557576946565138603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49282e99dd88c343aaf1914a2faa0c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 7597281173276487389}
+  m_idle:
+  - {fileID: 7400000, guid: 9b419f08cb4ca044c9825e105a7b277c, type: 2}
+  m_idleRanged: []
+  m_attack: []
+  m_attackRanged: []
+  m_forward: []
+  m_backward: []
+  m_backpedal: []
+  m_backpedalTurn: []
+  m_castForward: []
+  m_castMid: []
+  m_abilities:
+    list: []
+    keyCollision: 0
+  m_knockedBack: []
+  m_land: []
+  m_cower: []
+  m_stunned: []
+  m_die:
+  - {fileID: 7400000, guid: 62ec05da868252f40840958badd0ab42, type: 2}
+  m_revive: []
+  m_victory: []
 --- !u!1 &7558207124306187617
 GameObject:
   m_ObjectHideFlags: 0
