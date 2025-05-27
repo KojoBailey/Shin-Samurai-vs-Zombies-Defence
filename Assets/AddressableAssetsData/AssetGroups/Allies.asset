@@ -21,18 +21,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Ally
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a4b21efdab2770d409d6d56bcec161ee
-    m_Address: Data/Allies/Sword
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Ally
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d2aaf1871addd714f859a58de0498a02
-    m_Address: Data/Allies/Archer
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Ally
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ad3485259873eac478fc26ccd2272b29, type: 2}
   m_SchemaSet:

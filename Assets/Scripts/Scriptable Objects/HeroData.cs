@@ -19,7 +19,7 @@ public class HeroData : ScriptableObject, IUpgradable {
     }
 
     public enum Stat {
-        Health,
+        MaxHealth,
         HealthRegen,
         HealthRegenDelay,
         Acceleration
@@ -27,9 +27,9 @@ public class HeroData : ScriptableObject, IUpgradable {
     public GenericDictionary<Stat, float> stats;
     public GenericDictionary<Stat, float>[] upgrades;
 
-    public float health {
+    public float maxHealth {
         get {
-            return GetStat(Stat.Health);
+            return GetStat(Stat.MaxHealth);
         }
     }
     public float healthRegen {

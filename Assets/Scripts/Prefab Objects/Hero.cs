@@ -50,7 +50,7 @@ public class Hero : GameplayEntity {
         }
         SwitchToMelee();
 
-        health = data.health;
+        health = data.maxHealth;
 
         m_isTurning = false;
         animation.Play(animationHandler.idle);
@@ -67,8 +67,8 @@ public class Hero : GameplayEntity {
         if (m_healthRegenTimer <= 0) {
             health += data.healthRegen * Time.deltaTime;
         }
-        if (health > data.health)
-            health = data.health;
+        if (health > data.maxHealth)
+            health = data.maxHealth;
 
         if (abilityStatus == AbilityStatus.CastForward) {
             ChangeState(State.CastForward);

@@ -7,9 +7,9 @@ public class AllyData : ScriptableObject, IUpgradable {
     public string description;
     public Sprite icon;
     public GameObject prefabWrapper;
+    public EnemyData.MeleeWeapon meleeWeapon;
+    public EnemyData.RangedWeapon rangedWeapon;
     public CostumeData[] costumes;
-    public MeleeWeaponData meleeWeaponData;
-    public RangedWeaponData rangedWeaponData;
 
     public CostumeData GetEquippedCostume() {
         CostumeData costume = costumes[SaveManager.equippedCostumes[id]];

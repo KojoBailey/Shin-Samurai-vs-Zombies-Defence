@@ -62,9 +62,9 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
 
     private void Update() {
         if (GameplayManager.initialised) {
-            m_healthBarTargetPadding = m_healthBarWidth - GameplayManager.hero.health / GameplayManager.hero.data.health * m_healthBarWidth;
+            m_healthBarTargetPadding = m_healthBarWidth - GameplayManager.hero.health / GameplayManager.hero.data.maxHealth * m_healthBarWidth;
             m_healthBarMask.padding += new Vector4(0, 0, (m_healthBarTargetPadding - m_healthBarMask.padding.z) / 0.2f * Time.deltaTime, 0);
-            m_healthBarTargetColour = HealthBar.LerpHSV(HealthBar.red, HealthBar.green, GameplayManager.hero.health / GameplayManager.hero.data.health);
+            m_healthBarTargetColour = HealthBar.LerpHSV(HealthBar.red, HealthBar.green, GameplayManager.hero.health / GameplayManager.hero.data.maxHealth);
             m_healthBarImage.color += (m_healthBarTargetColour - m_healthBarImage.color) / 0.2f * Time.deltaTime;
 
             if (GameplayManager.smithy < AssetManager.alliesData[0].cost) {

@@ -194,39 +194,4 @@ public class AnimationHandler : MonoBehaviour {
     public bool IsAbilityPlaying(string abilityId) {
         return anim.IsPlaying(GetAbility(abilityId));
     }
-
-    public void LoadClips() {
-        foreach (AnimationClip clip in m_idle)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_idleRanged)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_attack)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_attackRanged)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_castForward)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_castMid)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_abilities.Values)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_forward)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_backward)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_backpedal)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_backpedalTurn)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_knockedBack)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_land)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_cower)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_die)
-            anim.AddClip(clip, clip.name);
-        foreach (AnimationClip clip in m_victory)
-            anim.AddClip(clip, clip.name);
-    }
 }

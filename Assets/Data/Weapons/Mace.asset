@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4eaf3f320d8964c9cd9c311a947830, type: 3}
   m_Name: Mace
   m_EditorClassIdentifier: 
-  id: 
-  leftHandPrefab: {fileID: 0}
+  id: Mace
+  leftHandPrefab: {fileID: 1924913640763457, guid: 8eb86d923bb363544a0026af5d87d022, type: 3}
   rightHandPrefab: {fileID: 0}
   hitAudio: []

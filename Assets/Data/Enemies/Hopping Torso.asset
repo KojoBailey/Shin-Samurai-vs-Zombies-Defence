@@ -18,9 +18,20 @@ MonoBehaviour:
   icon: {fileID: 0}
   prefabWrapper: {fileID: 9216566377795668689, guid: f9d6a86f6adaa3f4195e80d4041cba5e, type: 3}
   prefab: {fileID: 1934122997480958, guid: 446cc89e28448aa48bf63379d28c54d9, type: 3}
-  meleeWeaponData: {fileID: 11400000, guid: af10351aa07b4c94eb6aa1a5ce31118c, type: 2}
-  rangedWeaponData: {fileID: 0}
-  audioData: {fileID: 11400000, guid: dc99c1f98f3f2994db846d7044556dfc, type: 2}
+  audioData: {fileID: 11400000, guid: f75be2ccaa6b3c84791c08274b8ed651, type: 2}
+  meleeWeapon:
+    prefab: {fileID: 1924913640763457, guid: 8eb86d923bb363544a0026af5d87d022, type: 3}
+    hand: 0
+    hitAudio:
+    - {fileID: 8300000, guid: be36495f1f1eea34384dd0bbf96b4398, type: 3}
+    - {fileID: 8300000, guid: 7356b99108fa7d744ae262923745f742, type: 3}
+    - {fileID: 8300000, guid: 909bb386dc505fc45bef94617af14152, type: 3}
+    - {fileID: 8300000, guid: 4443511b6592fa745bad50e2ab83d8e1, type: 3}
+    - {fileID: 8300000, guid: eafac91f854d66d40a52b1d5882e477a, type: 3}
+  rangedWeapon:
+    prefab: {fileID: 0}
+    hand: 0
+    projectile: {fileID: 0}
   stats:
     list:
     - Key: 0
@@ -32,7 +43,7 @@ MonoBehaviour:
     - Key: 2
       Value: 10
     - Key: 3
-      Value: 2
+      Value: 1
     - Key: 5
-      Value: 1.5
+      Value: 1
     keyCollision: 0

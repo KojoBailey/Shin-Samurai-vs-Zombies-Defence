@@ -64,7 +64,6 @@ public class GameplayEntity { // Gameplay Entity
         animation = obj.GetComponent<Animation>();
         wrapperAnimation = wrapperObject.GetComponent<Animation>();
         animationHandler = obj.GetComponent<AnimationHandler>();
-        animationHandler.LoadClips();
         knockbackMeter = 20;
         if (allegiance == Side.Left)
             direction = 1;

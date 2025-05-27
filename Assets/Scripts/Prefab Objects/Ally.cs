@@ -15,12 +15,12 @@ public class Ally : GameplayEntity {
         transform.position = new Vector3(0f, 0f, Random.Range(-0.4f, 0.4f));
         transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
 
-        // Attach weapon.
-        if (data.meleeWeaponData != null) {
-            meleeWeapon = new MeleeWeapon(data.meleeWeaponData, obj);
+        // Attach weapon(s).
+        if (data.meleeWeapon.prefab != null) {
+            meleeWeapon = new MeleeWeapon(data.meleeWeapon, obj);
         }
-        if (data.rangedWeaponData != null) {
-            rangedWeapon = new RangedWeapon(data.rangedWeaponData, obj);
+        if (data.rangedWeapon.prefab != null) {
+            rangedWeapon = new RangedWeapon(data.rangedWeapon, obj);
         }
 
         health = data.health;
@@ -124,10 +124,10 @@ public class Ally : GameplayEntity {
     public override bool IsInMeleeRange(float targetX) {
         float distance = targetX - transform.position.x;
         if (allegiance == Side.Right) distance *= -1;
-        return (distance < data.meleeWeaponData.range) && (distance > 0);
+        return (distance < data.range) && (distance > 0);
     }
     public override void MeleeHit(GameplayEntity target) {
         target.Damage(data.damage);
-        meleeWeapon.data.PlayHit();
+        data.meleeWeapon.PlayHit();
     }
 }
