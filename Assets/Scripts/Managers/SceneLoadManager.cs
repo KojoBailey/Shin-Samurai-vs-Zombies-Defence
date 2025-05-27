@@ -23,7 +23,6 @@ public class SceneLoadManager { // Scene Load Manager
         // Load next scene.
         var handle = Addressables.LoadSceneAsync("Scenes/" + id, LoadSceneMode.Single);
         await handle.Task;
-        // Debug.LogFormat("Successfully loaded scene: {0}", id);
         if (!loadingScreen) m_loadingScene = false;
     }
 
@@ -35,6 +34,5 @@ public class SceneLoadManager { // Scene Load Manager
         }
         m_loadingScene = false;
         finishedLoading = true;
-        // Debug.Log("Finished loading scene.");
     }
 }

@@ -29,6 +29,12 @@ public class Gate : GameplayEntity {
         FinishInit();
     }
 
+    protected override void HandleState() {
+        if (health <= 0) {
+            ChangeState(State.Die);
+        }
+    }
+
     protected override void HandleMotion() {
         if (currentState != m_previousState) {
             m_previousState = currentState;

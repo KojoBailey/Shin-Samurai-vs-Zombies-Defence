@@ -29,6 +29,16 @@ public class Ally : GameplayEntity {
     }
 
     protected override void HandleState() {
+        if (GameplayManager.waveComplete) {
+            ChangeState(State.Victory);
+            return;
+        }
+
+        if (health <= 0) {
+            ChangeState(State.Die);
+        }
+        if (currentState == State.Die) return;
+
         // Handle knockback.
         for (int i = data.knockbackCount - m_knockedBackCount; i > 0; i--) {
             if (health <= data.health / (data.knockbackCount + 1) * i) {
@@ -89,6 +99,9 @@ public class Ally : GameplayEntity {
                 case State.Die:
                     animation.CrossFade(animationHandler.die, 0.1f);
                     wrapperAnimation.CrossFade(animationHandler.die, 0.1f);
+                    break;
+                case State.Victory:
+                    ChangeAnimation(animationHandler.victory, 0.1f);
                     break;
             }
         }

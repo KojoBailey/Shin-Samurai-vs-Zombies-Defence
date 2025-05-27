@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 public class Hero : GameplayEntity {
     private string m_heroId;
@@ -58,6 +59,11 @@ public class Hero : GameplayEntity {
     }
 
     protected override void HandleState() {
+        if (GameplayManager.waveComplete) {
+            ChangeState(State.Victory);
+            return;
+        }
+
         // Health-related stuff
         if (health <= 0) {
             ChangeState(State.Die);
@@ -197,6 +203,9 @@ public class Hero : GameplayEntity {
                     animation.CrossFade(animationHandler.die, 0.1f);
                     wrapperAnimation.CrossFade(animationHandler.die, 0.1f);
                     data.GetEquippedCostume().audioData.Die();
+                    break;
+                case State.Victory:
+                    ChangeAnimation(animationHandler.victory, 0.1f);
                     break;
             }
         }

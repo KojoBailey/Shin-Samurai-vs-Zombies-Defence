@@ -29,6 +29,11 @@ public class Enemy : GameplayEntity {
     }
 
     protected override void HandleState() {
+        if (health <= 0) {
+            ChangeState(State.Die);
+        }
+        if (currentState == State.Die) return;
+        
         // Handle knockback.
         for (int i = data.knockbackCount - m_knockedBackCount; i > 0; i--) {
             if (health <= data.health / (data.knockbackCount + 1) * i) {
@@ -87,6 +92,7 @@ public class Enemy : GameplayEntity {
                 case State.Die:
                     ChangeSpeed(1);
                     ChangeAnimation(animationHandler.die, 0.1f);
+                    GameplayManager.enemiesRemaining -= 1;
                     break;
             }
         }

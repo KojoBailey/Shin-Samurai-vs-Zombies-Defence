@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Prefab Objects\MeleeWeapon.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\Ally.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\GateData.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\WaveData.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\CostumeData.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\HeroData.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\GameplayEntity.cs" />

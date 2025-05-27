@@ -52,6 +52,7 @@ public class AssetManager { // Asset Manager
 
         /* Audio */
         audioClips = new Dictionary<string, AudioClip>();
+        await LoadAudioClip("Wave Victory");
         if (!fastLoad) {
             for (int i = 0; i < 5; i++)
                 await LoadAudioClip($"Combat/Swoosh Small 0{i}");

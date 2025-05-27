@@ -83,11 +83,6 @@ public class GameplayEntity { // Gameplay Entity
     public virtual void Update() {
         if (m_loaded) {
             HandleState();
-
-            if (health <= 0) {
-                ChangeState(State.Die);
-            }
-
             HandleMotion();
 
             if (transform.position.x < m_leftBound)

@@ -7,8 +7,7 @@ public class Gameplay : MonoBehaviour {
     private Quaternion m_cameraRotation = Quaternion.Euler(4.94f, 0f, 0f);
 
     private async void Start() {
-        await GameplayManager.StartWave();
-
+        await GameplayManager.StartWave(m_cameraTransform);
         m_cameraTransform.rotation = m_cameraRotation;
 
         SceneLoadManager.FinishLoading();
@@ -22,7 +21,8 @@ public class Gameplay : MonoBehaviour {
 
     private void LateUpdate() {
         if (SceneLoadManager.finishedLoading) {
-            m_cameraTransform.position = GameplayManager.hero.transform.position + m_cameraOffset;
+            if (!GameplayManager.startSlowMo)
+                m_cameraTransform.position = GameplayManager.hero.transform.position + m_cameraOffset;
         }
     }
 }

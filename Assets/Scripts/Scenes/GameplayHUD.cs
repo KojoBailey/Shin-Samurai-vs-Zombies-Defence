@@ -46,10 +46,10 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
     }
 
     private void AllySlotOnPointerClick(string id) {
-        if (GameplayManager.allyCooldowns[0] <= 0 && GameplayManager.smithy >= AssetManager.alliesData[0].cost) {
+        if (GameplayManager.allyCooldowns[0] <= 0 && GameplayManager.instance.smithy >= AssetManager.alliesData[0].cost) {
             GameplayManager.SpawnAlly(AssetManager.alliesData[0]);
             GameplayManager.allyCooldowns[0] = AssetManager.alliesData[0].cooldown;
-            GameplayManager.smithy -= AssetManager.alliesData[0].cost;
+            GameplayManager.instance.smithy -= AssetManager.alliesData[0].cost;
         }
     }
 
@@ -67,7 +67,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
             m_healthBarTargetColour = HealthBar.LerpHSV(HealthBar.red, HealthBar.green, GameplayManager.hero.health / GameplayManager.hero.data.maxHealth);
             m_healthBarImage.color += (m_healthBarTargetColour - m_healthBarImage.color) / 0.2f * Time.deltaTime;
 
-            if (GameplayManager.smithy < AssetManager.alliesData[0].cost) {
+            if (GameplayManager.instance.smithy < AssetManager.alliesData[0].cost) {
                 m_allySlotReference.GetComponent<RectTransform>().localScale = new Vector3(0.9f, 0.9f, 0.9f);
                 m_allyIconReference.color = new Color(0.3f, 0.3f, 0.3f);
             } else {
@@ -75,7 +75,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
                 m_allyIconReference.color = Color.white;
             }
             m_cooldownReference.fillAmount = GameplayManager.allyCooldowns[0] / AssetManager.alliesData[0].cooldown;
-            m_smithyText.text = GameplayManager.smithy.ToString();
+            m_smithyText.text = GameplayManager.instance.smithy.ToString();
 
             for (int i = 0; i < m_abilityButtons.Count; i++) {
                 Image cooldown = m_abilityButtons[i].transform.Find("Cooldown").gameObject.GetComponent<Image>();

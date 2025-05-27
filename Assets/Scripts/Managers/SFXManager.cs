@@ -15,10 +15,10 @@ public class SFXManager { // Sound Effects Manager
         }
     }
 
-    public static void Play(string address) {
-        Play(AssetManager.audioClips[address]);
+    public static float Play(string address) {
+        return Play(AssetManager.audioClips[address]);
     }
-    public static void Play(AudioClip clip) {
+    public static float Play(AudioClip clip) {
         AudioSource availableSlot = null;
         foreach (var audioSource in m_audioSources) {
             if (!audioSource.isPlaying) {
@@ -28,9 +28,10 @@ public class SFXManager { // Sound Effects Manager
         }
         if (availableSlot == null) {
             Debug.LogWarning("Maximum number of SFX slots reached. Could not play audio.");
-            return;
+            return 0;
         }
         availableSlot.clip = clip;
         availableSlot.Play();
+        return availableSlot.clip.length;
     }
 };

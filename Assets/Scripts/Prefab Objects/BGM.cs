@@ -18,4 +18,8 @@ class BGM { // Background Music
         m_bgm.loop = true;
         m_bgm.Play();
     }
+
+    public void Stop() {
+        m_bgm.Stop();
+    }
 };
