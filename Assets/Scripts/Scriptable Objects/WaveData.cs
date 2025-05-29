@@ -5,6 +5,10 @@ using UnityEngine;
 public class WaveData : ScriptableObject {
     public int index;
     public string title;
+    public enum Stage {
+        ZenGarden
+    }
+    public Stage stage;
     
     [System.Serializable] public class Entry {
         public float delay;
@@ -12,4 +16,11 @@ public class WaveData : ScriptableObject {
         public int enemyQuanitity;
     }
     public Entry[] entries;
+
+    public static string StageToString(Stage _stage) {
+        switch (_stage) {
+            case Stage.ZenGarden: return "Zen Garden";
+        }
+        return "";
+    }
 }

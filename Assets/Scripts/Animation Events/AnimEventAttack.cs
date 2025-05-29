@@ -6,12 +6,12 @@ public class AnimEventAttack : MonoBehaviour { // Animation Event: Attack
     public string entityId;
 
     public void DealDamage() {
-        GameplayManager.DealDamage(entityId);
+        GameplayManager.instance.DealDamage(entityId);
     }
     public void FireProjectile() {
-        GameplayManager.FireProjectile(entityId);
+        GameplayManager.instance.FireProjectile(entityId);
     }
     public void ActivateAbility() {
-        AbilityManager.ActivateAbility(entityId);
+        GameplayManager.instance.abilityManager.ActivateAbility(entityId);
     }
 };

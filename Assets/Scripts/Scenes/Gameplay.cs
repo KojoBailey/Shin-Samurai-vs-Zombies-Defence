@@ -7,22 +7,24 @@ public class Gameplay : MonoBehaviour {
     private Quaternion m_cameraRotation = Quaternion.Euler(4.94f, 0f, 0f);
 
     private async void Start() {
-        await GameplayManager.StartWave(m_cameraTransform);
         m_cameraTransform.rotation = m_cameraRotation;
+        await GameplayManager.Init(m_cameraTransform);
+        GameplayManager.instance.StartWave();
 
         SceneLoadManager.FinishLoading();
     }
 
     private void Update() {
         if (SceneLoadManager.finishedLoading) {
-            GameplayManager.Update();
+            GameplayManager.instance.Update();
         }
     }
 
     private void LateUpdate() {
         if (SceneLoadManager.finishedLoading) {
-            if (!GameplayManager.startSlowMo)
-                m_cameraTransform.position = GameplayManager.hero.transform.position + m_cameraOffset;
+            if (!GameplayManager.instance.startSlowMo)
+                m_cameraTransform.position = GameplayManager.instance.hero.transform.position + m_cameraOffset;
+                // !! change to just heroX
         }
     }
 }

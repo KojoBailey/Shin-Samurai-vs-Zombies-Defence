@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
+using System.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 
 public class SFXManager { // Sound Effects Manager
@@ -15,8 +15,18 @@ public class SFXManager { // Sound Effects Manager
         }
     }
 
+    public static async Task<AudioClip> Load(string address) {
+        var audioHandle = Addressables.LoadAssetAsync<AudioClip>($"Audio/{address}");
+        AudioClip clip = await audioHandle.Task;
+        if (clip == null) {
+            Debug.LogError($"Could not load AudioClip from address \"Audio/{address}\".");
+            return null;
+        }
+        return clip;
+    }
+
     public static float Play(string address) {
-        return Play(AssetManager.audioClips[address]);
+        return Play(GameplayManager.instance.audioClips[address]);
     }
     public static float Play(AudioClip clip) {
         AudioSource availableSlot = null;

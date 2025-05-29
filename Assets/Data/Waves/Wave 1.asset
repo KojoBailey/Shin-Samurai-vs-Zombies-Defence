@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e754f61b3b84dc34293c0b13d3957d85, type: 3}
   m_Name: Wave 1
   m_EditorClassIdentifier: 
-  index: 0
-  title: 
-  entries: []
+  index: 1
+  title: Dawn of the Dead
+  entries:
+  - delay: 7
+    enemy: {fileID: 11400000, guid: 1c8150266f882b644a3bcef9c07658fc, type: 2}
+    enemyQuanitity: 3

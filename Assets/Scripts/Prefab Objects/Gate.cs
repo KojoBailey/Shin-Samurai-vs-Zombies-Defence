@@ -21,7 +21,7 @@ public class Gate : GameplayEntity {
         transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
 
         SaveManager.SetLevel(data, 1);
-        m_healthBar = new HealthBar(AssetManager.healthBarPrefab, this, data.health);
+        m_healthBar = new HealthBar(GameplayManager.healthBarPrefab, this, data.health);
         m_healthBar.position = new Vector3(0f, 150f, 70f);
         m_healthBar.scale *= 100;
         health = data.health;
@@ -45,7 +45,7 @@ public class Gate : GameplayEntity {
                 case State.Die:
                     ChangeAnimation(animationHandler.die);
                     data.GetEquippedCostume().audioData.Die();
-                    GameplayManager.hero.health = 0;
+                    GameplayManager.instance.hero.health = 0;
                     break;
             }
         }

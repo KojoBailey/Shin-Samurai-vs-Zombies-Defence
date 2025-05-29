@@ -25,7 +25,7 @@ public class Enemy : GameplayEntity {
 
         health = data.health;
         data.audioData.Spawn();
-        m_healthBar = new HealthBar(AssetManager.healthBarPrefab, this, data.health);
+        m_healthBar = new HealthBar(GameplayManager.healthBarPrefab, this, data.health);
     }
 
     protected override void HandleState() {
@@ -51,7 +51,7 @@ public class Enemy : GameplayEntity {
             ChangeState(State.Walk);
         if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound)
             ChangeState(State.Idle);
-        foreach (GameplayEntity enemy in GameplayManager.entities.Values) {
+        foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
             if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
                 continue;
 
@@ -92,7 +92,7 @@ public class Enemy : GameplayEntity {
                 case State.Die:
                     ChangeSpeed(1);
                     ChangeAnimation(animationHandler.die, 0.1f);
-                    GameplayManager.enemiesRemaining -= 1;
+                    GameplayManager.instance.enemiesRemaining -= 1;
                     break;
             }
         }

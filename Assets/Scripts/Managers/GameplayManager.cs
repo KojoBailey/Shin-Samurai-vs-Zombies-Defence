@@ -6,131 +6,180 @@ using System;
 
 /* Manages the main, non-menu gameplay. */
 public class GameplayManager { // Gameplay Manager
-    private static Lazy<GameplayManager> m_instance = new Lazy<GameplayManager>(() => new GameplayManager());
-    public static GameplayManager instance => m_instance.Value;
+    /* Singleton Instance */
+    public static GameplayManager instance;
+
+    public AbilityManager abilityManager = new AbilityManager();
 
     /* Debug Tools */
-    public static bool heroDoNotAttack = false;
+    public const bool fastLoad = false;
+    public const bool heroDoNotAttack = false;
 
-    private bool m_initialised;
-    public static bool initialised { 
-        get => instance.m_initialised;
-        set => instance.m_initialised = value;
-    }
-    private static Transform camera;
-    public static float gameTimer;
-    private static float m_spawnSave;
+    public bool waveStarted = false;
 
-    public static float heroX;
+    private Transform camera;
 
-    public static Stage stage;
-    public static Gate gate;
-    private static GameObject m_hud;
-    private static BGM m_bgm;
+    public float gameTimer = 0;
+
+    public float heroX;
+
+    public List<AllyData> alliesData = new List<AllyData>();
+
+    public Stage stage;
+    public Gate gate;
+    private GameObject hud;
+    private BGM bgm;
 
     public int smithy = 0;
-    private static float m_smithySave = 0;
+    private static float smithySave = 0;
     public const float smithyRate = 1;
 
-    public static Dictionary<string, GameplayEntity> entities;
-    public static Hero hero;
+    public Dictionary<string, GameplayEntity> entities = new Dictionary<string, GameplayEntity>();
+    public Hero hero;
 
-    public static WaveData wave;
-    public static int enemiesRemaining;
-    public static bool waveComplete;
-    public static bool startSlowMo;
-    private static float slowMoTimer;
-    private static float transitionTimer;
-    private static float victoryLength;
-    private static int waveEntryIndex;
-    private static List<EnemyData> m_enemySpawnQueue;
-    private static float m_enemySpawnTimer;
+    public Dictionary<string, AudioClip> audioClips = new Dictionary<string, AudioClip>();
 
-    public static List<float> allyCooldowns;
+    public WaveData wave;
+    public int totalEnemies;
+    public int enemiesRemaining;
+    private float spawnSave;
+    public bool waveComplete = false;
+    public bool startSlowMo = false;
+    private float slowMoTimer;
+    private float transitionTimer;
+    private float victoryLength = 0; // Checked if 0 later on. !! consider changing this to be more explicit
+    private int waveEntryIndex = 0; // Which sub-wave of enemies is currently being called.
+    private List<EnemyData> enemySpawnQueue = new List<EnemyData>();
+    private float enemySpawnTimer;
 
-    public static List<AbilityData> equippedAbilities;
-    public static List<float> abilityCooldowns;
+    public static GameObject healthBarPrefab;
 
-    public static Dictionary<string, GameplayEntity> closestTargets;
+    public List<float> allyCooldowns = new List<float>();
 
-    public static async Task StartWave(Transform _cameraTransform) {
-        m_instance = new Lazy<GameplayManager>(() => new GameplayManager());
-        initialised = false;
-        camera = _cameraTransform;
+    public List<AbilityData> equippedAbilities = new List<AbilityData>();
+    public List<float> abilityCooldowns = new List<float>();
 
+    public Dictionary<string, GameplayEntity> closestTargets = new Dictionary<string, GameplayEntity>();
+
+    private void Reset() {
+        abilityManager = null;
+        waveStarted = false;
+        camera = null;
+        gameTimer = 0;
+        alliesData.Clear();
+        audioClips.Clear();
+    }
+
+    // Initialises and loads the data but does not start the wave.
+    public static async Task Init(Transform _cameraTransform) {
+        // Initialise new instance.
+        if (instance != null)
+            instance.Reset();
+        instance = new GameplayManager();
+        instance.camera = _cameraTransform;
+
+        // Load wave data.
         var waveHandle = Addressables.LoadAssetAsync<WaveData>("Data/Waves/1");
-        wave =  await waveHandle.Task;
-        waveComplete = false;
-        startSlowMo = false;
-        enemiesRemaining = 0;
-        victoryLength = 0;
-        foreach (WaveData.Entry entry in wave.entries) {
-            enemiesRemaining += entry.enemyQuanitity;
+        instance.wave =  await waveHandle.Task;
+        instance.totalEnemies = 0;
+        foreach (WaveData.Entry entry in instance.wave.entries) {
+            instance.totalEnemies += entry.enemyQuanitity;
+        }
+        instance.enemiesRemaining = instance.totalEnemies;
+
+        // Load health bar prefab.
+        var healthBarHandle = Addressables.LoadAssetAsync<GameObject>("Prefabs/Entity Health Bar");
+        healthBarPrefab = await healthBarHandle.Task;
+
+        // Load ally data.
+        var ashigaruDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/Ashigaru");
+        AllyData ashigaruData = await ashigaruDataHandle.Task;
+        if (ashigaruData == null) {
+            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/Ashigaru"}\".");
+            return;
+        }
+        instance.alliesData.Add(ashigaruData);
+        instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
+        SaveManager.SetLevel(ashigaruData, 1); // !! Remove once save system implemented
+
+        // Pre-load audio clips.
+        await instance.LoadAudioClip("Wave Victory");
+        if (!fastLoad) {
+            for (int i = 0; i < 5; i++)
+                await instance.LoadAudioClip($"Combat/Swoosh Small 0{i}");
+            for (int i = 0; i < 5; i++)
+                await instance.LoadAudioClip($"Combat/Swoosh Medium 0{i}");
+            for (int i = 0; i < 3; i++)
+                await instance.LoadAudioClip($"Combat/Arrow Fire 0{i}");
+            for (int i = 0; i < 3; i++)
+                await instance.LoadAudioClip($"Combat/Footstep Large 0{i}");
+            for (int i = 0; i < 5; i++)
+                await instance.LoadAudioClip($"Combat/Footstep 0{i}");
         }
 
-        await AssetManager.LoadGameplay();
-        entities = new Dictionary<string, GameplayEntity>();
-        closestTargets = new Dictionary<string, GameplayEntity>();
+        // Load abilities.
+        await instance.abilityManager.Init();
 
-        waveEntryIndex = 0;
-        m_enemySpawnQueue = new List<EnemyData>();
+        // Load stage.
+        instance.stage = new Stage(instance.wave.stage);
+        await instance.stage.Init();
 
-        allyCooldowns = new();
-        allyCooldowns.Add(0);
-
-        equippedAbilities = new List<AbilityData>();
-        abilityCooldowns = new List<float>();
-        await AbilityManager.Init();
-
-        stage = new Stage("ZenGarden");
-        await stage.Init();
-
+        // Load gate.
         SaveManager.EquipCostume("AlliesGate", 0);
-        gate = new Gate(GameplayEntity.Side.Left);
-        await gate.Init();
-        AddEntity("Gate", gate);
+        instance.gate = new Gate(GameplayEntity.Side.Left);
+        await instance.gate.Init();
+        instance.AddEntity("Gate", instance.gate);
 
+        // Load HUD.
         var hudHandle = Addressables.InstantiateAsync("Prefabs/Gameplay HUD");
-        m_hud = await hudHandle.Task;
+        instance.hud = await hudHandle.Task;
 
+        // Load hero.
         SaveManager.EquipCostume("Samurai", 0);
         SaveManager.EquipCostume("Kunoichi", 0);
         SaveManager.EquipCostume("Ronin", 0);
         SaveManager.EquipCostume("Ashigaru", 0);
-        hero = new Hero(SaveManager.selectedHero);
-        hero.SetBounds(stage.leftBound, stage.rightBound);
-        hero.allegiance = GameplayEntity.Side.Left;
-        await hero.Init(stage.heroSpawn);
-        AddEntity("Hero", hero);
+        instance.hero = new Hero(SaveManager.selectedHero);
+        instance.hero.SetBounds(instance.stage.leftBound, instance.stage.rightBound);
+        instance.hero.allegiance = GameplayEntity.Side.Left;
+        await instance.hero.Init(instance.stage.heroSpawn);
+        instance.AddEntity("Hero", instance.hero);
 
-        // Load BGM last so audio only starts once the game is ready.
-        m_bgm = new BGM("Zen Garden Day");
-        await m_bgm.Init();
-
-        initialised = true;
+        // Load BGM.
+        instance.bgm = new BGM("Zen Garden Day");
+        await instance.bgm.Init();
     }
 
-    private static void AddEntity(string id, GameplayEntity entity) {
+    private async Task LoadAudioClip(string address) {
+        audioClips.Add(address, await SFXManager.Load(address));
+    }
+
+    public void StartWave() {
+        bgm.Play();
+        waveStarted = true;
+    }
+
+    private void AddEntity(string id, GameplayEntity entity) {
         entity.SetEntityId(id);
         entities.Add(id, entity);
     }
 
-    public static void SpawnEnemy(EnemyData _data) {
+    public void SpawnEnemy(EnemyData _data) {
         Enemy enemy = new Enemy(_data, GameplayEntity.Side.Right);
         enemy.SetBounds(stage.leftBound, float.MaxValue);
         AddEntity($"Enemy{entities.Count - 1}", enemy);
         enemy.Spawn(stage.zombieSpawn);
     }
-     public static void SpawnAlly(AllyData _data) {
+     public void SpawnAlly(AllyData _data) {
         Ally ally = new Ally(_data, GameplayEntity.Side.Left);
         ally.SetBounds(float.MinValue, stage.rightBound);
         AddEntity($"Ally{entities.Count - 1}", ally);
         ally.Spawn(stage.allySpawn);
     }
 
-    public static void Update() {
-        if (initialised) {
-            AbilityManager.Update();
+    public void Update() {
+        if (waveStarted) {
+            abilityManager.Update();
 
             // Update each entity and destroy finished ones.
             foreach (var entity in entities) {
@@ -167,15 +216,15 @@ public class GameplayManager { // Gameplay Manager
             for (int i = 0; i < abilityCooldowns.Count; i++)
                 abilityCooldowns[i] -= Time.deltaTime;
 
-            if (gameTimer - m_smithySave > smithyRate) {
-                m_smithySave = gameTimer;
-                instance.smithy += 1;
+            if (gameTimer - smithySave > smithyRate) {
+                smithySave = gameTimer;
+                smithy += 1;
             }
 
             if (enemiesRemaining == 0) {
                 if (!startSlowMo) {
                     slowMoTimer = gameTimer;
-                    m_bgm.Stop();
+                    bgm.Stop();
                     camera.position = new Vector3(camera.position.x, 1.12f, -3.3f);
                     Time.timeScale = 0.2f;
                     startSlowMo = true;
@@ -194,25 +243,25 @@ public class GameplayManager { // Gameplay Manager
                     }
                 }
             } else {
-                if (!(waveEntryIndex > wave.entries.Length - 1) && gameTimer - m_spawnSave > wave.entries[waveEntryIndex].delay) {
-                    m_spawnSave = gameTimer;
+                if (!(waveEntryIndex > wave.entries.Length - 1) && gameTimer - spawnSave > wave.entries[waveEntryIndex].delay) {
+                    spawnSave = gameTimer;
                     for (int i = 0; i < wave.entries[waveEntryIndex].enemyQuanitity; i++)
-                        m_enemySpawnQueue.Add(wave.entries[waveEntryIndex].enemy);
+                        enemySpawnQueue.Add(wave.entries[waveEntryIndex].enemy);
                     waveEntryIndex++;
                 }
 
-                if (gameTimer - m_enemySpawnTimer > 0.3f && m_enemySpawnQueue.Count > 0) {
-                    m_enemySpawnTimer = gameTimer;
-                    SpawnEnemy(m_enemySpawnQueue[0]);
-                    m_enemySpawnQueue.RemoveAt(0);
+                if (gameTimer - enemySpawnTimer > 0.3f && enemySpawnQueue.Count > 0) {
+                    enemySpawnTimer = gameTimer;
+                    SpawnEnemy(enemySpawnQueue[0]);
+                    enemySpawnQueue.RemoveAt(0);
                 }
             }
 
-            gameTimer += Time.deltaTime;
+            instance.gameTimer += Time.deltaTime;
         }
     }
 
-    public static void DealDamage(string entityId) {
+    public void DealDamage(string entityId) {
         GameplayEntity entity = entities[entityId];
         foreach (GameplayEntity enemy in entities.Values) {
             if (enemy == null || enemy.allegiance == entity.allegiance || enemy.currentState == GameplayEntity.State.Die)
@@ -223,11 +272,11 @@ public class GameplayManager { // Gameplay Manager
         }
     }
 
-    public static void FireProjectile(string entityId) {
+    public void FireProjectile(string entityId) {
         entities[entityId].FireProjectile(closestTargets[entityId]);
     }
 
-    public static void DestroyEntity(string entityId) {
+    public void DestroyEntity(string entityId) {
         entities[entityId] = null;
     }
 };

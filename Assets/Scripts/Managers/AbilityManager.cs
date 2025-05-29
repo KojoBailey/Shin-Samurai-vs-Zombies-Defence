@@ -6,52 +6,52 @@ using System;
 
 // Stores functions for and handles Abilities during gameplay.
 public class AbilityManager { // Ability Manager
-    private static List<Action<string>> queue;
+    private List<Action<string>> queue;
 
-    private static AbilityData lethargyData;
-    private static bool lethargyActive = false;
-    private static float lethargyTimer;
+    private AbilityData lethargyData;
+    private bool lethargyActive = false;
+    private float lethargyTimer;
 
-    private static AbilityData katanaSlashData;
+    private AbilityData katanaSlashData;
 
-    public static async Task Init() {
+    public async Task Init() {
         queue = new List<Action<string>>();
 
         var katanaSlashDataHandle = Addressables.LoadAssetAsync<AbilityData>("Data/Abilities/Katana Slash");
         katanaSlashData = await katanaSlashDataHandle.Task;
-        GameplayManager.equippedAbilities.Add(katanaSlashData); // !! Remove for proper management.
-        GameplayManager.abilityCooldowns.Add(0);
+        GameplayManager.instance.equippedAbilities.Add(katanaSlashData); // !! Remove for proper management.
+        GameplayManager.instance.abilityCooldowns.Add(0);
         SaveManager.SetLevel(katanaSlashData, 1); // !! Remove once save system implemented.
 
         var lethargyDataHandle = Addressables.LoadAssetAsync<AbilityData>("Data/Abilities/Lethargy");
         lethargyData = await lethargyDataHandle.Task;
-        GameplayManager.equippedAbilities.Add(lethargyData); // !! Remove for proper management.
-        GameplayManager.abilityCooldowns.Add(0);
+        GameplayManager.instance.equippedAbilities.Add(lethargyData); // !! Remove for proper management.
+        GameplayManager.instance.abilityCooldowns.Add(0);
         SaveManager.SetLevel(lethargyData, 1); // !! Remove once save system implemented.
     }
 
-    public static void Update() {
+    public void Update() {
         if (lethargyTimer <= 0 && lethargyActive == true)
             LethargyEnd();
         lethargyTimer -= Time.deltaTime;
     }
 
-    public static void QueueAbility(string abilityId) {
+    public void QueueAbility(string abilityId) {
         if (abilityId == "Lethargy") {
             queue.Add(Lethargy);
-            GameplayManager.hero.abilityStatus = Hero.AbilityStatus.CastForward;
+            GameplayManager.instance.hero.abilityStatus = Hero.AbilityStatus.CastForward;
         } else if (abilityId == "KatanaSlash") {
             queue.Add(KatanaSlash);
-            GameplayManager.hero.abilityStatus = Hero.AbilityStatus.KatanaSlash;
+            GameplayManager.instance.hero.abilityStatus = Hero.AbilityStatus.KatanaSlash;
         }
     }
-    public static void ActivateAbility(string entityId) {
+    public void ActivateAbility(string entityId) {
         queue[0](entityId);
         queue.RemoveAt(0);
     }
 
-    public static void Lethargy(string entityId) {
-        foreach (GameplayEntity entity in GameplayManager.entities.Values) {
+    public void Lethargy(string entityId) {
+        foreach (GameplayEntity entity in GameplayManager.instance.entities.Values) {
             if (entity == null || entity.currentState == GameplayEntity.State.Die)
                 continue;
 
@@ -64,8 +64,8 @@ public class AbilityManager { // Ability Manager
         lethargyTimer = lethargyData.duration;
         lethargyActive = true;
     }
-    private static void LethargyEnd() {
-        foreach (GameplayEntity entity in GameplayManager.entities.Values) {
+    private void LethargyEnd() {
+        foreach (GameplayEntity entity in GameplayManager.instance.entities.Values) {
             if (entity == null || entity.currentState == GameplayEntity.State.Die)
                 continue;
 
@@ -77,9 +77,9 @@ public class AbilityManager { // Ability Manager
         lethargyActive = false;
     }
 
-    public static void KatanaSlash(string entityId) {
-        Hero hero = (Hero)GameplayManager.entities[entityId];
-        foreach (GameplayEntity enemy in GameplayManager.entities.Values) {
+    public void KatanaSlash(string entityId) {
+        Hero hero = (Hero)GameplayManager.instance.entities[entityId];
+        foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
             if (enemy == null || enemy.allegiance == hero.allegiance || enemy.currentState == GameplayEntity.State.Die)
                 continue;
 

@@ -153,6 +153,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d694f2785d1caa46add66fdf1f7346c
+    m_Address: Audio/Wave Victory
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 84b785395757d6c4ea6a18b5b766c067
     m_Address: BGM/Zen Garden Day
     m_ReadOnly: 0
@@ -261,6 +266,12 @@ MonoBehaviour:
     m_Address: Audio/Combat/Sword Impact 01
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d789dd45ce8894e46b2bcdb6b1f680f8
+    m_Address: Data/Waves/1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Wave
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df0aa7a306fcb0b4a88f1371414f98cf
     m_Address: Audio/Combat/Sword Impact 04

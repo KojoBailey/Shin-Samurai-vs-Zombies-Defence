@@ -25,11 +25,11 @@ public class Ally : GameplayEntity {
 
         health = data.health;
         data.GetEquippedCostume().audioData.Spawn();
-        m_healthBar = new HealthBar(AssetManager.healthBarPrefab, this, data.health);
+        m_healthBar = new HealthBar(GameplayManager.healthBarPrefab, this, data.health);
     }
 
     protected override void HandleState() {
-        if (GameplayManager.waveComplete) {
+        if (GameplayManager.instance.waveComplete) {
             ChangeState(State.Victory);
             return;
         }
@@ -56,7 +56,7 @@ public class Ally : GameplayEntity {
             ChangeState(State.Walk);
         if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound)
             ChangeState(State.Idle);
-        foreach (GameplayEntity enemy in GameplayManager.entities.Values) {
+        foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
             if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
                 continue;
 

@@ -3,23 +3,25 @@ using UnityEngine.AddressableAssets;
 using System.Threading.Tasks;
 
 class BGM { // Background Music
-    private string m_id;
-    private AudioSource m_bgm;
+    private string id;
+    private AudioSource bgm;
 
-    public BGM(string bgmId) {
-        m_id = bgmId;
+    public BGM(string _id) {
+        id = _id;
     }
 
     public async Task Init() {
         GameObject audioObject = new GameObject("BGM");
-        m_bgm = audioObject.AddComponent<AudioSource>();
-        var bgmHandle = Addressables.LoadAssetAsync<AudioClip>($"BGM/{m_id}");
-        m_bgm.clip = await bgmHandle.Task;
-        m_bgm.loop = true;
-        m_bgm.Play();
+        bgm = audioObject.AddComponent<AudioSource>();
+        var bgmHandle = Addressables.LoadAssetAsync<AudioClip>($"BGM/{id}");
+        bgm.clip = await bgmHandle.Task;
+        bgm.loop = true;
     }
 
+    public void Play() {
+        bgm.Play();
+    }
     public void Stop() {
-        m_bgm.Stop();
+        bgm.Stop();
     }
 };

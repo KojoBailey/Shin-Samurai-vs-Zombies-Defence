@@ -59,7 +59,7 @@ public class Hero : GameplayEntity {
     }
 
     protected override void HandleState() {
-        if (GameplayManager.waveComplete) {
+        if (GameplayManager.instance.waveComplete) {
             ChangeState(State.Victory);
             return;
         }
@@ -86,7 +86,7 @@ public class Hero : GameplayEntity {
 
         // Attack based on distance.
         attackStatus = AttackStatus.None;
-        foreach (GameplayEntity enemy in GameplayManager.entities.Values) {
+        foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
             if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
                 continue;
 
@@ -263,7 +263,7 @@ public class Hero : GameplayEntity {
             m_isTurning = false;
         }
 
-        GameplayManager.heroX = transform.position.x;
+        GameplayManager.instance.heroX = transform.position.x;
     }
 
     public override bool IsInMeleeRange(float targetX) {
