@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00fb1f7dc392b247969fe251c9b0f1b, type: 3}
+  m_Name: Blunt Impact
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: be36495f1f1eea34384dd0bbf96b4398, type: 3}
+  - {fileID: 8300000, guid: 7356b99108fa7d744ae262923745f742, type: 3}
+  - {fileID: 8300000, guid: 909bb386dc505fc45bef94617af14152, type: 3}
+  - {fileID: 8300000, guid: 4443511b6592fa745bad50e2ab83d8e1, type: 3}
+  - {fileID: 8300000, guid: eafac91f854d66d40a52b1d5882e477a, type: 3}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00fb1f7dc392b247969fe251c9b0f1b, type: 3}
+  m_Name: Light Zombie Spawn
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 882571bb8d56d5644ad728b68598c162, type: 3}
+  - {fileID: 8300000, guid: 6c9f923e53b0ee846bfd79866a4c373e, type: 3}
+  - {fileID: 8300000, guid: f9cdad137b065444593c0a40b4982708, type: 3}

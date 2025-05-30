@@ -37,7 +37,7 @@ public class GameplayManager { // Gameplay Manager
     public Dictionary<string, GameplayEntity> entities = new Dictionary<string, GameplayEntity>();
     public Hero hero;
 
-    public Dictionary<string, AudioClip> audioClips = new Dictionary<string, AudioClip>();
+    public Dictionary<string, AudioBundle> loadedAudio = new Dictionary<string, AudioBundle>();
 
     public WaveData wave;
     public int totalEnemies;
@@ -61,20 +61,9 @@ public class GameplayManager { // Gameplay Manager
 
     public Dictionary<string, GameplayEntity> closestTargets = new Dictionary<string, GameplayEntity>();
 
-    private void Reset() {
-        abilityManager = null;
-        waveStarted = false;
-        camera = null;
-        gameTimer = 0;
-        alliesData.Clear();
-        audioClips.Clear();
-    }
-
     // Initialises and loads the data but does not start the wave.
     public static async Task Init(Transform _cameraTransform) {
         // Initialise new instance.
-        if (instance != null)
-            instance.Reset();
         instance = new GameplayManager();
         instance.camera = _cameraTransform;
 
@@ -103,18 +92,13 @@ public class GameplayManager { // Gameplay Manager
         SaveManager.SetLevel(ashigaruData, 1); // !! Remove once save system implemented
 
         // Pre-load audio clips.
-        await instance.LoadAudioClip("Wave Victory");
+        await instance.LoadAudioBundle("Wave Victory");
         if (!fastLoad) {
-            for (int i = 0; i < 5; i++)
-                await instance.LoadAudioClip($"Combat/Swoosh Small 0{i}");
-            for (int i = 0; i < 5; i++)
-                await instance.LoadAudioClip($"Combat/Swoosh Medium 0{i}");
-            for (int i = 0; i < 3; i++)
-                await instance.LoadAudioClip($"Combat/Arrow Fire 0{i}");
-            for (int i = 0; i < 3; i++)
-                await instance.LoadAudioClip($"Combat/Footstep Large 0{i}");
-            for (int i = 0; i < 5; i++)
-                await instance.LoadAudioClip($"Combat/Footstep 0{i}");
+            await instance.LoadAudioBundle("Combat/Swoosh Small");
+            await instance.LoadAudioBundle("Combat/Swoosh Medium");
+            await instance.LoadAudioBundle("Combat/Arrow Fire");
+            await instance.LoadAudioBundle("Combat/Footstep");
+            await instance.LoadAudioBundle("Combat/Footstep Large");
         }
 
         // Load abilities.
@@ -150,8 +134,8 @@ public class GameplayManager { // Gameplay Manager
         await instance.bgm.Init();
     }
 
-    private async Task LoadAudioClip(string address) {
-        audioClips.Add(address, await SFXManager.Load(address));
+    private async Task LoadAudioBundle(string address) {
+        loadedAudio.Add(address, await SFXManager.Load(address));
     }
 
     public void StartWave() {
@@ -233,7 +217,7 @@ public class GameplayManager { // Gameplay Manager
                         camera.localPosition += new Vector3(0, 0.01f, -0.1f) * Time.deltaTime;
                     } else if (gameTimer - slowMoTimer > 0.4f) {
                         slowMoTimer = 0;
-                        victoryLength = SFXManager.Play("Wave Victory");
+                        victoryLength = SFXManager.PlayFromBundle("Wave Victory");
                         transitionTimer = gameTimer;
                         Time.timeScale = 1;
                         waveComplete = true;

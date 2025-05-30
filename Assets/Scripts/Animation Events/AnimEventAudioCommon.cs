@@ -5,12 +5,12 @@ using UnityEngine;
 [AddComponentMenu("Animation Event/Audio/Common")]
 public class AnimEventAudioCommon : MonoBehaviour { // Animation Event: Common Audio
     public void SwooshSmall() {
-        SFXManager.Play($"Combat/Swoosh Small 0{Random.Range(0, 5)}");
+        SFXManager.PlayFromBundle("Combat/Swoosh Small");
     }
     public void SwooshMedium() {
-        SFXManager.Play($"Combat/Swoosh Medium 0{Random.Range(0, 5)}");
+        SFXManager.PlayFromBundle("Combat/Swoosh Medium");
     }
     public void ArrowFire() {
-        SFXManager.Play($"Combat/Arrow Fire 0{Random.Range(0, 3)}");
+        SFXManager.PlayFromBundle("Combat/Arrow Fire");
     }
 };

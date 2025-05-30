@@ -5,46 +5,45 @@ using System.Threading.Tasks;
 [CreateAssetMenu(fileName = "NewEntityAudioData", menuName = "Game Data/Entity Audio")]
 public class EntityAudioData : ScriptableObject {
     public enum Size { Normal, Large }
-    public AudioClip[] spawnAudio;
+    public AudioBundle spawnAudio;
     public Size footstepSize; 
-    public AudioClip[] footstepAudio;
-    public AudioClip[] attackAudio;
-    public AudioClip[] bigAttackAudio;
-    public AudioClip[] longAttackAudio;
-    public GenericDictionary<string, AudioClip> personalAbilityAudio;
-    public AudioClip[] deathAudio;
+    public AudioBundle footstepAudio;
+    public AudioBundle attackAudio;
+    public AudioBundle bigAttackAudio;
+    public AudioBundle longAttackAudio;
+    public GenericDictionary<string, AudioBundle> personalAbilityAudio;
+    public AudioBundle deathAudio;
 
     public void Spawn() {
-        if (spawnAudio.Length > 0)
-            SFXManager.Play(spawnAudio[Random.Range(0, spawnAudio.Length)]);
+        SFXManager.PlayFromBundle(spawnAudio);
     }
     public void Footstep() {
-        if (footstepAudio.Length == 0) {
+        if (footstepAudio == null) {
             switch (footstepSize) {
                 case Size.Large:
-                    SFXManager.Play($"Combat/Footstep Large 0{Random.Range(0, 3)}");
+                    SFXManager.PlayFromBundle("Combat/Footstep Large");
                     break;
                 default:
-                    SFXManager.Play($"Combat/Footstep 0{Random.Range(0, 5)}");
+                    SFXManager.PlayFromBundle("Combat/Footstep");
                     break;
             }
             return;
         }
-        SFXManager.Play(footstepAudio[Random.Range(0, footstepAudio.Length)]);
+        SFXManager.PlayFromBundle(footstepAudio);
     }
     public void Attack() {
-        SFXManager.Play(attackAudio[Random.Range(0, attackAudio.Length)]);
+        SFXManager.PlayFromBundle(attackAudio);
     }
     public void BigAttack() {
-        SFXManager.Play(bigAttackAudio[Random.Range(0, bigAttackAudio.Length)]);
+        SFXManager.PlayFromBundle(bigAttackAudio);
     }
     public void LongAttack() {
-        SFXManager.Play(longAttackAudio[Random.Range(0, longAttackAudio.Length)]);
+        SFXManager.PlayFromBundle(longAttackAudio);
     }
     public void PersonalAbility(string abilityId) {
-        SFXManager.Play(personalAbilityAudio[abilityId]);
+        SFXManager.PlayFromBundle(personalAbilityAudio[abilityId]);
     }
     public void Die() {
-        SFXManager.Play(deathAudio[Random.Range(0, deathAudio.Length)]);
+        SFXManager.PlayFromBundle(deathAudio);
     }
 }

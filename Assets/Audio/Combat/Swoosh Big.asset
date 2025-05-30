@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00fb1f7dc392b247969fe251c9b0f1b, type: 3}
+  m_Name: Swoosh Big
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 18e17fdd16a7c484590463a317b6fcb1, type: 3}
+  - {fileID: 8300000, guid: 1de24b976edd97c45a8f856866384d0d, type: 3}
+  - {fileID: 8300000, guid: adfc8a089a67c2049899ef590a1409f9, type: 3}
+  - {fileID: 8300000, guid: fe17ce69757865141b460fc600f88944, type: 3}
+  - {fileID: 8300000, guid: 4ef14018da4ebcf40a1bb489d83630bb, type: 3}

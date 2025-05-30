@@ -102,6 +102,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30f7a79bb84627a4b8e9b23fb6a0b434
+    m_Address: Audio/Combat/Swoosh Huge
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 33b9dcb538985474e89c6f19f3ace0e6
     m_Address: Data/Allies Gate
     m_ReadOnly: 0
@@ -143,6 +148,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51455134a33268c4b9cac34691c3ea3d
+    m_Address: Audio/Combat/Sword Impact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 523ef244eb088474188c3e9c203e5418
     m_Address: Audio/Combat/Swoosh Huge 01
     m_ReadOnly: 0
@@ -153,8 +163,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7d694f2785d1caa46add66fdf1f7346c
-    m_Address: Audio/Wave Victory
+  - m_GUID: 68ac5777f200ebb4e96775fd93b92817
+    m_Address: Audio/Combat/Swoosh Big
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75d2a5f7fee7e074ab702664645c4a8f
+    m_Address: Audio/Combat/Swoosh Spin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d3cf7def9ba3fc49bf2dec6d793fa0b
+    m_Address: Audio/Combat/Swoosh Medium
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -163,6 +183,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 852c4ff43d5e2544285cd2ffea634a54
+    m_Address: Audio/Combat/Swoosh Small
+    m_ReadOnly: 0
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85b34f8238ed8704abd2c4c8f5a6c0f4
     m_Address: Audio/Combat/Footstep Large 02
@@ -174,13 +199,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91476b8ef2c8f85488101fd05f33c3ee
+    m_Address: Audio/Combat/Footstep Large
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9252e880a19416842935dd5cca45f893
+    m_Address: Audio/Combat/Footstep
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9383051597430fc47bcdbc7eab4d623a
     m_Address: Audio/Combat/Arrow Fire 02
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 949d6864fb0a6e941b628223390caf01
-    m_Address: Stages/ZenGarden
+    m_Address: Stages/Zen Garden
     m_ReadOnly: 0
     m_SerializedLabels:
     - Stage
@@ -247,6 +282,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cbe6b93649dfdc9499d425c622be4c43
+    m_Address: Audio/Combat/Blunt Impact
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cfc54814039e01540a3ae8d9b3774ef5
     m_Address: Audio/Combat/Swoosh Spin 00
     m_ReadOnly: 0
@@ -283,6 +323,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e381073e5aeba1c43abd0c79e8713dd1
+    m_Address: Audio/Combat/Arrow Fire
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5a756243dc9aac44bd138e7ee108b92
+    m_Address: Audio/Combat/Arrow Hit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e81b452004384fb4caa6e86143e4dec3
     m_Address: Audio/Combat/Arrow Fire 01
     m_ReadOnly: 0
@@ -305,6 +355,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f15777fb607b8b242a8e079c0a0f0b7f
     m_Address: Data/Weapons/Kunoichi Kusarigama
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5a8da6d41d103d4bbb247e8a34bbb9e
+    m_Address: Audio/Wave Victory
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00fb1f7dc392b247969fe251c9b0f1b, type: 3}
+  m_Name: Gate Damaged
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 1bcbf24a6bd85884691d27b282866270, type: 3}
+  - {fileID: 8300000, guid: f7b9f5e16024f66498d0a94ea5097f86, type: 3}
+  - {fileID: 8300000, guid: 9c641de3b3428fa448c61a92eba004c9, type: 3}
+  - {fileID: 8300000, guid: c59e86029a678ae40bed3f2ba62b2a9a, type: 3}
+  - {fileID: 8300000, guid: a821439784e0b2b4db3c5cf58dc80717, type: 3}

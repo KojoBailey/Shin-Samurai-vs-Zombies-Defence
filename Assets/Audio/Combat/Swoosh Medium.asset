@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00fb1f7dc392b247969fe251c9b0f1b, type: 3}
+  m_Name: Swoosh Medium
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 29ce92622e8fb4544af7673920057d1e, type: 3}
+  - {fileID: 8300000, guid: 23f5c0500e1764b4da5cc6790391f7e3, type: 3}
+  - {fileID: 8300000, guid: d012df1b0e07eb740ad2be9521f72124, type: 3}
+  - {fileID: 8300000, guid: 8f5d457021fdf334d88dd31f2ac640b8, type: 3}
+  - {fileID: 8300000, guid: 0b8bc01642653134a86794362470b2f3, type: 3}

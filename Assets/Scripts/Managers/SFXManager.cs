@@ -15,18 +15,22 @@ public class SFXManager { // Sound Effects Manager
         }
     }
 
-    public static async Task<AudioClip> Load(string address) {
-        var audioHandle = Addressables.LoadAssetAsync<AudioClip>($"Audio/{address}");
-        AudioClip clip = await audioHandle.Task;
-        if (clip == null) {
-            Debug.LogError($"Could not load AudioClip from address \"Audio/{address}\".");
+        public static async Task<AudioBundle> Load(string address) {
+        var audioHandle = Addressables.LoadAssetAsync<AudioBundle>($"Audio/{address}");
+        AudioBundle bundle = await audioHandle.Task;
+        if (bundle == null) {
+            Debug.LogError($"Could not load AudioBundle from address \"Audio/{address}\".");
             return null;
         }
-        return clip;
+        return bundle;
     }
 
-    public static float Play(string address) {
-        return Play(GameplayManager.instance.audioClips[address]);
+    public static float PlayFromBundle(string address) {
+        AudioBundle bundle = GameplayManager.instance.loadedAudio[address];
+        return Play(bundle.GetRandom());
+    }
+    public static float PlayFromBundle(AudioBundle bundle) {
+        return Play(bundle.GetRandom());
     }
     public static float Play(AudioClip clip) {
         AudioSource availableSlot = null;
