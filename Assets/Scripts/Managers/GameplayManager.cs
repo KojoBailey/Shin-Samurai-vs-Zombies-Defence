@@ -2,18 +2,20 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System;
 
 /* Manages the main, non-menu gameplay. */
 public class GameplayManager { // Gameplay Manager
     /* Singleton Instance */
     public static GameplayManager instance;
 
-    public AbilityManager abilityManager = new AbilityManager();
-
     /* Debug Tools */
     public const bool fastLoad = false;
     public const bool heroDoNotAttack = false;
+
+    /* Sub-managers */
+    public AbilityManager abilityManager = new AbilityManager();
+
+    public List<object> addressableAssets = new List<object>();
 
     public bool waveStarted = false;
 
@@ -31,7 +33,7 @@ public class GameplayManager { // Gameplay Manager
     private BGM bgm;
 
     public int smithy = 0;
-    private static float smithySave = 0;
+    private float smithySave = 0;
     public const float smithyRate = 1;
 
     public Dictionary<string, GameplayEntity> entities = new Dictionary<string, GameplayEntity>();
@@ -70,6 +72,7 @@ public class GameplayManager { // Gameplay Manager
         // Load wave data.
         var waveHandle = Addressables.LoadAssetAsync<WaveData>("Data/Waves/1");
         instance.wave =  await waveHandle.Task;
+        instance.addressableAssets.Add(instance.wave);
         instance.totalEnemies = 0;
         foreach (WaveData.Entry entry in instance.wave.entries) {
             instance.totalEnemies += entry.enemyQuanitity;
@@ -79,10 +82,12 @@ public class GameplayManager { // Gameplay Manager
         // Load health bar prefab.
         var healthBarHandle = Addressables.LoadAssetAsync<GameObject>("Prefabs/Entity Health Bar");
         healthBarPrefab = await healthBarHandle.Task;
+        instance.addressableAssets.Add(healthBarPrefab);
 
         // Load ally data.
         var ashigaruDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/Ashigaru");
         AllyData ashigaruData = await ashigaruDataHandle.Task;
+        instance.addressableAssets.Add(ashigaruData);
         if (ashigaruData == null) {
             Debug.LogError($"Could not find or load Ally of ID \"{"Humans/Ashigaru"}\".");
             return;
@@ -135,7 +140,9 @@ public class GameplayManager { // Gameplay Manager
     }
 
     private async Task LoadAudioBundle(string address) {
-        loadedAudio.Add(address, await SFXManager.Load(address));
+        AudioBundle bundle = await SFXManager.Load(address);
+        instance.addressableAssets.Add(bundle);
+        loadedAudio.Add(address, bundle);
     }
 
     public void StartWave() {
@@ -223,6 +230,7 @@ public class GameplayManager { // Gameplay Manager
                         waveComplete = true;
                     }
                     if (victoryLength > 0 && gameTimer - transitionTimer > victoryLength) {
+                        Terminate();
                         SceneLoadManager.LoadScene("TitleScreen");
                     }
                 }
@@ -243,6 +251,11 @@ public class GameplayManager { // Gameplay Manager
 
             instance.gameTimer += Time.deltaTime;
         }
+    }
+
+    public void Terminate() {
+        foreach (var handle in addressableAssets)
+            Addressables.Release(handle);
     }
 
     public void DealDamage(string entityId) {
