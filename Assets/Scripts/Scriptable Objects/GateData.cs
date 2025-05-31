@@ -7,7 +7,6 @@ public class GateData : ScriptableObject, IUpgradable {
     public string displayName;
     public string description;
     public Sprite icon;
-    public GameObject prefabWrapper;
     public CostumeData[] costumes;
 
     public CostumeData GetEquippedCostume() {

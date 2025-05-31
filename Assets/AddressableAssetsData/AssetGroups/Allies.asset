@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Ally
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 73ffb17c08030034a8ff2ddefcfaee7e
+    m_Address: Data/Allies/Humans/KatanaSamurai
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Ally
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ad3485259873eac478fc26ccd2272b29, type: 2}
   m_SchemaSet:

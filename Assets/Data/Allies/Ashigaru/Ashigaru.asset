@@ -14,9 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Ashigaru
   displayName: Ashigaru
-  description: 
+  description: As farmers of the village, not very strong, but oh so loyal.
   icon: {fileID: 21300000, guid: e0cb9dd843f376948833ce3ebb5d57eb, type: 3}
-  prefabWrapper: {fileID: 2380961386848252518, guid: feeace00d244d364f86ddddbdba82da9, type: 3}
+  costumes:
+  - {fileID: 11400000, guid: bc4fe1bf5c975494f9b4246339773972, type: 2}
+  - {fileID: 11400000, guid: dafb250bf6f2c38419ef4eb1f6cf2c3d, type: 2}
+  - {fileID: 11400000, guid: 4b967ea393e476844ae8c04ad4af8efc, type: 2}
+  - {fileID: 11400000, guid: f21f177f66841284faa7e0123c88710b, type: 2}
   meleeWeapon:
     prefab: {fileID: 1924913640763457, guid: 8eb86d923bb363544a0026af5d87d022, type: 3}
     hand: 1
@@ -30,11 +34,7 @@ MonoBehaviour:
     prefab: {fileID: 0}
     hand: 0
     projectile: {fileID: 0}
-  costumes:
-  - {fileID: 11400000, guid: bc4fe1bf5c975494f9b4246339773972, type: 2}
-  - {fileID: 11400000, guid: dafb250bf6f2c38419ef4eb1f6cf2c3d, type: 2}
-  - {fileID: 11400000, guid: 4b967ea393e476844ae8c04ad4af8efc, type: 2}
-  - {fileID: 11400000, guid: f21f177f66841284faa7e0123c88710b, type: 2}
+  animationEvents: {fileID: 11400000, guid: bb8791f36d36f104caa1c63bd7779c59, type: 2}
   stats:
     list:
     - Key: 0

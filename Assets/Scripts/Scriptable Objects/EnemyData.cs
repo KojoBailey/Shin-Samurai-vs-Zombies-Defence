@@ -6,7 +6,6 @@ public class EnemyData : ScriptableObject {
     public string displayName;
     public string description;
     public Sprite icon;
-    public GameObject prefabWrapper;
     public GameObject prefab;
     public EntityAudioData audioData;
 
@@ -29,6 +28,7 @@ public class EnemyData : ScriptableObject {
         public GameObject projectile;
     }
     public RangedWeapon rangedWeapon;
+    public AnimationEventData animationEvents;
 
     public enum Stat {
         Health,

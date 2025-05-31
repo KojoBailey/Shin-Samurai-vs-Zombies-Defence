@@ -14,8 +14,7 @@ public class Gate : GameplayEntity {
         var handle = Addressables.LoadAssetAsync<GateData>("Data/Allies Gate");
         data = await handle.Task;
 
-        wrapperObject = Object.Instantiate(data.prefabWrapper);
-        obj = Object.Instantiate(data.GetEquippedCostume().prefab, wrapperObject.transform);
+        obj = Object.Instantiate(data.GetEquippedCostume().prefab);
         Prepare();
         transform.position = new Vector3(0f, 0f, 0f);
         transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
@@ -40,10 +39,10 @@ public class Gate : GameplayEntity {
             m_previousState = currentState;
             switch (currentState) {
                 case State.Idle:
-                    ChangeAnimation(animationHandler.idle);
+                    ChangeAnimation("Idle");
                     break;
                 case State.Die:
-                    ChangeAnimation(animationHandler.die);
+                    ChangeAnimation("Die");
                     data.GetEquippedCostume().audioData.Die();
                     GameplayManager.instance.hero.health = 0;
                     break;

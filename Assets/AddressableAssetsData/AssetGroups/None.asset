@@ -118,7 +118,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 391c7c45f25312442b5de1862680ef7e
-    m_Address: Data/Abilities/Katana Slash
+    m_Address: Data/Abilities/KatanaSlash
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -142,11 +142,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Weapon
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 50fa20986c48e8e43a4005671559d3b5
-    m_Address: Assets/Prefabs/Humans/Ashigaru/Ashigaru.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 51455134a33268c4b9cac34691c3ea3d
     m_Address: Audio/Combat/Sword Impact
@@ -191,6 +186,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85b34f8238ed8704abd2c4c8f5a6c0f4
     m_Address: Audio/Combat/Footstep Large 02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 887aa15505a600d4782e4ea377ed4107
+    m_Address: Audio/Wave Defeat
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

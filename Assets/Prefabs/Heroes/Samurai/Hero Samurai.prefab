@@ -169,9 +169,9 @@ GameObject:
   - component: {fileID: 4106859189324623}
   - component: {fileID: 6292679410759752689}
   - component: {fileID: 111527447602694404}
-  - component: {fileID: -8716870789726330733}
   - component: {fileID: 7232215455403451582}
   - component: {fileID: 45962402728662870}
+  - component: {fileID: -8972537098636412784}
   m_Layer: 0
   m_Name: Hero Samurai
   m_TagString: Untagged
@@ -341,61 +341,6 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 1
---- !u!114 &-8716870789726330733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1145853511077067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a49282e99dd88c343aaf1914a2faa0c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 111527447602694404}
-  m_idle:
-  - {fileID: 7400000, guid: 90490e52d4a792c4d8235d97d1886bd4, type: 2}
-  m_idleRanged:
-  - {fileID: 7400000, guid: e4c26f948f8fa8847a8ace65e5879b36, type: 2}
-  m_attack:
-  - {fileID: 7400000, guid: 910e17b4fabb8024eba781343a8e2b72, type: 2}
-  - {fileID: 7400000, guid: 3f870df2a70335449b3d26029f044096, type: 2}
-  - {fileID: 7400000, guid: b5fcfbc061df0ac42a5f43631171bfcd, type: 2}
-  m_attackRanged:
-  - {fileID: 7400000, guid: 7eb1c865ef1c4e4408f6048703930c48, type: 2}
-  m_forward:
-  - {fileID: 7400000, guid: 1f679ac8ec2253b4dbaaad4fc70a13e5, type: 2}
-  m_backward:
-  - {fileID: 7400000, guid: 873633446c94ffd4bb403d54939b5eb0, type: 2}
-  m_backpedal:
-  - {fileID: 7400000, guid: 0de796ec919fc8949b55d84edd465d78, type: 2}
-  m_backpedalTurn:
-  - {fileID: 7400000, guid: af484ab74ae9a1c46a5853101540d3fc, type: 2}
-  m_castForward:
-  - {fileID: 7400000, guid: 4bb3d01d71a77654b8da6e2d2468d049, type: 2}
-  m_castMid:
-  - {fileID: 7400000, guid: 85301303290e1fb4db5809b659191c2a, type: 2}
-  m_abilities:
-    list:
-    - Key: KatanaSlash
-      Value: {fileID: 7400000, guid: d82a9557a6a4c204fa2d70c393990a98, type: 2}
-    - Key: SummonLightning
-      Value: {fileID: 7400000, guid: 22a3e096bd6e08b4d9eedc7e53bded84, type: 2}
-    keyCollision: 0
-  m_knockedBack:
-  - {fileID: 7400000, guid: 8ab1642c754b9f6498cb6f6d8c9fdbbe, type: 2}
-  m_land:
-  - {fileID: 7400000, guid: b12775afbe3037c45ba32802d4ac9527, type: 2}
-  m_cower: []
-  m_stunned:
-  - {fileID: 7400000, guid: 1104eda9b1b4e88468d0c591dd0bc864, type: 2}
-  m_die:
-  - {fileID: 7400000, guid: 0426536197850484397d540110bae4ae, type: 2}
-  m_revive:
-  - {fileID: 7400000, guid: 45c7a8fa079452242a81d90e4fa3af53, type: 2}
-  m_victory:
-  - {fileID: 7400000, guid: b1e74a380e18b9f46a454d83515ee6cd, type: 2}
 --- !u!114 &7232215455403451582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +366,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d56332d18cf5f46868d862c64c7543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8972537098636412784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145853511077067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5151dbeb3422ed47b8d301240bc96a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityId: 
 --- !u!1 &1178714306360538
 GameObject:
   m_ObjectHideFlags: 0

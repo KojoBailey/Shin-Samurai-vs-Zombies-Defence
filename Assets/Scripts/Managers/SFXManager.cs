@@ -43,6 +43,7 @@ public class SFXManager { // Sound Effects Manager
     public static float PlayFromBundle(AudioBundle bundle) {
         return Play(bundle.GetRandom());
     }
+    // Returns the length of the requested clip.
     public static float Play(AudioClip clip) {
         AudioSource availableSlot = null;
         foreach (var audioSource in m_audioSources) {

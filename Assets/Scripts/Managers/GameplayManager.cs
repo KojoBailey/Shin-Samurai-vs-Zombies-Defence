@@ -48,6 +48,7 @@ public class GameplayManager { // Gameplay Manager
     /* Flags */
     public bool paused = false;
     public bool waveStarted = false;
+    public bool defeated = false;
     public bool waveComplete = false;
     public bool startSlowMo = false;
 
@@ -99,6 +100,7 @@ public class GameplayManager { // Gameplay Manager
 
         // Pre-load audio clips.
         await SFXManager.Load(className, "Wave Victory");
+        await SFXManager.Load(className, "Wave Defeat");
         if (!fastLoad) {
             await SFXManager.Load(className, "Combat/Swoosh Small");
             await SFXManager.Load(className, "Combat/Swoosh Medium");
@@ -207,7 +209,21 @@ public class GameplayManager { // Gameplay Manager
                 smithy += 1;
             }
 
-            if (enemiesRemaining == 0) {
+            // On hero death:
+            if (hero.health <= 0) {
+                if (!defeated) {
+                    defeated = true;
+                    bgm.Stop();
+                    victoryDuration = SFXManager.PlayFromBundle("Wave Defeat");
+                    victoryTimer = waveStopwatch;
+                } else if (waveStopwatch - victoryTimer > victoryDuration) {
+                    Terminate();
+                    SceneLoadManager.LoadScene("TitleScreen");
+                }
+            }
+
+            // On wave completion:
+            if (enemiesRemaining == 0 && hero.health > 0) {
                 if (!startSlowMo) {
                     slowMoTimer = waveStopwatch;
                     bgm.Stop();

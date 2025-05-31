@@ -6,9 +6,6 @@ public class AllyData : ScriptableObject, IUpgradable {
     public string displayName;
     public string description;
     public Sprite icon;
-    public GameObject prefabWrapper;
-    public EnemyData.MeleeWeapon meleeWeapon;
-    public EnemyData.RangedWeapon rangedWeapon;
     public CostumeData[] costumes;
 
     public CostumeData GetEquippedCostume() {
@@ -17,6 +14,10 @@ public class AllyData : ScriptableObject, IUpgradable {
             costume.prefab.GetComponent<SkinnedMeshRenderer>().material = costume.material;
         return costume;
     }
+    
+    public EnemyData.MeleeWeapon meleeWeapon;
+    public EnemyData.RangedWeapon rangedWeapon;
+    public AnimationEventData animationEvents;
 
     public enum Stat {
         Cost,
@@ -55,7 +56,6 @@ public class AllyData : ScriptableObject, IUpgradable {
     public int range {
         get => (int)GetStat(Stat.Range);
     }
-
 
     public float GetStat(Stat stat) {
         return GetStat(SaveManager.levels[this], stat);

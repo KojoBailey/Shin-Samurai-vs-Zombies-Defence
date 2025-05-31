@@ -30,8 +30,7 @@ public class Hero : GameplayEntity {
             Debug.LogError($"Could not find or load Hero of ID \"{m_heroId}\".");
             return;
         }
-        wrapperObject = Object.Instantiate(data.prefabWrapper);
-        obj = Object.Instantiate(data.GetEquippedCostume().prefab, wrapperObject.transform);
+        obj = Object.Instantiate(data.GetEquippedCostume().prefab);
 
         SaveManager.SetLevel(data, 1);
         SaveManager.SetLevel(data.meleeWeaponData, 1);
@@ -39,6 +38,7 @@ public class Hero : GameplayEntity {
         Prepare();
         transform.position = new Vector3(spawnX, 0f, 0f);
         transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
+        ApplyTags(data.animationEvents);
 
         // Attach weapon.
         if (data.meleeWeaponData != null) {
@@ -54,7 +54,7 @@ public class Hero : GameplayEntity {
         health = data.maxHealth;
 
         m_isTurning = false;
-        animation.Play(animationHandler.idle);
+        ChangeAnimation("Idle");
         FinishInit();
     }
 
@@ -159,29 +159,24 @@ public class Hero : GameplayEntity {
             switch (currentState) {
                 case State.Idle:
                     SwitchToMelee();
-                    animation.CrossFade(animationHandler.idle, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.idle, 0.1f);
+                    ChangeAnimation("Idle", 0.1f);
                     break;
                 case State.IdleRanged:
                     SwitchToRanged();
-                    animation.CrossFade(animationHandler.idleRanged, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.idleRanged, 0.1f);
+                    ChangeAnimation("IdleRanged", 0.1f);
                     break;
                 case State.Forward:
                     SwitchToMelee();
-                    animation.CrossFade(animationHandler.forward, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.forward, 0.1f);
+                    ChangeAnimation("Forward", 0.1f);
                     break;
                 case State.BackPedal:
                     SwitchToMelee();
-                    animation.CrossFade(animationHandler.backpedal, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.backpedal, 0.1f);
+                    ChangeAnimation("BackPedal", 0.1f);
                     break;
                 case State.BackwardRun:
                     SwitchToMelee();
                     m_isTurning = true;
-                    animation.Play(animationHandler.backpedalTurn);
-                    wrapperAnimation.Play(animationHandler.backpedalTurn);
+                    ChangeAnimation("BackPedalTurn");
                     break;
                 case State.MeleeAttack:
                     SwitchToMelee();
@@ -191,21 +186,20 @@ public class Hero : GameplayEntity {
                     break;
                 case State.CastForward:
                     SwitchToMelee();
-                    ChangeAnimation(animationHandler.castForward, 0.1f);
+                    ChangeAnimation("CastForward", 0.1f);
                     break;
                 case State.PersonalAbility:
                     if (abilityStatus == AbilityStatus.KatanaSlash) {
                         SwitchToMelee();
-                        ChangeAnimation(animationHandler.GetAbility("KatanaSlash"), 0.1f);
+                        ChangeAnimation("AbilityKatanaSlash", 0.1f);
                     }
                     break;
                 case State.Die:
-                    animation.CrossFade(animationHandler.die, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.die, 0.1f);
+                    ChangeAnimation("Die", 0.1f);
                     data.GetEquippedCostume().audioData.Die();
                     break;
                 case State.Victory:
-                    ChangeAnimation(animationHandler.victory, 0.1f);
+                    ChangeAnimation("Victory", 0.1f);
                     break;
             }
         }
@@ -214,13 +208,11 @@ public class Hero : GameplayEntity {
         if (currentState == State.MeleeAttack) {
             if (m_meleeAttackTimer < 0f)
                 m_meleeAttackTimer = meleeWeapon.data.attackFrequency;
-            if (!animationHandler.attackIsPlaying) {
+            if (!animation.IsPlaying("Attack01")) {
                 if (m_meleeAttackTimer == meleeWeapon.data.attackFrequency) {
-                    animation.CrossFade(animationHandler.attack, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.attack, 0.1f);
+                    ChangeAnimation("Attack01", 0.1f);
                 } else {
-                    animation.CrossFade(animationHandler.idle, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.idle, 0.1f);
+                    ChangeAnimation("Idle", 0.1f);
                 }
             }
         }
@@ -229,20 +221,18 @@ public class Hero : GameplayEntity {
         if (currentState == State.RangedAttack && rangedWeapon != null) {
             if (m_rangedAttackTimer < 0f)
                 m_rangedAttackTimer = rangedWeapon.data.attackFrequency;
-            if (!animation.IsPlaying(animationHandler.attackRanged)) {
+            if (!animation.IsPlaying("AttackRanged")) {
                 if (m_rangedAttackTimer == rangedWeapon.data.attackFrequency) {
-                    animation.CrossFade(animationHandler.attackRanged, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.attackRanged, 0.1f);
+                    ChangeAnimation("AttackRanged", 0.1f);
                 } else {
-                    animation.CrossFade(animationHandler.idleRanged, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.idleRanged, 0.1f);
+                    ChangeAnimation("IdleRanged", 0.1f);
                 }
             }
         }
         m_rangedAttackTimer -= Time.deltaTime;
 
         if (currentState == State.CastForward) {
-            if (!animationHandler.castForwardIsPlaying) {
+            if (!animation.IsPlaying("CastForward")) {
                 abilityStatus = AbilityStatus.None;
                 ChangeState(State.Idle);
             }
@@ -250,16 +240,15 @@ public class Hero : GameplayEntity {
 
         if (currentState == State.PersonalAbility) {
             if (abilityStatus == AbilityStatus.KatanaSlash) {
-                if (!animationHandler.IsAbilityPlaying("KatanaSlash")) {
+                if (!animation.IsPlaying("AbilityKatanaSlash")) {
                     abilityStatus = AbilityStatus.None;
                     ChangeState(State.Idle);
                 }
             }
         }
 
-        if (m_isTurning == true && !animationHandler.backpedalTurnIsPlaying && currentState == State.BackwardRun) {
-            animation.Play(animationHandler.backward);
-            wrapperAnimation.Play(animationHandler.backward);
+        if (m_isTurning == true && !animation.IsPlaying("BackPedalTurn") && currentState == State.BackwardRun) {
+            ChangeAnimation("Backward");
             m_isTurning = false;
         }
 

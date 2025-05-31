@@ -15,13 +15,13 @@ MonoBehaviour:
   displayName: Samurai
   description: 
   icon: {fileID: 21300000, guid: 279aa6d8b6dc83243a928415256b53e1, type: 3}
-  prefabWrapper: {fileID: 5202391561953481559, guid: 488e500cf41c4d0499623eaa9439c38c, type: 3}
   costumes:
   - {fileID: 11400000, guid: f406d8dac3b82bd438738fa9c5d5beb2, type: 2}
   - {fileID: 11400000, guid: fcba9bceaa23a5a499e3364feae40c3d, type: 2}
   - {fileID: 11400000, guid: fdc056e2355cd63449e72e49d0c04d3b, type: 2}
   meleeWeaponData: {fileID: 11400000, guid: af10351aa07b4c94eb6aa1a5ce31118c, type: 2}
   rangedWeaponData: {fileID: 11400000, guid: 502e906824819f34d8a6249ea53493c3, type: 2}
+  animationEvents: {fileID: 11400000, guid: c3beaf3216a0eee46abd7f1f319260df, type: 2}
   stats:
     list:
     - Key: 2

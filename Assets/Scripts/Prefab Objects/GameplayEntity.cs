@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 /* Characters during gameplay, including heroes, allies, and enemies. */
 public class GameplayEntity { // Gameplay Entity
@@ -10,9 +11,6 @@ public class GameplayEntity { // Gameplay Entity
     public GameObject obj;
     public Transform transform;
     public Animation animation;
-    public GameObject wrapperObject;
-    public AnimationHandler animationHandler;
-    public Animation wrapperAnimation;
     protected float m_attackTimer;
     protected float m_leftBound, m_rightBound;
 
@@ -62,8 +60,6 @@ public class GameplayEntity { // Gameplay Entity
         obj.SetActive(false);
         transform = obj.transform;
         animation = obj.GetComponent<Animation>();
-        wrapperAnimation = wrapperObject.GetComponent<Animation>();
-        animationHandler = obj.GetComponent<AnimationHandler>();
         knockbackMeter = 20;
         if (allegiance == Side.Left)
             direction = 1;
@@ -97,9 +93,22 @@ public class GameplayEntity { // Gameplay Entity
     protected virtual void HandleState() {}
     protected virtual void HandleMotion() {}
 
-    public void SetEntityId(string newId) {
-        entityId = newId;
-        wrapperObject.GetComponent<AnimEventAttack>().entityId = entityId;
+    public void SetEntityId(string _entityId) {
+        entityId = _entityId;
+        obj.GetComponent<AnimEventAttack>().entityId = _entityId;
+    }
+
+    public void ApplyTags(AnimationEventData data) {
+        foreach (KeyValuePair<string, List<AnimationEventData.Tag>> tags in data.tags) {
+            AnimationClip clip = animation[tags.Key].clip;
+            foreach (AnimationEventData.Tag tag in tags.Value) {
+                AnimationEvent animEvent = new AnimationEvent {
+                    functionName = tag.action.ToString(),
+                    time = tag.frame / clip.frameRate
+                };
+                clip.AddEvent(animEvent);
+            }
+        }
     }
 
     protected void ChangeState(State newState) {
@@ -140,19 +149,14 @@ public class GameplayEntity { // Gameplay Entity
 
     protected void ChangeAnimation(string animationId) {
         animation.Play(animationId);
-        wrapperAnimation.Play(animationId);
     }
     protected void ChangeAnimation(string animationId, float crossFade) {
         animation.CrossFade(animationId, crossFade);
-        wrapperAnimation.CrossFade(animationId, crossFade);
     }
 
     public void ChangeSpeed(float _speedModifier) {
         speedModifier = _speedModifier;
         foreach (AnimationState state in animation) {
-            state.speed = speedModifier;
-        }
-        foreach (AnimationState state in wrapperAnimation) {
             state.speed = speedModifier;
         }
     }

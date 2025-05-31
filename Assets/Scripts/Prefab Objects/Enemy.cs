@@ -9,11 +9,11 @@ public class Enemy : GameplayEntity {
         data = _data;
         allegiance = _allegiance;
 
-        wrapperObject = Object.Instantiate(data.prefabWrapper);
-        obj = Object.Instantiate(data.prefab, wrapperObject.transform);
+        obj = Object.Instantiate(data.prefab);
         Prepare();
         transform.position = new Vector3(0f, 0f, Random.Range(-0.4f, 0.4f));
         transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
+        ApplyTags(data.animationEvents);
 
         // Attach weapon(s).
         if (data.meleeWeapon.prefab != null) {
@@ -47,7 +47,7 @@ public class Enemy : GameplayEntity {
         if (currentState == State.KnockedBack || (currentState == State.Landing && animation.IsPlaying("Land"))) return;
 
         // Handle attacking.
-        if (!animationHandler.attackIsPlaying)
+        if (!animation.IsPlaying("Attack01"))
             ChangeState(State.Walk);
         if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound)
             ChangeState(State.Idle);
@@ -78,20 +78,20 @@ public class Enemy : GameplayEntity {
             m_previousState = currentState;
             switch (currentState) {
                 case State.Idle:
-                    ChangeAnimation(animationHandler.idle, 0.1f);
+                    ChangeAnimation("Idle", 0.1f);
                     break;
                 case State.Walk:
-                    ChangeAnimation(animationHandler.forward, 0.1f);
+                    ChangeAnimation("Forward", 0.1f);
                     break;
                 case State.KnockedBack:
-                    ChangeAnimation(animationHandler.knockedBack, 0.1f);
+                    ChangeAnimation("KnockedBack", 0.1f);
                     break;
                 case State.Landing:
-                    ChangeAnimation(animationHandler.land, 0.1f);
+                    ChangeAnimation("Land", 0.1f);
                     break;
                 case State.Die:
                     ChangeSpeed(1);
-                    ChangeAnimation(animationHandler.die, 0.1f);
+                    ChangeAnimation("Die", 0.1f);
                     GameplayManager.instance.enemiesRemaining -= 1;
                     break;
             }
@@ -100,11 +100,11 @@ public class Enemy : GameplayEntity {
         if (currentState == State.MeleeAttack) {
             if (m_attackTimer < 0f)
                 m_attackTimer = data.attackFrequency;
-            if (!animationHandler.attackIsPlaying) {
+            if (!animation.IsPlaying("Attack01")) {
                 if (m_attackTimer == data.attackFrequency) {
-                    ChangeAnimation(animationHandler.attack, 0.1f);
+                    ChangeAnimation("Attack01", 0.1f);
                 } else {
-                    ChangeAnimation(animationHandler.idle, 0.1f);
+                    ChangeAnimation("Idle", 0.1f);
                 }
             }
             m_attackTimer -= Time.deltaTime;
@@ -113,8 +113,8 @@ public class Enemy : GameplayEntity {
         }
 
         if (currentState == State.Die) {
-            if (!animationHandler.dieIsPlaying) {
-                Object.Destroy(wrapperObject);
+            if (!animation.IsPlaying("Die")) {
+                Object.Destroy(obj);
                 toDestroy = true;
                 return;
             }

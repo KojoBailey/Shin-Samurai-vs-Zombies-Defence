@@ -6,10 +6,10 @@ public class HeroData : ScriptableObject, IUpgradable {
     public string displayName;
     public string description;
     public Sprite icon;
-    public GameObject prefabWrapper;
     public CostumeData[] costumes;
     public MeleeWeaponData meleeWeaponData;
     public RangedWeaponData rangedWeaponData;
+    public AnimationEventData animationEvents;
 
     public CostumeData GetEquippedCostume() {
         CostumeData costume = costumes[SaveManager.equippedCostumes[SaveManager.selectedHero]];

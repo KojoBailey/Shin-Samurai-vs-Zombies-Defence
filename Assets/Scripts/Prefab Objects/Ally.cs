@@ -9,11 +9,11 @@ public class Ally : GameplayEntity {
         data = _data;
         allegiance = _allegiance;
 
-        wrapperObject = Object.Instantiate(data.prefabWrapper);
-        obj = Object.Instantiate(data.GetEquippedCostume().prefab, wrapperObject.transform);
+        obj = Object.Instantiate(data.GetEquippedCostume().prefab);
         Prepare();
         transform.position = new Vector3(0f, 0f, Random.Range(-0.4f, 0.4f));
         transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
+        ApplyTags(data.animationEvents);
 
         // Attach weapon(s).
         if (data.meleeWeapon.prefab != null) {
@@ -52,7 +52,7 @@ public class Ally : GameplayEntity {
         if (currentState == State.KnockedBack || (currentState == State.Landing && animation.IsPlaying("Land"))) return;
 
         // Handle attacking.
-        if (!animationHandler.attackIsPlaying)
+        if (!animation.IsPlaying("Attack01"))
             ChangeState(State.Walk);
         if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound)
             ChangeState(State.Idle);
@@ -81,27 +81,22 @@ public class Ally : GameplayEntity {
             m_previousState = currentState;
             switch (currentState) {
                 case State.Idle:
-                    animation.CrossFade(animationHandler.idle, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.idle, 0.1f);
+                    ChangeAnimation("Idle", 0.1f);
                     break;
                 case State.Walk:
-                    animation.CrossFade(animationHandler.forward, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.forward, 0.1f);
+                    ChangeAnimation("Forward", 0.1f);
                     break;
                 case State.KnockedBack:
-                    animation.CrossFade(animationHandler.knockedBack, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.knockedBack, 0.1f);
+                    ChangeAnimation("KnockedBack", 0.1f);
                     break;
                 case State.Landing:
-                    animation.CrossFade(animationHandler.land, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.land, 0.1f);
+                    ChangeAnimation("Land", 0.1f);
                     break;
                 case State.Die:
-                    animation.CrossFade(animationHandler.die, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.die, 0.1f);
+                    ChangeAnimation("Die", 0.1f);
                     break;
                 case State.Victory:
-                    ChangeAnimation(animationHandler.victory, 0.1f);
+                    ChangeAnimation("VictoryLoop", 0.1f);
                     break;
             }
         }
@@ -109,13 +104,11 @@ public class Ally : GameplayEntity {
         if (currentState == State.MeleeAttack) {
             if (m_attackTimer < 0f)
                 m_attackTimer = data.attackFrequency;
-            if (!animationHandler.attackIsPlaying) {
+            if (!animation.IsPlaying("Attack01")) {
                 if (m_attackTimer == data.attackFrequency) {
-                    animation.CrossFade(animationHandler.attack, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.attack, 0.1f);
+                    ChangeAnimation("Attack01", 0.1f);
                 } else {
-                    animation.CrossFade(animationHandler.idle, 0.1f);
-                    wrapperAnimation.CrossFade(animationHandler.idle, 0.1f);
+                    ChangeAnimation("Idle", 0.1f);
                 }
             }
             m_attackTimer -= Time.deltaTime;
@@ -124,8 +117,8 @@ public class Ally : GameplayEntity {
         }
 
         if (currentState == State.Die) {
-            if (!animationHandler.dieIsPlaying) {
-                Object.Destroy(wrapperObject);
+            if (!animation.IsPlaying("Die")) {
+                Object.Destroy(obj);
                 toDestroy = true;
                 return;
             }

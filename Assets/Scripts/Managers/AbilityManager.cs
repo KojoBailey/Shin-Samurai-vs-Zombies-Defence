@@ -17,7 +17,7 @@ public class AbilityManager { // Ability Manager
     public async Task Init() {
         queue = new List<Action<string>>();
 
-        var katanaSlashDataHandle = Addressables.LoadAssetAsync<AbilityData>("Data/Abilities/Katana Slash");
+        var katanaSlashDataHandle = Addressables.LoadAssetAsync<AbilityData>("Data/Abilities/KatanaSlash");
         katanaSlashData = await katanaSlashDataHandle.Task;
         GameplayManager.instance.equippedAbilities.Add(katanaSlashData); // !! Remove for proper management.
         GameplayManager.instance.abilityCooldowns.Add(0);
