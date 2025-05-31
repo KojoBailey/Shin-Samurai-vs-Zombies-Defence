@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00fb1f7dc392b247969fe251c9b0f1b, type: 3}
   m_Name: Samurai Footstep
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 93804ecf0dfc6c34e9fb86270a135efd, type: 3}
+  - {fileID: 8300000, guid: d116370c6adc6a14489ef1130e26e86c, type: 3}
+  - {fileID: 8300000, guid: 0b47d36255deac745bc85431e7914747, type: 3}
+  - {fileID: 8300000, guid: 1343a4321113eff4cb202b39b73fb7b0, type: 3}
+  - {fileID: 8300000, guid: 987455eb075d2ad4c9b17604e838cdec, type: 3}

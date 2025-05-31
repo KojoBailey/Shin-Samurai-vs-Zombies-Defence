@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class SceneLoadManager { // Scene Load Manager
     private static bool m_loadingScene = false;

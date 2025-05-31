@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00fb1f7dc392b247969fe251c9b0f1b, type: 3}
   m_Name: Samurai Big Attack
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: e9218c94ead10f245bf1219e1562ec71, type: 3}
+  - {fileID: 8300000, guid: 48cee8410f0efd847a9b2719ac1ca21c, type: 3}
+  - {fileID: 8300000, guid: c11fc64c2c9036c4a828aa49e3262a0c, type: 3}
+  - {fileID: 8300000, guid: 4e71a80c4ca724f4eb86b3447429dced, type: 3}

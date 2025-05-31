@@ -45,7 +45,8 @@ public class GameplayManager { // Gameplay Manager
     private float victoryDuration; // Equal to the victory music duration.
     private float victoryTimer;
 
-    /* Completion Flags */
+    /* Flags */
+    public bool paused = false;
     public bool waveStarted = false;
     public bool waveComplete = false;
     public bool startSlowMo = false;
@@ -247,12 +248,6 @@ public class GameplayManager { // Gameplay Manager
         }
     }
 
-    public void Terminate() {
-        foreach (var handle in addressableAssets)
-            Addressables.Release(handle);
-        SFXManager.Clear(className);
-    }
-
     public void DealDamage(string entityId) {
         GameplayEntity entity = entities[entityId];
         foreach (GameplayEntity enemy in entities.Values) {
@@ -270,5 +265,23 @@ public class GameplayManager { // Gameplay Manager
 
     public void DestroyEntity(string entityId) {
         entities[entityId] = null;
+    }
+
+    public static void Pause() {
+        instance.paused = true;
+        Time.timeScale = 0;
+        instance.bgm.SetVolume(0.5f);
+    }
+    public static void Resume() {
+        instance.paused = false;
+        Time.timeScale = 1;
+        instance.bgm.SetVolume(1);
+    }
+
+    public static void Terminate() {
+        foreach (var handle in instance.addressableAssets)
+            Addressables.Release(handle);
+        SFXManager.Clear(className);
+        Resume();
     }
 };

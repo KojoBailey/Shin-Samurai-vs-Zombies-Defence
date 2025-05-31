@@ -24,4 +24,8 @@ class BGM { // Background Music
     public void Stop() {
         bgm.Stop();
     }
+
+    public void SetVolume(float _volume) {
+        bgm.volume = _volume;
+    }
 };

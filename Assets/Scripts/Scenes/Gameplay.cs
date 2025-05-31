@@ -15,7 +15,7 @@ public class Gameplay : MonoBehaviour {
     }
 
     private void Update() {
-        if (SceneLoadManager.finishedLoading) {
+        if (SceneLoadManager.finishedLoading && GameplayManager.instance.paused == false) {
             GameplayManager.instance.Update();
         }
     }

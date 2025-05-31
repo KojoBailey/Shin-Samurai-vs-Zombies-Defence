@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using UnityEngine.AddressableAssets;
+using System.Linq;
 
 /* Manages sound effects and dialogue, but not music. */
 public class SFXManager { // Sound Effects Manager
@@ -27,10 +28,12 @@ public class SFXManager { // Sound Effects Manager
             Debug.LogError($"Could not load AudioBundle from address \"Audio/{address}\".");
             return;
         }
-        loadedAudio.Add(address, bundle);
+        if (!loadedAudio.ContainsKey(address))
+            loadedAudio.Add(address, bundle);
         if (!ownershipLog.ContainsKey(owner))
             ownershipLog.Add(owner, new List<string>());
-        ownershipLog[owner].Add(address);
+        if (!ownershipLog[owner].Contains(address))
+            ownershipLog[owner].Add(address);
     }
 
     public static float PlayFromBundle(string address) {
