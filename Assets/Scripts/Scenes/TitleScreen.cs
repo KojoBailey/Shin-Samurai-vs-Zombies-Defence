@@ -34,7 +34,6 @@ public class TitleScreen : MonoBehaviour { // Title Screen
     private async void Start() {
         // Initialise managers.
         SFXManager.Init();
-        await AllyManager.Init();
 
         // Blood scroll animation
         m_bloodPos = 0;

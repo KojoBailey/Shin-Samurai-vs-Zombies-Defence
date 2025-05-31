@@ -601,9 +601,9 @@ GameObject:
   - component: {fileID: 4195522335748095}
   - component: {fileID: 1635248788075200460}
   - component: {fileID: 111051945417412983}
-  - component: {fileID: 551863758941257186}
   - component: {fileID: 4106094717279611765}
   - component: {fileID: 7263193307417124812}
+  - component: {fileID: 7718776979662459712}
   m_Layer: 0
   m_Name: Hopping Torso
   m_TagString: Untagged
@@ -724,47 +724,6 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 1
---- !u!114 &551863758941257186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934122997480958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a49282e99dd88c343aaf1914a2faa0c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 111051945417412983}
-  m_idle:
-  - {fileID: 7400000, guid: ad5108dd03aa7d746a3e4a271ed07414, type: 2}
-  m_idleRanged: []
-  m_attack:
-  - {fileID: 7400000, guid: 7d573fac039e7b646b7f9685d08d560b, type: 2}
-  m_attackRanged: []
-  m_forward:
-  - {fileID: 7400000, guid: 037f223652a9ee34e8817d41d7f36c41, type: 2}
-  m_backward: []
-  m_backpedal: []
-  m_backpedalTurn: []
-  m_castForward: []
-  m_castMid: []
-  m_abilities:
-    list: []
-    keyCollision: 0
-  m_knockedBack:
-  - {fileID: 7400000, guid: 05eea7c1f1e930b4294e0cd7966dee5b, type: 2}
-  m_land:
-  - {fileID: 7400000, guid: 18aa4034a15e29e42a4353dc5b91a33b, type: 2}
-  m_cower: []
-  m_stunned:
-  - {fileID: 7400000, guid: 30a9d5fcca816f343a4880e11eb2f081, type: 2}
-  m_die:
-  - {fileID: 7400000, guid: f91a698f37be669469e41ac281820ea6, type: 2}
-  m_revive: []
-  m_victory:
-  - {fileID: 7400000, guid: 47fb2d0501594d44b9f0f2512a0edfd6, type: 2}
 --- !u!114 &4106094717279611765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,6 +749,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_audioData: {fileID: 11400000, guid: f75be2ccaa6b3c84791c08274b8ed651, type: 2}
+--- !u!114 &7718776979662459712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934122997480958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5151dbeb3422ed47b8d301240bc96a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityId: 
 --- !u!1 &1936660192563843
 GameObject:
   m_ObjectHideFlags: 0

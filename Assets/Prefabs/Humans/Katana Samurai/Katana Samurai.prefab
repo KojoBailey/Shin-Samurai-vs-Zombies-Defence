@@ -678,7 +678,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4554683190308758}
-  - component: {fileID: 5243163452318386661}
   m_Layer: 0
   m_Name: samuraimelee:Sam_rt_hand_jnt
   m_TagString: Untagged
@@ -703,19 +702,6 @@ Transform:
   - {fileID: 4586093228379368}
   m_Father: {fileID: 4945333972971758}
   m_LocalEulerAnglesHint: {x: -0.35952094, y: 20.25433, z: 13.508336}
---- !u!114 &5243163452318386661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548455712642800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac8048ce5553ba478af3c6b8f835788, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  side: 1
 --- !u!1 &1553608776122551
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,9 +970,9 @@ GameObject:
   - component: {fileID: 4057630479361770}
   - component: {fileID: 2886293217822125211}
   - component: {fileID: 111959251017916575}
-  - component: {fileID: 4424118011160601154}
   - component: {fileID: 3923375785979213194}
   - component: {fileID: 2918583334150503499}
+  - component: {fileID: 1592274656003614288}
   m_Layer: 0
   m_Name: Katana Samurai
   m_TagString: Untagged
@@ -1128,49 +1114,6 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 1
---- !u!114 &4424118011160601154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677502904944905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a49282e99dd88c343aaf1914a2faa0c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 111959251017916575}
-  m_idle:
-  - {fileID: 7400000, guid: 8d8fe54b50e0f844cba68784c4bc060f, type: 2}
-  m_idleRanged: []
-  m_attack:
-  - {fileID: 7400000, guid: c6fbae1693c189247a3522031a611a64, type: 2}
-  - {fileID: 7400000, guid: 171dcd7be7652e14ca6692abb5a45c70, type: 2}
-  m_attackRanged: []
-  m_forward:
-  - {fileID: 7400000, guid: bde272ce643fe314baa44eea34da4622, type: 2}
-  m_backward: []
-  m_backpedal: []
-  m_backpedalTurn: []
-  m_castForward: []
-  m_castMid: []
-  m_abilities:
-    list: []
-    keyCollision: 0
-  m_knockedBack:
-  - {fileID: 7400000, guid: e3f6e394e0221cd4a96d0cc55e1a04da, type: 2}
-  m_land:
-  - {fileID: 7400000, guid: 6eddeff51d437134da3712bba5a5102a, type: 2}
-  m_cower:
-  - {fileID: 7400000, guid: db7837a5621d79649bf7a4420a54e4e7, type: 2}
-  m_stunned:
-  - {fileID: 7400000, guid: fce91dfa3e6a0504dad7333d2b71d404, type: 2}
-  m_die:
-  - {fileID: 7400000, guid: ce13e1e4326d15348b54c6129f2d04a9, type: 2}
-  m_revive: []
-  m_victory:
-  - {fileID: 7400000, guid: fee739bd19e982a4ebbfb9c0d2d0c783, type: 2}
 --- !u!114 &3923375785979213194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1195,7 +1138,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e8fb3f8bc967d4cb70acfa6eacc60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_audioData: {fileID: 0}
+  m_audioData: {fileID: 11400000, guid: 64a68f9080d321f41ac61428787a06dc, type: 2}
+--- !u!114 &1592274656003614288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677502904944905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5151dbeb3422ed47b8d301240bc96a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityId: 
 --- !u!1 &1699918409672932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,6 +1386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4690206592003085}
+  - component: {fileID: 3811839250806355432}
   m_Layer: 0
   m_Name: samuraimelee:prop
   m_TagString: Untagged
@@ -1452,3 +1409,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4447564813921351}
   m_LocalEulerAnglesHint: {x: -0.20894049, y: -10.254171, z: -62.799767}
+--- !u!114 &3811839250806355432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907982119634990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac8048ce5553ba478af3c6b8f835788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  side: 0

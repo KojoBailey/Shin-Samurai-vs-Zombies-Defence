@@ -10,12 +10,13 @@ public class GameplayManager { // Gameplay Manager
 
     /* Debug Tools */
     public static string className = typeof(GameplayManager).Name;
-    public const bool fastLoad = false;
-    public const bool heroDoNotAttack = false;
+    public const bool fastLoad = true;
+    public const bool heroDoNotAttack = true;
 
     /* Sub-managers */
     // !! Later these will need separating from GameplayManager for use in menus.
     public AbilityManager abilityManager = new AbilityManager();
+    public AllyManager allyManager = new AllyManager();
 
     /* Assets & Data */
     private List<object> addressableAssets = new List<object>();
@@ -57,7 +58,7 @@ public class GameplayManager { // Gameplay Manager
 
     public int smithy = 0;
     private float smithySave = 0;
-    public const float smithyRate = 1;
+    public const float smithyRate = 0.2f;
 
     public int totalEnemies;
     public int enemiesRemaining;
@@ -97,6 +98,16 @@ public class GameplayManager { // Gameplay Manager
         instance.equippedAllies.Add(ashigaruData);
         instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
         SaveManager.SetLevel(ashigaruData, 1); // !! Remove once save system implemented
+        var katanaSamuraiDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/KatanaSamurai");
+        AllyData katanaSamuraiData = await katanaSamuraiDataHandle.Task;
+        instance.addressableAssets.Add(katanaSamuraiData);
+        if (katanaSamuraiData == null) {
+            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/KatanaSamurai"}\".");
+            return;
+        }
+        instance.equippedAllies.Add(katanaSamuraiData);
+        instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
+        SaveManager.SetLevel(katanaSamuraiData, 1); // !! Remove once save system implemented
 
         // Pre-load audio clips.
         await SFXManager.Load(className, "Wave Victory");
@@ -131,6 +142,7 @@ public class GameplayManager { // Gameplay Manager
         SaveManager.EquipCostume("Kunoichi", 0);
         SaveManager.EquipCostume("Ronin", 0);
         SaveManager.EquipCostume("Ashigaru", 0);
+        SaveManager.EquipCostume("KatanaSamurai", 0);
         instance.hero = new Hero(SaveManager.selectedHero);
         instance.hero.SetBounds(instance.stage.leftBound, instance.stage.rightBound);
         instance.hero.allegiance = GameplayEntity.Side.Left;
@@ -200,7 +212,8 @@ public class GameplayManager { // Gameplay Manager
                 }
             }
 
-            allyCooldowns[0] -= Time.deltaTime;
+            for (int i = 0; i < allyCooldowns.Count; i++)
+                allyCooldowns[i] -= Time.deltaTime;
             for (int i = 0; i < abilityCooldowns.Count; i++)
                 abilityCooldowns[i] -= Time.deltaTime;
 

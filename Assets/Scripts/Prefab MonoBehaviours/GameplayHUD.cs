@@ -20,6 +20,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
     [SerializeField] private GameObject allySlotReference;
     [SerializeField] private Image allyIconReference;
     [SerializeField] private Image cooldownReference;
+    private List<GameObject> allyButtons;
     [SerializeField] private TextMeshProUGUI smithyText;
 
     [SerializeField] private GameObject abilitySlotReference;
@@ -36,7 +37,18 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
             Debug.LogError($"Could not load icon texture for {SaveManager.selectedHero}");
         }
 
-        UIManager.AddEventTrigger("AllySlot1", cooldownReference.gameObject, EventTriggerType.PointerClick, AllySlotOnPointerClick);
+        allyButtons = new List<GameObject>();
+        for (int i = 0; i < GameplayManager.instance.equippedAllies.Count; i++) {
+            GameObject allyButton = Instantiate(allySlotReference, allySlotReference.transform.parent);
+            AllyData allyData = GameplayManager.instance.equippedAllies[i];
+            allyButton.transform.Find("Icon").gameObject.GetComponent<Image>().sprite = allyData.icon;
+            allyButton.transform.Find("Cooldown").gameObject.GetComponent<Image>().sprite = allyData.icon;
+            allyButton.GetComponent<RectTransform>().localPosition = new Vector3(
+                300 * i, 0, 0);
+            UIManager.AddEventTrigger(allyData.id, i, allyButton, EventTriggerType.PointerClick, AllySlotOnPointerClick);
+            allyButtons.Add(allyButton);
+        }
+        allySlotReference.SetActive(false);
 
         abilityButtons = new List<GameObject>();
         for (int i = 0; i < GameplayManager.instance.equippedAbilities.Count; i++) {
@@ -69,11 +81,14 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
         SceneLoadManager.LoadScene("Gameplay");
     }
 
-    private void AllySlotOnPointerClick(string id) {
-        if (GameplayManager.instance.allyCooldowns[0] <= 0 && GameplayManager.instance.smithy >= GameplayManager.instance.equippedAllies[0].cost) {
-            GameplayManager.instance.SpawnAlly(GameplayManager.instance.equippedAllies[0]);
-            GameplayManager.instance.allyCooldowns[0] = GameplayManager.instance.equippedAllies[0].cooldown;
-            GameplayManager.instance.smithy -= GameplayManager.instance.equippedAllies[0].cost;
+    private void AllySlotOnPointerClick(string id, int index) {
+        AllyData ally = GameplayManager.instance.equippedAllies[index];
+        if (GameplayManager.instance.allyCooldowns[index] <= 0 
+            && GameplayManager.instance.smithy >= ally.cost
+        ) {
+            GameplayManager.instance.SpawnAlly(ally);
+            GameplayManager.instance.allyCooldowns[index] = ally.cooldown;
+            GameplayManager.instance.smithy -= ally.cost;
         }
     }
 
@@ -91,14 +106,18 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
             healthBarTargetColour = HealthBar.LerpHSV(HealthBar.red, HealthBar.green, GameplayManager.instance.hero.health / GameplayManager.instance.hero.data.maxHealth);
             healthBarImage.color += (healthBarTargetColour - healthBarImage.color) / 0.2f * Time.deltaTime;
 
-            if (GameplayManager.instance.smithy < GameplayManager.instance.equippedAllies[0].cost) {
-                allySlotReference.GetComponent<RectTransform>().localScale = new Vector3(0.9f, 0.9f, 0.9f);
-                allyIconReference.color = new Color(0.3f, 0.3f, 0.3f);
-            } else {
-                allySlotReference.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
-                allyIconReference.color = Color.white;
+            for (int i = 0; i < allyButtons.Count; i++) {
+                Image icon = allyButtons[i].transform.Find("Icon").gameObject.GetComponent<Image>();
+                Image cooldown = allyButtons[i].transform.Find("Cooldown").gameObject.GetComponent<Image>();
+                if (GameplayManager.instance.smithy < GameplayManager.instance.equippedAllies[i].cost) {
+                    allyButtons[i].GetComponent<RectTransform>().localScale = new Vector3(0.9f, 0.9f, 0.9f);
+                    icon.color = new Color(0.3f, 0.3f, 0.3f);
+                } else {
+                    allyButtons[i].GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                    icon.color = Color.white;
+                }
+                cooldown.fillAmount = GameplayManager.instance.allyCooldowns[i] / GameplayManager.instance.equippedAllies[i].cooldown;
             }
-            cooldownReference.fillAmount = GameplayManager.instance.allyCooldowns[0] / GameplayManager.instance.equippedAllies[0].cooldown;
             smithyText.text = GameplayManager.instance.smithy.ToString();
 
             for (int i = 0; i < abilityButtons.Count; i++) {

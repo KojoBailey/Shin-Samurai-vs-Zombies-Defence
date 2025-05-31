@@ -199,7 +199,7 @@ public class Hero : GameplayEntity {
                     data.GetEquippedCostume().audioData.Die();
                     break;
                 case State.Victory:
-                    ChangeAnimation("Victory", 0.1f);
+                    ChangeAnimation("VictoryLoop", 0.1f);
                     break;
             }
         }
