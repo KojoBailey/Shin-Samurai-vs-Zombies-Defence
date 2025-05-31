@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 
 public class Gate : GameplayEntity {
     private GateData data;
+    public override string GetTypeId() { return data.id; }
+    
     private HealthBar m_healthBar;
 
     public Gate(Side _allegiance) {

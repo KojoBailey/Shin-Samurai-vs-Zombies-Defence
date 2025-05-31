@@ -3,6 +3,8 @@ using UnityEngine;
 public class Enemy : GameplayEntity {
     private string m_id;
     public EnemyData data;
+    public override string GetTypeId() { return data.id; }
+    
     private HealthBar m_healthBar;
 
     public Enemy(EnemyData _data, Side _allegiance) {

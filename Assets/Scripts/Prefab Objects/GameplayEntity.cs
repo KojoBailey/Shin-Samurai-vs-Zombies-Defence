@@ -99,6 +99,8 @@ public class GameplayEntity { // Gameplay Entity
     }
 
     public void ApplyTags(AnimationEventData data) {
+        if (GameplayManager.instance.entitiesWithTags.Contains(GetTypeId()))
+            return;
         foreach (KeyValuePair<string, List<AnimationEventData.Tag>> tags in data.tags) {
             AnimationClip clip = animation[tags.Key].clip;
             foreach (AnimationEventData.Tag tag in tags.Value) {
@@ -109,6 +111,7 @@ public class GameplayEntity { // Gameplay Entity
                 clip.AddEvent(animEvent);
             }
         }
+        GameplayManager.instance.entitiesWithTags.Add(GetTypeId());
     }
 
     protected void ChangeState(State newState) {
@@ -160,4 +163,6 @@ public class GameplayEntity { // Gameplay Entity
             state.speed = speedModifier;
         }
     }
+
+    public virtual string GetTypeId() { return "N/A"; }
 };

@@ -66,6 +66,8 @@ public class GameplayManager { // Gameplay Manager
 
     public Dictionary<string, GameplayEntity> closestTargets = new Dictionary<string, GameplayEntity>();
 
+    public List<string> entitiesWithTags = new List<string>();
+
     // Initialises and loads the data but does not start the wave.
     public static async Task Init(Transform _cameraTransform) {
         // Initialise new instance.

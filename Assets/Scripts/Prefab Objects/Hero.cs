@@ -1,11 +1,10 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-
 public class Hero : GameplayEntity {
-    private string m_heroId;
+    private string heroId;
     public HeroData data;
+    public override string GetTypeId() { return data.id; }
 
     private float m_xVelocity;
 
@@ -20,14 +19,14 @@ public class Hero : GameplayEntity {
     public AbilityStatus abilityStatus = AbilityStatus.None;
 
     public Hero(string _heroId) {
-        m_heroId = _heroId;
+        heroId = _heroId;
     }
 
     public async Task Init(float spawnX) {
-        var handle = Addressables.LoadAssetAsync<HeroData>($"Data/Heroes/{m_heroId}");
+        var handle = Addressables.LoadAssetAsync<HeroData>($"Data/Heroes/{heroId}");
         data = await handle.Task;
         if (data == null) {
-            Debug.LogError($"Could not find or load Hero of ID \"{m_heroId}\".");
+            Debug.LogError($"Could not find or load Hero of ID \"{heroId}\".");
             return;
         }
         obj = Object.Instantiate(data.GetEquippedCostume().prefab);

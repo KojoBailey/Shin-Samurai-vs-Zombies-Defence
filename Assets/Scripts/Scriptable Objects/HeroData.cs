@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "NewHero", menuName = "Game Data/Hero")]
 public class HeroData : ScriptableObject, IUpgradable {
+    public string id;
     public string displayName;
     public string description;
     public Sprite icon;

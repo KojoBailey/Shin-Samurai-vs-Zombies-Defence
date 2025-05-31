@@ -1,8 +1,9 @@
 using UnityEngine;
 
 public class Ally : GameplayEntity {
-    private string m_id;
     private AllyData data;
+    public override string GetTypeId() { return data.id; }
+
     private HealthBar m_healthBar;
 
     public Ally(AllyData _data, Side _allegiance) {
