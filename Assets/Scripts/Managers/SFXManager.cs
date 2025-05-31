@@ -31,7 +31,6 @@ public class SFXManager { // Sound Effects Manager
         if (!ownershipLog.ContainsKey(owner))
             ownershipLog.Add(owner, new List<string>());
         ownershipLog[owner].Add(address);
-        Debug.Log($"Loaded AudioBundle of address \"{address}\" for \"{owner}\".");
     }
 
     public static float PlayFromBundle(string address) {
@@ -62,7 +61,6 @@ public class SFXManager { // Sound Effects Manager
         foreach (string address in ownershipLog[owner]) {
             Addressables.Release(loadedAudio[address]);
             loadedAudio.Remove(address);
-            Debug.Log($"Freed the cache of addressable \"{address}\" from \"{owner}\".");
         }
         ownershipLog.Remove(owner);
     }

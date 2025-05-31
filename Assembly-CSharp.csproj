@@ -69,7 +69,6 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\EnemyData.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\TroopWeaponData.cs" />
-    <Compile Include="Assets\Scripts\Scenes\GameplayHUD.cs" />
     <Compile Include="Assets\Scripts\Animation Events\AnimEventAudioEntity.cs" />
     <Compile Include="Assets\Scripts\Prefab MonoBehaviours\AnimationHandler.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AudioBundle.cs" />
@@ -89,6 +88,7 @@
     <Compile Include="Assets\Scripts\Prefab Objects\GameplayEntity.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\MeleeWeaponData.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RangedWeaponData.cs" />
+    <Compile Include="Assets\Scripts\Prefab MonoBehaviours\GameplayHUD.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AllyData.cs" />
     <Compile Include="Assets\Scripts\Managers\GameplayManager.cs" />
     <Compile Include="Assets\Scripts\Scenes\GluLogoIntro.cs" />

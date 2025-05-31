@@ -14,16 +14,29 @@ public class GameplayManager { // Gameplay Manager
     public const bool heroDoNotAttack = false;
 
     /* Sub-managers */
+    // !! Later these will need separating from GameplayManager for use in menus.
     public AbilityManager abilityManager = new AbilityManager();
 
-    /* Assets */
+    /* Assets & Data */
     private List<object> addressableAssets = new List<object>();
     public static GameObject healthBarPrefab;
+    public WaveData wave;
+    public List<AbilityData> equippedAbilities = new List<AbilityData>();
     public List<AllyData> equippedAllies = new List<AllyData>();
     private List<EnemyData> enemySpawnQueue = new List<EnemyData>();
 
+    /* Game Objects */
+    public Stage stage;
+    public Gate gate;
+    private GameObject hud;
+    private BGM bgm;
+    public Dictionary<string, GameplayEntity> entities = new Dictionary<string, GameplayEntity>();
+    public Hero hero;
+
     /* Time Trackers */
     public float waveStopwatch = 0; // Time since wave began.
+    public List<float> allyCooldowns = new List<float>();
+    public List<float> abilityCooldowns = new List<float>();
     private float enemySpawnTimer; // Time between groups of enemy spawns.
     private const float enemySpacingDuration = 0.3f; // Time between enemy spawns of the same group.
     private float enemySpacingTimer;
@@ -38,30 +51,15 @@ public class GameplayManager { // Gameplay Manager
     public bool startSlowMo = false;
 
     private Transform camera;
-
     public float heroX;
-
-    public Stage stage;
-    public Gate gate;
-    private GameObject hud;
-    private BGM bgm;
 
     public int smithy = 0;
     private float smithySave = 0;
     public const float smithyRate = 1;
 
-    public Dictionary<string, GameplayEntity> entities = new Dictionary<string, GameplayEntity>();
-    public Hero hero;
-
-    public WaveData wave;
     public int totalEnemies;
     public int enemiesRemaining;
     private int waveEntryIndex = 0; // Which sub-wave of enemies is currently being called.
-
-    public List<float> allyCooldowns = new List<float>();
-
-    public List<AbilityData> equippedAbilities = new List<AbilityData>();
-    public List<float> abilityCooldowns = new List<float>();
 
     public Dictionary<string, GameplayEntity> closestTargets = new Dictionary<string, GameplayEntity>();
 
