@@ -3,9 +3,14 @@ using UnityEngine;
 using System.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 
+/* Manages sound effects and dialogue, but not music. */
 public class SFXManager { // Sound Effects Manager
     static private GameObject m_audioObject = new GameObject("SFX");
     static private List<AudioSource> m_audioSources;
+
+    static private Dictionary<string, AudioBundle> loadedAudio = new Dictionary<string, AudioBundle>();
+    // For keeping track of what uses what audio.
+    static private Dictionary<string, List<string>> ownershipLog = new Dictionary<string, List<string>>();
 
     public static void Init() {
         Object.DontDestroyOnLoad(m_audioObject);
@@ -15,18 +20,22 @@ public class SFXManager { // Sound Effects Manager
         }
     }
 
-        public static async Task<AudioBundle> Load(string address) {
+    public static async Task Load(string owner, string address) {
         var audioHandle = Addressables.LoadAssetAsync<AudioBundle>($"Audio/{address}");
         AudioBundle bundle = await audioHandle.Task;
         if (bundle == null) {
             Debug.LogError($"Could not load AudioBundle from address \"Audio/{address}\".");
-            return null;
+            return;
         }
-        return bundle;
+        loadedAudio.Add(address, bundle);
+        if (!ownershipLog.ContainsKey(owner))
+            ownershipLog.Add(owner, new List<string>());
+        ownershipLog[owner].Add(address);
+        Debug.Log($"Loaded AudioBundle of address \"{address}\" for \"{owner}\".");
     }
 
     public static float PlayFromBundle(string address) {
-        AudioBundle bundle = GameplayManager.instance.loadedAudio[address];
+        AudioBundle bundle = loadedAudio[address];
         return Play(bundle.GetRandom());
     }
     public static float PlayFromBundle(AudioBundle bundle) {
@@ -47,5 +56,14 @@ public class SFXManager { // Sound Effects Manager
         availableSlot.clip = clip;
         availableSlot.Play();
         return availableSlot.clip.length;
+    }
+
+    public static void Clear(string owner) {
+        foreach (string address in ownershipLog[owner]) {
+            Addressables.Release(loadedAudio[address]);
+            loadedAudio.Remove(address);
+            Debug.Log($"Freed the cache of addressable \"{address}\" from \"{owner}\".");
+        }
+        ownershipLog.Remove(owner);
     }
 };

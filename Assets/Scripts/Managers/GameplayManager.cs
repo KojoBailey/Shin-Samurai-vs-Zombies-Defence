@@ -9,23 +9,37 @@ public class GameplayManager { // Gameplay Manager
     public static GameplayManager instance;
 
     /* Debug Tools */
+    public static string className = typeof(GameplayManager).Name;
     public const bool fastLoad = false;
     public const bool heroDoNotAttack = false;
 
     /* Sub-managers */
     public AbilityManager abilityManager = new AbilityManager();
 
-    public List<object> addressableAssets = new List<object>();
+    /* Assets */
+    private List<object> addressableAssets = new List<object>();
+    public static GameObject healthBarPrefab;
+    public List<AllyData> equippedAllies = new List<AllyData>();
+    private List<EnemyData> enemySpawnQueue = new List<EnemyData>();
 
+    /* Time Trackers */
+    public float waveStopwatch = 0; // Time since wave began.
+    private float enemySpawnTimer; // Time between groups of enemy spawns.
+    private const float enemySpacingDuration = 0.3f; // Time between enemy spawns of the same group.
+    private float enemySpacingTimer;
+    private const float slowMoDuration = 0.4f; // Duration of the victory slow-mo.
+    private float slowMoTimer;
+    private float victoryDuration; // Equal to the victory music duration.
+    private float victoryTimer;
+
+    /* Completion Flags */
     public bool waveStarted = false;
+    public bool waveComplete = false;
+    public bool startSlowMo = false;
 
     private Transform camera;
 
-    public float gameTimer = 0;
-
     public float heroX;
-
-    public List<AllyData> alliesData = new List<AllyData>();
 
     public Stage stage;
     public Gate gate;
@@ -39,22 +53,10 @@ public class GameplayManager { // Gameplay Manager
     public Dictionary<string, GameplayEntity> entities = new Dictionary<string, GameplayEntity>();
     public Hero hero;
 
-    public Dictionary<string, AudioBundle> loadedAudio = new Dictionary<string, AudioBundle>();
-
     public WaveData wave;
     public int totalEnemies;
     public int enemiesRemaining;
-    private float spawnSave;
-    public bool waveComplete = false;
-    public bool startSlowMo = false;
-    private float slowMoTimer;
-    private float transitionTimer;
-    private float victoryLength = 0; // Checked if 0 later on. !! consider changing this to be more explicit
     private int waveEntryIndex = 0; // Which sub-wave of enemies is currently being called.
-    private List<EnemyData> enemySpawnQueue = new List<EnemyData>();
-    private float enemySpawnTimer;
-
-    public static GameObject healthBarPrefab;
 
     public List<float> allyCooldowns = new List<float>();
 
@@ -92,18 +94,18 @@ public class GameplayManager { // Gameplay Manager
             Debug.LogError($"Could not find or load Ally of ID \"{"Humans/Ashigaru"}\".");
             return;
         }
-        instance.alliesData.Add(ashigaruData);
+        instance.equippedAllies.Add(ashigaruData);
         instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
         SaveManager.SetLevel(ashigaruData, 1); // !! Remove once save system implemented
 
         // Pre-load audio clips.
-        await instance.LoadAudioBundle("Wave Victory");
+        await SFXManager.Load(className, "Wave Victory");
         if (!fastLoad) {
-            await instance.LoadAudioBundle("Combat/Swoosh Small");
-            await instance.LoadAudioBundle("Combat/Swoosh Medium");
-            await instance.LoadAudioBundle("Combat/Arrow Fire");
-            await instance.LoadAudioBundle("Combat/Footstep");
-            await instance.LoadAudioBundle("Combat/Footstep Large");
+            await SFXManager.Load(className, "Combat/Swoosh Small");
+            await SFXManager.Load(className, "Combat/Swoosh Medium");
+            await SFXManager.Load(className, "Combat/Arrow Fire");
+            await SFXManager.Load(className, "Combat/Footstep");
+            await SFXManager.Load(className, "Combat/Footstep Large");
         }
 
         // Load abilities.
@@ -137,12 +139,6 @@ public class GameplayManager { // Gameplay Manager
         // Load BGM.
         instance.bgm = new BGM("Zen Garden Day");
         await instance.bgm.Init();
-    }
-
-    private async Task LoadAudioBundle(string address) {
-        AudioBundle bundle = await SFXManager.Load(address);
-        instance.addressableAssets.Add(bundle);
-        loadedAudio.Add(address, bundle);
     }
 
     public void StartWave() {
@@ -207,14 +203,14 @@ public class GameplayManager { // Gameplay Manager
             for (int i = 0; i < abilityCooldowns.Count; i++)
                 abilityCooldowns[i] -= Time.deltaTime;
 
-            if (gameTimer - smithySave > smithyRate) {
-                smithySave = gameTimer;
+            if (waveStopwatch - smithySave > smithyRate) {
+                smithySave = waveStopwatch;
                 smithy += 1;
             }
 
             if (enemiesRemaining == 0) {
                 if (!startSlowMo) {
-                    slowMoTimer = gameTimer;
+                    slowMoTimer = waveStopwatch;
                     bgm.Stop();
                     camera.position = new Vector3(camera.position.x, 1.12f, -3.3f);
                     Time.timeScale = 0.2f;
@@ -222,40 +218,41 @@ public class GameplayManager { // Gameplay Manager
                 } else {
                     if (slowMoTimer == 0) {
                         camera.localPosition += new Vector3(0, 0.01f, -0.1f) * Time.deltaTime;
-                    } else if (gameTimer - slowMoTimer > 0.4f) {
+                    } else if (waveStopwatch - slowMoTimer > slowMoDuration) {
                         slowMoTimer = 0;
-                        victoryLength = SFXManager.PlayFromBundle("Wave Victory");
-                        transitionTimer = gameTimer;
+                        victoryDuration = SFXManager.PlayFromBundle("Wave Victory");
+                        victoryTimer = waveStopwatch;
                         Time.timeScale = 1;
                         waveComplete = true;
                     }
-                    if (victoryLength > 0 && gameTimer - transitionTimer > victoryLength) {
+                    if (waveComplete && waveStopwatch - victoryTimer > victoryDuration) {
                         Terminate();
                         SceneLoadManager.LoadScene("TitleScreen");
                     }
                 }
             } else {
-                if (!(waveEntryIndex > wave.entries.Length - 1) && gameTimer - spawnSave > wave.entries[waveEntryIndex].delay) {
-                    spawnSave = gameTimer;
+                if (!(waveEntryIndex > wave.entries.Length - 1) && waveStopwatch - enemySpawnTimer > wave.entries[waveEntryIndex].delay) {
+                    enemySpawnTimer = waveStopwatch;
                     for (int i = 0; i < wave.entries[waveEntryIndex].enemyQuanitity; i++)
                         enemySpawnQueue.Add(wave.entries[waveEntryIndex].enemy);
                     waveEntryIndex++;
                 }
 
-                if (gameTimer - enemySpawnTimer > 0.3f && enemySpawnQueue.Count > 0) {
-                    enemySpawnTimer = gameTimer;
+                if (waveStopwatch - enemySpacingTimer > enemySpacingDuration && enemySpawnQueue.Count > 0) {
+                    enemySpacingTimer = waveStopwatch;
                     SpawnEnemy(enemySpawnQueue[0]);
                     enemySpawnQueue.RemoveAt(0);
                 }
             }
 
-            instance.gameTimer += Time.deltaTime;
+            instance.waveStopwatch += Time.deltaTime;
         }
     }
 
     public void Terminate() {
         foreach (var handle in addressableAssets)
             Addressables.Release(handle);
+        SFXManager.Clear(className);
     }
 
     public void DealDamage(string entityId) {

@@ -46,10 +46,10 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
     }
 
     private void AllySlotOnPointerClick(string id) {
-        if (GameplayManager.instance.allyCooldowns[0] <= 0 && GameplayManager.instance.smithy >= GameplayManager.instance.alliesData[0].cost) {
-            GameplayManager.instance.SpawnAlly(GameplayManager.instance.alliesData[0]);
-            GameplayManager.instance.allyCooldowns[0] = GameplayManager.instance.alliesData[0].cooldown;
-            GameplayManager.instance.smithy -= GameplayManager.instance.alliesData[0].cost;
+        if (GameplayManager.instance.allyCooldowns[0] <= 0 && GameplayManager.instance.smithy >= GameplayManager.instance.equippedAllies[0].cost) {
+            GameplayManager.instance.SpawnAlly(GameplayManager.instance.equippedAllies[0]);
+            GameplayManager.instance.allyCooldowns[0] = GameplayManager.instance.equippedAllies[0].cooldown;
+            GameplayManager.instance.smithy -= GameplayManager.instance.equippedAllies[0].cost;
         }
     }
 
@@ -67,14 +67,14 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
             m_healthBarTargetColour = HealthBar.LerpHSV(HealthBar.red, HealthBar.green, GameplayManager.instance.hero.health / GameplayManager.instance.hero.data.maxHealth);
             m_healthBarImage.color += (m_healthBarTargetColour - m_healthBarImage.color) / 0.2f * Time.deltaTime;
 
-            if (GameplayManager.instance.smithy < GameplayManager.instance.alliesData[0].cost) {
+            if (GameplayManager.instance.smithy < GameplayManager.instance.equippedAllies[0].cost) {
                 m_allySlotReference.GetComponent<RectTransform>().localScale = new Vector3(0.9f, 0.9f, 0.9f);
                 m_allyIconReference.color = new Color(0.3f, 0.3f, 0.3f);
             } else {
                 m_allySlotReference.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 m_allyIconReference.color = Color.white;
             }
-            m_cooldownReference.fillAmount = GameplayManager.instance.allyCooldowns[0] / GameplayManager.instance.alliesData[0].cooldown;
+            m_cooldownReference.fillAmount = GameplayManager.instance.allyCooldowns[0] / GameplayManager.instance.equippedAllies[0].cooldown;
             m_smithyText.text = GameplayManager.instance.smithy.ToString();
 
             for (int i = 0; i < m_abilityButtons.Count; i++) {
