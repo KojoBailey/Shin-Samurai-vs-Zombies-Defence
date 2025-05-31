@@ -14,7 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 1
   title: Dawn of the Dead
+  stage: 0
   entries:
   - delay: 7
     enemy: {fileID: 11400000, guid: 1c8150266f882b644a3bcef9c07658fc, type: 2}
+    enemyQuanitity: 3
+  - delay: 7
+    enemy: {fileID: 11400000, guid: bed8c9dd3c22de0478177814a73fd4b0, type: 2}
+    enemyQuanitity: 3
+  - delay: 7
+    enemy: {fileID: 11400000, guid: 1c8150266f882b644a3bcef9c07658fc, type: 2}
+    enemyQuanitity: 3
+  - delay: 7
+    enemy: {fileID: 11400000, guid: bed8c9dd3c22de0478177814a73fd4b0, type: 2}
+    enemyQuanitity: 3
+  - delay: 7
+    enemy: {fileID: 11400000, guid: 1c8150266f882b644a3bcef9c07658fc, type: 2}
+    enemyQuanitity: 3
+  - delay: 7
+    enemy: {fileID: 11400000, guid: bed8c9dd3c22de0478177814a73fd4b0, type: 2}
     enemyQuanitity: 3

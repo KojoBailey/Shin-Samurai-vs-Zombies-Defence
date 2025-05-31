@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00fb1f7dc392b247969fe251c9b0f1b, type: 3}
+  m_Name: Yari Samurai Attack
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: cfd822bd71082504da2c218ec1580d71, type: 3}
+  - {fileID: 8300000, guid: 215542b9d9d8d4a4fbeef6c04aef308a, type: 3}
+  - {fileID: 8300000, guid: 63bbb127929214640943ebdeee1b0f49, type: 3}

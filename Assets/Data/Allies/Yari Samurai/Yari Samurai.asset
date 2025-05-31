@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109c3ab24b89a96498b9ff5c084d2ce4, type: 3}
+  m_Name: Yari Samurai
+  m_EditorClassIdentifier: 
+  id: YariSamurai
+  displayName: Yari Samurai
+  description: Fight from the rear, but do not mistake them for cowards.
+  icon: {fileID: 21300000, guid: 6c58684ee9ca89b42b8ac7b0b617fd33, type: 3}
+  costumes:
+  - {fileID: 11400000, guid: 1a2d9b18606d6ff4486f958a685d7094, type: 2}
+  meleeWeapon:
+    prefab: {fileID: 1924913640763457, guid: 8eb86d923bb363544a0026af5d87d022, type: 3}
+    hand: 1
+    hitAudio: []
+  rangedWeapon:
+    prefab: {fileID: 0}
+    hand: 0
+    projectile: {fileID: 0}
+  animationEvents: {fileID: 11400000, guid: 299366b4f8fb42d4d9ad0b4134805554, type: 2}
+  stats:
+    list:
+    - Key: 0
+      Value: 15
+    - Key: 1
+      Value: 1
+    - Key: 3
+      Value: 1
+    - Key: 5
+      Value: 2
+    - Key: 7
+      Value: 2
+    keyCollision: 0
+  upgrades:
+  - list:
+    - Key: 2
+      Value: 70
+    - Key: 4
+      Value: 15
+    - Key: 6
+      Value: 1
+    keyCollision: 0

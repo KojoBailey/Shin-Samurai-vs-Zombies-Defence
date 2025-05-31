@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d717bd6c91cbeb4cb73a639d2c2d15e, type: 3}
+  m_Name: Yari Samurai Audio
+  m_EditorClassIdentifier: 
+  spawnAudio: {fileID: 11400000, guid: a32652c83a33757458d80829ae7ace1b, type: 2}
+  footstepSize: 0
+  footstepAudio: {fileID: 0}
+  attackAudio: {fileID: 11400000, guid: bed843232f7ede040aac4a3cb2a8dd48, type: 2}
+  bigAttackAudio: {fileID: 0}
+  longAttackAudio: {fileID: 0}
+  personalAbilityAudio:
+    list: []
+    keyCollision: 0
+  deathAudio: {fileID: 11400000, guid: 85acb85769f5e3e409fd0c76a6091f3d, type: 2}

@@ -27,6 +27,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Ally
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ef08c21a5ec0ca45b8d2ba489b437ef
+    m_Address: Data/Allies/Humans/YariSamurai
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Ally
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ad3485259873eac478fc26ccd2272b29, type: 2}
   m_SchemaSet:

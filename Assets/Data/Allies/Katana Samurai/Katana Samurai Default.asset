@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f03e728150d15846ba70b211eed59f1, type: 3}
   m_Name: Katana Samurai Default
   m_EditorClassIdentifier: 
-  displayName: 
-  prefab: {fileID: 0}
-  material: {fileID: 0}
-  audioData: {fileID: 0}
+  displayName: Katana Samurai
+  prefab: {fileID: 1677502904944905, guid: b0e338c231bd8324093e187fdd58f944, type: 3}
+  material: {fileID: 2100000, guid: bb31e4a008d0ea54fb5407515dc5ce0b, type: 2}
+  audioData: {fileID: 11400000, guid: 64a68f9080d321f41ac61428787a06dc, type: 2}

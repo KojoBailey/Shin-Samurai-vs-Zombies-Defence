@@ -20,4 +20,28 @@ MonoBehaviour:
         action: 0
       - frame: 24
         action: 0
+    - Key: Attack02
+      Value:
+      - frame: 12
+        action: 0
+      - frame: 24
+        action: 0
+    - Key: Attack03
+      Value:
+      - frame: 12
+        action: 0
+      - frame: 23
+        action: 0
+    - Key: AttackRanged
+      Value:
+      - frame: 3
+        action: 1
+    - Key: AbilityKatanaSlash
+      Value:
+      - frame: 2
+        action: 2
+    - Key: CastForward
+      Value:
+      - frame: 6
+        action: 2
     keyCollision: 0

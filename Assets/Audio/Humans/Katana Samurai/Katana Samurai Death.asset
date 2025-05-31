@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00fb1f7dc392b247969fe251c9b0f1b, type: 3}
   m_Name: Katana Samurai Death
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: b037b0210fe53194fa4b48f520ad9a07, type: 3}
+  - {fileID: 8300000, guid: 5b973a9c431e1de47bc7856d5ba015d1, type: 3}
+  - {fileID: 8300000, guid: 9b4df87fd9be03643afa4c5e2af94d17, type: 3}

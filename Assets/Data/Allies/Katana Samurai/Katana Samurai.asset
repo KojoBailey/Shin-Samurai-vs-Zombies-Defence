@@ -16,17 +16,36 @@ MonoBehaviour:
   displayName: Katana Samurai
   description: Sworn protectors of the village, armed to repel the invasion!
   icon: {fileID: 21300000, guid: 13878438caec6ee4bbdd3d5dc5f4bace, type: 3}
-  costumes: []
+  costumes:
+  - {fileID: 11400000, guid: c0f3cb727fd873f48be0e941a55896aa, type: 2}
   meleeWeapon:
-    prefab: {fileID: 0}
+    prefab: {fileID: 1280527185330284, guid: 0920c50d0b7145e4c825502c2ebdef3c, type: 3}
     hand: 0
     hitAudio: []
   rangedWeapon:
     prefab: {fileID: 0}
     hand: 0
     projectile: {fileID: 0}
-  animationEvents: {fileID: 0}
+  animationEvents: {fileID: 11400000, guid: 5fe22e397e8fdca45a118afc272aa727, type: 2}
   stats:
-    list: []
+    list:
+    - Key: 0
+      Value: 10
+    - Key: 1
+      Value: 1
+    - Key: 3
+      Value: 1
+    - Key: 5
+      Value: 1.5
+    - Key: 7
+      Value: 1
     keyCollision: 0
-  upgrades: []
+  upgrades:
+  - list:
+    - Key: 2
+      Value: 100
+    - Key: 4
+      Value: 8
+    - Key: 6
+      Value: 1
+    keyCollision: 0

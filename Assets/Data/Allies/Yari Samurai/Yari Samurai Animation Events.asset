@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f4eaf3f320d8964c9cd9c311a947830, type: 3}
-  m_Name: Mace
+  m_Script: {fileID: 11500000, guid: cc04d4f451eb8e841affafc1097e0bcd, type: 3}
+  m_Name: Yari Samurai Animation Events
   m_EditorClassIdentifier: 
-  id: Mace
-  leftHandPrefab: {fileID: 1924913640763457, guid: 8eb86d923bb363544a0026af5d87d022, type: 3}
-  rightHandPrefab: {fileID: 0}
-  hitAudio: []
+  tags:
+    list:
+    - Key: Attack01
+      Value:
+      - frame: 9
+        action: 0
+    keyCollision: 0

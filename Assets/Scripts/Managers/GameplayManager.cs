@@ -100,6 +100,7 @@ public class GameplayManager { // Gameplay Manager
         instance.equippedAllies.Add(ashigaruData);
         instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
         SaveManager.SetLevel(ashigaruData, 1); // !! Remove once save system implemented
+
         var katanaSamuraiDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/KatanaSamurai");
         AllyData katanaSamuraiData = await katanaSamuraiDataHandle.Task;
         instance.addressableAssets.Add(katanaSamuraiData);
@@ -110,6 +111,17 @@ public class GameplayManager { // Gameplay Manager
         instance.equippedAllies.Add(katanaSamuraiData);
         instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
         SaveManager.SetLevel(katanaSamuraiData, 1); // !! Remove once save system implemented
+
+        var yariSamuraiDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/YariSamurai");
+        AllyData yariSamuraiData = await yariSamuraiDataHandle.Task;
+        instance.addressableAssets.Add(yariSamuraiData);
+        if (yariSamuraiData == null) {
+            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/YariSamurai"}\".");
+            return;
+        }
+        instance.equippedAllies.Add(yariSamuraiData);
+        instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
+        SaveManager.SetLevel(yariSamuraiData, 1); // !! Remove once save system implemented
 
         // Pre-load audio clips.
         await SFXManager.Load(className, "Wave Victory");
@@ -145,6 +157,7 @@ public class GameplayManager { // Gameplay Manager
         SaveManager.EquipCostume("Ronin", 0);
         SaveManager.EquipCostume("Ashigaru", 0);
         SaveManager.EquipCostume("KatanaSamurai", 0);
+        SaveManager.EquipCostume("YariSamurai", 0);
         instance.hero = new Hero(SaveManager.selectedHero);
         instance.hero.SetBounds(instance.stage.leftBound, instance.stage.rightBound);
         instance.hero.allegiance = GameplayEntity.Side.Left;

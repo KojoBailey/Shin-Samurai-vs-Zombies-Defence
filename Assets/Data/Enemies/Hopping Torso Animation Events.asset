@@ -16,6 +16,6 @@ MonoBehaviour:
     list:
     - Key: Attack01
       Value:
-      - frame: 14
+      - frame: 7
         action: 0
     keyCollision: 0

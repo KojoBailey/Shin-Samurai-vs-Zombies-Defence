@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags:
     list:
-    - Key: 
-      Value: []
-    - Key: 
-      Value: []
-    keyCollision: 1
+    - Key: Attack01
+      Value:
+      - frame: 3
+        action: 0
+    - Key: Attack02
+      Value:
+      - frame: 3
+        action: 0
+    keyCollision: 0

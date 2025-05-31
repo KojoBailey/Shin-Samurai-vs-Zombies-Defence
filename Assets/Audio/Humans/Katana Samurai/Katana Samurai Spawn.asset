@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00fb1f7dc392b247969fe251c9b0f1b, type: 3}
   m_Name: Katana Samurai Spawn
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 589c02decb4b2eb44b9dc696679d72cc, type: 3}
+  - {fileID: 8300000, guid: dd33a71056479664a87040644951f102, type: 3}

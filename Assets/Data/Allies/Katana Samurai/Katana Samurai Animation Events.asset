@@ -13,5 +13,13 @@ MonoBehaviour:
   m_Name: Katana Samurai Animation Events
   m_EditorClassIdentifier: 
   tags:
-    list: []
+    list:
+    - Key: Attack01
+      Value:
+      - frame: 11
+        action: 0
+    - Key: Attack02
+      Value:
+      - frame: 16
+        action: 0
     keyCollision: 0

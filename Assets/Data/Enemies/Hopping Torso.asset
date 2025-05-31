@@ -16,7 +16,6 @@ MonoBehaviour:
   displayName: Hopping Torso
   description: 
   icon: {fileID: 0}
-  prefabWrapper: {fileID: 9216566377795668689, guid: f9d6a86f6adaa3f4195e80d4041cba5e, type: 3}
   prefab: {fileID: 1934122997480958, guid: 446cc89e28448aa48bf63379d28c54d9, type: 3}
   audioData: {fileID: 11400000, guid: f75be2ccaa6b3c84791c08274b8ed651, type: 2}
   meleeWeapon:
@@ -32,6 +31,7 @@ MonoBehaviour:
     prefab: {fileID: 0}
     hand: 0
     projectile: {fileID: 0}
+  animationEvents: {fileID: 11400000, guid: af310789fb3fe4d469e66b7374db09c3, type: 2}
   stats:
     list:
     - Key: 0
