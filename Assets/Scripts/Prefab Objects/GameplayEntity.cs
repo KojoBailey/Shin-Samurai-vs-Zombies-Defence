@@ -6,7 +6,7 @@ public class GameplayEntity { // Gameplay Entity
     public string entityId;
     public enum Side { Left, Right }
     public Side allegiance;
-    protected bool m_loaded = false;
+    protected bool finishedLoading = false;
 
     public GameObject obj;
     public Transform transform;
@@ -51,7 +51,7 @@ public class GameplayEntity { // Gameplay Entity
         Stunned,
         Die,
         Revive,
-        Victory
+        Victory,
     }
     public State currentState;
     protected State m_previousState;
@@ -69,29 +69,84 @@ public class GameplayEntity { // Gameplay Entity
     public void Spawn(float spawnX) {
         xPos = spawnX;
         obj.SetActive(true);
-        m_loaded = true;
+        finishedLoading = true;
     }
     protected void FinishInit() {
         obj.SetActive(true);
-        m_loaded = true;
+        finishedLoading = true;
     }
 
-    public virtual void Update() {
-        if (m_loaded) {
-            HandleState();
-            HandleMotion();
-
-            if (transform.position.x < m_leftBound)
-                xPos = m_leftBound;
-            if (transform.position.x > m_rightBound)
-                xPos = m_rightBound;
-            if (rangedWeapon != null)
-                rangedWeapon.Update();
+    public void Update() {
+        if (finishedLoading) {
+            EntityUpdate();
         }
     }
+    protected virtual void EntityUpdate() {
+        /* State */
+        if (HandleVictoryState() == true) return;
+        if (HandleDeathState() == true) return;
+        HandleHealthRegen();
+        HandleAbilityState();
+        HandleKnockbackState();
+        HandleTravelState();
+        HandleAttackState();
 
-    protected virtual void HandleState() {}
+        /* Motion */
+        HandleTravelMotion();
+        HandleKnockbackMotion();
+        HandleStateChangeMotion();
+        HandleAttackMotion();
+        HandleDeathMotion();
+    }
+
+    /* Gameplay State Handling */
+    protected virtual void HandleHealthRegen() {}
+    protected virtual void HandleAbilityState() {}
+    protected virtual void HandleKnockbackState() {}
+    protected virtual void HandleTravelState() {
+        if (!animation.IsPlaying("Attack01"))
+            ChangeState(State.Walk);
+        if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound)
+            ChangeState(State.Idle);
+    }
+    protected virtual void HandleAttackState() {
+        foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
+            if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
+                continue;
+
+            if (IsInMeleeRange(enemy.xPos)) {
+                ChangeState(State.MeleeAttack);
+                break;
+            }
+        }
+    }
+    protected virtual bool HandleDeathState() {
+        if (health <= 0)
+            ChangeState(State.Die);
+        return health <= 0;
+    }
+    protected virtual bool HandleVictoryState() {
+        return false;
+    }
+
+    /* Animation and Motion Handling */
     protected virtual void HandleMotion() {}
+    protected virtual void HandleTravelMotion() {}
+    protected virtual void HandleKnockbackMotion() {
+        if (!isGettingKnockedBack && currentState == State.KnockedBack)
+            ChangeState(State.Landing);
+    }
+    protected virtual void HandleStateChangeMotion() {}
+    protected virtual void HandleAttackMotion() {}
+    protected virtual void HandleDeathMotion() {
+        if (currentState == State.Die) {
+            if (!animation.IsPlaying("Die")) {
+                Object.Destroy(obj);
+                toDestroy = true;
+                return;
+            }
+        }
+    }
 
     public void SetEntityId(string _entityId) {
         entityId = _entityId;
@@ -99,7 +154,7 @@ public class GameplayEntity { // Gameplay Entity
     }
 
     public void ApplyTags(AnimationEventData data) {
-        if (GameplayManager.instance.entitiesWithTags.Contains(GetTypeId()))
+        if (GameplayManager.instance.entitiesWithTags.Contains(typeId))
             return;
         foreach (KeyValuePair<string, List<AnimationEventData.Tag>> tags in data.tags) {
             AnimationClip clip = animation[tags.Key].clip;
@@ -111,7 +166,7 @@ public class GameplayEntity { // Gameplay Entity
                 clip.AddEvent(animEvent);
             }
         }
-        GameplayManager.instance.entitiesWithTags.Add(GetTypeId());
+        GameplayManager.instance.entitiesWithTags.Add(typeId);
     }
 
     protected void ChangeState(State newState) {
@@ -164,5 +219,5 @@ public class GameplayEntity { // Gameplay Entity
         }
     }
 
-    public virtual string GetTypeId() { return "N/A"; }
+    public virtual string typeId => "N/A";
 };

@@ -1,11 +1,10 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewAlly", menuName = "Game Data/Ally")]
-public class AllyData : ScriptableObject, IUpgradable {
-    public string id;
-    public string displayName;
-    public string description;
-    public Sprite icon;
+public class AllyData : TroopData, IUpgradable {
+    public int cost;
+    public float cooldown;
+    public bool isUnique; // Can only be on the field once at a time.
     public CostumeData[] costumes;
 
     public CostumeData GetEquippedCostume() {
@@ -14,50 +13,19 @@ public class AllyData : ScriptableObject, IUpgradable {
             costume.prefab.GetComponent<SkinnedMeshRenderer>().material = costume.material;
         return costume;
     }
-    
-    public EnemyData.MeleeWeapon meleeWeapon;
-    public EnemyData.RangedWeapon rangedWeapon;
-    public AnimationEventData animationEvents;
+    public override GameObject prefab => GetEquippedCostume().prefab;
+    public override EntityAudioData audioData => GetEquippedCostume().audioData;
 
-    public enum Stat {
-        Cost,
-        Cooldown,
-        Health,
-        Speed,
-        Damage,
-        AttackFrequency,
-        KnockbackCount,
-        Range
-    }
-    public GenericDictionary<Stat, float> stats;
     public GenericDictionary<Stat, float>[] upgrades;
 
-    public int cost {
-        get => (int)GetStat(Stat.Cost);
-    }
-    public float cooldown {
-        get => GetStat(Stat.Cooldown);
-    }
-    public float health {
-        get => GetStat(Stat.Health);
-    }
-    public float speed {
-        get => GetStat(Stat.Speed);
-    }
-    public float damage {
-        get => GetStat(Stat.Damage);
-    }
-    public int attackFrequency {
-        get => (int)GetStat(Stat.AttackFrequency);
-    }
-    public int knockbackCount {
-        get => (int)GetStat(Stat.KnockbackCount);
-    }
-    public int range {
-        get => (int)GetStat(Stat.Range);
-    }
+    public override int health => (int)GetStat(Stat.Health);
+    public override float speed => GetStat(Stat.Speed);
+    public override float damage => GetStat(Stat.Damage);
+    public override float attackFrequency => GetStat(Stat.AttackFrequency);
+    public override int knockbackCount => (int)GetStat(Stat.KnockbackCount);
+    public override float range => GetStat(Stat.Range);
 
-    public float GetStat(Stat stat) {
+    private float GetStat(Stat stat) {
         return GetStat(SaveManager.levels[this], stat);
     }
     public float GetStat(int level, Stat stat) {

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 public class Gate : GameplayEntity {
     private GateData data;
-    public override string GetTypeId() { return data.id; }
+    public override string typeId => data.id;
     
     private HealthBar m_healthBar;
 
@@ -30,13 +30,11 @@ public class Gate : GameplayEntity {
         FinishInit();
     }
 
-    protected override void HandleState() {
-        if (health <= 0) {
-            ChangeState(State.Die);
-        }
+    protected override void EntityUpdate() {
+        if (HandleDeathState() == true) return;
     }
 
-    protected override void HandleMotion() {
+    protected override void HandleStateChangeMotion() {
         if (currentState != m_previousState) {
             m_previousState = currentState;
             switch (currentState) {
@@ -50,7 +48,5 @@ public class Gate : GameplayEntity {
                     break;
             }
         }
-
-        m_healthBar.Update();
     }
 }

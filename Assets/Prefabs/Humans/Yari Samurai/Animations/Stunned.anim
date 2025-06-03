@@ -2,23 +2,25 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!74 &7400000
 AnimationClip:
-  serializedVersion: 3
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Stunned
-  m_AnimationType: 1
+  serializedVersion: 7
+  m_Legacy: 1
   m_Compressed: 1
+  m_UseHighQualityCurve: 1
   m_RotationCurves: []
   m_CompressedRotationCurves:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt
     m_Times:
       m_NumItems: 4
-      m_Data: 8010d90c
+      m_Data: 8010990c
       m_BitSize: 7
     m_Values:
       m_NumItems: 4
-      m_Data: 6bf9192a5359da29bba9982b6bf9592a
+      m_Data: 6bf9d9295359da29bba9182b6bf9d929
     m_Slopes:
       m_NumItems: 16
       m_Range: 0.11605019
@@ -30,7 +32,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt
     m_Times:
       m_NumItems: 3
-      m_Data: 00a04b
+      m_Data: 00a049
       m_BitSize: 8
     m_Values:
       m_NumItems: 3
@@ -46,7 +48,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt
     m_Times:
       m_NumItems: 3
-      m_Data: 009952
+      m_Data: 009950
       m_BitSize: 8
     m_Values:
       m_NumItems: 3
@@ -62,7 +64,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_neck_jnt
     m_Times:
       m_NumItems: 2
-      m_Data: 00eb
+      m_Data: 00e9
       m_BitSize: 8
     m_Values:
       m_NumItems: 2
@@ -71,18 +73,18 @@ AnimationClip:
       m_NumItems: 8
       m_Range: 0
       m_Start: 0
-      m_Data: 000000000000
-      m_BitSize: 6
+      m_Data: 
+      m_BitSize: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_neck_jnt/samuraispear:Sam_head_a_jnt
     m_Times:
       m_NumItems: 4
-      m_Data: 00307a04
+      m_Data: 00303a04
       m_BitSize: 7
     m_Values:
       m_NumItems: 4
-      m_Data: 63f430487b3431454b94304963f43048
+      m_Data: 63f430487b34b1444b94304963f43048
     m_Slopes:
       m_NumItems: 16
       m_Range: 0.075385235
@@ -94,7 +96,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt
     m_Times:
       m_NumItems: 2
-      m_Data: 00eb
+      m_Data: 00e9
       m_BitSize: 8
     m_Values:
       m_NumItems: 2
@@ -103,18 +105,18 @@ AnimationClip:
       m_NumItems: 8
       m_Range: 0
       m_Start: 0
-      m_Data: 000000000000
-      m_BitSize: 6
+      m_Data: 
+      m_BitSize: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt/samuraispear:Sam_lf_upArm_jnt
     m_Times:
       m_NumItems: 3
-      m_Data: 009655
+      m_Data: 009653
       m_BitSize: 8
     m_Values:
       m_NumItems: 3
-      m_Data: c399aab9d3f9e7bbc369aab9
+      m_Data: c399aab9d3f9e7bbc349aab9
     m_Slopes:
       m_NumItems: 12
       m_Range: 0.1597113
@@ -126,7 +128,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt/samuraispear:Sam_lf_upArm_jnt/samuraispear:Sam_lf_elbow_jnt
     m_Times:
       m_NumItems: 7
-      m_Data: 808ca22b2f00
+      m_Data: 808ca22b0f00
       m_BitSize: 6
     m_Values:
       m_NumItems: 7
@@ -142,7 +144,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt/samuraispear:Sam_lf_upArm_jnt/samuraispear:Sam_lf_elbow_jnt/samuraispear:Sam_lf_wrist_jnt/samuraispear:Sam_lf_hand_jnt
     m_Times:
       m_NumItems: 6
-      m_Data: 8064ce831a01
+      m_Data: 8064ce830a01
       m_BitSize: 7
     m_Values:
       m_NumItems: 6
@@ -158,23 +160,23 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt/samuraispear:Sam_lf_upArm_jnt/samuraispear:Sam_lf_elbow_jnt/samuraispear:Sam_lf_wrist_jnt/samuraispear:Sam_lf_hand_jnt/samuraispear:Sam_lf_thumb_a_jnt
     m_Times:
       m_NumItems: 2
-      m_Data: 00eb
+      m_Data: 00e9
       m_BitSize: 8
     m_Values:
       m_NumItems: 2
-      m_Data: d0584e54d0584e54
+      m_Data: d058ce53d058ce53
     m_Slopes:
       m_NumItems: 8
       m_Range: 0
       m_Start: 0
-      m_Data: 000000000000
-      m_BitSize: 6
+      m_Data: 
+      m_BitSize: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt/samuraispear:Sam_lf_upArm_jnt/samuraispear:Sam_lf_elbow_jnt/samuraispear:Sam_lf_wrist_jnt/samuraispear:Sam_lf_hand_jnt/samuraispear:Sam_lf_index_a_jnt
     m_Times:
       m_NumItems: 2
-      m_Data: 00eb
+      m_Data: 00e9
       m_BitSize: 8
     m_Values:
       m_NumItems: 2
@@ -183,34 +185,34 @@ AnimationClip:
       m_NumItems: 8
       m_Range: 0
       m_Start: 0
-      m_Data: 000000000000
-      m_BitSize: 6
+      m_Data: 
+      m_BitSize: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt
     m_Times:
       m_NumItems: 2
-      m_Data: 00eb
+      m_Data: 00e9
       m_BitSize: 8
     m_Values:
       m_NumItems: 2
-      m_Data: e09bec44e09bec44
+      m_Data: e09b6c44e09b6c44
     m_Slopes:
       m_NumItems: 8
       m_Range: 0
       m_Start: 0
-      m_Data: 000000000000
-      m_BitSize: 6
+      m_Data: 
+      m_BitSize: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt
     m_Times:
       m_NumItems: 5
-      m_Data: 00d7ebf704
+      m_Data: 00d7ebd704
       m_BitSize: 7
     m_Values:
       m_NumItems: 5
-      m_Data: 038a2baafb096ca97b1971a37b1971a303baaba9
+      m_Data: 038a2baafb09eca87b1971a37b1971a303ba2ba9
     m_Slopes:
       m_NumItems: 20
       m_Range: 0.4667703
@@ -222,11 +224,11 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt/samuraispear:Sam_rt_elbow_jnt
     m_Times:
       m_NumItems: 8
-      m_Data: c07a5128cb17
+      m_Data: c07a5128cb0f
       m_BitSize: 6
     m_Values:
       m_NumItems: 8
-      m_Data: fb87e97feb37298033972483eb16a382a3e7e87b5b782d740b182a7efbb7697f
+      m_Data: fb87e97feb37298033972483eb16a382a3e7e87b5b78ed730bf8297efbb7697f
     m_Slopes:
       m_NumItems: 32
       m_Range: 1.1417047
@@ -238,11 +240,11 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt/samuraispear:Sam_rt_elbow_jnt/samuraispear:Sam_rt_wrist_jnt/samuraispear:Sam_rt_hand_jnt
     m_Times:
       m_NumItems: 8
-      m_Data: 002d4e268a32
+      m_Data: 002d4a278a2a
       m_BitSize: 6
     m_Values:
       m_NumItems: 8
-      m_Data: 4315598a73c55887ab35d8812b559987abd59e84e385618183951b884b95198a
+      m_Data: 43f5588a73c55887ab35d8812b559987abd59e84e38561818395db874b95198a
     m_Slopes:
       m_NumItems: 32
       m_Range: 1.0427473
@@ -254,7 +256,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt/samuraispear:Sam_rt_elbow_jnt/samuraispear:Sam_rt_wrist_jnt/samuraispear:Sam_rt_hand_jnt/samuraispear:Sam_rt_thumb_a_jnt
     m_Times:
       m_NumItems: 2
-      m_Data: 00eb
+      m_Data: 00e9
       m_BitSize: 8
     m_Values:
       m_NumItems: 2
@@ -263,14 +265,14 @@ AnimationClip:
       m_NumItems: 8
       m_Range: 0
       m_Start: 0
-      m_Data: 000000000000
-      m_BitSize: 6
+      m_Data: 
+      m_BitSize: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt/samuraispear:Sam_rt_elbow_jnt/samuraispear:Sam_rt_wrist_jnt/samuraispear:Sam_rt_hand_jnt/samuraispear:Sam_rt_index_a_jnt
     m_Times:
       m_NumItems: 2
-      m_Data: 00eb
+      m_Data: 00e9
       m_BitSize: 8
     m_Values:
       m_NumItems: 2
@@ -279,14 +281,14 @@ AnimationClip:
       m_NumItems: 8
       m_Range: 0
       m_Start: 0
-      m_Data: 000000000000
-      m_BitSize: 6
+      m_Data: 
+      m_BitSize: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt/samuraispear:Sam_rt_elbow_jnt/samuraispear:Sam_rt_wrist_jnt/samuraispear:Sam_rt_hand_jnt/samuraispear:prop
     m_Times:
       m_NumItems: 2
-      m_Data: 00eb
+      m_Data: 00e9
       m_BitSize: 8
     m_Values:
       m_NumItems: 2
@@ -295,30 +297,30 @@ AnimationClip:
       m_NumItems: 8
       m_Range: 0
       m_Start: 0
-      m_Data: 000000000000
-      m_BitSize: 6
+      m_Data: 
+      m_BitSize: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt
     m_Times:
       m_NumItems: 3
-      m_Data: 009952
+      m_Data: 009950
       m_BitSize: 8
     m_Values:
       m_NumItems: 3
       m_Data: fbf71f7dfbc7df7cfbf71f7d
     m_Slopes:
       m_NumItems: 12
-      m_Range: 0.014565902
+      m_Range: 0.014334697
       m_Start: -0.0055770385
-      m_Data: 1a0b5c16225e970f5e
+      m_Data: 5a0b5c16325ed71f5e
       m_BitSize: 6
     m_PreInfinity: 2
     m_PostInfinity: 2
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_lf_upLeg_jnt
     m_Times:
       m_NumItems: 6
-      m_Data: 004fad069d00
+      m_Data: 004fad068d00
       m_BitSize: 7
     m_Values:
       m_NumItems: 6
@@ -334,11 +336,11 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_lf_upLeg_jnt/samuraispear:Sam_lf_knee_jnt
     m_Times:
       m_NumItems: 5
-      m_Data: 8050aec605
+      m_Data: 8050aea605
       m_BitSize: 7
     m_Values:
       m_NumItems: 5
-      m_Data: d879569ef0f9159f183a55a0d869569ed879569e
+      m_Data: d879569ef0f9159f181a55a0d869569ed879569e
     m_Slopes:
       m_NumItems: 20
       m_Range: 0.20171791
@@ -350,7 +352,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_lf_upLeg_jnt/samuraispear:Sam_lf_knee_jnt/samuraispear:Sam_lf_ankle_jnt
     m_Times:
       m_NumItems: 4
-      m_Data: 00307009
+      m_Data: 00303009
       m_BitSize: 7
     m_Values:
       m_NumItems: 4
@@ -366,7 +368,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_lf_upLeg_jnt/samuraispear:Sam_lf_knee_jnt/samuraispear:Sam_lf_ankle_jnt/samuraispear:Sam_lf_ball_jnt
     m_Times:
       m_NumItems: 2
-      m_Data: 00eb
+      m_Data: 00e9
       m_BitSize: 8
     m_Values:
       m_NumItems: 2
@@ -375,14 +377,14 @@ AnimationClip:
       m_NumItems: 8
       m_Range: 0
       m_Start: 0
-      m_Data: 000000000000
-      m_BitSize: 6
+      m_Data: 
+      m_BitSize: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_rt_upLeg_jnt
     m_Times:
       m_NumItems: 5
-      m_Data: 80504ef804
+      m_Data: 80504ed804
       m_BitSize: 7
     m_Values:
       m_NumItems: 5
@@ -398,7 +400,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_rt_upLeg_jnt/samuraispear:Sam_rt_knee_jnt
     m_Times:
       m_NumItems: 3
-      m_Data: 0049a2
+      m_Data: 0049a0
       m_BitSize: 8
     m_Values:
       m_NumItems: 3
@@ -414,11 +416,11 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_rt_upLeg_jnt/samuraispear:Sam_rt_knee_jnt/samuraispear:Sam_rt_ankle_jnt
     m_Times:
       m_NumItems: 5
-      m_Data: 80958c2705
+      m_Data: 80958c0705
       m_BitSize: 7
     m_Values:
       m_NumItems: 5
-      m_Data: c38426cbdbb4e6c6e38426cdf2e8ccccbb8466cb
+      m_Data: c384a6cadbb4e6c6e38426cdf2e8ccccbb84e6ca
     m_Slopes:
       m_NumItems: 20
       m_Range: 0.2865925
@@ -430,7 +432,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_rt_upLeg_jnt/samuraispear:Sam_rt_knee_jnt/samuraispear:Sam_rt_ankle_jnt/samuraispear:Sam_rt_ball_jnt
     m_Times:
       m_NumItems: 2
-      m_Data: 00eb
+      m_Data: 00e9
       m_BitSize: 8
     m_Values:
       m_NumItems: 2
@@ -439,18 +441,18 @@ AnimationClip:
       m_NumItems: 8
       m_Range: 0
       m_Start: 0
-      m_Data: 000000000000
-      m_BitSize: 6
+      m_Data: 
+      m_BitSize: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:RightSkirt
     m_Times:
       m_NumItems: 5
-      m_Data: 006b8e0702
+      m_Data: 006b8ee701
       m_BitSize: 7
     m_Values:
       m_NumItems: 5
-      m_Data: 42ae6590126e6a86128e688d0aae659142ae6590
+      m_Data: 426e6590126e6a86128e688d0a6e6591426e6590
     m_Slopes:
       m_NumItems: 20
       m_Range: 0.2587043
@@ -462,7 +464,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:RightSkirt/samuraispear:RightSkirt1
     m_Times:
       m_NumItems: 5
-      m_Data: 00234ab604
+      m_Data: 00234a9604
       m_BitSize: 7
     m_Values:
       m_NumItems: 5
@@ -478,7 +480,7 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:LeftSkirt
     m_Times:
       m_NumItems: 5
-      m_Data: 00ebab1603
+      m_Data: 00ebabf602
       m_BitSize: 7
     m_Values:
       m_NumItems: 5
@@ -494,11 +496,11 @@ AnimationClip:
   - m_Path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:LeftSkirt/samuraispear:LeftSkirt1
     m_Times:
       m_NumItems: 5
-      m_Data: 00e34a8604
+      m_Data: 00e34a6604
       m_BitSize: 7
     m_Values:
       m_NumItems: 5
-      m_Data: d3f7613423d8633adb376237ab27e130cbe72134
+      m_Data: d3f7613423d8e339db376237ab27e130cbe72134
     m_Slopes:
       m_NumItems: 20
       m_Range: 0.27868992
@@ -507,842 +509,1331 @@ AnimationClip:
       m_BitSize: 6
     m_PreInfinity: 2
     m_PostInfinity: 2
+  m_EulerCurves: []
   m_PositionCurves:
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: -0.0001101848, y: 0.362246, z: -0.05291795}
-        inSlope: {x: -0.016850349, y: 3.4694467E-15, z: -0.013130975}
-        outSlope: {x: -0.016850349, y: 3.4694467E-15, z: -0.013130975}
+        inSlope: {x: -0.016850349, y: 3.4694467e-15, z: -0.013130975}
+        outSlope: {x: -0.016850349, y: 3.4694467e-15, z: -0.013130975}
         tangentMode: 0
-      - time: 0.033333335
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
         value: {x: -0.0006718627, y: 0.362246, z: -0.05335565}
-        inSlope: {x: -0.017591551, y: 1.4869059E-15, z: -0.013707863}
-        outSlope: {x: -0.017591545, y: 3.4694472E-15, z: -0.013707917}
+        inSlope: {x: -0.017591551, y: 1.4869059e-15, z: -0.013707863}
+        outSlope: {x: -0.017591545, y: 3.4694472e-15, z: -0.013707917}
         tangentMode: 0
-      - time: 0.56666666
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.56666666
         value: {x: -0.009658709, y: 0.362246, z: -0.06035876}
-        inSlope: {x: -0.003359949, y: 1.4869047E-15, z: -0.002617812}
-        outSlope: {x: -0.0033602426, y: 3.4694503E-15, z: -0.002618248}
+        inSlope: {x: -0.003359949, y: 1.4869047e-15, z: -0.002617812}
+        outSlope: {x: -0.0033602426, y: 3.4694503e-15, z: -0.002618248}
         tangentMode: 0
-      - time: 0.7
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.7
         value: {x: -0.008781799, y: 0.362246, z: -0.05966187}
-        inSlope: {x: 0.0172809, y: 1.4869047E-15, z: 0.013691568}
-        outSlope: {x: 0.017281504, y: 3.4694503E-15, z: 0.01369214}
+        inSlope: {x: 0.0172809, y: 1.4869047e-15, z: 0.013691568}
+        outSlope: {x: 0.017281504, y: 3.4694503e-15, z: 0.01369214}
         tangentMode: 0
-      - time: 0.99999994
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.99999994
         value: {x: -0.0008544376, y: 0.362246, z: -0.05347624}
-        inSlope: {x: 0.023865359, y: 1.4869074E-15, z: 0.018050924}
-        outSlope: {x: 0.02386476, y: 3.4694378E-15, z: 0.018050658}
+        inSlope: {x: 0.023865359, y: 1.4869074e-15, z: 0.018050924}
+        outSlope: {x: 0.02386476, y: 3.4694378e-15, z: 0.018050658}
         tangentMode: 0
-      - time: 1.0333334
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.0333334
         value: {x: -0.0001101848, y: 0.362246, z: -0.05291795}
-        inSlope: {x: 0.021939991, y: 1.4869021E-15, z: 0.016292859}
-        outSlope: {x: 0.021940697, y: 3.4694503E-15, z: 0.01629329}
+        inSlope: {x: 0.021939991, y: 1.4869021e-15, z: 0.016292859}
+        outSlope: {x: 0.021940697, y: 3.4694503e-15, z: 0.01629329}
         tangentMode: 0
-      - time: 1.0666667
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.0666667
         value: {x: 0.000608263, y: 0.362246, z: -0.05239004}
-        inSlope: {x: 0.022421176, y: 1.4869074E-15, z: 0.016340652}
-        outSlope: {x: 0.022421323, y: 3.4694503E-15, z: 0.016340882}
+        inSlope: {x: 0.022421176, y: 1.4869074e-15, z: 0.016340652}
+        outSlope: {x: 0.022421323, y: 3.4694503e-15, z: 0.016340882}
         tangentMode: 0
-      - time: 1.4666667
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.4666667
         value: {x: 0.008657034, y: 0.362246, z: -0.04676452}
-        inSlope: {x: 0.0048429593, y: 1.4869074E-15, z: 0.0032961552}
-        outSlope: {x: 0.004843137, y: 3.4694503E-15, z: 0.0032967038}
+        inSlope: {x: 0.0048429593, y: 1.4869074e-15, z: 0.0032961552}
+        outSlope: {x: 0.004843137, y: 3.4694503e-15, z: 0.0032967038}
         tangentMode: 0
-      - time: 1.6333333
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6333333
         value: {x: 0.008380977, y: 0.362246, z: -0.04696004}
-        inSlope: {x: -0.0051668757, y: 1.4869074E-15, z: -0.0036259133}
-        outSlope: {x: -0.005166443, y: 3.4694378E-15, z: -0.0036250274}
+        inSlope: {x: -0.0051668757, y: 1.4869074e-15, z: -0.0036259133}
+        outSlope: {x: -0.005166443, y: 3.4694378e-15, z: -0.0036250274}
         tangentMode: 0
-      - time: 2.3333333
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3333333
         value: {x: 0.0005904065, y: 0.362246, z: -0.05242637}
-        inSlope: {x: -0.0111161275, y: 1.4869074E-15, z: -0.00779945}
-        outSlope: {x: -0.011115411, y: 3.4694256E-15, z: -0.0077995006}
+        inSlope: {x: -0.0111161275, y: 1.4869074e-15, z: -0.00779945}
+        outSlope: {x: -0.011115411, y: 3.4694256e-15, z: -0.0077995006}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 0.0002293174, y: 0.362246, z: -0.05267974}
-        inSlope: {x: -0.010832178, y: 1.4868968E-15, z: -0.007600997}
-        outSlope: {x: -0.010832178, y: 1.4868968E-15, z: -0.007600997}
+        inSlope: {x: -0.010832178, y: 1.4868968e-15, z: -0.007600997}
+        outSlope: {x: -0.010832178, y: 1.4868968e-15, z: -0.007600997}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
-        value: {x: -0.05746832, y: -4.304179E-13, z: -3.469447E-17}
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.05746832, y: -4.304179e-13, z: -3.469447e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
-        value: {x: -0.05746832, y: -4.304179E-13, z: -3.469447E-17}
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
+        value: {x: -0.05746832, y: -4.304179e-13, z: -3.469447e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
-        value: {x: -0.07033041, y: 6.956068E-12, z: -4.857226E-17}
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.07033041, y: 6.956068e-12, z: -4.857226e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
-        value: {x: -0.07033041, y: 6.956068E-12, z: -4.857226E-17}
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
+        value: {x: -0.07033041, y: 6.956068e-12, z: -4.857226e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
-        value: {x: -0.1002925, y: 0, z: -2.081668E-17}
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.1002925, y: 0, z: -2.081668e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
-        value: {x: -0.1002925, y: 0, z: -2.081668E-17}
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
+        value: {x: -0.1002925, y: 0, z: -2.081668e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_neck_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
-        value: {x: 9.020562E-17, y: 0.04185132, z: 3.654854E-13}
+      - serializedVersion: 3
+        time: 0
+        value: {x: 9.020562e-17, y: 0.04185132, z: 3.654854e-13}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
-        value: {x: 9.020562E-17, y: 0.04185132, z: 3.654854E-13}
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
+        value: {x: 9.020562e-17, y: 0.04185132, z: 3.654854e-13}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_neck_jnt/samuraispear:Sam_head_a_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: -0.1792262, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: -0.1792262, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt/samuraispear:Sam_lf_upArm_jnt/samuraispear:Sam_lf_elbow_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: -0.09941963, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: -0.09941963, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt/samuraispear:Sam_lf_upArm_jnt/samuraispear:Sam_lf_elbow_jnt/samuraispear:Sam_lf_wrist_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 0.1792262, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 0.1792262, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt/samuraispear:Sam_rt_elbow_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 0.09941929, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 0.09941929, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt/samuraispear:Sam_rt_elbow_jnt/samuraispear:Sam_rt_wrist_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 0.04433028, y: 0.08533576, z: 0.0001698332}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 0.04433028, y: 0.08533576, z: 0.0001698332}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt/samuraispear:Sam_rt_elbow_jnt/samuraispear:Sam_rt_wrist_jnt/samuraispear:Sam_rt_hand_jnt/samuraispear:prop
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
-        value: {x: 0.08159952, y: -0.003408722, z: 2.775558E-17}
-        inSlope: {x: -3.844499E-05, y: -0.0009103081, z: -0.0008117595}
-        outSlope: {x: -3.844499E-05, y: -0.0009103081, z: -0.0008117595}
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.08159952, y: -0.003408722, z: 2.775558e-17}
+        inSlope: {x: -0.00003844499, y: -0.0009103081, z: -0.0008117595}
+        outSlope: {x: -0.00003844499, y: -0.0009103081, z: -0.0008117595}
         tangentMode: 0
-      - time: 0.033333335
-        value: {x: 0.08159824, y: -0.003439066, z: -2.705863E-05}
-        inSlope: {x: -4.0573726E-05, y: -0.0009471951, z: -0.0008734452}
-        outSlope: {x: -4.011605E-05, y: -0.0009472571, z: -0.00087344565}
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.033333335
+        value: {x: 0.08159824, y: -0.003439066, z: -0.00002705863}
+        inSlope: {x: -0.000040573726, y: -0.0009471951, z: -0.0008734452}
+        outSlope: {x: -0.00004011605, y: -0.0009472571, z: -0.00087344565}
         tangentMode: 0
-      - time: 0.6666666
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.6666666
         value: {x: 0.08157177, y: -0.003987583, z: -0.0004956545}
-        inSlope: {x: 3.895593E-06, y: -3.6746023E-05, z: 0.0007026033}
-        outSlope: {x: 2.1287346E-06, y: -3.6815152E-05, z: 0.00070258975}
+        inSlope: {x: 0.000003895593, y: -0.000036746023, z: 0.0007026033}
+        outSlope: {x: 0.0000021287346, y: -0.000036815152, z: 0.00070258975}
         tangentMode: 0
-      - time: 0.96666664
-        value: {x: 0.0815748, y: -0.003956332, z: -4.485559E-06}
-        inSlope: {x: 1.0239217E-05, y: 0.00019948577, z: 0.0022776343}
-        outSlope: {x: 8.365944E-06, y: 0.00019953269, z: 0.002277653}
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.96666664
+        value: {x: 0.0815748, y: -0.003956332, z: -0.000004485559}
+        inSlope: {x: 0.000010239217, y: 0.00019948577, z: 0.0022776343}
+        outSlope: {x: 0.000008365944, y: 0.00019953269, z: 0.002277653}
         tangentMode: 0
-      - time: 1.5666667
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.5666667
         value: {x: 0.0815767, y: -0.003756935, z: 0.00110847}
-        inSlope: {x: 1.6827682E-05, y: 0.00042428396, z: 0.0002962127}
-        outSlope: {x: 1.6103912E-05, y: 0.00042438143, z: 0.0002962573}
+        inSlope: {x: 0.000016827682, y: 0.00042428396, z: 0.0002962127}
+        outSlope: {x: 0.000016103912, y: 0.00042438143, z: 0.0002962573}
         tangentMode: 0
-      - time: 2.3333333
-        value: {x: 0.08159849, y: -0.003431831, z: 9.662157E-05}
-        inSlope: {x: 1.730665E-05, y: 0.00035841114, z: -0.0015553556}
-        outSlope: {x: 1.6359243E-05, y: 0.0003583793, z: -0.0015552558}
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3333333
+        value: {x: 0.08159849, y: -0.003431831, z: 0.00009662157}
+        inSlope: {x: 0.00001730665, y: 0.00035841114, z: -0.0015553556}
+        outSlope: {x: 0.000016359243, y: 0.0003583793, z: -0.0015552558}
         tangentMode: 0
-      - time: 2.3666668
-        value: {x: 0.08159903, y: -0.003420074, z: 4.641456E-05}
-        inSlope: {x: 1.529488E-05, y: 0.0003527249, z: -0.001506142}
-        outSlope: {x: 1.529488E-05, y: 0.0003527249, z: -0.001506142}
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
+        value: {x: 0.08159903, y: -0.003420074, z: 0.00004641456}
+        inSlope: {x: 0.00001529488, y: 0.0003527249, z: -0.001506142}
+        outSlope: {x: 0.00001529488, y: 0.0003527249, z: -0.001506142}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: -0.09972919, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: -0.09972919, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_lf_upLeg_jnt/samuraispear:Sam_lf_knee_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: -0.10411, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: -0.10411, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_lf_upLeg_jnt/samuraispear:Sam_lf_knee_jnt/samuraispear:Sam_lf_ankle_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 0.09972842, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 0.09972842, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_rt_upLeg_jnt/samuraispear:Sam_rt_knee_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 0.1041105, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 0.1041105, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_rt_upLeg_jnt/samuraispear:Sam_rt_knee_jnt/samuraispear:Sam_rt_ankle_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: -0.0719741, y: 0.001111211, z: -0.134739}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: -0.0719741, y: 0.001111211, z: -0.134739}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:RightSkirt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: -0.07197446, y: 0.001111212, z: 0.1347388}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: -0.07197446, y: 0.001111212, z: 0.1347388}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:LeftSkirt
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_neck_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_neck_jnt/samuraispear:Sam_head_a_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt/samuraispear:Sam_lf_upArm_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt/samuraispear:Sam_lf_upArm_jnt/samuraispear:Sam_lf_elbow_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt/samuraispear:Sam_lf_upArm_jnt/samuraispear:Sam_lf_elbow_jnt/samuraispear:Sam_lf_wrist_jnt/samuraispear:Sam_lf_hand_jnt/samuraispear:Sam_lf_thumb_a_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_lf_clavicle_jnt/samuraispear:Sam_lf_upArm_jnt/samuraispear:Sam_lf_elbow_jnt/samuraispear:Sam_lf_wrist_jnt/samuraispear:Sam_lf_hand_jnt/samuraispear:Sam_lf_index_a_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt/samuraispear:Sam_rt_elbow_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt/samuraispear:Sam_rt_elbow_jnt/samuraispear:Sam_rt_wrist_jnt/samuraispear:Sam_rt_hand_jnt/samuraispear:Sam_rt_thumb_a_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt/samuraispear:Sam_rt_elbow_jnt/samuraispear:Sam_rt_wrist_jnt/samuraispear:Sam_rt_hand_jnt/samuraispear:Sam_rt_index_a_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_spine_mid_jnt/samuraispear:Sam_spine_hi_jnt/samuraispear:Sam_spine_end_jnt/samuraispear:Sam_rt_clavicle_jnt/samuraispear:Sam_rt_upArm_jnt/samuraispear:Sam_rt_elbow_jnt/samuraispear:Sam_rt_wrist_jnt/samuraispear:Sam_rt_hand_jnt/samuraispear:prop
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_lf_upLeg_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_lf_upLeg_jnt/samuraispear:Sam_lf_knee_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_lf_upLeg_jnt/samuraispear:Sam_lf_knee_jnt/samuraispear:Sam_lf_ankle_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_lf_upLeg_jnt/samuraispear:Sam_lf_knee_jnt/samuraispear:Sam_lf_ankle_jnt/samuraispear:Sam_lf_ball_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_rt_upLeg_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_rt_upLeg_jnt/samuraispear:Sam_rt_knee_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_rt_upLeg_jnt/samuraispear:Sam_rt_knee_jnt/samuraispear:Sam_rt_ankle_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:Sam_rt_upLeg_jnt/samuraispear:Sam_rt_knee_jnt/samuraispear:Sam_rt_ankle_jnt/samuraispear:Sam_rt_ball_jnt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:RightSkirt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:RightSkirt/samuraispear:RightSkirt1
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:LeftSkirt
   - curve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2.3666668
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3666668
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
+      m_RotationOrder: 4
     path: samuraispear:skeleton_root_joint/samuraispear:Sam_Skeleton_grp/samuraispear:Sam_spine_low_jnt/samuraispear:Sam_hip_jnt/samuraispear:LeftSkirt/samuraispear:LeftSkirt1
   m_FloatCurves: []
+  m_PPtrCurves: []
   m_SampleRate: 30
-  m_WrapMode: 0
+  m_WrapMode: 2
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
-  m_MuscleClipInfo:
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
     m_StopTime: 0
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -1352,7 +1843,8 @@ AnimationClip:
     m_KeepOriginalPositionXZ: 0
     m_HeightFromFeet: 0
     m_Mirror: 0
-    m_KeepAdditionalBonesAnimation: 0
   m_EditorCurves: []
   m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
   m_Events: []

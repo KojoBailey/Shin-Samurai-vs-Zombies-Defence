@@ -19,7 +19,7 @@ MonoBehaviour:
   costumes:
   - {fileID: 11400000, guid: 1a2d9b18606d6ff4486f958a685d7094, type: 2}
   meleeWeapon:
-    prefab: {fileID: 1924913640763457, guid: 8eb86d923bb363544a0026af5d87d022, type: 3}
+    prefab: {fileID: 1954138338949380, guid: 5cd999fcab118ae4895cb8ef8c24a27b, type: 3}
     hand: 1
     hitAudio: []
   rangedWeapon:

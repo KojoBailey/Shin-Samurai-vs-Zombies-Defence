@@ -4,94 +4,90 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 
 public class RangedWeapon { // Ranged Weapon
-    private string m_id;
     public RangedWeaponData data;
-    private GameObject m_leftObj, m_rightObj;
-    private Transform m_projectileSpawn;
+    private GameObject leftObj, rightObj;
+    private Transform projectileSpawn;
 
-    private List<Projectile> m_projectiles;
+    private List<Projectile> projectiles;
 
-    public RangedWeapon(string weaponId) {
-        m_id = weaponId;
-    }
-    public RangedWeapon(RangedWeaponData inputData, GameObject heroLink) {
-        data = inputData;
+    public RangedWeapon(RangedWeaponData _data, GameObject heroLink) {
+        data = _data;
 
         if (data.leftHandPrefab != null) {
-            m_leftObj = Object.Instantiate(data.leftHandPrefab);
+            leftObj = Object.Instantiate(data.leftHandPrefab);
             WeaponAnchor[] handObjs = heroLink.GetComponentsInChildren<WeaponAnchor>();
             foreach (WeaponAnchor handObj in handObjs) {
                 if (handObj.side == WeaponAnchor.Side.Left) {
-                    m_leftObj.transform.SetParent(handObj.transform, worldPositionStays: false);
+                    leftObj.transform.SetParent(handObj.transform, worldPositionStays: false);
                     break;
                 }
             }
         }
         if (data.rightHandPrefab != null) {
-            m_rightObj = Object.Instantiate(data.rightHandPrefab);
+            rightObj = Object.Instantiate(data.rightHandPrefab);
             WeaponAnchor[] handObjs = heroLink.GetComponentsInChildren<WeaponAnchor>();
             foreach (WeaponAnchor handObj in handObjs) {
                 if (handObj.side == WeaponAnchor.Side.Right) {
-                    m_projectileSpawn = handObj.transform;
-                    m_rightObj.transform.SetParent(m_projectileSpawn, worldPositionStays: false);
+                    projectileSpawn = handObj.transform;
+                    rightObj.transform.SetParent(projectileSpawn, worldPositionStays: false);
                     break;
                 }
             }
         }
 
-        m_projectiles = new();
+        projectiles = new();
         SaveManager.SetLevel(data, 1);
     }
-    public RangedWeapon(EnemyData.RangedWeapon weaponData, GameObject enemyLink) {
-        if (weaponData.hand == WeaponAnchor.Side.Left) {
-            m_leftObj = Object.Instantiate(weaponData.prefab);
-            WeaponAnchor[] handObjs = enemyLink.GetComponentsInChildren<WeaponAnchor>();
+    public RangedWeapon(TroopData.RangedWeapon troopWeapon, GameObject troopLink) {
+        if (troopWeapon.hand == WeaponAnchor.Side.Left) {
+            leftObj = Object.Instantiate(troopWeapon.prefab);
+            WeaponAnchor[] handObjs = troopLink.GetComponentsInChildren<WeaponAnchor>();
             foreach (WeaponAnchor handObj in handObjs) {
                 if (handObj.side == WeaponAnchor.Side.Left) {
-                    m_leftObj.transform.SetParent(handObj.transform, worldPositionStays: false);
+                    leftObj.transform.SetParent(handObj.transform, worldPositionStays: false);
                     break;
                 }
             }
-        } else if (weaponData.hand == WeaponAnchor.Side.Right) {
-            m_rightObj = Object.Instantiate(weaponData.prefab);
-            WeaponAnchor[] handObjs = enemyLink.GetComponentsInChildren<WeaponAnchor>();
+        } else if (troopWeapon.hand == WeaponAnchor.Side.Right) {
+            rightObj = Object.Instantiate(troopWeapon.prefab);
+            WeaponAnchor[] handObjs = troopLink.GetComponentsInChildren<WeaponAnchor>();
             foreach (WeaponAnchor handObj in handObjs) {
                 if (handObj.side == WeaponAnchor.Side.Right) {
-                    m_rightObj.transform.SetParent(handObj.transform, worldPositionStays: false);
+                    rightObj.transform.SetParent(handObj.transform, worldPositionStays: false);
                     break;
                 }
             }
         }
 
-        m_projectiles = new();
+        projectiles = new();
     }
 
     public void Update() {
-        foreach (Projectile projectile in m_projectiles) {
+        foreach (Projectile projectile in projectiles) {
             if (!projectile.toDestroy)
                 projectile.Update();
         }
-        for (int i = 0; i < m_projectiles.Count; i++) {
-            if (m_projectiles[i].toDestroy)
-                m_projectiles.RemoveAt(i);
+        for (int i = 0; i < projectiles.Count; i++) {
+            if (projectiles[i].toDestroy)
+                projectiles.RemoveAt(i);
         }
     }
 
     public void Show() {
-        if (m_leftObj != null)
-            m_leftObj.SetActive(true);
-        if (m_rightObj != null)
-            m_rightObj.SetActive(true);
+        if (leftObj != null)
+            leftObj.SetActive(true);
+        if (rightObj != null)
+            rightObj.SetActive(true);
     }
     public void Hide() {
-        if (m_leftObj != null)
-            m_leftObj.SetActive(false);
-        if (m_rightObj != null)
-            m_rightObj.SetActive(false);
+        if (leftObj != null)
+            leftObj.SetActive(false);
+        if (rightObj != null)
+            rightObj.SetActive(false);
     }
 
     public void FireProjectile(GameplayEntity target) {
-        Projectile projectile = new Projectile(data, m_projectileSpawn, target);
-        m_projectiles.Add(projectile);
+        Projectile projectile = new Projectile(data, projectileSpawn, target);
+        projectiles.Add(projectile);
     }
 };

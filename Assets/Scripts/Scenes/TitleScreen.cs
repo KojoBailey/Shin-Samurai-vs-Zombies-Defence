@@ -31,7 +31,7 @@ public class TitleScreen : MonoBehaviour { // Title Screen
     private Vector2 m_targetLogoPos;
     private Vector2 m_targetSettingsScale;
 
-    private async void Start() {
+    private void Start() {
         // Initialise managers.
         SFXManager.Init();
 

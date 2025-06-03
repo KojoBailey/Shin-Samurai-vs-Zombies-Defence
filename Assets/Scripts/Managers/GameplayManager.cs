@@ -10,8 +10,8 @@ public class GameplayManager { // Gameplay Manager
 
     /* Debug Tools */
     public static string className = typeof(GameplayManager).Name;
-    public const bool fastLoad = true;
-    public const bool heroDoNotAttack = true;
+    public static bool fastLoad = true;
+    public static bool heroDoNotAttack = false;
 
     /* Sub-managers */
     // !! Later these will need separating from GameplayManager for use in menus.
@@ -54,7 +54,6 @@ public class GameplayManager { // Gameplay Manager
     public bool startSlowMo = false;
 
     private Transform camera;
-    public float heroX;
 
     public int smithy = 0;
     private float smithySave = 0;
@@ -101,22 +100,22 @@ public class GameplayManager { // Gameplay Manager
         instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
         SaveManager.SetLevel(ashigaruData, 1); // !! Remove once save system implemented
 
-        var katanaSamuraiDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/KatanaSamurai");
+        var katanaSamuraiDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/Katana");
         AllyData katanaSamuraiData = await katanaSamuraiDataHandle.Task;
         instance.addressableAssets.Add(katanaSamuraiData);
         if (katanaSamuraiData == null) {
-            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/KatanaSamurai"}\".");
+            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/Katana"}\".");
             return;
         }
         instance.equippedAllies.Add(katanaSamuraiData);
         instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
         SaveManager.SetLevel(katanaSamuraiData, 1); // !! Remove once save system implemented
 
-        var yariSamuraiDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/YariSamurai");
+        var yariSamuraiDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/Yari");
         AllyData yariSamuraiData = await yariSamuraiDataHandle.Task;
         instance.addressableAssets.Add(yariSamuraiData);
         if (yariSamuraiData == null) {
-            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/YariSamurai"}\".");
+            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/Yari"}\".");
             return;
         }
         instance.equippedAllies.Add(yariSamuraiData);
@@ -156,8 +155,8 @@ public class GameplayManager { // Gameplay Manager
         SaveManager.EquipCostume("Kunoichi", 0);
         SaveManager.EquipCostume("Ronin", 0);
         SaveManager.EquipCostume("Ashigaru", 0);
-        SaveManager.EquipCostume("KatanaSamurai", 0);
-        SaveManager.EquipCostume("YariSamurai", 0);
+        SaveManager.EquipCostume("Katana", 0);
+        SaveManager.EquipCostume("Yari", 0);
         instance.hero = new Hero(SaveManager.selectedHero);
         instance.hero.SetBounds(instance.stage.leftBound, instance.stage.rightBound);
         instance.hero.allegiance = GameplayEntity.Side.Left;
