@@ -166,6 +166,25 @@ public class GameplayManager { // Gameplay Manager
         // Load BGM.
         instance.bgm = new BGM("Zen Garden Day");
         await instance.bgm.Init();
+
+        instance.hero.onDeath += instance.PlayWaveDefeat;
+        instance.onWaveComplete += instance.PlayWaveVictory;
+    }
+
+    public event System.Action onWaveComplete;
+
+    public void PlayWaveDefeat() {
+        defeated = true;
+        bgm.Stop();
+        victoryDuration = SFXManager.PlayFromBundle("Wave Defeat");
+        victoryTimer = waveStopwatch;
+    }
+    public void PlayWaveVictory() {
+        waveComplete = true;
+        slowMoTimer = 0;
+        victoryDuration = SFXManager.PlayFromBundle("Wave Victory");
+        victoryTimer = waveStopwatch;
+        Time.timeScale = 1;
     }
 
     public void StartWave() {
@@ -236,21 +255,13 @@ public class GameplayManager { // Gameplay Manager
                 smithy += 1;
             }
 
-            // On hero death:
-            if (hero.health <= 0) {
-                if (!defeated) {
-                    defeated = true;
-                    bgm.Stop();
-                    victoryDuration = SFXManager.PlayFromBundle("Wave Defeat");
-                    victoryTimer = waveStopwatch;
-                } else if (waveStopwatch - victoryTimer > victoryDuration) {
-                    Terminate();
-                    SceneLoadManager.LoadScene("TitleScreen");
-                }
+            if (defeated && waveStopwatch - victoryTimer > victoryDuration) {
+                Terminate();
+                SceneLoadManager.LoadScene("TitleScreen");
             }
 
             // On wave completion:
-            if (enemiesRemaining == 0 && hero.health > 0) {
+            if (enemiesRemaining == 0 && !hero.isDead) {
                 if (!startSlowMo) {
                     slowMoTimer = waveStopwatch;
                     bgm.Stop();
@@ -261,11 +272,7 @@ public class GameplayManager { // Gameplay Manager
                     if (slowMoTimer == 0) {
                         camera.localPosition += new Vector3(0, 0.01f, -0.1f) * Time.deltaTime;
                     } else if (waveStopwatch - slowMoTimer > slowMoDuration) {
-                        slowMoTimer = 0;
-                        victoryDuration = SFXManager.PlayFromBundle("Wave Victory");
-                        victoryTimer = waveStopwatch;
-                        Time.timeScale = 1;
-                        waveComplete = true;
+                        onWaveComplete?.Invoke();
                     }
                     if (waveComplete && waveStopwatch - victoryTimer > victoryDuration) {
                         Terminate();

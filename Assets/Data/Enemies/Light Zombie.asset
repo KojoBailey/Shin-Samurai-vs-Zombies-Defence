@@ -16,8 +16,6 @@ MonoBehaviour:
   displayName: Light Zombie
   description: 
   icon: {fileID: 0}
-  prefab: {fileID: 1915455133389061, guid: cac684251d156ea44a9938e624d586a3, type: 3}
-  audioData: {fileID: 11400000, guid: dc99c1f98f3f2994db846d7044556dfc, type: 2}
   meleeWeapon:
     prefab: {fileID: 0}
     hand: 0
@@ -27,6 +25,12 @@ MonoBehaviour:
     hand: 0
     projectile: {fileID: 0}
   animationEvents: {fileID: 11400000, guid: 6c21520e7ee07714c8716d5e4bc4e97a, type: 2}
+  isMeleeAttacker: 1
+  isRangedAttacker: 0
+  isHealer: 0
+  isFlying: 0
+  isGateRusher: 0
+  isAbsorbant: 0
   stats:
     list:
     - Key: 0
@@ -42,3 +46,6 @@ MonoBehaviour:
     - Key: 5
       Value: 1
     keyCollision: 0
+  m_prefab: {fileID: 1915455133389061, guid: cac684251d156ea44a9938e624d586a3, type: 3}
+  m_audioData: {fileID: 11400000, guid: dc99c1f98f3f2994db846d7044556dfc, type: 2}
+  isBoss: 0

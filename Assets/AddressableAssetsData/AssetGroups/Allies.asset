@@ -22,13 +22,13 @@ MonoBehaviour:
     - Ally
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 73ffb17c08030034a8ff2ddefcfaee7e
-    m_Address: Data/Allies/Humans/KatanaSamurai
+    m_Address: Data/Allies/Humans/Katana
     m_ReadOnly: 0
     m_SerializedLabels:
     - Ally
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7ef08c21a5ec0ca45b8d2ba489b437ef
-    m_Address: Data/Allies/Humans/YariSamurai
+    m_Address: Data/Allies/Humans/Yari
     m_ReadOnly: 0
     m_SerializedLabels:
     - Ally

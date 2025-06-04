@@ -35,6 +35,7 @@ public class Hero : GameplayEntity {
 
     private bool isTravelling;
     private bool isPerformingAbility;
+    public bool isDead = false;
 
     public Hero(string _heroId) {
         heroId = _heroId;
@@ -73,31 +74,17 @@ public class Hero : GameplayEntity {
         animationHandler = new AnimationHandler(animation);
         animationHandler.Reset("Idle", true);
 
+        onDeath += HandleDeath;
+
         FinishInit();
     }
 
-    protected bool HandleVictory() {
-        if (GameplayManager.instance.waveComplete) {
-            lockControls = true;
-            if (currentState != State.Victory) {
-                ChangeAnimation("VictoryLoop", 0.1f);
-                ChangeState(State.Victory);
-            }
-            return true;
-        }
-        return false;
-    }
-    protected bool HandleDeath() {
-        if (currentState == State.Die) {
-            lockControls = true;
-            return true;
-        } else if (health <= 0) {
-            ChangeAnimation("Die", 0.1f);
-            data.GetEquippedCostume().audioData.Die();
-            ChangeState(State.Die);
-            return true;
-        }
-        return false;
+    protected void HandleDeath() {
+        isDead = true;
+        ChangeState(State.Die);
+        lockControls = true;
+        animationHandler.Reset("Die", false, 0.1f);
+        data.GetEquippedCostume().audioData.Die();
     }
     
     protected void HandleTravel() {
@@ -141,6 +128,30 @@ public class Hero : GameplayEntity {
 
 
     protected void HandleAttack() {
+        attackStatus = AttackStatus.None;
+        if (GameplayManager.heroDoNotAttack) return;
+
+        foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
+            if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
+                continue;
+
+            float difference = enemy.xPos - xPos;
+            if (allegiance == Side.Right)
+                difference *= -1;
+            if (difference > 0) {
+                if (difference < meleeRange) {
+                    attackStatus = AttackStatus.Melee;
+                    break;
+                } else if (difference < rangedRange) {
+                    attackStatus = AttackStatus.Ranged;
+                    break;
+                } else if (difference < rangedRange + 1) {
+                    attackStatus = AttackStatus.RangedHold;
+                    break;
+                }
+            }
+        }
+
         if (attackStatus == AttackStatus.Melee) {
             SwitchToMelee();
             if (m_meleeAttackTimer < 0f)
@@ -176,6 +187,10 @@ public class Hero : GameplayEntity {
     }
 
     protected void HandleIdle() {
+        if (GameplayManager.instance.waveComplete) {
+            animationHandler.Reset("VictoryLoop", true, 0.1f);
+            return;
+        }
         if (attackStatus == AttackStatus.RangedHold) {
             SwitchToRanged();
             animationHandler.Reset("IdleRanged", true, 0.1f);
@@ -184,43 +199,17 @@ public class Hero : GameplayEntity {
         }
     }
 
-    protected void HandleStates() {
-        attackStatus = AttackStatus.None;
-        if (GameplayManager.heroDoNotAttack) return;
-
-        foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
-            if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
-                continue;
-
-            float difference = enemy.xPos - xPos;
-            if (allegiance == Side.Right)
-                difference *= -1;
-            if (difference > 0) {
-                if (difference < meleeRange) {
-                    attackStatus = AttackStatus.Melee;
-                    break;
-                } else if (difference < rangedRange) {
-                    attackStatus = AttackStatus.Ranged;
-                    break;
-                } else if (difference < rangedRange + 1) {
-                    attackStatus = AttackStatus.RangedHold;
-                    break;
-                }
-            }
-        }
-    }
-
     protected override void EntityUpdate() {
-        if (HandleVictory() == true) return;
-        if (HandleDeath() == true) return;
-        HandleAbilityCast();
-        HandleTravel();
-        HandleIdle();
-        HandleHealthRegen();
+        if (!isDead) {
+            if (!GameplayManager.instance.waveComplete) {
+                HandleAttack();
+            }
+            HandleAbilityCast();
+            HandleTravel();
+            HandleIdle();
+            HandleHealthRegen();
+        }
         animationHandler.Update();
-
-        // HandleAttackState();
-        // HandleAttack();
         if (rangedWeapon != null) rangedWeapon.Update();
     }
 
@@ -240,10 +229,6 @@ public class Hero : GameplayEntity {
         isPerformingAbility = true;
         lockControls = true;
         animationHandler.Reset(animationName, false, 0.1f);
-        animationHandler.onAnimationStart += () => {
-            isPerformingAbility = true;
-            lockControls = true;
-        };
         animationHandler.onAnimationEnd += () => {
             isPerformingAbility = false;
             lockControls = false;
@@ -265,8 +250,11 @@ public class Hero : GameplayEntity {
     }
 
     public override void Damage(float damage) {
+        if (isDead) return;
         health -= damage;
         healthRegenTimer = data.healthRegenDelay;
+        if (health <= 0)
+            TriggerOnDeath();
     }
     public override void Heal(float damage) {
         health += damage;

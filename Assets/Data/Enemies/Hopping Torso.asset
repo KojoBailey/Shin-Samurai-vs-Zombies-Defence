@@ -16,8 +16,6 @@ MonoBehaviour:
   displayName: Hopping Torso
   description: 
   icon: {fileID: 0}
-  prefab: {fileID: 1934122997480958, guid: 446cc89e28448aa48bf63379d28c54d9, type: 3}
-  audioData: {fileID: 11400000, guid: f75be2ccaa6b3c84791c08274b8ed651, type: 2}
   meleeWeapon:
     prefab: {fileID: 1924913640763457, guid: 8eb86d923bb363544a0026af5d87d022, type: 3}
     hand: 0
@@ -32,6 +30,12 @@ MonoBehaviour:
     hand: 0
     projectile: {fileID: 0}
   animationEvents: {fileID: 11400000, guid: af310789fb3fe4d469e66b7374db09c3, type: 2}
+  isMeleeAttacker: 1
+  isRangedAttacker: 0
+  isHealer: 0
+  isFlying: 0
+  isGateRusher: 0
+  isAbsorbant: 0
   stats:
     list:
     - Key: 0
@@ -47,3 +51,6 @@ MonoBehaviour:
     - Key: 5
       Value: 1
     keyCollision: 0
+  m_prefab: {fileID: 1934122997480958, guid: 446cc89e28448aa48bf63379d28c54d9, type: 3}
+  m_audioData: {fileID: 11400000, guid: f75be2ccaa6b3c84791c08274b8ed651, type: 2}
+  isBoss: 0

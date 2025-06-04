@@ -56,6 +56,9 @@ public class GameplayEntity { // Gameplay Entity
     public State currentState;
     protected State m_previousState;
 
+    public event System.Action onDeath;
+    protected void TriggerOnDeath() => onDeath?.Invoke();
+
     protected void Prepare() {
         obj.SetActive(false);
         transform = obj.transform;

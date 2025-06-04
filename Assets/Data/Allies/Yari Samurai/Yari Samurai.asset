@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109c3ab24b89a96498b9ff5c084d2ce4, type: 3}
   m_Name: Yari Samurai
   m_EditorClassIdentifier: 
-  id: YariSamurai
+  id: Yari
   displayName: Yari Samurai
   description: Fight from the rear, but do not mistake them for cowards.
   icon: {fileID: 21300000, guid: 6c58684ee9ca89b42b8ac7b0b617fd33, type: 3}
-  costumes:
-  - {fileID: 11400000, guid: 1a2d9b18606d6ff4486f958a685d7094, type: 2}
   meleeWeapon:
     prefab: {fileID: 1954138338949380, guid: 5cd999fcab118ae4895cb8ef8c24a27b, type: 3}
     hand: 1
@@ -27,25 +25,32 @@ MonoBehaviour:
     hand: 0
     projectile: {fileID: 0}
   animationEvents: {fileID: 11400000, guid: 299366b4f8fb42d4d9ad0b4134805554, type: 2}
+  isMeleeAttacker: 1
+  isRangedAttacker: 0
+  isHealer: 0
+  isFlying: 0
+  isGateRusher: 0
+  isAbsorbant: 0
   stats:
     list:
-    - Key: 0
-      Value: 15
     - Key: 1
       Value: 1
     - Key: 3
-      Value: 1
+      Value: 2
     - Key: 5
       Value: 2
-    - Key: 7
-      Value: 2
     keyCollision: 0
+  cost: 15
+  cooldown: 2
+  isUnique: 0
+  costumes:
+  - {fileID: 11400000, guid: 1a2d9b18606d6ff4486f958a685d7094, type: 2}
   upgrades:
   - list:
-    - Key: 2
+    - Key: 0
       Value: 70
-    - Key: 4
+    - Key: 2
       Value: 15
-    - Key: 6
+    - Key: 4
       Value: 1
     keyCollision: 0

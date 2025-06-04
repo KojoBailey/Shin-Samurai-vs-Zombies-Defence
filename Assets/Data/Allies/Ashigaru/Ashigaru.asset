@@ -16,13 +16,8 @@ MonoBehaviour:
   displayName: Ashigaru
   description: As farmers of the village, not very strong, but oh so loyal.
   icon: {fileID: 21300000, guid: e0cb9dd843f376948833ce3ebb5d57eb, type: 3}
-  costumes:
-  - {fileID: 11400000, guid: bc4fe1bf5c975494f9b4246339773972, type: 2}
-  - {fileID: 11400000, guid: dafb250bf6f2c38419ef4eb1f6cf2c3d, type: 2}
-  - {fileID: 11400000, guid: 4b967ea393e476844ae8c04ad4af8efc, type: 2}
-  - {fileID: 11400000, guid: f21f177f66841284faa7e0123c88710b, type: 2}
   meleeWeapon:
-    prefab: {fileID: 1924913640763457, guid: 8eb86d923bb363544a0026af5d87d022, type: 3}
+    prefab: {fileID: 1373965030633029, guid: 7078ef1bf4e1dc64581ae851c94bee1c, type: 3}
     hand: 1
     hitAudio:
     - {fileID: 8300000, guid: 01364c2a699ab9c48bc478b723b58178, type: 3}
@@ -35,25 +30,35 @@ MonoBehaviour:
     hand: 0
     projectile: {fileID: 0}
   animationEvents: {fileID: 11400000, guid: bb8791f36d36f104caa1c63bd7779c59, type: 2}
+  isMeleeAttacker: 1
+  isRangedAttacker: 0
+  isHealer: 0
+  isFlying: 0
+  isGateRusher: 0
+  isAbsorbant: 0
   stats:
     list:
-    - Key: 0
-      Value: 5
     - Key: 1
       Value: 1
     - Key: 3
-      Value: 1
-    - Key: 5
       Value: 1.5
-    - Key: 7
+    - Key: 5
       Value: 1
     keyCollision: 0
+  cost: 5
+  cooldown: 1
+  isUnique: 0
+  costumes:
+  - {fileID: 11400000, guid: bc4fe1bf5c975494f9b4246339773972, type: 2}
+  - {fileID: 11400000, guid: dafb250bf6f2c38419ef4eb1f6cf2c3d, type: 2}
+  - {fileID: 11400000, guid: 4b967ea393e476844ae8c04ad4af8efc, type: 2}
+  - {fileID: 11400000, guid: f21f177f66841284faa7e0123c88710b, type: 2}
   upgrades:
   - list:
-    - Key: 2
+    - Key: 0
       Value: 40
-    - Key: 6
-      Value: 1
     - Key: 4
+      Value: 1
+    - Key: 2
       Value: 5
     keyCollision: 0
