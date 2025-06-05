@@ -74,7 +74,7 @@ public class GameplayManager { // Gameplay Manager
         instance.camera = _cameraTransform;
 
         // Load wave data.
-        var waveHandle = Addressables.LoadAssetAsync<WaveData>("Data/Waves/2");
+        var waveHandle = Addressables.LoadAssetAsync<WaveData>("Data/Waves/1");
         instance.wave =  await waveHandle.Task;
         instance.addressableAssets.Add(instance.wave);
         instance.totalEnemies = 0;

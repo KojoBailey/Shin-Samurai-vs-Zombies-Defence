@@ -208,7 +208,7 @@ public class GameplayEntity { // Gameplay Entity
     }
 
     public void FireProjectile(GameplayEntity target) {
-        if (currentState == State.RangedAttack)
+        if (rangedWeapon != null)
             rangedWeapon.FireProjectile(target);
     }
 

@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Gameplay : MonoBehaviour {
     [SerializeField] private Transform cameraTransform;
-    private Vector3 m_cameraOffset = new Vector3(0f, 1.39f, -5.07f);
-    private Quaternion m_cameraRotation = Quaternion.Euler(4.94f, 0f, 0f);
+    private Vector3 cameraOffset = new Vector3(0f, 1.39f, -5.07f);
+    private Quaternion cameraRotation = Quaternion.Euler(4.94f, 0f, 0f);
 
     private async void Start() {
-        cameraTransform.rotation = m_cameraRotation;
+        cameraTransform.rotation = cameraRotation;
         await GameplayManager.Init(cameraTransform);
         GameplayManager.instance.StartWave();
 
@@ -22,7 +22,7 @@ public class Gameplay : MonoBehaviour {
     private void LateUpdate() {
         if (SceneLoadManager.finishedLoading) {
             if (!GameplayManager.instance.startSlowMo)
-                cameraTransform.position = GameplayManager.instance.hero.transform.position + m_cameraOffset;
+                cameraTransform.position = GameplayManager.instance.hero.transform.position + cameraOffset;
             else
                 cameraTransform.position = new Vector3(
                     GameplayManager.instance.hero.xPos,
