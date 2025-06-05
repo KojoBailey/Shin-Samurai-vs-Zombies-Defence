@@ -18,6 +18,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
     private Color healthBarTargetColour;
 
     private const float SLOT_SPACING = 230;
+    private Vector3 baseScale;
 
     [SerializeField] private GameObject allySlotReference;
     [SerializeField] private Image allyIconReference;
@@ -64,6 +65,8 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
             abilityButtons.Add(abilityButton);
         }
         abilitySlotReference.SetActive(false);
+
+        baseScale = abilitySlotReference.transform.localScale;
     }
 
     public void PauseGameplay() {
@@ -112,10 +115,10 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
                 Image icon = allyButtons[i].transform.Find("Icon").gameObject.GetComponent<Image>();
                 Image cooldown = allyButtons[i].transform.Find("Cooldown").gameObject.GetComponent<Image>();
                 if (GameplayManager.instance.smithy < GameplayManager.instance.equippedAllies[i].cost) {
-                    allyButtons[i].GetComponent<RectTransform>().localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                    allyButtons[i].GetComponent<RectTransform>().localScale = baseScale * 0.9f;
                     icon.color = new Color(0.3f, 0.3f, 0.3f);
                 } else {
-                    allyButtons[i].GetComponent<RectTransform>().localScale = new Vector3(0.9f, 0.9f, 0.9f);
+                    allyButtons[i].GetComponent<RectTransform>().localScale = baseScale;
                     icon.color = Color.white;
                 }
                 cooldown.fillAmount = GameplayManager.instance.allyCooldowns[i] / GameplayManager.instance.equippedAllies[i].cooldown;
