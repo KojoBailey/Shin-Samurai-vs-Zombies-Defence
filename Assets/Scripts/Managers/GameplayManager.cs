@@ -203,7 +203,7 @@ public class GameplayManager { // Gameplay Manager
         AddEntity($"Enemy{entities.Count - 1}", enemy);
         enemy.Spawn(stage.zombieSpawn);
     }
-     public void SpawnAlly(AllyData _data) {
+    public void SpawnAlly(AllyData _data) {
         Ally ally = new Ally(_data, GameplayEntity.Side.Left);
         ally.SetBounds(float.MinValue, stage.rightBound);
         AddEntity($"Ally{entities.Count - 1}", ally);
@@ -213,23 +213,33 @@ public class GameplayManager { // Gameplay Manager
     public void Update() {
         if (waveStarted) {
             abilityManager.Update();
+            UpdateEntities();
+            UpdateCooldowns();
+            UpdateSmithy();
+            HandleWaveEnd();
+            
+            instance.waveStopwatch += Time.deltaTime;
+        }
+    }
 
-            // Update each entity and destroy finished ones.
-            foreach (var entity in entities) {
-                if (entity.Value != null) {
-                    if (entity.Value.toDestroy) {
-                        DestroyEntity(entity.Value.entityId);
-                        break;
-                    }
-                    entity.Value.Update();
+    // Update each entity and destroy defeated/finished ones.
+    private void UpdateEntities() {
+        foreach (var entity in entities) {
+            if (entity.Value != null) {
+                if (entity.Value.toDestroy) {
+                    DestroyEntity(entity.Value.entityId);
+                    break;
                 }
+                entity.Value.Update();
             }
+        }
 
-            foreach (GameplayEntity entity in entities.Values) {
-                if (entity != null) {
-                    stage.ApplyGravity(entity);
+        foreach (GameplayEntity entity in entities.Values) {
+            if (entity != null) {
+                stage.ApplyGravity(entity);
 
-                    // Get closest targets to each entity.
+                // Calculate closest target for each single-hit entity.
+                if (entity.rangedWeapon != null) {
                     float closestDistance = float.MaxValue;
                     foreach (GameplayEntity target in entities.Values) {
                         if (target != null && target.allegiance != entity.allegiance && !target.isDead) {
@@ -244,57 +254,61 @@ public class GameplayManager { // Gameplay Manager
                     }
                 }
             }
+        }
+    }
 
-            for (int i = 0; i < allyCooldowns.Count; i++)
-                allyCooldowns[i] -= Time.deltaTime;
-            for (int i = 0; i < abilityCooldowns.Count; i++)
-                abilityCooldowns[i] -= Time.deltaTime;
+    private void UpdateCooldowns() {
+        for (int i = 0; i < allyCooldowns.Count; i++)
+            allyCooldowns[i] -= Time.deltaTime;
+        for (int i = 0; i < abilityCooldowns.Count; i++)
+            abilityCooldowns[i] -= Time.deltaTime;
+    }
 
-            if (waveStopwatch - smithySave > smithyRate) {
-                smithySave = waveStopwatch;
-                smithy += 1;
-            }
+    private void UpdateSmithy() {
+        if (waveStopwatch - smithySave > smithyRate) {
+            smithySave = waveStopwatch;
+            smithy += 1;
+        }
+    }
 
-            if (defeated && waveStopwatch - victoryTimer > victoryDuration) {
-                Terminate();
-                SceneLoadManager.LoadScene("TitleScreen");
-            }
+    private void HandleWaveEnd() {
+        if (defeated && waveStopwatch - victoryTimer > victoryDuration) {
+            Terminate();
+            SceneLoadManager.LoadScene("TitleScreen");
+        }
 
-            // On wave completion:
-            if (enemiesRemaining == 0 && !hero.isDead) {
-                if (!startSlowMo) {
-                    slowMoTimer = waveStopwatch;
-                    bgm.Stop();
-                    camera.position = new Vector3(camera.position.x, 1.12f, -3.3f);
-                    Time.timeScale = 0.2f;
-                    startSlowMo = true;
-                } else {
-                    if (slowMoTimer == 0) {
-                        camera.localPosition += new Vector3(0, 0.01f, -0.1f) * Time.deltaTime;
-                    } else if (waveStopwatch - slowMoTimer > slowMoDuration) {
-                        onWaveComplete?.Invoke();
-                    }
-                    if (waveComplete && waveStopwatch - victoryTimer > victoryDuration) {
-                        Terminate();
-                        SceneLoadManager.LoadScene("TitleScreen");
-                    }
-                }
+        // On wave completion:
+        if (enemiesRemaining == 0 && !hero.isDead) {
+            if (!startSlowMo) {
+                slowMoTimer = waveStopwatch;
+                bgm.Stop();
+                camera.position = new Vector3(camera.position.x, 1.12f, -3.3f);
+                Time.timeScale = 0.2f;
+                startSlowMo = true;
             } else {
-                if (!(waveEntryIndex > wave.entries.Length - 1) && waveStopwatch - enemySpawnTimer > wave.entries[waveEntryIndex].delay) {
-                    enemySpawnTimer = waveStopwatch;
-                    for (int i = 0; i < wave.entries[waveEntryIndex].enemyQuanitity; i++)
-                        enemySpawnQueue.Add(wave.entries[waveEntryIndex].enemy);
-                    waveEntryIndex++;
+                if (slowMoTimer == 0) {
+                    camera.localPosition += new Vector3(0, 0.01f, -0.1f) * Time.deltaTime;
+                } else if (waveStopwatch - slowMoTimer > slowMoDuration) {
+                    onWaveComplete?.Invoke();
                 }
-
-                if (waveStopwatch - enemySpacingTimer > enemySpacingDuration && enemySpawnQueue.Count > 0) {
-                    enemySpacingTimer = waveStopwatch;
-                    SpawnEnemy(enemySpawnQueue[0]);
-                    enemySpawnQueue.RemoveAt(0);
+                if (waveComplete && waveStopwatch - victoryTimer > victoryDuration) {
+                    Terminate();
+                    SceneLoadManager.LoadScene("TitleScreen");
                 }
             }
+        } else {
+            if (!(waveEntryIndex > wave.entries.Length - 1) && waveStopwatch - enemySpawnTimer > wave.entries[waveEntryIndex].delay) {
+                enemySpawnTimer = waveStopwatch;
+                for (int i = 0; i < wave.entries[waveEntryIndex].enemyQuanitity; i++)
+                    enemySpawnQueue.Add(wave.entries[waveEntryIndex].enemy);
+                waveEntryIndex++;
+            }
 
-            instance.waveStopwatch += Time.deltaTime;
+            if (waveStopwatch - enemySpacingTimer > enemySpacingDuration && enemySpawnQueue.Count > 0) {
+                enemySpacingTimer = waveStopwatch;
+                SpawnEnemy(enemySpawnQueue[0]);
+                enemySpawnQueue.RemoveAt(0);
+            }
         }
     }
 
