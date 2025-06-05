@@ -52,7 +52,7 @@ public class AbilityManager { // Ability Manager
 
     public void Lethargy(string entityId) {
         foreach (GameplayEntity entity in GameplayManager.instance.entities.Values) {
-            if (entity == null || entity.currentState == GameplayEntity.State.Die)
+            if (entity == null || entity.isDead)
                 continue;
 
             if (entity.allegiance == GameplayEntity.Side.Right) {
@@ -66,7 +66,7 @@ public class AbilityManager { // Ability Manager
     }
     private void LethargyEnd() {
         foreach (GameplayEntity entity in GameplayManager.instance.entities.Values) {
-            if (entity == null || entity.currentState == GameplayEntity.State.Die)
+            if (entity == null || entity.isDead)
                 continue;
 
             if (entity.allegiance == GameplayEntity.Side.Right) {
@@ -80,7 +80,7 @@ public class AbilityManager { // Ability Manager
     public void KatanaSlash(string entityId) {
         Hero hero = (Hero)GameplayManager.instance.entities[entityId];
         foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
-            if (enemy == null || enemy.allegiance == hero.allegiance || enemy.currentState == GameplayEntity.State.Die)
+            if (enemy == null || enemy.allegiance == hero.allegiance || enemy.isDead)
                 continue;
 
             float distance = enemy.xPos - hero.xPos;

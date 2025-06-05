@@ -46,14 +46,10 @@ public class Hero : GameplayEntity {
         ApplyTags(data.animationEvents);
 
         // Attach weapons.
-        if (data.meleeWeaponData != null) {
+        if (data.meleeWeaponData != null)
             meleeWeapon = new MeleeWeapon(data.meleeWeaponData, obj);
-            meleeRange = meleeWeapon.data.range;
-        }
-        if (data.rangedWeaponData != null) {
+        if (data.rangedWeaponData != null)
             rangedWeapon = new RangedWeapon(data.rangedWeaponData, obj);
-            rangedRange = rangedWeapon.data.range;
-        }
         SwitchToMelee();
 
         health = data.maxHealth;
@@ -62,7 +58,7 @@ public class Hero : GameplayEntity {
         FinishInit();
     }
 
-    protected void HandleDeath() {
+    private void HandleDeath() {
         ChangeSpeed(1);
         animationHandler.Play("Die", false, 0.1f);
         data.GetEquippedCostume().audioData.Die();
@@ -80,7 +76,7 @@ public class Hero : GameplayEntity {
         if (rangedWeapon != null) rangedWeapon.Update();
     }
 
-    protected void HandleAbilityCast() {
+    private void HandleAbilityCast() {
         switch (abilityState) {
             case AbilityState.CastForward:
                 PlayAbilityAnimation("CastForward");
@@ -99,7 +95,7 @@ public class Hero : GameplayEntity {
         };
     }
 
-    protected void HandleTravel() {
+    private void HandleTravel() {
         if (isPerformingAbility)
             travelState = TravelState.None;
         else HandleTravelInput();
@@ -157,7 +153,7 @@ public class Hero : GameplayEntity {
         travelState = _travelState;
     }
 
-    protected void HandleAttack() {
+    private void HandleAttack() {
         attackState = AttackState.None;
         if (GameplayManager.heroDoNotAttack
             || GameplayManager.instance.waveComplete
@@ -167,20 +163,20 @@ public class Hero : GameplayEntity {
 
         // Detect enemies and set attackState accordingly.
         foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
-            if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
+            if (enemy == null || enemy.allegiance == allegiance || enemy.isDead)
                 continue;
 
             float difference = enemy.xPos - xPos;
             if (allegiance == Side.Right)
                 difference *= -1;
             if (difference > 0) {
-                if (difference < meleeRange) {
+                if (difference < meleeWeapon.data.range) {
                     attackState = AttackState.Melee;
                     break;
-                } else if (difference < rangedRange) {
+                } else if (difference < rangedWeapon.data.range) {
                     attackState = AttackState.Ranged;
                     break;
-                } else if (difference < rangedRange + 1) {
+                } else if (difference < rangedWeapon.data.range + 1) {
                     attackState = AttackState.RangedHold;
                     break;
                 }
@@ -214,20 +210,23 @@ public class Hero : GameplayEntity {
         rangedAttackTimer -= Time.deltaTime;
     }
 
-    protected void HandleIdle() {
+    private void HandleIdle() {
+        if (isTravelling) return;
         if (GameplayManager.instance.waveComplete) {
             animationHandler.Play("VictoryLoop", true, 0.1f);
+            abilityState = AbilityState.None;
+            attackState = AttackState.None;
             return;
         }
         if (attackState == AttackState.RangedHold) {
             SwitchToRanged();
             animationHandler.Play("IdleRanged", true, 0.1f);
-        } else if (!isTravelling && attackState == AttackState.None && !isPerformingAbility) {
+        } else if (attackState == AttackState.None && !isPerformingAbility) {
             animationHandler.Play("Idle", true, 0.1f);
         }
     }
 
-    protected override void HandleHealthRegen() {
+    private void HandleHealthRegen() {
         healthRegenTimer -= Time.deltaTime;
         if (healthRegenTimer <= 0)
             health += data.healthRegen * Time.deltaTime;

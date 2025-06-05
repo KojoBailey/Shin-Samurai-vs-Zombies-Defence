@@ -5,8 +5,6 @@ using System.Collections.Generic;
 public class GameplayEntity { // Gameplay Entity
     public string entityId;
     public virtual string typeId => "N/A";
-    public enum Side { Left, Right }
-    public Side allegiance;
     protected bool finishedLoading = false;
 
     public GameObject obj;
@@ -16,6 +14,8 @@ public class GameplayEntity { // Gameplay Entity
     protected float attackTimer;
     protected float leftBound, rightBound;
 
+    public enum Side { Left, Right }
+    public Side allegiance;
     public int direction;
     public float xPos {
         get => (transform != null) ? transform.position.x : 0;
@@ -30,32 +30,8 @@ public class GameplayEntity { // Gameplay Entity
 
     public float health;
     public float speedModifier = 1.0f; // Affects both animation and movement.
-    public float meleeRange;
-    public float rangedRange;
     protected int knockedBackCount = 0;
     public bool toDestroy = false;
-
-    public enum State {
-        Idle,
-        IdleRanged,
-        Forward,
-        BackPedal,
-        BackwardRun,
-        Walk,
-        MeleeAttack,
-        RangedAttack,
-        CastMid,
-        CastForward,
-        PersonalAbility,
-        KnockedBack,
-        Landing,
-        Stunned,
-        Die,
-        Revive,
-        Victory,
-    }
-    public State currentState;
-    protected State m_previousState;
 
     public bool isDead = false;
 
@@ -89,72 +65,7 @@ public class GameplayEntity { // Gameplay Entity
             EntityUpdate();
         }
     }
-    protected virtual void EntityUpdate() {
-        /* State */
-        if (HandleVictoryState() == true) return;
-        if (HandleDeathState() == true) return;
-        HandleHealthRegen();
-        HandleAbilityState();
-        HandleKnockbackState();
-        HandleTravelState();
-        HandleAttackState();
-
-        /* Motion */
-        HandleTravelMotion();
-        HandleKnockbackMotion();
-        HandleStateChangeMotion();
-        HandleAttackMotion();
-        HandleDeathMotion();
-    }
-
-    /* Gameplay State Handling */
-    protected virtual void HandleHealthRegen() {}
-    protected virtual void HandleAbilityState() {}
-    protected virtual void HandleKnockbackState() {}
-    protected virtual void HandleTravelState() {
-        if (!animation.IsPlaying("Attack01"))
-            ChangeState(State.Walk);
-        if (xPos <= leftBound || xPos >= rightBound)
-            ChangeState(State.Idle);
-    }
-    protected virtual void HandleAttackState() {
-        foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
-            if (enemy == null || enemy.allegiance == allegiance || enemy.isDead)
-                continue;
-
-            if (IsInMeleeRange(enemy.xPos)) {
-                ChangeState(State.MeleeAttack);
-                break;
-            }
-        }
-    }
-    protected virtual bool HandleDeathState() {
-        if (health <= 0)
-            ChangeState(State.Die);
-        return health <= 0;
-    }
-    protected virtual bool HandleVictoryState() {
-        return false;
-    }
-
-    /* Animation and Motion Handling */
-    protected virtual void HandleMotion() {}
-    protected virtual void HandleTravelMotion() {}
-    protected virtual void HandleKnockbackMotion() {
-        if (!isGettingKnockedBack && currentState == State.KnockedBack)
-            ChangeState(State.Landing);
-    }
-    protected virtual void HandleStateChangeMotion() {}
-    protected virtual void HandleAttackMotion() {}
-    protected virtual void HandleDeathMotion() {
-        if (currentState == State.Die) {
-            if (!animation.IsPlaying("Die")) {
-                Object.Destroy(obj);
-                toDestroy = true;
-                return;
-            }
-        }
-    }
+    protected virtual void EntityUpdate() {}
 
     public void SetEntityId(string _entityId) {
         entityId = _entityId;
@@ -175,10 +86,6 @@ public class GameplayEntity { // Gameplay Entity
             }
         }
         GameplayManager.instance.entitiesWithTags.Add(typeId);
-    }
-
-    protected void ChangeState(State newState) {
-        currentState = newState;
     }
 
     public void SetBounds(float left, float right) {
