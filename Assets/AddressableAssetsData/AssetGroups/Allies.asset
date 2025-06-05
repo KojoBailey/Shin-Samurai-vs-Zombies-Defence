@@ -33,6 +33,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Ally
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed7226461b3b0d348979cfbdbea8c38f
+    m_Address: Data/Allies/Humans/Kyudo
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Ally
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ad3485259873eac478fc26ccd2272b29, type: 2}
   m_SchemaSet:

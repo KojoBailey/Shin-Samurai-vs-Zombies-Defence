@@ -19,11 +19,12 @@ MonoBehaviour:
   meleeWeapon:
     prefab: {fileID: 1954138338949380, guid: 5cd999fcab118ae4895cb8ef8c24a27b, type: 3}
     hand: 1
-    hitAudio: []
+    hitAudio: {fileID: 11400000, guid: 51455134a33268c4b9cac34691c3ea3d, type: 2}
   rangedWeapon:
     prefab: {fileID: 0}
     hand: 0
     projectile: {fileID: 0}
+    hitAudio: {fileID: 0}
   animationEvents: {fileID: 11400000, guid: 299366b4f8fb42d4d9ad0b4134805554, type: 2}
   isMeleeAttacker: 1
   isRangedAttacker: 0
@@ -50,7 +51,7 @@ MonoBehaviour:
     - Key: 0
       Value: 70
     - Key: 2
-      Value: 15
+      Value: 8
     - Key: 4
       Value: 1
     keyCollision: 0

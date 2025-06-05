@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109c3ab24b89a96498b9ff5c084d2ce4, type: 3}
+  m_Name: Kyudo Samurai
+  m_EditorClassIdentifier: 
+  id: Kyudo
+  displayName: "Kyud\u014D Samurai"
+  description: Long ranged, but can't take a hit up close.
+  icon: {fileID: 21300000, guid: 5e1598213ab2e4947b5b081eb7c8a5e3, type: 3}
+  meleeWeapon:
+    prefab: {fileID: 0}
+    hand: 0
+    hitAudio: {fileID: 0}
+  rangedWeapon:
+    prefab: {fileID: 1817465305699816, guid: 175b19e223b6c774a95a72781759beea, type: 3}
+    hand: 0
+    projectile: {fileID: 1554390345530895, guid: 2b75133f2c5a8444d8375ed679525afe, type: 3}
+    hitAudio: {fileID: 11400000, guid: e5a756243dc9aac44bd138e7ee108b92, type: 2}
+  animationEvents: {fileID: 11400000, guid: aada65d115c6b75468596201698997a9, type: 2}
+  isMeleeAttacker: 0
+  isRangedAttacker: 1
+  isHealer: 0
+  isFlying: 0
+  isGateRusher: 0
+  isAbsorbant: 0
+  stats:
+    list:
+    - Key: 1
+      Value: 1
+    - Key: 3
+      Value: 2
+    - Key: 5
+      Value: 5
+    keyCollision: 0
+  cost: 10
+  cooldown: 2
+  isUnique: 0
+  costumes:
+  - {fileID: 11400000, guid: e36e3d273147c204fb91c7f5f490e49b, type: 2}
+  upgrades:
+  - list:
+    - Key: 0
+      Value: 40
+    - Key: 2
+      Value: 8
+    - Key: 4
+      Value: 1
+    keyCollision: 0

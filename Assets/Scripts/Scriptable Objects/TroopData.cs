@@ -13,12 +13,11 @@ public abstract class TroopData : ScriptableObject {
     [System.Serializable] public class MeleeWeapon {
         public GameObject prefab;
         public WeaponAnchor.Side hand;
-        public AudioClip[] hitAudio;
+        public AudioBundle hitAudio;
 
         public void PlayHit() {
-            if (hitAudio.Length > 0) {
-                SFXManager.Play(hitAudio[Random.Range(0, hitAudio.Length)]);
-            }
+            if (hitAudio != null)
+                SFXManager.Play(hitAudio.GetRandom());
         }
     }
     public MeleeWeapon meleeWeapon;
@@ -26,6 +25,12 @@ public abstract class TroopData : ScriptableObject {
         public GameObject prefab;
         public WeaponAnchor.Side hand;
         public GameObject projectile;
+        public AudioBundle hitAudio;
+
+        public void PlayHit() {
+            if (hitAudio != null)
+                SFXManager.Play(hitAudio.GetRandom());
+        }
     }
     public RangedWeapon rangedWeapon;
 

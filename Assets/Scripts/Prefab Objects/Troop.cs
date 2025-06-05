@@ -66,7 +66,7 @@ public class Troop : GameplayEntity {
     }
 
     private void HandleAttack() {
-        if (animation.IsPlaying("Attack01")) {
+        if (animation.IsPlaying("Attack01") || animation.IsPlaying("AttackRanged")) {
             isAttacking = true;
         } else {
             isAttacking = false;
@@ -84,11 +84,21 @@ public class Troop : GameplayEntity {
         if (isAttacking) {
             if (attackTimer < 0f)
                 attackTimer = data.attackFrequency;
-            if (!animation.IsPlaying("Attack01")) {
-                if (attackTimer == data.attackFrequency) {
-                    animationHandler.Play("Attack01", false, 0.1f);
-                } else {
-                    animationHandler.Play("Idle", true, 0.1f);
+            if (data.isMeleeAttacker) {
+                if (!animation.IsPlaying("Attack01")) {
+                    if (attackTimer == data.attackFrequency) {
+                        animationHandler.Play("Attack01", false, 0.1f);
+                    } else {
+                        animationHandler.Play("Idle", true, 0.1f);
+                    }
+                }
+            } else if (data.isRangedAttacker) {
+                if (!animation.IsPlaying("AttackRanged")) {
+                    if (attackTimer == data.attackFrequency) {
+                        animationHandler.Play("AttackRanged", false, 0.1f);
+                    } else {
+                        animationHandler.Play("Idle", true, 0.1f);
+                    }
                 }
             }
             attackTimer -= Time.deltaTime;
@@ -148,5 +158,14 @@ public class Troop : GameplayEntity {
                 break;
             }
         }
+    }
+
+    public override void FireProjectile(GameplayEntity target) {
+        rangedWeapon.FireProjectile(
+            data.rangedWeapon.prefab,
+            data.damage,
+            data.rangedWeapon.hitAudio,
+            target
+        );
     }
 }

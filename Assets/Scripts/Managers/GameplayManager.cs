@@ -11,7 +11,7 @@ public class GameplayManager { // Gameplay Manager
     /* Debug Tools */
     public static string className = typeof(GameplayManager).Name;
     public static bool fastLoad = false;
-    public static bool heroDoNotAttack = false;
+    public static bool heroDoNotAttack = true;
 
     /* Sub-managers */
     // !! Later these will need separating from GameplayManager for use in menus.
@@ -74,7 +74,7 @@ public class GameplayManager { // Gameplay Manager
         instance.camera = _cameraTransform;
 
         // Load wave data.
-        var waveHandle = Addressables.LoadAssetAsync<WaveData>("Data/Waves/1");
+        var waveHandle = Addressables.LoadAssetAsync<WaveData>("Data/Waves/2");
         instance.wave =  await waveHandle.Task;
         instance.addressableAssets.Add(instance.wave);
         instance.totalEnemies = 0;
@@ -110,6 +110,17 @@ public class GameplayManager { // Gameplay Manager
         instance.equippedAllies.Add(katanaSamuraiData);
         instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
         SaveManager.SetLevel(katanaSamuraiData, 1); // !! Remove once save system implemented
+
+        var kyudoSamuraiDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/Kyudo");
+        AllyData kyudoSamuraiData = await kyudoSamuraiDataHandle.Task;
+        instance.addressableAssets.Add(kyudoSamuraiData);
+        if (kyudoSamuraiData == null) {
+            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/Kyudo"}\".");
+            return;
+        }
+        instance.equippedAllies.Add(kyudoSamuraiData);
+        instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
+        SaveManager.SetLevel(kyudoSamuraiData, 1); // !! Remove once save system implemented
 
         var yariSamuraiDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/Yari");
         AllyData yariSamuraiData = await yariSamuraiDataHandle.Task;
@@ -156,6 +167,7 @@ public class GameplayManager { // Gameplay Manager
         SaveManager.EquipCostume("Ronin", 0);
         SaveManager.EquipCostume("Ashigaru", 0);
         SaveManager.EquipCostume("Katana", 0);
+        SaveManager.EquipCostume("Kyudo", 0);
         SaveManager.EquipCostume("Yari", 0);
         instance.hero = new Hero(SaveManager.selectedHero);
         instance.hero.SetBounds(instance.stage.leftBound, instance.stage.rightBound);
@@ -217,7 +229,7 @@ public class GameplayManager { // Gameplay Manager
             UpdateCooldowns();
             UpdateSmithy();
             HandleWaveEnd();
-            
+
             instance.waveStopwatch += Time.deltaTime;
         }
     }

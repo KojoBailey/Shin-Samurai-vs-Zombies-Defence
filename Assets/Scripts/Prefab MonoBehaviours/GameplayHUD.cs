@@ -17,6 +17,8 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
     private float healthBarTargetPadding;
     private Color healthBarTargetColour;
 
+    private const float SLOT_SPACING = 230;
+
     [SerializeField] private GameObject allySlotReference;
     [SerializeField] private Image allyIconReference;
     [SerializeField] private Image cooldownReference;
@@ -44,7 +46,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
             allyButton.transform.Find("Icon").gameObject.GetComponent<Image>().sprite = allyData.icon;
             allyButton.transform.Find("Cooldown").gameObject.GetComponent<Image>().sprite = allyData.icon;
             allyButton.GetComponent<RectTransform>().localPosition = new Vector3(
-                300 * i, 0, 0);
+                SLOT_SPACING * i, 0, 0);
             UIManager.AddEventTrigger(allyData.id, i, allyButton, EventTriggerType.PointerClick, AllySlotOnPointerClick);
             allyButtons.Add(allyButton);
         }
@@ -57,7 +59,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
             abilityButton.transform.Find("Icon").gameObject.GetComponent<Image>().sprite = abilityData.icon;
             abilityButton.transform.Find("Cooldown").gameObject.GetComponent<Image>().sprite = abilityData.icon;
             abilityButton.GetComponent<RectTransform>().localPosition = new Vector3(
-                -300 * (GameplayManager.instance.equippedAbilities.Count - 1 - i), 0, 0);
+                -SLOT_SPACING * (GameplayManager.instance.equippedAbilities.Count - 1 - i), 0, 0);
             UIManager.AddEventTrigger(abilityData.id, i, abilityButton, EventTriggerType.PointerClick, AbilitySlotOnPointerClick);
             abilityButtons.Add(abilityButton);
         }
@@ -110,10 +112,10 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
                 Image icon = allyButtons[i].transform.Find("Icon").gameObject.GetComponent<Image>();
                 Image cooldown = allyButtons[i].transform.Find("Cooldown").gameObject.GetComponent<Image>();
                 if (GameplayManager.instance.smithy < GameplayManager.instance.equippedAllies[i].cost) {
-                    allyButtons[i].GetComponent<RectTransform>().localScale = new Vector3(0.9f, 0.9f, 0.9f);
+                    allyButtons[i].GetComponent<RectTransform>().localScale = new Vector3(0.8f, 0.8f, 0.8f);
                     icon.color = new Color(0.3f, 0.3f, 0.3f);
                 } else {
-                    allyButtons[i].GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                    allyButtons[i].GetComponent<RectTransform>().localScale = new Vector3(0.9f, 0.9f, 0.9f);
                     icon.color = Color.white;
                 }
                 cooldown.fillAmount = GameplayManager.instance.allyCooldowns[i] / GameplayManager.instance.equippedAllies[i].cooldown;

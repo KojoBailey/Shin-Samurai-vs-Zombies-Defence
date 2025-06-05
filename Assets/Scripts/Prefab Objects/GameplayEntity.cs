@@ -114,9 +114,8 @@ public class GameplayEntity { // Gameplay Entity
             rangedWeapon.Show();
     }
 
-    public void FireProjectile(GameplayEntity target) {
-        if (rangedWeapon != null)
-            rangedWeapon.FireProjectile(target);
+    public virtual void FireProjectile(GameplayEntity target) {
+        rangedWeapon.FireProjectile(target);
     }
 
     public virtual bool IsInMeleeRange(float _x) { return false; }

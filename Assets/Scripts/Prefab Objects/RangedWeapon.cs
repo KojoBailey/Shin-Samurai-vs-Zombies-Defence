@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using System.Threading.Tasks;
 using System.Collections.Generic;
 
 public class RangedWeapon { // Ranged Weapon
@@ -44,6 +42,7 @@ public class RangedWeapon { // Ranged Weapon
             WeaponAnchor[] handObjs = troopLink.GetComponentsInChildren<WeaponAnchor>();
             foreach (WeaponAnchor handObj in handObjs) {
                 if (handObj.side == WeaponAnchor.Side.Left) {
+                    projectileSpawn = handObj.transform;
                     leftObj.transform.SetParent(handObj.transform, worldPositionStays: false);
                     break;
                 }
@@ -53,6 +52,7 @@ public class RangedWeapon { // Ranged Weapon
             WeaponAnchor[] handObjs = troopLink.GetComponentsInChildren<WeaponAnchor>();
             foreach (WeaponAnchor handObj in handObjs) {
                 if (handObj.side == WeaponAnchor.Side.Right) {
+                    projectileSpawn = handObj.transform;
                     rightObj.transform.SetParent(handObj.transform, worldPositionStays: false);
                     break;
                 }
@@ -88,6 +88,16 @@ public class RangedWeapon { // Ranged Weapon
 
     public void FireProjectile(GameplayEntity target) {
         Projectile projectile = new Projectile(data, projectileSpawn, target);
+        projectiles.Add(projectile);
+    }
+    public void FireProjectile(GameObject prefab, float _damage, AudioBundle _hitAudio, GameplayEntity _targetEntity) {
+        Projectile projectile = new Projectile(
+            prefab,
+            _damage,
+            _hitAudio,
+            projectileSpawn,
+            _targetEntity
+        );
         projectiles.Add(projectile);
     }
 };
