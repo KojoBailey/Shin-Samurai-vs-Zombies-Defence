@@ -9,7 +9,7 @@ public class Stage {
     private GameObject gameObject;
     private GameObject groundSnapping;
     private List<Transform> bridgeGrounds = new List<Transform>();
-    private const float gravity = 9.81f;
+    private const float GRAVITY = 9.81f;
 
     public float leftBound { get; private set; }
     public float rightBound { get; private set; }
@@ -60,6 +60,7 @@ public class Stage {
 
     public void ApplyGravity(GameplayEntity entity) {
         Transform gameObjectTransform = entity.transform;
+        if (gameObjectTransform == null) return;
         float groundY = 0;
         Vector3 gameObjectPos = gameObjectTransform.position;
         for (int i = 0; i < bridgeGrounds.Count - 1; i++) {
@@ -78,14 +79,12 @@ public class Stage {
             }
         }
 
-        entity.yVelocity -= gravity * Time.deltaTime;
+        entity.yVelocity -= GRAVITY * Time.deltaTime;
         gameObjectTransform.position += new Vector3(0, entity.yVelocity, 0) * Time.deltaTime;
         if (gameObjectTransform.position.y < groundY) {
             gameObjectTransform.position = new Vector3(gameObjectTransform.position.x, groundY, gameObjectTransform.position.z);
             entity.yVelocity = 0;
             entity.isGettingKnockedBack = false;
-        } else {
-            entity.isGettingKnockedBack = true;
         }
     }
 };

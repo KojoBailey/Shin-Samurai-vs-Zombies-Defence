@@ -10,7 +10,7 @@ public class GameplayManager { // Gameplay Manager
 
     /* Debug Tools */
     public static string className = typeof(GameplayManager).Name;
-    public static bool fastLoad = true;
+    public static bool fastLoad = false;
     public static bool heroDoNotAttack = false;
 
     /* Sub-managers */
@@ -74,7 +74,7 @@ public class GameplayManager { // Gameplay Manager
         instance.camera = _cameraTransform;
 
         // Load wave data.
-        var waveHandle = Addressables.LoadAssetAsync<WaveData>("Data/Waves/1");
+        var waveHandle = Addressables.LoadAssetAsync<WaveData>("Data/Waves/2");
         instance.wave =  await waveHandle.Task;
         instance.addressableAssets.Add(instance.wave);
         instance.totalEnemies = 0;
@@ -301,7 +301,7 @@ public class GameplayManager { // Gameplay Manager
     public void DealDamage(string entityId) {
         GameplayEntity entity = entities[entityId];
         foreach (GameplayEntity enemy in entities.Values) {
-            if (enemy == null || enemy.allegiance == entity.allegiance || enemy.currentState == GameplayEntity.State.Die)
+            if (enemy == null || enemy.allegiance == entity.allegiance || enemy.isDead)
                 continue;
 
             if (entity.IsInMeleeRange(enemy.xPos + 0.2f * enemy.direction))

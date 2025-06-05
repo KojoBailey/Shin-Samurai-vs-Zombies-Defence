@@ -4,24 +4,25 @@ using System.Collections.Generic;
 /* Characters during gameplay, including heroes, allies, and enemies. */
 public class GameplayEntity { // Gameplay Entity
     public string entityId;
+    public virtual string typeId => "N/A";
     public enum Side { Left, Right }
     public Side allegiance;
     protected bool finishedLoading = false;
 
     public GameObject obj;
     public Transform transform;
-    public Animation animation;
-    protected float m_attackTimer;
-    protected float m_leftBound, m_rightBound;
+    protected Animation animation;
+    protected AnimationHandler animationHandler;
+    protected float attackTimer;
+    protected float leftBound, rightBound;
 
     public int direction;
     public float xPos {
-        get => transform.position.x;
+        get => (transform != null) ? transform.position.x : 0;
         set => transform.position = new Vector3(value, transform.position.y, transform.position.z);
     }
 
     public float yVelocity;
-    public float knockbackMeter;
     public bool isGettingKnockedBack = false;
 
     public MeleeWeapon meleeWeapon;
@@ -31,7 +32,7 @@ public class GameplayEntity { // Gameplay Entity
     public float speedModifier = 1.0f; // Affects both animation and movement.
     public float meleeRange;
     public float rangedRange;
-    protected int m_knockedBackCount = 0;
+    protected int knockedBackCount = 0;
     public bool toDestroy = false;
 
     public enum State {
@@ -56,6 +57,8 @@ public class GameplayEntity { // Gameplay Entity
     public State currentState;
     protected State m_previousState;
 
+    public bool isDead = false;
+
     public event System.Action onDeath;
     protected void TriggerOnDeath() => onDeath?.Invoke();
 
@@ -63,10 +66,12 @@ public class GameplayEntity { // Gameplay Entity
         obj.SetActive(false);
         transform = obj.transform;
         animation = obj.GetComponent<Animation>();
-        knockbackMeter = 20;
+        animationHandler = new AnimationHandler(animation);
         if (allegiance == Side.Left)
             direction = 1;
         else direction = -1;
+
+        onDeath += () => isDead = true;
     }
 
     public void Spawn(float spawnX) {
@@ -109,12 +114,12 @@ public class GameplayEntity { // Gameplay Entity
     protected virtual void HandleTravelState() {
         if (!animation.IsPlaying("Attack01"))
             ChangeState(State.Walk);
-        if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound)
+        if (xPos <= leftBound || xPos >= rightBound)
             ChangeState(State.Idle);
     }
     protected virtual void HandleAttackState() {
         foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
-            if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
+            if (enemy == null || enemy.allegiance == allegiance || enemy.isDead)
                 continue;
 
             if (IsInMeleeRange(enemy.xPos)) {
@@ -177,12 +182,15 @@ public class GameplayEntity { // Gameplay Entity
     }
 
     public void SetBounds(float left, float right) {
-        m_leftBound = left;
-        m_rightBound = right;
+        leftBound = left;
+        rightBound = right;
     }
 
     public virtual void Damage(float damage) {
+        if (isDead) return;
         health -= damage;
+        if (health <= 0)
+            TriggerOnDeath();
     }
     public virtual void Heal(float damage) {
         health += damage;
@@ -221,6 +229,4 @@ public class GameplayEntity { // Gameplay Entity
             state.speed = speedModifier;
         }
     }
-
-    public virtual string typeId => "N/A";
 };

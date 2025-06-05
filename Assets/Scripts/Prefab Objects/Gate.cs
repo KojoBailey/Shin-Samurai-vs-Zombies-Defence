@@ -6,7 +6,7 @@ public class Gate : GameplayEntity {
     private GateData data;
     public override string typeId => data.id;
     
-    private HealthBar m_healthBar;
+    private HealthBar healthBar;
 
     public Gate(Side _allegiance) {
         allegiance = _allegiance;
@@ -22,31 +22,30 @@ public class Gate : GameplayEntity {
         transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
 
         SaveManager.SetLevel(data, 1);
-        m_healthBar = new HealthBar(GameplayManager.healthBarPrefab, this, data.health);
-        m_healthBar.position = new Vector3(0f, 150f, 70f);
-        m_healthBar.scale *= 100;
+        healthBar = new HealthBar(GameplayManager.healthBarPrefab, this, data.health);
+        healthBar.position = new Vector3(0f, 150f, 70f);
+        healthBar.scale *= 100;
         health = data.health;
+        onDeath += HandleDeath;
 
         FinishInit();
     }
 
-    protected override void EntityUpdate() {
-        if (HandleDeathState() == true) return;
+    private void HandleDeath() {
+        animationHandler.Play("Collapse", false);
+        data.GetEquippedCostume().audioData.Die();
+        GameplayManager.instance.hero.Damage(float.MaxValue);
     }
 
-    protected override void HandleStateChangeMotion() {
-        if (currentState != m_previousState) {
-            m_previousState = currentState;
-            switch (currentState) {
-                case State.Idle:
-                    ChangeAnimation("Idle");
-                    break;
-                case State.Die:
-                    ChangeAnimation("Die");
-                    data.GetEquippedCostume().audioData.Die();
-                    GameplayManager.instance.hero.health = 0;
-                    break;
-            }
-        }
+    protected override void EntityUpdate() {
+        if (!isDead)
+            animationHandler.Play("Idle", true);
+        animationHandler.Update();
+        healthBar.Update();
+    }
+
+    public override void Damage(float damage) {
+        base.Damage(damage);
+        data.GetEquippedCostume().audioData.Damaged();
     }
 }

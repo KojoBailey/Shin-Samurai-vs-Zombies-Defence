@@ -1,17 +1,12 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 
 public class Hero : GameplayEntity {
     private string heroId;
     public HeroData data;
     public override string typeId => data.id;
 
-    private AnimationHandler animationHandler;
-
-    public bool isDead = false;
     private float healthRegenTimer = 0;
 
     public enum TravelState { None, Forward, Backward, BackPedal };
@@ -50,7 +45,7 @@ public class Hero : GameplayEntity {
         transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
         ApplyTags(data.animationEvents);
 
-        // Attach weapon.
+        // Attach weapons.
         if (data.meleeWeaponData != null) {
             meleeWeapon = new MeleeWeapon(data.meleeWeaponData, obj);
             meleeRange = meleeWeapon.data.range;
@@ -62,13 +57,15 @@ public class Hero : GameplayEntity {
         SwitchToMelee();
 
         health = data.maxHealth;
-
-        animationHandler = new AnimationHandler(animation);
-        animationHandler.Play("Idle", true);
-
         onDeath += HandleDeath;
 
         FinishInit();
+    }
+
+    protected void HandleDeath() {
+        ChangeSpeed(1);
+        animationHandler.Play("Die", false, 0.1f);
+        data.GetEquippedCostume().audioData.Die();
     }
 
     protected override void EntityUpdate() {
@@ -94,6 +91,7 @@ public class Hero : GameplayEntity {
         }
     }
     private void PlayAbilityAnimation(string animationName) {
+        if (animationName == animationHandler.currentAnimation) return;
         SwitchToMelee();
         animationHandler.Play(animationName, false, 0.1f);
         animationHandler.onAnimationEnd += () => {
@@ -101,19 +99,12 @@ public class Hero : GameplayEntity {
         };
     }
 
-    protected void HandleDeath() {
-        isDead = true;
-        ChangeState(State.Die);
-        animationHandler.Play("Die", false, 0.1f);
-        data.GetEquippedCostume().audioData.Die();
-    }
-
     protected void HandleTravel() {
-        if (isPerformingAbility) {
+        if (isPerformingAbility)
             travelState = TravelState.None;
-        } else {
-            HandleTravelInput();
-        }
+        else HandleTravelInput();
+        
+        // Import to always update due to acceleration physics.
         UpdatePosition();
     }
     private void HandleTravelInput() {
@@ -140,11 +131,11 @@ public class Hero : GameplayEntity {
         xVelocity *= 0.90f;
 
         // Keep within the stage bounds.
-        if (transform.position.x < m_leftBound)
-            xPos = m_leftBound;
-        if (transform.position.x > m_rightBound)
-            xPos = m_rightBound;
-        if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound)
+        if (xPos < leftBound)
+            xPos = leftBound;
+        if (xPos > rightBound)
+            xPos = rightBound;
+        if (xPos <= leftBound || xPos >= rightBound)
             travelState = TravelState.None;
     }
     private void ChangeTravelAnimation(TravelState _travelState) {
@@ -245,7 +236,7 @@ public class Hero : GameplayEntity {
     }
 
     public override bool IsInMeleeRange(float targetX) {
-        float distance = targetX - transform.position.x;
+        float distance = targetX - xPos;
         distance *= direction;
         return (distance < meleeWeapon.data.range) && (distance > 0);
     }
@@ -265,6 +256,7 @@ public class Hero : GameplayEntity {
             TriggerOnDeath();
     }
     public override void Heal(float damage) {
+        if (isDead) return;
         health += damage;
         healthRegenTimer = 0;
     }

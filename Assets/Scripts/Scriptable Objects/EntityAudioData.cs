@@ -12,6 +12,7 @@ public class EntityAudioData : ScriptableObject {
     public AudioBundle bigAttackAudio;
     public AudioBundle longAttackAudio;
     public GenericDictionary<string, AudioBundle> personalAbilityAudio;
+    public AudioBundle damagedAudio;
     public AudioBundle deathAudio;
 
     public void Spawn() {
@@ -42,6 +43,9 @@ public class EntityAudioData : ScriptableObject {
     }
     public void PersonalAbility(string abilityId) {
         SFXManager.PlayFromBundle(personalAbilityAudio[abilityId]);
+    }
+    public void Damaged() {
+        SFXManager.PlayFromBundle(damagedAudio);
     }
     public void Die() {
         SFXManager.PlayFromBundle(deathAudio);
