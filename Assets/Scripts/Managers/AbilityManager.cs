@@ -39,10 +39,10 @@ public class AbilityManager { // Ability Manager
     public void QueueAbility(string abilityId) {
         if (abilityId == "Lethargy") {
             queue.Add(Lethargy);
-            GameplayManager.instance.hero.abilityStatus = Hero.AbilityStatus.CastForward;
+            GameplayManager.instance.hero.abilityState = Hero.AbilityState.CastForward;
         } else if (abilityId == "KatanaSlash") {
             queue.Add(KatanaSlash);
-            GameplayManager.instance.hero.abilityStatus = Hero.AbilityStatus.KatanaSlash;
+            GameplayManager.instance.hero.abilityState = Hero.AbilityState.KatanaSlash;
         }
     }
     public void ActivateAbility(string entityId) {

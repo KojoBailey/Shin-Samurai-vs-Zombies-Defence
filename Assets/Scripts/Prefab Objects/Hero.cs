@@ -11,31 +11,23 @@ public class Hero : GameplayEntity {
 
     private AnimationHandler animationHandler;
 
-    public bool lockControls;
-
-    private float xVelocity;
+    public bool isDead = false;
+    private float healthRegenTimer = 0;
 
     public enum TravelState { None, Forward, Backward, BackPedal };
     public TravelState travelState;
-    private TravelState previousTravelStatus;
-    public enum AttackStatus { None, RangedHold, Melee, Ranged };
-    public AttackStatus attackStatus;
-    private float m_meleeAttackTimer;
-    private float m_rangedAttackTimer;
-    private float healthRegenTimer = 0;
+    private bool isTravelling => travelState != TravelState.None;
     private float backPedalTimer;
-    public enum AbilityStatus { None, CastForward, CastMid, KatanaSlash };
-    public AbilityStatus abilityStatus = AbilityStatus.None;
-    private enum AbilityProgress {
-        NotPlaying,
-        Started,
-        InProgress
-    }
-    private AbilityProgress abilityProgress = AbilityProgress.NotPlaying;
+    private float xVelocity;
 
-    private bool isTravelling;
-    private bool isPerformingAbility;
-    public bool isDead = false;
+    public enum AttackState { None, RangedHold, Melee, Ranged };
+    public AttackState attackState;
+    private float meleeAttackTimer;
+    private float rangedAttackTimer;
+
+    public enum AbilityState { None, CastForward, CastMid, KatanaSlash };
+    public AbilityState abilityState = AbilityState.None;
+    private bool isPerformingAbility => abilityState != AbilityState.None;
 
     public Hero(string _heroId) {
         heroId = _heroId;
@@ -72,44 +64,74 @@ public class Hero : GameplayEntity {
         health = data.maxHealth;
 
         animationHandler = new AnimationHandler(animation);
-        animationHandler.Reset("Idle", true);
+        animationHandler.Play("Idle", true);
 
         onDeath += HandleDeath;
 
         FinishInit();
     }
 
+    protected override void EntityUpdate() {
+        if (!isDead) {
+            HandleAbilityCast();
+            HandleTravel();
+            HandleAttack();
+            HandleIdle();
+            HandleHealthRegen();
+        }
+        animationHandler.Update();
+        if (rangedWeapon != null) rangedWeapon.Update();
+    }
+
+    protected void HandleAbilityCast() {
+        switch (abilityState) {
+            case AbilityState.CastForward:
+                PlayAbilityAnimation("CastForward");
+                break;
+            case AbilityState.KatanaSlash:
+                PlayAbilityAnimation("AbilityKatanaSlash");
+                break;
+        }
+    }
+    private void PlayAbilityAnimation(string animationName) {
+        SwitchToMelee();
+        animationHandler.Play(animationName, false, 0.1f);
+        animationHandler.onAnimationEnd += () => {
+            abilityState = AbilityState.None;
+        };
+    }
+
     protected void HandleDeath() {
         isDead = true;
         ChangeState(State.Die);
-        lockControls = true;
-        animationHandler.Reset("Die", false, 0.1f);
+        animationHandler.Play("Die", false, 0.1f);
         data.GetEquippedCostume().audioData.Die();
     }
-    
+
     protected void HandleTravel() {
-        if (!lockControls) HandleTravelInput();
+        if (isPerformingAbility) {
+            travelState = TravelState.None;
+        } else {
+            HandleTravelInput();
+        }
         UpdatePosition();
     }
     private void HandleTravelInput() {
         if (Input.GetKey(KeyCode.D)) {
-            isTravelling = true;
+            ChangeTravelAnimation(TravelState.Forward);
             xVelocity += data.acceleration * Time.deltaTime;
-            animationHandler.Reset("Forward", true, 0.1f);
             backPedalTimer = 1;
         } else if (Input.GetKey(KeyCode.A)) {
-            isTravelling = true;
             if (backPedalTimer <= 0) {
+                ChangeTravelAnimation(TravelState.Backward);
                 xVelocity -= data.acceleration * 1.2f * Time.deltaTime;
-                    animationHandler.Reset("BackPedalTurn", false, 0.1f, "BackwardRun");
-                    animationHandler.Queue("Backward", true, 0, "BackwardRun");
             } else {
+                ChangeTravelAnimation(TravelState.BackPedal);
                 xVelocity -= data.acceleration * Time.deltaTime;
                 backPedalTimer -= Time.deltaTime;
-                animationHandler.Reset("BackPedal", true, 0.1f);
             }
         } else {
-            isTravelling = false;
+            travelState = TravelState.None;
             backPedalTimer = 1;
         }
     }
@@ -123,14 +145,36 @@ public class Hero : GameplayEntity {
         if (transform.position.x > m_rightBound)
             xPos = m_rightBound;
         if (transform.position.x <= m_leftBound || transform.position.x >= m_rightBound)
-            isTravelling = false;
+            travelState = TravelState.None;
+    }
+    private void ChangeTravelAnimation(TravelState _travelState) {
+        if (travelState != _travelState)
+            switch (_travelState) {
+                case TravelState.Forward:
+                    animationHandler.Play("Forward", true, 0.1f);
+                    break;
+                case TravelState.BackPedal:
+                    animationHandler.Play("BackPedal", true, 0.1f);
+                    break;
+                case TravelState.Backward:
+                    animationHandler.PlaySequence(
+                        ("BackPedalTurn", false, 0.1f),
+                        ("Backward", true, 0)
+                    );
+                    break;
+            }
+        travelState = _travelState;
     }
 
-
     protected void HandleAttack() {
-        attackStatus = AttackStatus.None;
-        if (GameplayManager.heroDoNotAttack) return;
+        attackState = AttackState.None;
+        if (GameplayManager.heroDoNotAttack
+            || GameplayManager.instance.waveComplete
+            || isTravelling
+            || isPerformingAbility
+        ) return;
 
+        // Detect enemies and set attackState accordingly.
         foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
             if (enemy == null || enemy.allegiance == allegiance || enemy.currentState == State.Die)
                 continue;
@@ -140,100 +184,64 @@ public class Hero : GameplayEntity {
                 difference *= -1;
             if (difference > 0) {
                 if (difference < meleeRange) {
-                    attackStatus = AttackStatus.Melee;
+                    attackState = AttackState.Melee;
                     break;
                 } else if (difference < rangedRange) {
-                    attackStatus = AttackStatus.Ranged;
+                    attackState = AttackState.Ranged;
                     break;
                 } else if (difference < rangedRange + 1) {
-                    attackStatus = AttackStatus.RangedHold;
+                    attackState = AttackState.RangedHold;
                     break;
                 }
             }
         }
 
-        if (attackStatus == AttackStatus.Melee) {
+        if (attackState == AttackState.Melee) {
             SwitchToMelee();
-            if (m_meleeAttackTimer < 0f)
-                m_meleeAttackTimer = meleeWeapon.data.attackFrequency;
+            if (meleeAttackTimer < 0f)
+                meleeAttackTimer = meleeWeapon.data.attackFrequency;
             if (!animation.IsPlaying("Attack01")) {
-                if (m_meleeAttackTimer == meleeWeapon.data.attackFrequency) {
-                    ChangeAnimation("Attack01", 0.1f);
+                if (meleeAttackTimer == meleeWeapon.data.attackFrequency) {
+                    animationHandler.Play("Attack01", false, 0.1f);
                 } else {
-                    ChangeAnimation("Idle", 0.1f);
+                    animationHandler.Play("Idle", true, 0.1f);
                 }
             }
-        } else if (attackStatus == AttackStatus.Ranged && rangedWeapon != null) {
+        } else if (attackState == AttackState.Ranged && rangedWeapon != null) {
             SwitchToRanged();
-            if (m_rangedAttackTimer < 0f)
-                m_rangedAttackTimer = rangedWeapon.data.attackFrequency;
+            if (rangedAttackTimer < 0f)
+                rangedAttackTimer = rangedWeapon.data.attackFrequency;
             if (!animation.IsPlaying("AttackRanged")) {
-                if (m_rangedAttackTimer == rangedWeapon.data.attackFrequency) {
-                    ChangeAnimation("AttackRanged", 0.1f);
+                if (rangedAttackTimer == rangedWeapon.data.attackFrequency) {
+                    animationHandler.Play("AttackRanged", false, 0.1f);
                 } else {
-                    ChangeAnimation("IdleRanged", 0.1f);
+                    animationHandler.Play("IdleRanged", true, 0.1f);
                 }
             }
         }
-        m_meleeAttackTimer -= Time.deltaTime;
-        m_rangedAttackTimer -= Time.deltaTime;
+        meleeAttackTimer -= Time.deltaTime;
+        rangedAttackTimer -= Time.deltaTime;
     }
+
+    protected void HandleIdle() {
+        if (GameplayManager.instance.waveComplete) {
+            animationHandler.Play("VictoryLoop", true, 0.1f);
+            return;
+        }
+        if (attackState == AttackState.RangedHold) {
+            SwitchToRanged();
+            animationHandler.Play("IdleRanged", true, 0.1f);
+        } else if (!isTravelling && attackState == AttackState.None && !isPerformingAbility) {
+            animationHandler.Play("Idle", true, 0.1f);
+        }
+    }
+
     protected override void HandleHealthRegen() {
         healthRegenTimer -= Time.deltaTime;
         if (healthRegenTimer <= 0)
             health += data.healthRegen * Time.deltaTime;
         if (health > data.maxHealth)
             health = data.maxHealth;
-    }
-
-    protected void HandleIdle() {
-        if (GameplayManager.instance.waveComplete) {
-            animationHandler.Reset("VictoryLoop", true, 0.1f);
-            return;
-        }
-        if (attackStatus == AttackStatus.RangedHold) {
-            SwitchToRanged();
-            animationHandler.Reset("IdleRanged", true, 0.1f);
-        } else if (!isTravelling && attackStatus == AttackStatus.None && !isPerformingAbility) {
-            animationHandler.Reset("Idle", true, 0.1f);
-        }
-    }
-
-    protected override void EntityUpdate() {
-        if (!isDead) {
-            if (!GameplayManager.instance.waveComplete) {
-                HandleAttack();
-            }
-            HandleAbilityCast();
-            HandleTravel();
-            HandleIdle();
-            HandleHealthRegen();
-        }
-        animationHandler.Update();
-        if (rangedWeapon != null) rangedWeapon.Update();
-    }
-
-    protected void HandleAbilityCast() {
-        switch (abilityStatus) {
-            case AbilityStatus.CastForward:
-                PlayAbilityAnimation("CastForward");
-                break;
-            case AbilityStatus.KatanaSlash:
-                PlayAbilityAnimation("AbilityKatanaSlash");
-                break;
-        }
-    }
-
-    private void PlayAbilityAnimation(string animationName) {
-        SwitchToMelee();
-        isPerformingAbility = true;
-        lockControls = true;
-        animationHandler.Reset(animationName, false, 0.1f);
-        animationHandler.onAnimationEnd += () => {
-            isPerformingAbility = false;
-            lockControls = false;
-            abilityStatus = AbilityStatus.None;
-        };
     }
 
     public override bool IsInMeleeRange(float targetX) {

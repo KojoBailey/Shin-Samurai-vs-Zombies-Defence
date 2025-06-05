@@ -9,13 +9,10 @@ public class AnimationHandler {
         public string id;
         public bool loop;
         public float crossFade;
-        public string sequenceId;
     }
 
     private List<AnimationEntry> queue = new List<AnimationEntry>();
     private string animationInProgress;
-    private string sequenceInProgress = "*";
-    private int sequenceIndex;
 
     public event Action onAnimationStart;
     public event Action onAnimationEnd;
@@ -24,54 +21,39 @@ public class AnimationHandler {
 
     public void Update() {
         if (queue.Count == 0) return;
-        if (sequenceIndex >= queue.Count) {
-            sequenceIndex = 0;
-            queue.Clear();
-            return;
-        }
-        if (!queue[sequenceIndex].loop && !animation.IsPlaying(animationInProgress)) {
+        if (!queue[0].loop && !animation.IsPlaying(animationInProgress)) {
             onAnimationEnd?.Invoke();
             animationInProgress = "";
-            if (++sequenceIndex >= queue.Count) {
-                sequenceIndex = 0;
-                queue.Clear();
-                return;
-            }
+            queue.RemoveAt(0);
         }
-        Play(sequenceIndex);
-    }
-
-    public void Queue(string _id, bool _loop, float _crossFade = 0, string _sequenceId = "") {
-        AnimationEntry animationEntry = new AnimationEntry {
-            id = _id,
-            loop = _loop,
-            crossFade = _crossFade,
-            sequenceId = _sequenceId,
-        };
-        queue.Add(animationEntry);
-    }
-    public void Reset(string _id, bool _loop, float _crossFade = 0, string _sequenceId = "") {
-        queue.Clear();
-        onAnimationStart = null;
-        onAnimationEnd = null;
-        sequenceInProgress = _sequenceId;
-        Queue(_id, _loop, _crossFade, _sequenceId);
-    }
-
-    private void Play(int index) {
-        if (index >= queue.Count) {
-            Debug.LogError($"Tried to play animation of index {index} that does not exist.");
-            return;
-        }
-        AnimationEntry animationEntry = queue[index];
+        AnimationEntry animationEntry = queue[0];
+        if (animationEntry.id == animationInProgress) return;
+        animationInProgress = animationEntry.id;
         if (animationEntry.crossFade == 0)
             animation.Play(animationEntry.id);
         else
             animation.CrossFade(animationEntry.id, animationEntry.crossFade);
-        animationInProgress = animationEntry.id;
         onAnimationStart?.Invoke();
-        if (animationEntry.sequenceId != sequenceInProgress || animationEntry.sequenceId == "")
-            sequenceIndex = 0;
-        sequenceInProgress = animationEntry.sequenceId;
+    }
+
+    private void Queue(string _id, bool _loop, float _crossFade = 0) {
+        AnimationEntry animationEntry = new AnimationEntry {
+            id = _id,
+            loop = _loop,
+            crossFade = _crossFade,
+        };
+        queue.Add(animationEntry);
+    }
+    public void Play(string _id, bool _loop, float _crossFade = 0) {
+        queue.Clear();
+        onAnimationStart = null;
+        onAnimationEnd = null;
+        Queue(_id, _loop, _crossFade);
+    }
+    public void PlaySequence(params (string _id, bool _loop, float _crossFade)[] entries) {
+        Play(entries[0]._id, entries[0]._loop, entries[0]._crossFade);
+        for (int i = 1; i < entries.Length; i++) {
+            Queue(entries[i]._id, entries[i]._loop, entries[i]._crossFade);
+        }
     }
 }
