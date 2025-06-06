@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0292bbba6cd1944b97a4e82a3e7dd34, type: 3}
-  m_Name: Lord Oni
+  m_Name: Nobusuma
   m_EditorClassIdentifier: 
-  id: LordOni
-  displayName: Lord Oni
+  id: Nobusuma
+  displayName: Nobusuma
   description: 
   icon: {fileID: 0}
   meleeWeapon:
@@ -25,29 +25,29 @@ MonoBehaviour:
     hand: 0
     projectile: {fileID: 0}
     hitAudio: {fileID: 0}
-  animationEvents: {fileID: 11400000, guid: eb77785668c6d9a41823bb3e7d4c49a4, type: 2}
+  animationEvents: {fileID: 11400000, guid: 301d1d3fe0cdc0444945c28808719c01, type: 2}
   isMeleeAttacker: 1
   isRangedAttacker: 0
   isHealer: 0
-  isFlying: 0
+  isFlying: 1
   isGateRusher: 0
   isAbsorbant: 0
   stats:
     list:
     - Key: 0
-      Value: 500
+      Value: 20
     - Key: 1
       Value: 1
     - Key: 2
-      Value: 40
+      Value: 20
     - Key: 3
-      Value: 3
+      Value: 1
     - Key: 4
       Value: 0
     - Key: 5
-      Value: 1.5
+      Value: 2
     keyCollision: 0
-  m_prefab: {fileID: 1574327699844652, guid: 4bf96bd968bdaff43a397536118ffda2, type: 3}
+  m_prefab: {fileID: 1025061931095092, guid: 9ac288091cbfda040befa9c6d48ee53c, type: 3}
   materialOverride: {fileID: 0}
   m_audioData: {fileID: 11400000, guid: dc99c1f98f3f2994db846d7044556dfc, type: 2}
-  isBoss: 1
+  isBoss: 0

@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0292bbba6cd1944b97a4e82a3e7dd34, type: 3}
-  m_Name: Lord Oni
+  m_Name: Hopping Torso
   m_EditorClassIdentifier: 
-  id: LordOni
-  displayName: Lord Oni
+  id: HoppingTorso
+  displayName: Hopping Torso
   description: 
   icon: {fileID: 0}
   meleeWeapon:
-    prefab: {fileID: 1702036046624835, guid: 492e6644fce65dd4ea8300d695d273b9, type: 3}
+    prefab: {fileID: 1531920039927171, guid: 3cbd26cd43a5ccf4c830951fe1473f4a, type: 3}
     hand: 0
-    hitAudio: {fileID: 11400000, guid: cbe6b93649dfdc9499d425c622be4c43, type: 2}
+    hitAudio: {fileID: 0}
   rangedWeapon:
     prefab: {fileID: 0}
     hand: 0
     projectile: {fileID: 0}
     hitAudio: {fileID: 0}
-  animationEvents: {fileID: 11400000, guid: eb77785668c6d9a41823bb3e7d4c49a4, type: 2}
+  animationEvents: {fileID: 11400000, guid: af310789fb3fe4d469e66b7374db09c3, type: 2}
   isMeleeAttacker: 1
   isRangedAttacker: 0
   isHealer: 0
@@ -35,19 +35,18 @@ MonoBehaviour:
   stats:
     list:
     - Key: 0
-      Value: 500
+      Value: 20
     - Key: 1
       Value: 1
-    - Key: 2
-      Value: 40
-    - Key: 3
-      Value: 3
     - Key: 4
       Value: 0
+    - Key: 2
+      Value: 10
+    - Key: 3
+      Value: 1
     - Key: 5
-      Value: 1.5
+      Value: 1
     keyCollision: 0
-  m_prefab: {fileID: 1574327699844652, guid: 4bf96bd968bdaff43a397536118ffda2, type: 3}
-  materialOverride: {fileID: 0}
-  m_audioData: {fileID: 11400000, guid: dc99c1f98f3f2994db846d7044556dfc, type: 2}
-  isBoss: 1
+  m_prefab: {fileID: 1934122997480958, guid: 446cc89e28448aa48bf63379d28c54d9, type: 3}
+  m_audioData: {fileID: 11400000, guid: f75be2ccaa6b3c84791c08274b8ed651, type: 2}
+  isBoss: 0

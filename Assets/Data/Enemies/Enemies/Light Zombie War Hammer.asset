@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0292bbba6cd1944b97a4e82a3e7dd34, type: 3}
-  m_Name: Lord Oni
+  m_Name: Light Zombie War Hammer
   m_EditorClassIdentifier: 
-  id: LordOni
-  displayName: Lord Oni
+  id: LightWarHammer
+  displayName: Light War Hammer Zombie
   description: 
   icon: {fileID: 0}
   meleeWeapon:
-    prefab: {fileID: 1702036046624835, guid: 492e6644fce65dd4ea8300d695d273b9, type: 3}
-    hand: 0
+    prefab: {fileID: 1475473949241908, guid: e26507f383292fc4b860c3ff44bcb19b, type: 3}
+    hand: 1
     hitAudio: {fileID: 11400000, guid: cbe6b93649dfdc9499d425c622be4c43, type: 2}
   rangedWeapon:
     prefab: {fileID: 0}
     hand: 0
     projectile: {fileID: 0}
     hitAudio: {fileID: 0}
-  animationEvents: {fileID: 11400000, guid: eb77785668c6d9a41823bb3e7d4c49a4, type: 2}
+  animationEvents: {fileID: 11400000, guid: 298ed3e9195ecb148831440ed38d97f0, type: 2}
   isMeleeAttacker: 1
   isRangedAttacker: 0
   isHealer: 0
@@ -35,19 +35,19 @@ MonoBehaviour:
   stats:
     list:
     - Key: 0
-      Value: 500
+      Value: 40
     - Key: 1
       Value: 1
     - Key: 2
-      Value: 40
+      Value: 10
     - Key: 3
-      Value: 3
+      Value: 2
     - Key: 4
-      Value: 0
+      Value: 1
     - Key: 5
-      Value: 1.5
+      Value: 1
     keyCollision: 0
-  m_prefab: {fileID: 1574327699844652, guid: 4bf96bd968bdaff43a397536118ffda2, type: 3}
-  materialOverride: {fileID: 0}
+  m_prefab: {fileID: 1433204440266046, guid: 320612a3807510c488221ef563589a01, type: 3}
+  materialOverride: {fileID: 2100000, guid: 6b9b80cee0e5ce747bca11338209d4b5, type: 2}
   m_audioData: {fileID: 11400000, guid: dc99c1f98f3f2994db846d7044556dfc, type: 2}
-  isBoss: 1
+  isBoss: 0
