@@ -57,7 +57,7 @@ public class GameplayManager { // Gameplay Manager
 
     public int smithy = 0;
     private float smithySave = 0;
-    public const float smithyRate = 0.2f;
+    public const float smithyRate = 1.0f;
 
     public int totalEnemies;
     public int enemiesRemaining;

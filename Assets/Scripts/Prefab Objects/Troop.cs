@@ -29,10 +29,12 @@ public class Troop : GameplayEntity {
 
         health = data.health;
         onDeath += HandleDeath;
-        if (isAlly)
+        if (isAlly) {
             GameplayManager.instance.onWaveComplete += HandleVictory;
-        else
+            GameplayManager.instance.hero.onDeath += () => Damage(float.MaxValue);
+        } else {
             GameplayManager.instance.hero.onDeath += HandleVictory;
+        }
 
         data.audioData.Spawn();
         healthBar = new HealthBar(GameplayManager.healthBarPrefab, this, data.health);
@@ -72,6 +74,8 @@ public class Troop : GameplayEntity {
             isAttacking = false;
             foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
                 if (enemy == null || enemy.allegiance == allegiance || enemy.isDead)
+                    continue;
+                if (data.isGateRusher && enemy.entityId != "Gate")
                     continue;
 
                 if (IsInMeleeRange(enemy.xPos)) {

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0292bbba6cd1944b97a4e82a3e7dd34, type: 3}
-  m_Name: Light Zombie Mace
+  m_Name: Lord Oni
   m_EditorClassIdentifier: 
-  id: LightMace
-  displayName: Light Mace Zombie
+  id: LightWarHammer
+  displayName: Light War Hammer Zombie
   description: 
   icon: {fileID: 0}
   meleeWeapon:
-    prefab: {fileID: 1924913640763457, guid: 8eb86d923bb363544a0026af5d87d022, type: 3}
+    prefab: {fileID: 1475473949241908, guid: e26507f383292fc4b860c3ff44bcb19b, type: 3}
     hand: 1
     hitAudio: {fileID: 11400000, guid: cbe6b93649dfdc9499d425c622be4c43, type: 2}
   rangedWeapon:
@@ -48,6 +48,6 @@ MonoBehaviour:
       Value: 1
     keyCollision: 0
   m_prefab: {fileID: 1433204440266046, guid: 320612a3807510c488221ef563589a01, type: 3}
-  materialOverride: {fileID: 2100000, guid: 4037919517d69ff40b21ec247f742973, type: 2}
+  materialOverride: {fileID: 2100000, guid: 6b9b80cee0e5ce747bca11338209d4b5, type: 2}
   m_audioData: {fileID: 11400000, guid: dc99c1f98f3f2994db846d7044556dfc, type: 2}
   isBoss: 0
