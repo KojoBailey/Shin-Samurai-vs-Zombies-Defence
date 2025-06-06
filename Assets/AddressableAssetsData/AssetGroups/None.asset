@@ -56,7 +56,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1c8150266f882b644a3bcef9c07658fc
-    m_Address: Data/Enemies/Zombies/LightZombie
+    m_Address: Data/Enemies/Zombies/Light
     m_ReadOnly: 0
     m_SerializedLabels:
     - Enemy

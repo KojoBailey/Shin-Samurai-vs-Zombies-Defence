@@ -10,6 +10,7 @@ public class Projectile {
 
     private AudioBundle hitAudio;
     private float damage;
+    private int direction;
 
     public bool toDestroy = false;
     private bool initialised = false;
@@ -25,6 +26,7 @@ public class Projectile {
             targetEntity = _targetEntity;
             targetTransform = targetEntity.transform;
             initialDistance = targetTransform.position.x - transform.position.x;
+            direction = -targetEntity.direction;
             initialised = true;
         } else {
             toDestroy = true;
@@ -35,12 +37,13 @@ public class Projectile {
             damage = _damage;
             hitAudio = _hitAudio;
             gameObject = Object.Instantiate(prefab);
-            transform = gameObject.GetComponent<Transform>();
-            transform.position = spawnPos.position;
-            transform.rotation = Quaternion.Euler(0f, 90f, 0f);
             targetEntity = _targetEntity;
             targetTransform = targetEntity.transform;
-            initialDistance = targetTransform.position.x - transform.position.x;
+            direction = -targetEntity.direction;
+            transform = gameObject.GetComponent<Transform>();
+            transform.position = spawnPos.position;
+            transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
+            initialDistance = (targetTransform.position.x - transform.position.x) * direction;
             initialised = true;
         } else {
             toDestroy = true;
@@ -55,11 +58,11 @@ public class Projectile {
                 return;
             }
             transform.position += new Vector3(
-                speed * Time.deltaTime,
+                speed * Time.deltaTime * direction,
                 (targetTransform.position.y - transform.position.y + 0.7f) / initialDistance * speed  * Time.deltaTime,
                 0
             );
-            if (targetTransform.position.x - transform.position.x < 0) {
+            if ((targetTransform.position.x - transform.position.x) * direction < 0) {
                 targetEntity.Damage(damage);
                 if (hitAudio != null)
                     SFXManager.Play(hitAudio.GetRandom());

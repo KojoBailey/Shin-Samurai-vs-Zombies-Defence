@@ -17,18 +17,14 @@ MonoBehaviour:
   description: 
   icon: {fileID: 0}
   meleeWeapon:
-    prefab: {fileID: 1924913640763457, guid: 8eb86d923bb363544a0026af5d87d022, type: 3}
+    prefab: {fileID: 1531920039927171, guid: 3cbd26cd43a5ccf4c830951fe1473f4a, type: 3}
     hand: 0
-    hitAudio:
-    - {fileID: 8300000, guid: be36495f1f1eea34384dd0bbf96b4398, type: 3}
-    - {fileID: 8300000, guid: 7356b99108fa7d744ae262923745f742, type: 3}
-    - {fileID: 8300000, guid: 909bb386dc505fc45bef94617af14152, type: 3}
-    - {fileID: 8300000, guid: 4443511b6592fa745bad50e2ab83d8e1, type: 3}
-    - {fileID: 8300000, guid: eafac91f854d66d40a52b1d5882e477a, type: 3}
+    hitAudio: {fileID: 0}
   rangedWeapon:
     prefab: {fileID: 0}
     hand: 0
     projectile: {fileID: 0}
+    hitAudio: {fileID: 0}
   animationEvents: {fileID: 11400000, guid: af310789fb3fe4d469e66b7374db09c3, type: 2}
   isMeleeAttacker: 1
   isRangedAttacker: 0

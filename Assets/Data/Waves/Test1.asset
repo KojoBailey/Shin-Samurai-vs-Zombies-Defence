@@ -17,13 +17,13 @@ MonoBehaviour:
   stage: 0
   entries:
   - delay: 7
-    enemy: {fileID: 11400000, guid: 1c8150266f882b644a3bcef9c07658fc, type: 2}
+    enemy: {fileID: 11400000, guid: 4c3f12bf969dd11439d3d8d11f92d50e, type: 2}
     enemyQuanitity: 3
   - delay: 7
-    enemy: {fileID: 11400000, guid: bed8c9dd3c22de0478177814a73fd4b0, type: 2}
+    enemy: {fileID: 11400000, guid: 5aa81a466091b604b9ed7ffff44d1c63, type: 2}
     enemyQuanitity: 3
   - delay: 7
-    enemy: {fileID: 11400000, guid: 1c8150266f882b644a3bcef9c07658fc, type: 2}
+    enemy: {fileID: 11400000, guid: 2d00a9c27c68db3478bf2717327a174a, type: 2}
     enemyQuanitity: 3
   - delay: 7
     enemy: {fileID: 11400000, guid: bed8c9dd3c22de0478177814a73fd4b0, type: 2}

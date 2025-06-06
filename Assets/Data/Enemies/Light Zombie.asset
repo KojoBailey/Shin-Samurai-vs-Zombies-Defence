@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0292bbba6cd1944b97a4e82a3e7dd34, type: 3}
   m_Name: Light Zombie
   m_EditorClassIdentifier: 
-  id: LightZombie
+  id: Light
   displayName: Light Zombie
   description: 
   icon: {fileID: 0}
   meleeWeapon:
     prefab: {fileID: 0}
     hand: 0
-    hitAudio: []
+    hitAudio: {fileID: 0}
   rangedWeapon:
     prefab: {fileID: 0}
     hand: 0
     projectile: {fileID: 0}
+    hitAudio: {fileID: 0}
   animationEvents: {fileID: 11400000, guid: 6c21520e7ee07714c8716d5e4bc4e97a, type: 2}
   isMeleeAttacker: 1
   isRangedAttacker: 0

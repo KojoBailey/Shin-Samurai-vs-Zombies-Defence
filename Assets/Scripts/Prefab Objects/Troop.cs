@@ -162,7 +162,7 @@ public class Troop : GameplayEntity {
 
     public override void FireProjectile(GameplayEntity target) {
         rangedWeapon.FireProjectile(
-            data.rangedWeapon.prefab,
+            data.rangedWeapon.projectile,
             data.damage,
             data.rangedWeapon.hitAudio,
             target

@@ -39,7 +39,7 @@ MonoBehaviour:
     - Key: 3
       Value: 2
     - Key: 5
-      Value: 5
+      Value: 4
     keyCollision: 0
   cost: 10
   cooldown: 2
