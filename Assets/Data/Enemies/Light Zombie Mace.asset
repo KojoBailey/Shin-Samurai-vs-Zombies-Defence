@@ -35,11 +35,11 @@ MonoBehaviour:
   stats:
     list:
     - Key: 0
-      Value: 40
+      Value: 60
     - Key: 1
       Value: 1
     - Key: 2
-      Value: 10
+      Value: 15
     - Key: 3
       Value: 2
     - Key: 4

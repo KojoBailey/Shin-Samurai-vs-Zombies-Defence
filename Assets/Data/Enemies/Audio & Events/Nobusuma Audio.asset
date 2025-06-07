@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d717bd6c91cbeb4cb73a639d2c2d15e, type: 3}
+  m_Name: Nobusuma Audio
+  m_EditorClassIdentifier: 
+  spawnAudio: {fileID: 11400000, guid: b81bb845671392d43821235dc83d0a27, type: 2}
+  footstepSize: 0
+  footstepAudio: {fileID: 0}
+  attackAudio: {fileID: 11400000, guid: 4a5aa4c4516db294aa25993b33738579, type: 2}
+  bigAttackAudio: {fileID: 0}
+  longAttackAudio: {fileID: 0}
+  personalAbilityAudio:
+    list: []
+    keyCollision: 0
+  damagedAudio: {fileID: 0}
+  deathAudio: {fileID: 11400000, guid: c2f0fa0c323723a46b0635914db27d3e, type: 2}

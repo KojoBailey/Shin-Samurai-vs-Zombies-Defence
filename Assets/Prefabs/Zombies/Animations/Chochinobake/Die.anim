@@ -20,7 +20,7 @@ AnimationClip:
       m_BitSize: 6
     m_Values:
       m_NumItems: 13
-      m_Data: 6a753035671a17cfffe9d5c15fea56cd22b5af3157ea56cd4fca16cb8ad72f471a7ab666a817767a18d7b5706807367670077676
+      m_Data: 6a753035671a17cfffe9d5c15fea56cd1ab5af3157ea56cd4fcad6ca8ad72f471a7ab666a817767a18d7b5706807367670077676
     m_Slopes:
       m_NumItems: 52
       m_Range: 2.4289474
@@ -52,7 +52,7 @@ AnimationClip:
       m_BitSize: 7
     m_Values:
       m_NumItems: 18
-      m_Data: e533adba15d4edb9fd14b1b42a361cac9ad61fa85a569daaadf5b2b09d746fb74d332bbdfd11a7c0fdd023c29d9062c29d9062c29d9062c2e5b1e6c05d32e8bfcd51e6c0cd51e6c0
+      m_Data: e533adba15d4edb9fd14b1b42a361cac9ad61fa85a369daaadf5b2b09d746fb74d332bbdfd11a7c0fdd023c29d9062c29d9062c29d9062c2e5b1e6c05d32e8bfcd51e6c0cd51e6c0
     m_Slopes:
       m_NumItems: 72
       m_Range: 5.7329354
@@ -84,7 +84,7 @@ AnimationClip:
       m_BitSize: 6
     m_Values:
       m_NumItems: 18
-      m_Data: 19919041c1904f41e94fcd40eeeee340c64ddd4326aedf422e0fe54091100f4119b253436973584751145c4ba1745d4da1745d4da1745d4d39b3974619d2534319d2534319d25343
+      m_Data: 19919041c1904f41e94fcd40eeeee340c64ddd4326aedf422eefe44091100f4119b253436973584751145c4ba1745d4da1745d4da1745d4d39b3974619d2534319d2534319d25343
     m_Slopes:
       m_NumItems: 72
       m_Range: 6.682255
@@ -132,7 +132,7 @@ AnimationClip:
       m_BitSize: 8
     m_Values:
       m_NumItems: 16
-      m_Data: 7992e5852132e589995264908116e494217a649bd03be6a7704ce4b1485c67b9402c2abf500cacc0b998abbcb9d829b7f8c7dc7ff8c7dc7ff8c7dc7ff8c7dc7f
+      m_Data: 7992e5852132e589995264908116e494217a649bd03be6a7704ce4b1485c67b9401c2abf500cacc0b998abbcb9d829b7f8c7dc7ff8c7dc7ff8c7dc7ff8c7dc7f
     m_Slopes:
       m_NumItems: 64
       m_Range: 16.769794
@@ -164,7 +164,7 @@ AnimationClip:
       m_BitSize: 8
     m_Values:
       m_NumItems: 15
-      m_Data: 9aefc9b81a90cacc6b1826d38ba867d55ad153d31af2dbcc9b19afc20baaf0c6b914f3b5d2f366b5a2d264b8fbf79fd5fbf79fd5fbf79fd5fbf79fd5
+      m_Data: 9aefc9b81a90cacc6b1826d38ba867d55ad153d31af2dbcc9b19afc20baaf0c6b914f3b5d2f366b5a2b264b8fbf79fd5fbf79fd5fbf79fd5fbf79fd5
     m_Slopes:
       m_NumItems: 60
       m_Range: 13.794008
@@ -196,7 +196,7 @@ AnimationClip:
       m_BitSize: 8
     m_Values:
       m_NumItems: 16
-      m_Data: 6cd91a64c4f85c61ccc91d61f42a1e61ccfc5c6239281a687cfc9097642cd0a20c7c8facc48b4fb2bcab10b2ac1b92adb10fa092b10fa092b10fa092b10fa092
+      m_Data: 6cd9da63c4f85c61ccc91d61f42a1e61ccfc5c6239281a687cfc9097642cd0a20c7c8facc48b4fb2bcab10b2ac1b92adb10fa092b10fa092b10fa092b10fa092
     m_Slopes:
       m_NumItems: 64
       m_Range: 15.613813
@@ -1997,7 +1997,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0
+    m_StopTime: 2.6333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -22512,4 +22512,11 @@ AnimationClip:
     flags: 0
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: Die
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

@@ -74,7 +74,7 @@ public class GameplayEntity { // Gameplay Entity
     }
 
     public void ApplyTags(AnimationEventData data) {
-        if (GameplayManager.instance.entitiesWithTags.Contains(typeId))
+        if (GameplayManager.entitiesWithTags.Contains(typeId))
             return;
         foreach (KeyValuePair<string, List<AnimationEventData.Tag>> tags in data.tags) {
             AnimationClip clip = animation[tags.Key].clip;
@@ -86,7 +86,7 @@ public class GameplayEntity { // Gameplay Entity
                 clip.AddEvent(animEvent);
             }
         }
-        GameplayManager.instance.entitiesWithTags.Add(typeId);
+        GameplayManager.entitiesWithTags.Add(typeId);
     }
 
     public void SetBounds(float left, float right) {

@@ -15,4 +15,12 @@ MonoBehaviour:
   index: 0
   title: 
   stage: 0
-  entries: []
+  entries:
+  - delay: 1
+    enemy: {fileID: 11400000, guid: e47aeeb96959ba14da6bb09542eac5ed, type: 2}
+    enemyQuanitity: 5
+    spacing: 3
+  - delay: 0
+    enemy: {fileID: 11400000, guid: d5c7f345b42f65a4db34c04de65c5ba3, type: 2}
+    enemyQuanitity: 1
+    spacing: 0

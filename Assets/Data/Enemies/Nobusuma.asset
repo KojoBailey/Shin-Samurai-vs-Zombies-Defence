@@ -39,7 +39,7 @@ MonoBehaviour:
     - Key: 1
       Value: 1
     - Key: 2
-      Value: 20
+      Value: 8
     - Key: 3
       Value: 1
     - Key: 4
@@ -49,5 +49,5 @@ MonoBehaviour:
     keyCollision: 0
   m_prefab: {fileID: 1025061931095092, guid: 9ac288091cbfda040befa9c6d48ee53c, type: 3}
   materialOverride: {fileID: 0}
-  m_audioData: {fileID: 11400000, guid: dc99c1f98f3f2994db846d7044556dfc, type: 2}
+  m_audioData: {fileID: 11400000, guid: b11e298419f4dda46bfdcd398f0f180d, type: 2}
   isBoss: 0

@@ -61,7 +61,7 @@ public class GameplayManager { // Gameplay Manager
 
     public int smithy = 0;
     private float smithySave = 0;
-    public const float smithyRate = 1.0f;
+    public const float smithyRate = 1.5f;
 
     public int totalEnemies;
     public int enemiesRemaining;
@@ -69,7 +69,7 @@ public class GameplayManager { // Gameplay Manager
 
     public Dictionary<string, GameplayEntity> closestTargets = new Dictionary<string, GameplayEntity>();
 
-    public List<string> entitiesWithTags = new List<string>();
+    public static List<string> entitiesWithTags = new List<string>();
 
     // Initialises and loads the data but does not start the wave.
     public static async Task Init(Transform _cameraTransform) {
@@ -281,7 +281,7 @@ public class GameplayManager { // Gameplay Manager
     }
 
     private void UpdateSmithy() {
-        if (waveStopwatch - smithySave > smithyRate) {
+        if (waveStopwatch - smithySave > 1 / smithyRate) {
             smithySave = waveStopwatch;
             smithy += 1;
         }
@@ -338,6 +338,8 @@ public class GameplayManager { // Gameplay Manager
         GameplayEntity entity = entities[entityId];
         foreach (GameplayEntity enemy in entities.Values) {
             if (enemy == null || enemy.allegiance == entity.allegiance || enemy.isDead)
+                continue;
+            if (enemy.isFlying && entity.rangedWeapon == null)
                 continue;
 
             if (entity.IsInMeleeRange(enemy.xPos + 0.2f * enemy.direction))

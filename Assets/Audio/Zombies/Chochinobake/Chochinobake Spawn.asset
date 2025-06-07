@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00fb1f7dc392b247969fe251c9b0f1b, type: 3}
+  m_Name: Chochinobake Spawn
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 968a3fa9d5b2fca4d834f0de536bec7a, type: 3}
+  - {fileID: 8300000, guid: 4e0ff32e65751e747b4facde34abce74, type: 3}
+  - {fileID: 8300000, guid: 3175b2e565c28ef42ab84b027699aeea, type: 3}
+  - {fileID: 8300000, guid: 379eafe4dc466cb4baaf73550d6b0757, type: 3}

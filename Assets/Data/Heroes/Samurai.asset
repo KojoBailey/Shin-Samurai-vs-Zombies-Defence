@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc32a23c5b63c4498c56f103d07588f, type: 3}
   m_Name: Samurai
   m_EditorClassIdentifier: 
+  id: 
   displayName: Samurai
   description: 
   icon: {fileID: 21300000, guid: 279aa6d8b6dc83243a928415256b53e1, type: 3}
@@ -27,7 +28,7 @@ MonoBehaviour:
     - Key: 2
       Value: 4
     - Key: 3
-      Value: 0.4
+      Value: 24
     keyCollision: 0
   upgrades:
   - list:

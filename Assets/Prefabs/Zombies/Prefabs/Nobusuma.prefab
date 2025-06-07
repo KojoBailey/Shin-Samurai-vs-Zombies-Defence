@@ -108,6 +108,8 @@ GameObject:
   - component: {fileID: 8690183247905131601}
   - component: {fileID: 111847800703791358}
   - component: {fileID: 4349947462485830523}
+  - component: {fileID: 1260342446704881520}
+  - component: {fileID: 8680449427274514318}
   m_Layer: 0
   m_Name: Nobusuma
   m_TagString: Untagged
@@ -257,6 +259,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityId: 
+--- !u!114 &1260342446704881520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025061931095092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d56332d18cf5f46868d862c64c7543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8680449427274514318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025061931095092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e8fb3f8bc967d4cb70acfa6eacc60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_audioData: {fileID: 11400000, guid: b11e298419f4dda46bfdcd398f0f180d, type: 2}
 --- !u!1 &1039758142970735
 GameObject:
   m_ObjectHideFlags: 0

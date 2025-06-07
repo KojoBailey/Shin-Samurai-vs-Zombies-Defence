@@ -123,9 +123,9 @@ public class Hero : GameplayEntity {
         }
     }
     private void UpdatePosition() {
-        xPos += xVelocity * direction;
-        xVelocity *= 0.90f;
-
+        xPos += xVelocity * direction * Time.deltaTime;
+        xVelocity *= Mathf.Pow(0.90f, Time.deltaTime * 60f);
+        
         // Keep within the stage bounds.
         if (xPos < leftBound)
             xPos = leftBound;

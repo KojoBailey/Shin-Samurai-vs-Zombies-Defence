@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d717bd6c91cbeb4cb73a639d2c2d15e, type: 3}
+  m_Name: Chochinobake Audio
+  m_EditorClassIdentifier: 
+  spawnAudio: {fileID: 11400000, guid: c0155575cf3912440b9d40adc0c2eed2, type: 2}
+  footstepSize: 0
+  footstepAudio: {fileID: 0}
+  attackAudio: {fileID: 11400000, guid: 496b4ffdc3cb8e344ba5fbfb4115e17f, type: 2}
+  bigAttackAudio: {fileID: 0}
+  longAttackAudio: {fileID: 0}
+  personalAbilityAudio:
+    list: []
+    keyCollision: 0
+  damagedAudio: {fileID: 0}
+  deathAudio: {fileID: 11400000, guid: f6903eae12e684d448ee94383acda48d, type: 2}

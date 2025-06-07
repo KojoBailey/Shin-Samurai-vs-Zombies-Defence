@@ -20,7 +20,7 @@ AnimationClip:
       m_BitSize: 5
     m_Values:
       m_NumItems: 19
-      m_Data: 569433cbde53b4cbdeb2b5cdd61137cf1e9137d0f6f0b7d0f690b8d068544da8ae79a59daed9a59bae19a69a3ef9269f6638a9a9eeb62cb74eb5b0c1f6f3b3c9667335cd765335cd6614b4c9
+      m_Data: 569433cbde53b4cbdeb2b5cdd61137cf1e9137d0f6f0b7d0f690b8d068540da8ae79a59daed9a59bae19a69a36f9269f6638a9a9eeb62cb74eb5b0c1f6f3b3c9667335cd765335cd6614b4c9
     m_Slopes:
       m_NumItems: 76
       m_Range: 14.1111
@@ -100,7 +100,7 @@ AnimationClip:
       m_BitSize: 6
     m_Values:
       m_NumItems: 11
-      m_Data: f1888f4479685048b107524ff1e6d356a9c6545aa9c6545aa9c6545aa9c6545a3127d35349c8504af1888f44
+      m_Data: f1884f4479685048b107524ff1e6d356a9c6545aa9c6545aa9c6545aa9c6545a3127d35349c8504af1884f44
     m_Slopes:
       m_NumItems: 44
       m_Range: 3.5137782
@@ -116,7 +116,7 @@ AnimationClip:
       m_BitSize: 4
     m_Values:
       m_NumItems: 22
-      m_Data: 9367acb9f3e7adb5934830af1b9931ab0b6a30a75b6af0a5739af0a4339af2a3331af1a4fba92da4c3c96ba2c3896ba1ab09a9999b59289793192896bbd96aa0637930b1b170aece61ef2ec8d16e6ec98b176fbb7b272cbb
+      m_Data: 9367acb9f3e7adb5934830af1b9931ab0b6a30a75b6af0a5739af0a4338af2a3331af1a4fba92da4c3c96ba2c3896ba1ab09a9999b59289793192896bbd96aa0637930b1b170aece61efeec7d16e2ec98b176fbb7b272cbb
     m_Slopes:
       m_NumItems: 88
       m_Range: 8.8334675
@@ -148,7 +148,7 @@ AnimationClip:
       m_BitSize: 3
     m_Values:
       m_NumItems: 22
-      m_Data: 5b432175fb92a36b0cea96cd34fb94b51cbc15a4ecec96983c1d188e4c6d988973f625480bb820720bb82072fb37216f63f7e35eab0626518b56264f0be62156a3a4d95d333315574cd553c6fb3266804353e17263136176
+      m_Data: 5b432175fb92a36b0cea96cd34fb94b51cbc15a4ecec96983c1d188e4c6d988973f625480bb820720bb82072fb37216f63f7e35eab0626518b56264f0be62156a3a4d95d332315574cd553c6fb3266804353e17263136176
     m_Slopes:
       m_NumItems: 88
       m_Range: 23.419455
@@ -196,7 +196,7 @@ AnimationClip:
       m_BitSize: 7
     m_Values:
       m_NumItems: 2
-      m_Data: 744451c0744451c0
+      m_Data: 743451c0743451c0
     m_Slopes:
       m_NumItems: 8
       m_Range: 0
@@ -228,7 +228,7 @@ AnimationClip:
       m_BitSize: 4
     m_Values:
       m_NumItems: 16
-      m_Data: fb37ed7ffb77ee7ffbe7f17ffbe7f17ffb17ea7ffbe7e17ffbe7e17ffbe7e17ffb27e77ffb37f07ffb87f47ffb07f47ffb07f17ffbc7ed7ffb37ed7ffb37ed7f
+      m_Data: fb37ed7ffb77ee7ffbe7f17ffbe7f17ffb07ea7ffbe7e17ffbe7e17ffbe7e17ffb27e77ffb37f07ffb87f47ffb07f47ffb07f17ffbc7ed7ffb37ed7ffb37ed7f
     m_Slopes:
       m_NumItems: 64
       m_Range: 14.225081
@@ -244,7 +244,7 @@ AnimationClip:
       m_BitSize: 4
     m_Values:
       m_NumItems: 19
-      m_Data: 7baa67969bdae893036b6c8b133b2d891b8bed872386d6874307d1864307d1864307d186fbf7107c53d9d16b830a55668bcbdf72d3cbe777b34b67892bab678fb3ba67947baa67967baa6796
+      m_Data: 7baa67969bdae893036b6c8b133b2d891b8bed872386d68743f7d08643f7d08643f7d086fbf7107c53d9d16b83fa54668bcbdf72d3cbe777b34b67892bab678fb3ba67947baa67967baa6796
     m_Slopes:
       m_NumItems: 76
       m_Range: 21.98795
@@ -324,7 +324,7 @@ AnimationClip:
       m_BitSize: 3
     m_Values:
       m_NumItems: 20
-      m_Data: e9cd8f9ec1aed09a71af929849d09495e110d690f970569011b1d691966a689cc689e5a0b629e5a2ce6966a4e98a4da5398ccea3216e8f9ef9eecf9bf1eecf9bc9ce0f9cb1ce0f9c29ce4f9ed1cd8f9f
+      m_Data: e9cd8f9ec1aed09a71af929849d09495e110d690f970569011b1d6918e6a689cc669e5a0b609e5a2ce6966a4e98a4da5398ccea3216e8f9ef9eecf9bf1eecf9bc9ce0f9cb1ce0f9c29ce4f9ed1cd8f9f
     m_Slopes:
       m_NumItems: 80
       m_Range: 9.882463
@@ -356,7 +356,7 @@ AnimationClip:
       m_BitSize: 3
     m_Values:
       m_NumItems: 19
-      m_Data: f363e2a7e3e321a4e333a1a6f313a0abfb1360adfbe35fadb32328be6383e9b34383a9af3b73e9ac3b43e8ac03d3a5a7dbe2a49de373a1a3e383a1a3e3b361a3e3d361a3e32362a7f353a2a8
+      m_Data: f363e2a7e3e321a4e333a1a6f313a0abfb1360adfbe35fadb32328be6383e9b34383a9af3b73e9ac3b43e8ac03d3a5a7dbe2a49de373a1a3e383a1a3e3b361a3e3d361a3e32362a7f35362a8
     m_Slopes:
       m_NumItems: 76
       m_Range: 6.640513
@@ -484,7 +484,7 @@ AnimationClip:
       m_BitSize: 7
     m_Values:
       m_NumItems: 2
-      m_Data: b28c6a89828c6a89
+      m_Data: b28c6a897a8c6a89
     m_Slopes:
       m_NumItems: 8
       m_Range: 0.03763765
@@ -32351,4 +32351,18 @@ AnimationClip:
     flags: 0
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.1
+    functionName: Attack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.26666668
+    functionName: SwooshMedium
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

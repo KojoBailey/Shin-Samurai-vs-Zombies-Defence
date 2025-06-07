@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00fb1f7dc392b247969fe251c9b0f1b, type: 3}
+  m_Name: Chochinobake Attack
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: c82464e3d5eabca4894916a89c20bb16, type: 3}
+  - {fileID: 8300000, guid: fd9c053677f3c59419f056d743595ece, type: 3}
+  - {fileID: 8300000, guid: caa9fa9940f99d248a552c950f419f1f, type: 3}
