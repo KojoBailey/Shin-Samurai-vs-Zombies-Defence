@@ -11,7 +11,7 @@ public class GameplayManager { // Gameplay Manager
     /* Debug Tools */
     public static string className = typeof(GameplayManager).Name;
     public static bool fastLoad = false;
-    public static bool heroDoNotAttack = true;
+    public static bool heroDoNotAttack = false;
 
     /* Sub-managers */
     // !! Later these will need separating from GameplayManager for use in menus.
@@ -74,7 +74,7 @@ public class GameplayManager { // Gameplay Manager
         instance.camera = _cameraTransform;
 
         // Load wave data.
-        var waveHandle = Addressables.LoadAssetAsync<WaveData>("Data/Waves/2");
+        var waveHandle = Addressables.LoadAssetAsync<WaveData>("Data/Waves/1");
         instance.wave =  await waveHandle.Task;
         instance.addressableAssets.Add(instance.wave);
         instance.totalEnemies = 0;

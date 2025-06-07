@@ -170,7 +170,7 @@ public class Hero : GameplayEntity {
             if (allegiance == Side.Right)
                 difference *= -1;
             if (difference > 0) {
-                if (difference < meleeWeapon.data.range) {
+                if (difference < meleeWeapon.data.range && !enemy.isFlying) {
                     attackState = AttackState.Melee;
                     break;
                 } else if (difference < rangedWeapon.data.range) {

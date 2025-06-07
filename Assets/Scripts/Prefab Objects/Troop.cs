@@ -19,6 +19,8 @@ public class Troop : GameplayEntity {
         transform.rotation = Quaternion.Euler(0f, 90f * direction, 0f);
         ApplyTags(data.animationEvents);
 
+        isFlying = data.isFlying;
+
         // Attach weapon(s).
         if (data.meleeWeapon.prefab != null) {
             meleeWeapon = new MeleeWeapon(data.meleeWeapon, obj);
@@ -76,6 +78,8 @@ public class Troop : GameplayEntity {
                 if (enemy == null || enemy.allegiance == allegiance || enemy.isDead)
                     continue;
                 if (data.isGateRusher && enemy.entityId != "Gate")
+                    continue;
+                if (enemy.isFlying && !data.isRangedAttacker)
                     continue;
 
                 if (IsInMeleeRange(enemy.xPos)) {

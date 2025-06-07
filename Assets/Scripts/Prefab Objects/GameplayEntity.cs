@@ -24,6 +24,7 @@ public class GameplayEntity { // Gameplay Entity
 
     public float yVelocity;
     public bool isGettingKnockedBack = false;
+    public bool isFlying;
 
     public MeleeWeapon meleeWeapon;
     public RangedWeapon rangedWeapon;
