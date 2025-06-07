@@ -24,7 +24,11 @@ public class GameplayManager { // Gameplay Manager
     public WaveData wave;
     public List<AbilityData> equippedAbilities = new List<AbilityData>();
     public List<AllyData> equippedAllies = new List<AllyData>();
-    private List<EnemyData> enemySpawnQueue = new List<EnemyData>();
+    private struct EnemySpawnData {
+        public EnemyData enemy;
+        public float spacing;
+    }
+    private List<EnemySpawnData> enemySpawnQueue = new List<EnemySpawnData>();
 
     /* Game Objects */
     public Stage stage;
@@ -311,14 +315,20 @@ public class GameplayManager { // Gameplay Manager
         } else {
             if (!(waveEntryIndex > wave.entries.Length - 1) && waveStopwatch - enemySpawnTimer > wave.entries[waveEntryIndex].delay) {
                 enemySpawnTimer = waveStopwatch;
-                for (int i = 0; i < wave.entries[waveEntryIndex].enemyQuanitity; i++)
-                    enemySpawnQueue.Add(wave.entries[waveEntryIndex].enemy);
+                for (int i = 0; i < wave.entries[waveEntryIndex].enemyQuanitity; i++) {
+                    float spacing = wave.entries[waveEntryIndex].spacing;
+                    EnemySpawnData spawnData = new EnemySpawnData {
+                        enemy = wave.entries[waveEntryIndex].enemy,
+                        spacing = (spacing > enemySpacingDuration) ? spacing : enemySpacingDuration
+                    };
+                    enemySpawnQueue.Add(spawnData);
+                }
                 waveEntryIndex++;
             }
 
-            if (waveStopwatch - enemySpacingTimer > enemySpacingDuration && enemySpawnQueue.Count > 0) {
+            if (enemySpawnQueue.Count > 0 && waveStopwatch - enemySpacingTimer > enemySpawnQueue[0].spacing) {
                 enemySpacingTimer = waveStopwatch;
-                SpawnEnemy(enemySpawnQueue[0]);
+                SpawnEnemy(enemySpawnQueue[0].enemy);
                 enemySpawnQueue.RemoveAt(0);
             }
         }

@@ -45,7 +45,7 @@ MonoBehaviour:
     - Key: 4
       Value: 1
     - Key: 5
-      Value: 3
+      Value: 2.5
     keyCollision: 0
   m_prefab: {fileID: 1350686360343166, guid: de61f0ad2345990498231fae68263514, type: 3}
   materialOverride: {fileID: 2100000, guid: 938bef74dbc9c0c4eb455d7765b423f4, type: 2}

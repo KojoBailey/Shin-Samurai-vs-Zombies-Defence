@@ -14,6 +14,7 @@ public class WaveData : ScriptableObject {
         public float delay;
         public EnemyData enemy;
         public int enemyQuanitity;
+        public float spacing;
     }
     public Entry[] entries;
 

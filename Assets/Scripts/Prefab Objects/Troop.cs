@@ -53,6 +53,7 @@ public class Troop : GameplayEntity {
     }
 
     private void HandleVictory() {
+        if (isDead) return;
         if (animation["VictoryLoop"] != null)
             animationHandler.Play("VictoryLoop", true, 0.1f);
         else
@@ -70,7 +71,7 @@ public class Troop : GameplayEntity {
     }
 
     private void HandleAttack() {
-        if (animation.IsPlaying("Attack01") || animation.IsPlaying("AttackRanged")) {
+        if (animation.IsPlaying("Attack01")) {
             isAttacking = true;
         } else {
             isAttacking = false;

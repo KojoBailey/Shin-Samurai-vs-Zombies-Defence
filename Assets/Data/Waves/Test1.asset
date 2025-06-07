@@ -16,21 +16,55 @@ MonoBehaviour:
   title: Dawn of the Dead
   stage: 0
   entries:
-  - delay: 3
-    enemy: {fileID: 11400000, guid: e47aeeb96959ba14da6bb09542eac5ed, type: 2}
-    enemyQuanitity: 3
-  - delay: 25
-    enemy: {fileID: 11400000, guid: 5aa81a466091b604b9ed7ffff44d1c63, type: 2}
-    enemyQuanitity: 3
-  - delay: 7
-    enemy: {fileID: 11400000, guid: 2d00a9c27c68db3478bf2717327a174a, type: 2}
-    enemyQuanitity: 3
-  - delay: 7
+  - delay: 1
     enemy: {fileID: 11400000, guid: bed8c9dd3c22de0478177814a73fd4b0, type: 2}
     enemyQuanitity: 3
-  - delay: 7
+    spacing: 3
+  - delay: 13
     enemy: {fileID: 11400000, guid: 1c8150266f882b644a3bcef9c07658fc, type: 2}
     enemyQuanitity: 3
-  - delay: 7
-    enemy: {fileID: 11400000, guid: bed8c9dd3c22de0478177814a73fd4b0, type: 2}
+    spacing: 0
+  - delay: 4
+    enemy: {fileID: 11400000, guid: 4c3f12bf969dd11439d3d8d11f92d50e, type: 2}
     enemyQuanitity: 3
+    spacing: 0
+  - delay: 4
+    enemy: {fileID: 11400000, guid: ca3dc738aab24aa46a60ae55199d3c1a, type: 2}
+    enemyQuanitity: 4
+    spacing: 2
+  - delay: 4
+    enemy: {fileID: 11400000, guid: 64f858b901bd486428fc7ee2e1d83660, type: 2}
+    enemyQuanitity: 3
+    spacing: 3
+  - delay: 9
+    enemy: {fileID: 11400000, guid: 5aa81a466091b604b9ed7ffff44d1c63, type: 2}
+    enemyQuanitity: 3
+    spacing: 2
+  - delay: 9
+    enemy: {fileID: 11400000, guid: 2d00a9c27c68db3478bf2717327a174a, type: 2}
+    enemyQuanitity: 2
+    spacing: 2
+  - delay: 12
+    enemy: {fileID: 11400000, guid: e47aeeb96959ba14da6bb09542eac5ed, type: 2}
+    enemyQuanitity: 3
+    spacing: 3
+  - delay: 3
+    enemy: {fileID: 11400000, guid: d5c7f345b42f65a4db34c04de65c5ba3, type: 2}
+    enemyQuanitity: 1
+    spacing: 0
+  - delay: 3
+    enemy: {fileID: 11400000, guid: 64f858b901bd486428fc7ee2e1d83660, type: 2}
+    enemyQuanitity: 4
+    spacing: 3
+  - delay: 3
+    enemy: {fileID: 11400000, guid: 8c98e7fedf110344281b041ac3f230b5, type: 2}
+    enemyQuanitity: 4
+    spacing: 3
+  - delay: 3
+    enemy: {fileID: 11400000, guid: 4c3f12bf969dd11439d3d8d11f92d50e, type: 2}
+    enemyQuanitity: 4
+    spacing: 1
+  - delay: 3
+    enemy: {fileID: 11400000, guid: 8c98e7fedf110344281b041ac3f230b5, type: 2}
+    enemyQuanitity: 4
+    spacing: 3
