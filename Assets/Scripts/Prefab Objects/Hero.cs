@@ -175,10 +175,8 @@ public class Hero : GameplayEntity {
                     break;
                 } else if (difference < rangedWeapon.data.range) {
                     attackState = AttackState.Ranged;
-                    break;
-                } else if (difference < rangedWeapon.data.range + 1) {
+                } else if (difference < rangedWeapon.data.range + 1 && attackState != AttackState.Ranged) {
                     attackState = AttackState.RangedHold;
-                    break;
                 }
             }
         }

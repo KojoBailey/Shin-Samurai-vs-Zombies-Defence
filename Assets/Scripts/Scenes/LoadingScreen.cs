@@ -1,22 +1,24 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class LoadingScreen : MonoBehaviour { // Loading Screen
-    [SerializeField] private GameObject m_clock;
-    private const float m_clockSpeed = 900;
+    [SerializeField] private GameObject clock;
+    private const float CLOCK_SPEED = 900;
 
-    [SerializeField] private TextMeshProUGUI m_tipText;
+    [SerializeField] private TextMeshProUGUI tipText;
+    [SerializeField] private List<string> tips;
 
     private void Start() {
         DontDestroyOnLoad(gameObject);
-        m_tipText.text = "Abilities can come in handy at the right moment, but beware of their cooldowns!";
+        tipText.text = tips[Random.Range(0, tips.Count)];
     }
 
     private void Update() {
-        Transform shortHand = m_clock.transform.Find("Short Hand");
-        Transform longHand = m_clock.transform.Find("Long Hand");
-        shortHand.GetComponent<RectTransform>().transform.Rotate(0, 0, -1 * m_clockSpeed / 12 * Time.deltaTime);
-        longHand.GetComponent<RectTransform>().transform.Rotate(0, 0, -1 * m_clockSpeed * Time.deltaTime);
+        Transform shortHand = clock.transform.Find("Short Hand");
+        Transform longHand = clock.transform.Find("Long Hand");
+        shortHand.GetComponent<RectTransform>().transform.Rotate(0, 0, -1 * CLOCK_SPEED / 12 * Time.deltaTime);
+        longHand.GetComponent<RectTransform>().transform.Rotate(0, 0, -1 * CLOCK_SPEED * Time.deltaTime);
     }
 
     public void Destroy() {

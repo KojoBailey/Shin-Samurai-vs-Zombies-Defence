@@ -586,8 +586,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9a6e720ab4f574fb2027e8d488b974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_clock: {fileID: 9007817151937935009}
-  m_tipText: {fileID: 3342436749745339620}
+  clock: {fileID: 9007817151937935009}
+  tipText: {fileID: 3342436749745339620}
+  tips:
+  - Abilities can come in handy at the right moment, but beware of their cooldowns!
+  - Flying enemies can only be hit by ranged attackers!
+  - Make sure to use the right ally for the job!
 --- !u!1 &8368467005903007548
 GameObject:
   m_ObjectHideFlags: 0

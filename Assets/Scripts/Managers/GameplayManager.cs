@@ -43,7 +43,7 @@ public class GameplayManager { // Gameplay Manager
     public List<float> allyCooldowns = new List<float>();
     public List<float> abilityCooldowns = new List<float>();
     private float enemySpawnTimer; // Time between groups of enemy spawns.
-    private const float enemySpacingDuration = 0.3f; // Time between enemy spawns of the same group.
+    private const float enemySpacingDuration = 0.5f; // Time between enemy spawns of the same group.
     private float enemySpacingTimer;
     private const float slowMoDuration = 0.4f; // Duration of the victory slow-mo.
     private float slowMoTimer;

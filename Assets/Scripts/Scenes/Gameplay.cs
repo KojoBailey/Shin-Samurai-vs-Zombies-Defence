@@ -25,8 +25,8 @@ public class Gameplay : MonoBehaviour {
                 cameraTransform.position = GameplayManager.instance.hero.transform.position + cameraOffset;
             else
                 cameraTransform.position = new Vector3(
-                    GameplayManager.instance.hero.xPos,
-                    cameraTransform.position.y,
+                    GameplayManager.instance.hero.xPos + cameraOffset.x,
+                    GameplayManager.instance.hero.transform.position.y + cameraOffset.y,
                     cameraTransform.position.z
                 );
         }
