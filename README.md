@@ -3,8 +3,6 @@
 
 ***[Shin Samurai vs Zombies Defence](https://svzdefense.wiki.gg/wiki/Mod:Shin_Samurai_vs_Zombies_Defence)*** (tentative) is a remake of the *Samurai vs Zombies Defense* series, combining both games and expanding them further.
 
-It is currently in development with no estimated release date, but will have periodic playtests as it progresses. There's still some time yet until the first playtest, but feel free to check out the source code in the meantime!
+It is currently in development with no estimated release date, but will have periodic playtests as it progresses - the first of which is already available at [itch.io](https://kojobailey.itch.io/shin-svz)!
 
-To follow development of this project, check its the Milanote planning board: https://app.milanote.com/1UhltG12a4LS7I?p=RTslhIwHuvA
-
-You should also join the *Samurai vs Zombies Defense* community on Discord, where there will also be updates on the development of this game: https://discord.gg/9nNeTYrpaj
+You may also be interested in joining our *Samurai vs Zombies Defense* community on Discord, where there will be updates on the development of this game: https://discord.gg/9nNeTYrpaj
