@@ -31,7 +31,8 @@ public class TitleScreen : MonoBehaviour { // Title Screen
     private Vector2 m_targetLogoPos;
     private Vector2 m_targetSettingsScale;
 
-    private void Start() {
+    private void Start()
+    {
         // Initialise managers.
         SFXManager.Init();
 
@@ -93,34 +94,41 @@ public class TitleScreen : MonoBehaviour { // Title Screen
         SceneLoadManager.FinishLoading();
     }
 
-    private void HeroOnPointerEnter(string id) {
+    private void HeroOnPointerEnter(string id)
+    {
         m_targetHeroPositions[id] = m_originalHeroPositions[id] + new Vector2(5, 5);
     }
-    private void HeroOnPointerExit(string id) {
+
+    private void HeroOnPointerExit(string id)
+    {
         m_targetHeroPositions[id] = m_originalHeroPositions[id];
     }
 
-    private void SettingsOnPointerEnter(string id) {
+    private void SettingsOnPointerEnter(string id)
+    {
         m_targetSettingsScale = new Vector2(1.1f, 1.1f);
     }
-    private void SettingsOnPointerExit(string id) {
+
+    private void SettingsOnPointerExit(string id)
+    {
         m_targetSettingsScale = new Vector2(1.0f, 1.0f);
     }
 
 
-    private void Update() {
+    private void Update()
+    {
         if (SceneLoadManager.finishedLoading) {
             // Update blood scroll positions.
             m_bloodPos += m_bloodScrollSpeed * Time.deltaTime;
             m_bloodPos %= m_bloodWidth;
-            for (int i = 0; i < 4; i++) {
+            for (uint i = 0; i < 4; i++) {
                 RectTransform rectTransform = m_bloodBottom[i].GetComponent<RectTransform>();
                 rectTransform.anchoredPosition = new Vector2(
                     m_bloodBottomRef.rectTransform.anchoredPosition.x + m_bloodPos - m_bloodWidth * i,
                     rectTransform.anchoredPosition.y
                 );
             }
-            for (int i = 0; i < 4; i++) {
+            for (uint i = 0; i < 4; i++) {
                 RectTransform rectTransform = m_bloodTop[i].GetComponent<RectTransform>();
                 rectTransform.anchoredPosition = new Vector2(
                     m_bloodTopRef.rectTransform.anchoredPosition.x - m_bloodPos + m_bloodWidth * i,
@@ -143,8 +151,9 @@ public class TitleScreen : MonoBehaviour { // Title Screen
             UIManager.SinScale(m_startTextTransform, new Vector2(1f, 1f), new Vector2(1.2f, 1.2f), 1);
 
             // Click/tap anywhere to proceed to next scene.
-            if (Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Return)) {
                 SceneLoadManager.LoadScene("Gameplay");
+            }
         }
     }
 }

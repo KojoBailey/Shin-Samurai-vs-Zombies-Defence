@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "NewHero", menuName = "Game Data/Hero")]
 public class HeroData : ScriptableObject, IUpgradable {
@@ -23,7 +22,7 @@ public class HeroData : ScriptableObject, IUpgradable {
         MaxHealth,
         HealthRegen,
         HealthRegenDelay,
-        Acceleration
+        Speed
     }
     public GenericDictionary<Stat, float> stats;
     public GenericDictionary<Stat, float>[] upgrades;
@@ -43,9 +42,9 @@ public class HeroData : ScriptableObject, IUpgradable {
             return GetStat(Stat.HealthRegenDelay);
         }
     }
-    public float acceleration {
+    public float speed {
         get {
-            return GetStat(Stat.Acceleration);
+            return GetStat(Stat.Speed);
         }
     }
 

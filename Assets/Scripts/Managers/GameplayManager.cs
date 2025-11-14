@@ -16,6 +16,7 @@ public class GameplayManager { // Gameplay Manager
     /* Sub-managers */
     // !! Later these will need separating from GameplayManager for use in menus.
     public AbilityManager abilityManager = new AbilityManager();
+    public EntityManager entityManager = new EntityManager();
     public AllyManager allyManager = new AllyManager();
 
     /* Assets & Data */
@@ -35,7 +36,6 @@ public class GameplayManager { // Gameplay Manager
     public Gate gate;
     private GameObject hud;
     private BGM bgm;
-    public Dictionary<string, GameplayEntity> entities = new Dictionary<string, GameplayEntity>();
     public Hero hero;
 
     /* Time Trackers */
@@ -49,6 +49,9 @@ public class GameplayManager { // Gameplay Manager
     private float slowMoTimer;
     private float victoryDuration; // Equal to the victory music duration.
     private float victoryTimer;
+
+    private int enemyCounter;
+    private int allyCounter;
 
     /* Flags */
     public bool paused = false;
@@ -67,77 +70,46 @@ public class GameplayManager { // Gameplay Manager
     public int enemiesRemaining;
     private int waveEntryIndex = 0; // Which sub-wave of enemies is currently being called.
 
-    public Dictionary<string, GameplayEntity> closestTargets = new Dictionary<string, GameplayEntity>();
-
     public static List<string> entitiesWithTags = new List<string>();
 
-    // Initialises and loads the data but does not start the wave.
-    public static async Task Init(Transform _cameraTransform) {
-        // Initialise new instance.
-        instance = new GameplayManager();
-        instance.camera = _cameraTransform;
+    public event System.Action onWaveComplete;
 
-        // Load wave data.
+    public Dictionary<string, GameplayEntity>.ValueCollection GetEntities() {
+        return entityManager.entities.Values;
+    }
+
+    private async Task LoadWaveData() {
         var waveHandle = Addressables.LoadAssetAsync<WaveData>("Data/Waves/1");
-        instance.wave =  await waveHandle.Task;
-        instance.addressableAssets.Add(instance.wave);
-        instance.totalEnemies = 0;
-        foreach (WaveData.Entry entry in instance.wave.entries) {
-            instance.totalEnemies += entry.enemyQuanitity;
+        wave = await waveHandle.Task;
+        addressableAssets.Add(wave);
+        totalEnemies = 0;
+        foreach (WaveData.Entry entry in wave.entries) {
+            totalEnemies += entry.enemyQuanitity;
         }
-        instance.enemiesRemaining = instance.totalEnemies;
-
-        // Load health bar prefab.
+        enemiesRemaining = totalEnemies;
+    }
+    private async Task LoadHealthBar() {
         var healthBarHandle = Addressables.LoadAssetAsync<GameObject>("Prefabs/Entity Health Bar");
         healthBarPrefab = await healthBarHandle.Task;
-        instance.addressableAssets.Add(healthBarPrefab);
+        addressableAssets.Add(healthBarPrefab);
+    }
+    private async Task LoadAllyData() {
+        string[] ids = {"Ashigaru", "Katana", "Kyudo", "Yari"};
 
-        // Load ally data.
-        var ashigaruDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/Ashigaru");
-        AllyData ashigaruData = await ashigaruDataHandle.Task;
-        instance.addressableAssets.Add(ashigaruData);
-        if (ashigaruData == null) {
-            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/Ashigaru"}\".");
-            return;
+        foreach (string id in ids) {
+            var allyDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/{id}");
+            AllyData allyData = await allyDataHandle.Task;
+            addressableAssets.Add(allyData);
+            if (allyData == null) {
+                Debug.LogError($"Could not find or load Ally of ID \"{$"Humans/{id}"}\".");
+                return;
+            }
+            equippedAllies.Add(allyData);
+            allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
+            SaveManager.SetLevel(allyData, 1); // !! Remove once save system implemented
         }
-        instance.equippedAllies.Add(ashigaruData);
-        instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
-        SaveManager.SetLevel(ashigaruData, 1); // !! Remove once save system implemented
-
-        var katanaSamuraiDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/Katana");
-        AllyData katanaSamuraiData = await katanaSamuraiDataHandle.Task;
-        instance.addressableAssets.Add(katanaSamuraiData);
-        if (katanaSamuraiData == null) {
-            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/Katana"}\".");
-            return;
-        }
-        instance.equippedAllies.Add(katanaSamuraiData);
-        instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
-        SaveManager.SetLevel(katanaSamuraiData, 1); // !! Remove once save system implemented
-
-        var kyudoSamuraiDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/Kyudo");
-        AllyData kyudoSamuraiData = await kyudoSamuraiDataHandle.Task;
-        instance.addressableAssets.Add(kyudoSamuraiData);
-        if (kyudoSamuraiData == null) {
-            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/Kyudo"}\".");
-            return;
-        }
-        instance.equippedAllies.Add(kyudoSamuraiData);
-        instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
-        SaveManager.SetLevel(kyudoSamuraiData, 1); // !! Remove once save system implemented
-
-        var yariSamuraiDataHandle = Addressables.LoadAssetAsync<AllyData>($"Data/Allies/Humans/Yari");
-        AllyData yariSamuraiData = await yariSamuraiDataHandle.Task;
-        instance.addressableAssets.Add(yariSamuraiData);
-        if (yariSamuraiData == null) {
-            Debug.LogError($"Could not find or load Ally of ID \"{"Humans/Yari"}\".");
-            return;
-        }
-        instance.equippedAllies.Add(yariSamuraiData);
-        instance.allyCooldowns.Add(0); // !! Replace when Allies are loaded properly
-        SaveManager.SetLevel(yariSamuraiData, 1); // !! Remove once save system implemented
-
-        // Pre-load audio clips.
+    }
+    private async Task PreLoadAudioClips() {
         await SFXManager.Load(className, "Wave Victory");
         await SFXManager.Load(className, "Wave Defeat");
         if (!fastLoad) {
@@ -147,25 +119,22 @@ public class GameplayManager { // Gameplay Manager
             await SFXManager.Load(className, "Combat/Footstep");
             await SFXManager.Load(className, "Combat/Footstep Large");
         }
-
-        // Load abilities.
-        await instance.abilityManager.Init();
-
-        // Load stage.
-        instance.stage = new Stage(instance.wave.stage);
-        await instance.stage.Init();
-
-        // Load gate.
+    }
+    private async Task LoadStage() {
+        stage = new Stage(wave.stage);
+        await stage.Init();
+    }
+    private async Task LoadGate() {
         SaveManager.EquipCostume("AlliesGate", 0);
-        instance.gate = new Gate(GameplayEntity.Side.Left);
-        await instance.gate.Init();
-        instance.AddEntity("Gate", instance.gate);
-
-        // Load HUD.
+        gate = new Gate(GameplayEntity.Side.Left);
+        await gate.Init();
+        entityManager.AddEntity("Gate", gate);
+    }
+    private async Task LoadHUD() {
         var hudHandle = Addressables.InstantiateAsync("Prefabs/Gameplay HUD");
-        instance.hud = await hudHandle.Task;
-
-        // Load hero.
+        hud = await hudHandle.Task;
+    }
+    private async Task LoadHero() {
         SaveManager.EquipCostume("Samurai", 0);
         SaveManager.EquipCostume("Kunoichi", 0);
         SaveManager.EquipCostume("Ronin", 0);
@@ -173,21 +142,39 @@ public class GameplayManager { // Gameplay Manager
         SaveManager.EquipCostume("Katana", 0);
         SaveManager.EquipCostume("Kyudo", 0);
         SaveManager.EquipCostume("Yari", 0);
-        instance.hero = new Hero(SaveManager.selectedHero);
-        instance.hero.SetBounds(instance.stage.leftBound, instance.stage.rightBound);
-        instance.hero.allegiance = GameplayEntity.Side.Left;
-        await instance.hero.Init(instance.stage.heroSpawn);
-        instance.AddEntity("Hero", instance.hero);
-
-        // Load BGM.
-        instance.bgm = new BGM("Zen Garden Day");
-        await instance.bgm.Init();
-
-        instance.hero.onDeath += instance.PlayWaveDefeat;
-        instance.onWaveComplete += instance.PlayWaveVictory;
+        hero = new Hero(SaveManager.selectedHero);
+        hero.SetBounds(stage.leftBound, stage.rightBound);
+        hero.allegiance = GameplayEntity.Side.Left;
+        await hero.Init(stage.heroSpawn);
+        entityManager.AddEntity("Hero", hero);
+    }
+    private async Task LoadBGM() {
+        bgm = new BGM("Zen Garden Day");
+        await bgm.Init();
+    }
+    private void RegisterEvents() {
+        hero.onDeath += PlayWaveDefeat;
+        onWaveComplete += PlayWaveVictory;
     }
 
-    public event System.Action onWaveComplete;
+    // Does not start the wave.
+    public static async Task Init(Transform _cameraTransform) {
+        // Initialise new instance.
+        instance = new GameplayManager();
+        instance.camera = _cameraTransform;
+
+        await instance.LoadWaveData();
+        await instance.LoadHealthBar();
+        await instance.LoadAllyData();
+        await instance.PreLoadAudioClips();
+        await instance.abilityManager.Init();
+        await instance.LoadStage();
+        await instance.LoadGate();
+        await instance.LoadHUD();
+        await instance.LoadHero();
+        await instance.LoadBGM();
+        instance.RegisterEvents();
+    }
 
     public void PlayWaveDefeat() {
         defeated = true;
@@ -208,69 +195,27 @@ public class GameplayManager { // Gameplay Manager
         waveStarted = true;
     }
 
-    private void AddEntity(string id, GameplayEntity entity) {
-        entity.SetEntityId(id);
-        entities.Add(id, entity);
-    }
-
     public void SpawnEnemy(EnemyData _data) {
         Enemy enemy = new Enemy(_data, GameplayEntity.Side.Right);
         enemy.SetBounds(stage.leftBound, float.MaxValue);
-        AddEntity($"Enemy{entities.Count - 1}", enemy);
+        entityManager.AddEntity($"Enemy{enemyCounter++}", enemy);
         enemy.Spawn(stage.zombieSpawn);
     }
     public void SpawnAlly(AllyData _data) {
         Ally ally = new Ally(_data, GameplayEntity.Side.Left);
         ally.SetBounds(float.MinValue, stage.rightBound);
-        AddEntity($"Ally{entities.Count - 1}", ally);
+        entityManager.AddEntity($"Ally{allyCounter++}", ally);
         ally.Spawn(stage.allySpawn);
     }
 
     public void Update() {
-        if (waveStarted) {
-            abilityManager.Update();
-            UpdateEntities();
-            UpdateCooldowns();
-            UpdateSmithy();
-            HandleWaveEnd();
-
-            instance.waveStopwatch += Time.deltaTime;
-        }
-    }
-
-    // Update each entity and destroy defeated/finished ones.
-    private void UpdateEntities() {
-        foreach (var entity in entities) {
-            if (entity.Value != null) {
-                if (entity.Value.toDestroy) {
-                    DestroyEntity(entity.Value.entityId);
-                    break;
-                }
-                entity.Value.Update();
-            }
-        }
-
-        foreach (GameplayEntity entity in entities.Values) {
-            if (entity != null) {
-                stage.ApplyGravity(entity);
-
-                // Calculate closest target for each single-hit entity.
-                if (entity.rangedWeapon != null) {
-                    float closestDistance = float.MaxValue;
-                    foreach (GameplayEntity target in entities.Values) {
-                        if (target != null && target.allegiance != entity.allegiance && !target.isDead) {
-                            float distance = target.xPos - entity.xPos;
-                            if (entity.allegiance == GameplayEntity.Side.Right)
-                                distance *= -1;
-                            if (distance > 0 && distance < closestDistance) {
-                                closestDistance = distance;
-                                closestTargets[entity.entityId] = target;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        if (!waveStarted) return;
+        abilityManager.Update();
+        entityManager.Update();
+        UpdateCooldowns();
+        UpdateSmithy();
+        HandleWaveEnd();
+        waveStopwatch += Time.deltaTime;
     }
 
     private void UpdateCooldowns() {
@@ -335,8 +280,8 @@ public class GameplayManager { // Gameplay Manager
     }
 
     public void DealDamage(string entityId) {
-        GameplayEntity entity = entities[entityId];
-        foreach (GameplayEntity enemy in entities.Values) {
+        GameplayEntity entity = entityManager.entities[entityId];
+        foreach (GameplayEntity enemy in entityManager.entities.Values) {
             if (enemy == null || enemy.allegiance == entity.allegiance || enemy.isDead)
                 continue;
             if (enemy.isFlying && entity.rangedWeapon == null)
@@ -348,11 +293,7 @@ public class GameplayManager { // Gameplay Manager
     }
 
     public void FireProjectile(string entityId) {
-        entities[entityId].FireProjectile(closestTargets[entityId]);
-    }
-
-    public void DestroyEntity(string entityId) {
-        entities[entityId] = null;
+        entityManager.entities[entityId].FireProjectile(entityManager.closestTargets[entityId]);
     }
 
     public static void Pause() {

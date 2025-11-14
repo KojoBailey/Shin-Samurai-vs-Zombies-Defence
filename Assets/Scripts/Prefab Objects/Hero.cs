@@ -106,15 +106,15 @@ public class Hero : GameplayEntity {
     private void HandleTravelInput() {
         if (Input.GetKey(KeyCode.D)) {
             ChangeTravelAnimation(TravelState.Forward);
-            xVelocity += data.acceleration * Time.deltaTime;
+            xVelocity = data.speed;
             backPedalTimer = 1;
         } else if (Input.GetKey(KeyCode.A)) {
             if (backPedalTimer <= 0) {
                 ChangeTravelAnimation(TravelState.Backward);
-                xVelocity -= data.acceleration * 1.2f * Time.deltaTime;
+                xVelocity = -data.speed * 1.2f;
             } else {
                 ChangeTravelAnimation(TravelState.BackPedal);
-                xVelocity -= data.acceleration * Time.deltaTime;
+                xVelocity = -data.speed;
                 backPedalTimer -= Time.deltaTime;
             }
         } else {
@@ -123,8 +123,8 @@ public class Hero : GameplayEntity {
         }
     }
     private void UpdatePosition() {
-        xPos += xVelocity * direction * Time.deltaTime;
-        xVelocity *= Mathf.Pow(0.90f, Time.deltaTime * 60f);
+        if (travelState != TravelState.None)
+            xPos += xVelocity * direction * Time.deltaTime;
         
         // Keep within the stage bounds.
         if (xPos < leftBound)
@@ -162,7 +162,7 @@ public class Hero : GameplayEntity {
         ) return;
 
         // Detect enemies and set attackState accordingly.
-        foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
+        foreach (GameplayEntity enemy in GameplayManager.instance.GetEntities()) {
             if (enemy == null || enemy.allegiance == allegiance || enemy.isDead)
                 continue;
 
@@ -210,12 +210,14 @@ public class Hero : GameplayEntity {
 
     private void HandleIdle() {
         if (isTravelling) return;
+
         if (GameplayManager.instance.waveComplete) {
             animationHandler.Play("VictoryLoop", true, 0.1f);
             abilityState = AbilityState.None;
             attackState = AttackState.None;
             return;
         }
+        
         if (attackState == AttackState.RangedHold) {
             SwitchToRanged();
             animationHandler.Play("IdleRanged", true, 0.1f);

@@ -51,7 +51,7 @@ public class AbilityManager { // Ability Manager
     }
 
     public void Lethargy(string entityId) {
-        foreach (GameplayEntity entity in GameplayManager.instance.entities.Values) {
+        foreach (GameplayEntity entity in GameplayManager.instance.GetEntities()) {
             if (entity == null || entity.isDead)
                 continue;
 
@@ -65,7 +65,7 @@ public class AbilityManager { // Ability Manager
         lethargyActive = true;
     }
     private void LethargyEnd() {
-        foreach (GameplayEntity entity in GameplayManager.instance.entities.Values) {
+        foreach (GameplayEntity entity in GameplayManager.instance.GetEntities()) {
             if (entity == null || entity.isDead)
                 continue;
 
@@ -78,8 +78,8 @@ public class AbilityManager { // Ability Manager
     }
 
     public void KatanaSlash(string entityId) {
-        Hero hero = (Hero)GameplayManager.instance.entities[entityId];
-        foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
+        Hero hero = (Hero)GameplayManager.instance.entityManager.entities[entityId];
+        foreach (GameplayEntity enemy in GameplayManager.instance.GetEntities()) {
             if (enemy == null || enemy.allegiance == hero.allegiance || enemy.isDead)
                 continue;
 

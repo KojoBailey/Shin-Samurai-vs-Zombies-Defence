@@ -75,7 +75,7 @@ public class Troop : GameplayEntity {
             isAttacking = true;
         } else {
             isAttacking = false;
-            foreach (GameplayEntity enemy in GameplayManager.instance.entities.Values) {
+            foreach (GameplayEntity enemy in GameplayManager.instance.GetEntities()) {
                 if (enemy == null || enemy.allegiance == allegiance || enemy.isDead)
                     continue;
                 if (data.isGateRusher && enemy.entityId != "Gate")

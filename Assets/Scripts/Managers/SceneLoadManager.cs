@@ -4,36 +4,39 @@ using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
 
 public class SceneLoadManager { // Scene Load Manager
-    private static bool m_loadingScene = false;
+    private static bool m_isLoadingScene = false;
     private static GameObject m_loadingScreenInstance;
 
-    public static bool finishedLoading;
+    public static bool hasFinishedLoading;
 
-    public static async void LoadScene(string id, bool loadingScreen = true) {
-        // Prevent duplicate scene loading.
-        if (m_loadingScene == true) return;
-        m_loadingScene = true;
-        finishedLoading = false;
+    public static async void LoadScene(string id, bool isTheLoadingScreen = true)
+    {
+        if (m_isLoadingScene) {
+            return;
+        }
+        m_isLoadingScene = true;
+        hasFinishedLoading = false;
 
-        // Start loading screen.
-        if (loadingScreen) {
+        if (isTheLoadingScreen) {
             var loadingHandle = Addressables.InstantiateAsync("Prefabs/Loading Screen");
             m_loadingScreenInstance = await loadingHandle.Task;
         }
 
-        // Load next scene.
         var handle = Addressables.LoadSceneAsync("Scenes/" + id, LoadSceneMode.Single);
         await handle.Task;
-        if (!loadingScreen) m_loadingScene = false;
+        if (!isTheLoadingScreen) {
+            m_isLoadingScene = false;
+        }
     }
 
-    public static void FinishLoading() {
+    public static void FinishLoading()
+    {
         // Remove the loading screen once the scene has decided it is ready.
         if (m_loadingScreenInstance != null) {
             var controller = m_loadingScreenInstance.GetComponent<LoadingScreen>();
             controller.Destroy();
         }
-        m_loadingScene = false;
-        finishedLoading = true;
+        m_isLoadingScene = false;
+        hasFinishedLoading = true;
     }
 }

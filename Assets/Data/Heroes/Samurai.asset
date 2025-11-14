@@ -28,7 +28,7 @@ MonoBehaviour:
     - Key: 2
       Value: 4
     - Key: 3
-      Value: 24
+      Value: 3
     keyCollision: 0
   upgrades:
   - list:
