@@ -55,7 +55,44 @@ public class TitleScreen : MonoBehaviour
         _bloodPos = 0;
         _bloodWidth = bloodBottomRef.rectTransform.rect.width - 3;
     }
+    
+    private void Start()
+    {
+        SFXManager.Init();
+        
+        PrepareBlood();
+        
+        PrepareHeroes();
+        
+        PrepareSettingsButton();
+        
+        PrepareLogo();
 
+        PrepareVersionText();
+
+        SceneLoadManager.FinishLoading();
+    }
+    
+    private void Update()
+    {
+        if (!SceneLoadManager.hasFinishedLoading) return;
+
+        UpdateBlood();
+
+        UpdateHeroes();
+
+        UpdateLogo();
+
+        UpdateSettingsButton();
+
+        UpdateStartText();
+        
+        if (Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Return))
+        {
+            SceneLoadManager.LoadScene("Gameplay");
+        }
+    }
+    
     private void PrepareBlood()
     {
         for (uint i = 0; i < 4; i++)
@@ -126,23 +163,6 @@ public class TitleScreen : MonoBehaviour
         }
     }
     
-    private void Start()
-    {
-        SFXManager.Init();
-        
-        PrepareBlood();
-        
-        PrepareHeroes();
-        
-        PrepareSettingsButton();
-        
-        PrepareLogo();
-
-        PrepareVersionText();
-
-        SceneLoadManager.FinishLoading();
-    }
-
     private void HeroOnPointerEnter(string id)
     {
         _targetHeroPositions[id] = _originalHeroPositions[id] + new Vector2(5, 5);
@@ -210,25 +230,5 @@ public class TitleScreen : MonoBehaviour
     {
         UIUtils.SinScale(
             startTextTransform, new Vector2(1f, 1f), new Vector2(1.2f, 1.2f), 1);
-    }
-
-    private void Update()
-    {
-        if (!SceneLoadManager.hasFinishedLoading) return;
-
-        UpdateBlood();
-
-        UpdateHeroes();
-
-        UpdateLogo();
-
-        UpdateSettingsButton();
-
-        UpdateStartText();
-        
-        if (Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Return))
-        {
-            SceneLoadManager.LoadScene("Gameplay");
-        }
     }
 }
