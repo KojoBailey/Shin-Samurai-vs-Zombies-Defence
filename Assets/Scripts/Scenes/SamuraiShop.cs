@@ -23,12 +23,12 @@ public class SamuraiShop : MonoBehaviour { // Samurai Shop
             img.sprite = ally.icon;
 
             RectTransform rectTransform = allyButton.GetComponent<RectTransform>();
-            UIManager.CopyRectTransform(m_allyReference, rectTransform);
+            UIUtils.CopyRectTransform(m_allyReference, rectTransform);
             rectTransform.anchoredPosition += new Vector2(i++ * 275, 0);
 
-            UIManager.AddEventTrigger(allyId, allyButton, EventTriggerType.PointerEnter, OnPointerEnter);
-            UIManager.AddEventTrigger(allyId, allyButton, EventTriggerType.PointerExit, OnPointerExit);
-            UIManager.AddEventTrigger(allyId, allyButton, EventTriggerType.PointerClick, OnPointerClick);
+            UIUtils.AddEventTrigger(allyId, allyButton, EventTriggerType.PointerEnter, OnPointerEnter);
+            UIUtils.AddEventTrigger(allyId, allyButton, EventTriggerType.PointerExit, OnPointerExit);
+            UIUtils.AddEventTrigger(allyId, allyButton, EventTriggerType.PointerClick, OnPointerClick);
 
             m_allies.Add(allyId, ally);
             m_allyButtons.Add(allyId, allyButton);
@@ -50,7 +50,7 @@ public class SamuraiShop : MonoBehaviour { // Samurai Shop
 
     private void Update() {
         foreach (var pair in m_allyButtons) {
-            UIManager.SmoothScale(pair.Value.GetComponent<RectTransform>(), m_targetScales[pair.Key]);
+            UIUtils.SmoothScale(pair.Value.GetComponent<RectTransform>(), m_targetScales[pair.Key]);
         }
     }
 }

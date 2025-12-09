@@ -5,7 +5,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class TitleScreen : MonoBehaviour {
+public class TitleScreen : MonoBehaviour
+{
     [FormerlySerializedAs("m_canvas")]
         [SerializeField] private Canvas canvas;
     [FormerlySerializedAs("m_bloodBottomRef")]
@@ -66,7 +67,7 @@ public class TitleScreen : MonoBehaviour {
             _bloodBottom[i].AddComponent<Image>().sprite = bloodBottomRef.sprite;
 
             _bloodBottomRect[i] = _bloodBottom[i].GetComponent<RectTransform>();
-            UIManager.CopyRectTransform(bloodBottomRef.rectTransform, _bloodBottomRect[i]);
+            UIUtils.CopyRectTransform(bloodBottomRef.rectTransform, _bloodBottomRect[i]);
             _bloodBottomRect[i].anchoredPosition -= new Vector2(i * _bloodWidth, 0);
         }
         for (uint i = 0; i < 4; i++)
@@ -78,7 +79,7 @@ public class TitleScreen : MonoBehaviour {
             _bloodTop[i].AddComponent<Image>().sprite = bloodTopRef.sprite;
 
             _bloodTopRect[i] = _bloodTop[i].GetComponent<RectTransform>();
-            UIManager.CopyRectTransform(bloodTopRef.rectTransform, _bloodTopRect[i]);
+            UIUtils.CopyRectTransform(bloodTopRef.rectTransform, _bloodTopRect[i]);
             _bloodTopRect[i].anchoredPosition += new Vector2(i * _bloodWidth, 0);
         }
     }
@@ -94,9 +95,9 @@ public class TitleScreen : MonoBehaviour {
         {
             _originalHeroPositions.Add(pair.Key, pair.Value.rectTransform.anchoredPosition);
             _targetHeroPositions.Add(pair.Key, _originalHeroPositions[pair.Key]);
-            UIManager.AddEventTrigger(
+            UIUtils.AddEventTrigger(
                 pair.Key, pair.Value.gameObject, EventTriggerType.PointerEnter, HeroOnPointerEnter);
-            UIManager.AddEventTrigger(
+            UIUtils.AddEventTrigger(
                 pair.Key, pair.Value.gameObject, EventTriggerType.PointerExit, HeroOnPointerExit);
         }
     }
@@ -104,16 +105,16 @@ public class TitleScreen : MonoBehaviour {
     private void PrepareSettingsButton()
     {
         ResetSettingsScale();
-        UIManager.AddEventTrigger(
+        UIUtils.AddEventTrigger(
             "settings", settingsButton.gameObject, EventTriggerType.PointerEnter, SettingsOnPointerEnter);
-        UIManager.AddEventTrigger(
+        UIUtils.AddEventTrigger(
             "settings", settingsButton.gameObject, EventTriggerType.PointerExit, SettingsOnPointerExit);
     }
 
     private void PrepareLogo()
     {
         _targetLogoPos = logoTransform.anchoredPosition;
-        UIManager.SendOffScreen(logoTransform, UIManager.Direction.Up);
+        UIUtils.SendOffscreen(logoTransform, UIUtils.Direction.Up);
     }
 
     private void PrepareVersionText()
@@ -191,23 +192,23 @@ public class TitleScreen : MonoBehaviour {
     {
         foreach (var pair in _heroes)
         {
-            UIManager.SmoothPos(pair.Value.rectTransform, _targetHeroPositions[pair.Key]);
+            UIUtils.SmoothPos(pair.Value.rectTransform, _targetHeroPositions[pair.Key]);
         }
     }
 
     private void UpdateLogo()
     {
-        UIManager.SmoothPos(logoTransform, _targetLogoPos, 0.7f);
+        UIUtils.SmoothPos(logoTransform, _targetLogoPos, 0.7f);
     }
     
     private void UpdateSettingsButton()
     {
-        UIManager.SmoothScale(_settingsButtonRect, _targetSettingsScale);
+        UIUtils.SmoothScale(_settingsButtonRect, _targetSettingsScale);
     }
 
     private void UpdateStartText()
     {
-        UIManager.SinScale(
+        UIUtils.SinScale(
             startTextTransform, new Vector2(1f, 1f), new Vector2(1.2f, 1.2f), 1);
     }
 

@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\Prefab MonoBehaviours\EntityHealthBar.cs" />
     <Compile Include="Assets\Scripts\Scenes\SamuraiShop.cs" />
     <Compile Include="Assets\Scripts\Managers\AbilityManager.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\EntityAudioData.cs" />
     <Compile Include="Assets\Scripts\Managers\SaveManager.cs" />
@@ -66,7 +67,6 @@
     <Compile Include="Assets\Scripts\Prefab Objects\Troop.cs" />
     <Compile Include="Assets\Scripts\Animation Events\AnimEventAudioCommon.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\EnemyData.cs" />
-    <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\TroopWeaponData.cs" />
     <Compile Include="Assets\Scripts\Animation Events\AnimEventAudioEntity.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\TroopData.cs" />

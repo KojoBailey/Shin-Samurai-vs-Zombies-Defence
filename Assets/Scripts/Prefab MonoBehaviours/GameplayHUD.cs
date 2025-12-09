@@ -48,7 +48,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
             allyButton.transform.Find("Cooldown").gameObject.GetComponent<Image>().sprite = allyData.icon;
             allyButton.GetComponent<RectTransform>().localPosition = new Vector3(
                 SLOT_SPACING * i, 0, 0);
-            UIManager.AddEventTrigger(allyData.id, i, allyButton, EventTriggerType.PointerClick, AllySlotOnPointerClick);
+            UIUtils.AddEventTrigger(allyData.id, i, allyButton, EventTriggerType.PointerClick, AllySlotOnPointerClick);
             allyButtons.Add(allyButton);
         }
         allySlotReference.SetActive(false);
@@ -61,7 +61,7 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
             abilityButton.transform.Find("Cooldown").gameObject.GetComponent<Image>().sprite = abilityData.icon;
             abilityButton.GetComponent<RectTransform>().localPosition = new Vector3(
                 -SLOT_SPACING * (GameplayManager.instance.equippedAbilities.Count - 1 - i), 0, 0);
-            UIManager.AddEventTrigger(abilityData.id, i, abilityButton, EventTriggerType.PointerClick, AbilitySlotOnPointerClick);
+            UIUtils.AddEventTrigger(abilityData.id, i, abilityButton, EventTriggerType.PointerClick, AbilitySlotOnPointerClick);
             abilityButtons.Add(abilityButton);
         }
         abilitySlotReference.SetActive(false);
