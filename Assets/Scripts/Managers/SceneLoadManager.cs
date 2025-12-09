@@ -3,7 +3,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
 
-public class SceneLoadManager { // Scene Load Manager
+public class SceneLoadManager {
     private static bool m_isLoadingScene = false;
     private static GameObject m_loadingScreenInstance;
 

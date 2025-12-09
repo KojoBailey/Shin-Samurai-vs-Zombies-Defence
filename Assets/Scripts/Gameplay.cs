@@ -22,14 +22,14 @@ public class Gameplay : MonoBehaviour {
     
     private void Update() 
     {
-        if (SceneLoadManager.finishedLoading && !GameplayManager.instance.paused) {
+        if (SceneLoadManager.hasFinishedLoading && !GameplayManager.instance.paused) {
             GameplayManager.instance.Update();
         }
     }
 
     private void LateUpdate() 
     {
-        if (SceneLoadManager.finishedLoading) {
+        if (SceneLoadManager.hasFinishedLoading) {
             if (!GameplayManager.instance.startSlowMo) {
                 m_cameraTransform.position = GameplayManager.instance.hero.transform.position + CAMERA_OFFSET;
             } else {
