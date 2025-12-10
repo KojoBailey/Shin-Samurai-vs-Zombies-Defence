@@ -35,7 +35,7 @@ public class SamuraiShop : MonoBehaviour { // Samurai Shop
             m_targetScales.Add(allyId, m_allyReference.localScale);
         }
 
-        SceneLoadManager.FinishLoading();
+        SceneLoader.FinishLoading();
     }
 
     private void OnPointerEnter(string id) {

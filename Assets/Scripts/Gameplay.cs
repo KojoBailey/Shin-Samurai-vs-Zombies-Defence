@@ -1,10 +1,12 @@
-using UnityEngine;
 using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Gameplay : MonoBehaviour {
-    [SerializeField] private Transform m_cameraTransform;
-    private readonly Vector3 CAMERA_OFFSET = new Vector3(0f, 1.39f, -5.07f);
-    private readonly Quaternion CAMERA_ROTATION = Quaternion.Euler(4.94f, 0f, 0f);
+    [FormerlySerializedAs("m_cameraTransform")]
+        [SerializeField] private Transform cameraTransform;
+    private readonly Vector3 _cameraOffset = new Vector3(0f, 1.39f, -5.07f);
+    private readonly Quaternion _cameraRotation = Quaternion.Euler(4.94f, 0f, 0f);
 
     private void Start()
     {
@@ -13,30 +15,30 @@ public class Gameplay : MonoBehaviour {
     
     private async Task StartAsync()
     {
-        m_cameraTransform.rotation = CAMERA_ROTATION;
-        await GameplayManager.Init(m_cameraTransform);
+        cameraTransform.rotation = _cameraRotation;
+        await GameplayManager.Init(cameraTransform);
         GameplayManager.instance.StartWave();
 
-        SceneLoadManager.FinishLoading();
+        SceneLoader.FinishLoading();
     }
     
     private void Update() 
     {
-        if (SceneLoadManager.hasFinishedLoading && !GameplayManager.instance.paused) {
+        if (SceneLoader.hasFinishedLoading && !GameplayManager.instance.paused) {
             GameplayManager.instance.Update();
         }
     }
 
     private void LateUpdate() 
     {
-        if (SceneLoadManager.hasFinishedLoading) {
+        if (SceneLoader.hasFinishedLoading) {
             if (!GameplayManager.instance.startSlowMo) {
-                m_cameraTransform.position = GameplayManager.instance.hero.transform.position + CAMERA_OFFSET;
+                cameraTransform.position = GameplayManager.instance.hero.transform.position + _cameraOffset;
             } else {
-                m_cameraTransform.position = new Vector3(
-                    GameplayManager.instance.hero.xPos + CAMERA_OFFSET.x,
-                    GameplayManager.instance.hero.transform.position.y + CAMERA_OFFSET.y,
-                    m_cameraTransform.position.z
+                cameraTransform.position = new Vector3(
+                    GameplayManager.instance.hero.xPos + _cameraOffset.x,
+                    GameplayManager.instance.hero.transform.position.y + _cameraOffset.y,
+                    cameraTransform.position.z
                 );
             }
         }

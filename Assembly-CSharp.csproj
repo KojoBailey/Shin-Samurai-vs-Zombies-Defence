@@ -55,7 +55,6 @@
     <Compile Include="Assets\Scripts\Animation Events\AnimEventAttack.cs" />
     <Compile Include="Assets\Scripts\Prefab Objects\BGM.cs" />
     <Compile Include="Assets\Scripts\Managers\AllyManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\SceneLoadManager.cs" />
     <Compile Include="Assets\Scripts\Prefab MonoBehaviours\EntityHealthBar.cs" />
     <Compile Include="Assets\Scripts\Scenes\SamuraiShop.cs" />
     <Compile Include="Assets\Scripts\Managers\AbilityManager.cs" />
@@ -91,6 +90,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\RangedWeaponData.cs" />
     <Compile Include="Assets\Scripts\Prefab MonoBehaviours\GameplayHUD.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\AllyData.cs" />
+    <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Managers\GameplayManager.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

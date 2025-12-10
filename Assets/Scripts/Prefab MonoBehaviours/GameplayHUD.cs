@@ -79,11 +79,11 @@ public class GameplayHUD : MonoBehaviour { // Gameplay Heads-Up Display
     }
     public void Quit() {
         GameplayManager.Terminate();
-        SceneLoadManager.LoadScene("TitleScreen");
+        SceneLoader.StartLoading("TitleScreen");
     }
     public void Restart() {
         GameplayManager.Resume();
-        SceneLoadManager.LoadScene("Gameplay");
+        SceneLoader.StartLoading("Gameplay");
     }
 
     private void AllySlotOnPointerClick(string id, int index) {

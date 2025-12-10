@@ -70,12 +70,12 @@ public class TitleScreen : MonoBehaviour
 
         PrepareVersionText();
 
-        SceneLoadManager.FinishLoading();
+        SceneLoader.FinishLoading();
     }
     
     private void Update()
     {
-        if (!SceneLoadManager.hasFinishedLoading) return;
+        if (!SceneLoader.hasFinishedLoading) return;
 
         UpdateBlood();
 
@@ -87,9 +87,9 @@ public class TitleScreen : MonoBehaviour
 
         UpdateStartText();
         
-        if (Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
-            SceneLoadManager.LoadScene("Gameplay");
+            SceneLoader.StartLoading("Gameplay");
         }
     }
     

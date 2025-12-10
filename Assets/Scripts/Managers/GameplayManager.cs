@@ -235,7 +235,7 @@ public class GameplayManager { // Gameplay Manager
     private void HandleWaveEnd() {
         if (defeated && waveStopwatch - victoryTimer > victoryDuration) {
             Terminate();
-            SceneLoadManager.LoadScene("TitleScreen");
+            SceneLoader.StartLoading("TitleScreen");
         }
 
         // On wave completion:
@@ -254,7 +254,7 @@ public class GameplayManager { // Gameplay Manager
                 }
                 if (waveComplete && waveStopwatch - victoryTimer > victoryDuration) {
                     Terminate();
-                    SceneLoadManager.LoadScene("TitleScreen");
+                    SceneLoader.StartLoading("TitleScreen");
                 }
             }
         } else {
